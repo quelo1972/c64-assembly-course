@@ -10,6 +10,8 @@ Benvenuto nel corso completo di programmazione Assembly per Commodore 64.
 
 👉 [Lezione 002 - Binario ed esadecimale](lessons/002-binary-hex.md)
 
+👉 [Lezione 003 - Byte, word e overflow](lessons/003-byte-word.md)
+
 ---
 
 ## 🎯 Obiettivo del corso
