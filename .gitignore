@@ -1,0 +1,9 @@
+# File generati dalla compilazione
+bin/
+
+# File temporanei di VS Code
+.vscode/*.log
+
+# File di sistema
+.DS_Store
+Thumbs.db
