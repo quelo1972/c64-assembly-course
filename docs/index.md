@@ -14,6 +14,8 @@ Benvenuto nel corso completo di programmazione Assembly per Commodore 64.
 
 👉 [Lezione 004 - La CPU MOS 6510](lessons/004-cpu-6510.md)
 
+👉 [Lezione 005 - Registri A, X e Y](lessons/005-registers-axy.md)
+
 ---
 
 ## 🎯 Obiettivo del corso
