@@ -40,6 +40,8 @@ Serve per:
 - trasferimenti di dati
 - interazione con la memoria
 
+Immagina la CPU come un piccolo banco da lavoro. Sul banco c'è pochissimo spazio. Il registro A è il piano principale dove il 6510 appoggia il dato su cui sta lavorando. Se il dato è ancora nella RAM, la CPU non può usarlo direttamente: prima deve prenderlo e metterlo sul banco, cioè nell'Accumulatore.
+
 Esempio:
 
 ```asm
