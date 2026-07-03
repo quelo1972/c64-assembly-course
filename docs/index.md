@@ -13,6 +13,7 @@ Benvenuto nel corso completo di programmazione Assembly per Commodore 64.
 👉 [Lezione 003 - Byte, word e overflow](lessons/003-byte-word.md)
 
 👉 [Lezione 004 - La CPU MOS 6510](lessons/004-cpu-6510.md)
+
 ---
 
 ## 🎯 Obiettivo del corso
