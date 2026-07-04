@@ -16,6 +16,8 @@ Benvenuto nel corso completo di programmazione Assembly per Commodore 64.
 
 👉 [Lezione 005 - Registri A, X e Y](lessons/005-registers-axy.md)
 
+👉 [Lezione 006 - Dal sorgente all'esecuzione](lessons/006-from-source-to-execution.md)
+
 ---
 
 ## 🎯 Obiettivo del corso
