@@ -75,6 +75,31 @@ Compilazione:
   src/000-toolchain/hello.asm
 ```
 
+## ⚠️ Binari e come ricostruirli
+
+- La cartella `bin/` contiene i file `.prg` compilati ma **non** è tracciata nel repository (è ignorata). Se vuoi ricostruire i binari localmente usa i comandi seguenti.
+
+1) Compilare tutti gli esempi `src/*/main.asm` in `bin/`:
+
+```bash
+mkdir -p bin
+for d in src/*; do
+  if [ -f "$d/main.asm" ]; then
+    64tass --cbm-prg -o "bin/$(basename "$d").prg" "$d/main.asm"
+  fi
+done
+```
+
+2) Ricostruire il sito MkDocs localmente (usa l'ambiente virtuale):
+
+```bash
+python -m pip install -r requirements.txt
+.venv/bin/mkdocs build
+# oppure: mkdocs build
+```
+
+Per una panoramica delle modifiche recenti e delle decisioni di progetto vedi `CHANGELOG.md`.
+
 Oppure direttamente da VS Code:
 
 ```
