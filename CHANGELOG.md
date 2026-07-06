@@ -9,6 +9,8 @@
 - Esempio pratico e README nella cartella src/008-sta
 - Nuova lezione 009: Trasferimento tra registri
 - Esempio pratico e README nella cartella src/009-trasferimento-tra-registri
+- Nuova lezione 010: Incremento e decremento
+- Esempio pratico e README nella cartella src/010-increment-decrement
 
 ### Modificato
 - Aggiornato l'indice del corso con la nuova lezione

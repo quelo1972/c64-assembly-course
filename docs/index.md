@@ -24,6 +24,8 @@ Benvenuto nel corso completo di programmazione Assembly per Commodore 64.
 
 👉 [Lezione 009 - Trasferimento tra registri](lessons/009-trasferimento-tra-registri.md)
 
+👉 [Lezione 010 - Incremento e decremento](lessons/010-increment-decrement.md)
+
 ---
 
 ## 🎯 Obiettivo del corso
