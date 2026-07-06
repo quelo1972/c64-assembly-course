@@ -209,6 +209,8 @@ In questa lezione hai imparato che:
 
 Finalmente inizieremo a programmare. Studieremo la nostra prima vera istruzione, `LDA`, e vedremo cosa succede dentro la CPU quando un valore viene caricato nel registro A.
 
+Nota: `LDA #value` carica un valore immediato nel registro `A` (accumulatore). Questa breve nota introduce il mnemonico che sarà spiegato in dettaglio nella lezione dedicata.
+
 ## 🔎 Approfondimento - Dentro il 6510
 
 Il processo di assemblaggio non fa altro che tradurre testo in byte, che poi il 6510 legge come istruzioni numeriche in memoria.
