@@ -17,7 +17,8 @@ Per ogni nuova lezione seguire sempre questi passaggi:
 5. Verificare l'esecuzione in VICE.
 6. Aggiornare `docs/index.md`.
 7. Aggiornare, se necessario, il glossario.
-8. Eseguire commit e push.
+8. Aggiornare coerentemente `CHANGELOG.md`.
+9. Eseguire commit e push.
 
 ---
 
