@@ -112,6 +112,9 @@ succede questo:
 
 ---
 
+Nota rapida: `RTS` (ReTurn from Subroutine) è l'istruzione che termina una subroutine tornando all'indirizzo chiamante. In semplici esempi `RTS` appare come istruzione finale per terminare l'esecuzione.
+
+
 # Come ragiona il 6510
 
 La CPU non sa cosa sia un file.
