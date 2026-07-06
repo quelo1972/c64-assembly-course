@@ -27,3 +27,13 @@ Ogni modifica significativa al corso deve includere un aggiornamento coerente de
 
 Motivazione:
 Mantenere il repository documentato e sincronizzato con il lavoro svolto.
+
+---
+
+## 2026-07-06
+
+Decisione:
+Dopo la migrazione a MkDocs, ogni aggiornamento della documentazione deve essere verificato anche con una build locale di MkDocs.
+
+Motivazione:
+Garantire che le lezioni e il sito generato rimangano coerenti e che il deploy GitHub Pages non fallisca.

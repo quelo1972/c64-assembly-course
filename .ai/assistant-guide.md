@@ -88,6 +88,8 @@ L'assistente dovrebbe ricordare di:
 
 * aggiornare `docs/index.md` quando viene aggiunta una lezione;
 * mantenere sincronizzati teoria ed esempi;
+* verificare la generazione del sito MkDocs con `mkdocs build` quando si modifica la documentazione;
+* mantenere aggiornati `mkdocs.yml` e `requirements.txt` se si aggiungono estensioni o si cambia il tema;
 * suggerire commit chiari e descrittivi;
 * mantenere il repository ordinato.
 

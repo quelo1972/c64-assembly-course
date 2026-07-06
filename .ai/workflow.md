@@ -15,10 +15,11 @@ Per ogni nuova lezione seguire sempre questi passaggi:
 3. Preparare almeno un esempio Assembly compilabile.
 4. Verificare che l'esempio venga compilato con 64tass.
 5. Verificare l'esecuzione in VICE.
-6. Aggiornare `docs/index.md`.
-7. Aggiornare, se necessario, il glossario.
-8. Aggiornare coerentemente `CHANGELOG.md`.
-9. Eseguire commit e push.
+6. Verificare brevemente la generazione del sito con `mkdocs build`.
+7. Aggiornare `docs/index.md`.
+8. Aggiornare, se necessario, il glossario.
+9. Aggiornare coerentemente `CHANGELOG.md`.
+10. Eseguire commit e push.
 
 ---
 
