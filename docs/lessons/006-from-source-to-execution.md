@@ -6,13 +6,13 @@
 
 ---
 
-## Obiettivi
+## 🎯 Obiettivi
 
 - capire il percorso da un file `.asm` a un programma `.prg`;
 - distinguere sorgente, assembler e memoria del C64;
 - riconoscere il ruolo di 64tass e VICE.
 
-## Introduzione
+## 🧠 Introduzione
 
 Finora abbiamo studiato:
 
@@ -27,7 +27,7 @@ Ma c'è una domanda fondamentale:
 
 ---
 
-## Teoria
+## 📘 Teoria
 
 Un file Assembly è un testo che descrive istruzioni per la CPU. Per diventare eseguibile, quel testo deve essere tradotto in codice macchina e caricato nella memoria giusta.
 
@@ -161,21 +161,21 @@ MOS 6510
 
 ---
 
-## Come ragiona il 6510
+## 🤖 Come ragiona il 6510
 
 La CPU non vede file, cartelle o nomi. Quando il programma viene caricato, vede solo byte in memoria e segue l'indirizzo di partenza del PRG.
 
-## Esempio pratico
+## 💡 Esempio pratico
 
 Se il sorgente contiene `* = $1000`, l'assembler produce un PRG che viene caricato a partire da quell'indirizzo.
 
-## Errori comuni
+## ⚠️ Errori comuni
 
 - confondere il file sorgente con il file eseguibile;
 - dimenticare che il PRG contiene anche l'indirizzo di caricamento;
 - pensare che la CPU esegua direttamente il file `.asm`.
 
-## Esercizi
+## 🧪 Esercizi
 
 Compila il programma:
 
@@ -193,7 +193,7 @@ e osserva:
 
 ---
 
-## Riassunto
+## 📌 Riassunto
 
 In questa lezione hai imparato che:
 
@@ -202,15 +202,15 @@ In questa lezione hai imparato che:
 - il file `.prg` contiene anche l'indirizzo di caricamento;
 - il 6510 esegue solo i byte presenti in memoria.
 
-## Preparazione alla lezione successiva
+## 🔜 Preparazione alla lezione successiva
 
 Finalmente inizieremo a programmare. Studieremo la nostra prima vera istruzione, `LDA`, e vedremo cosa succede dentro la CPU quando un valore viene caricato nel registro A.
 
-## Approfondimento - Dentro il 6510
+## 🔎 Approfondimento - Dentro il 6510
 
 Il processo di assemblaggio non fa altro che tradurre testo in byte, che poi il 6510 legge come istruzioni numeriche in memoria.
 
-## Checklist finale
+## ✅ Checklist finale
 
 - [ ] l'esempio compila con 64tass;
 - [ ] l'esempio è coerente con la lezione;

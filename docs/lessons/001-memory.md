@@ -5,13 +5,13 @@
 
 ---
 
-## Obiettivi
+## 🎯 Obiettivi
 
 - capire come la CPU vede la memoria del C64;
 - distinguere indirizzo e contenuto;
 - riconoscere la differenza tra RAM e registri hardware.
 
-## Introduzione
+## 🧠 Introduzione
 
 Prima di imparare una sola istruzione Assembly è fondamentale capire una cosa:
 
@@ -23,7 +23,7 @@ Tutto ciò che il Commodore 64 fa è il risultato di letture e scritture in memo
 
 ---
 
-## Teoria
+## 📘 Teoria
 
 La memoria del C64 è una sequenza di celle, ognuna identificata da un indirizzo. Il 6510 legge e scrive byte in queste celle, e ogni byte ha un significato che dipende dall'hardware o dal programma.
 
@@ -172,15 +172,15 @@ Sa soltanto che deve scrivere il valore **6** nell'indirizzo **$D020**.
 
 ---
 
-## Come ragiona il 6510
+## 🤖 Come ragiona il 6510
 
 La CPU non "vede" schermo, tastiera o colori. Per lei esistono soltanto indirizzi e valori. Quando un programma scrive un byte in $D020, non è la CPU a interpretarlo come colore: è il chip video VIC-II a farlo.
 
-## Esempio pratico
+## 💡 Esempio pratico
 
 Immaginiamo di voler cambiare il bordo. Il programma non parla di “blu”: scrive un byte nell'indirizzo corretto e lascia che l'hardware interpreti quel valore.
 
-## Errori comuni
+## ⚠️ Errori comuni
 
 - confondere un indirizzo con il contenuto della cella;
 - pensare che la CPU conosca il colore direttamente;
@@ -197,7 +197,7 @@ Alla fine di questa lezione dovresti aver capito che:
 
 ---
 
-## Esercizi
+## 🧪 Esercizi
 
 1. Perché il 6510 può indirizzare esattamente 65.536 celle di memoria?
 2. Che cos'è la Zero Page?
@@ -206,22 +206,22 @@ Alla fine di questa lezione dovresti aver capito che:
 
 ---
 
-## Riassunto
+## 📌 Riassunto
 
 - la memoria è una sequenza di indirizzi e contenuti;
 - il 6510 lavora sempre con byte;
 - alcuni indirizzi controllano hardware;
 - capire la memoria è il prerequisito per ogni programma Assembly.
 
-## Preparazione alla lezione successiva
+## 🔜 Preparazione alla lezione successiva
 
 Nella prossima lezione studieremo il sistema binario e l'esadecimale, perché sono il linguaggio con cui il 6510 legge e scrive i numeri.
 
-## Approfondimento - Dentro il 6510
+## 🔎 Approfondimento - Dentro il 6510
 
 Nel Commodore 64 la CPU vive in un mondo di indirizzi e valori. Anche il colore del bordo è solo un valore scritto in una posizione di memoria.
 
-## Checklist finale
+## ✅ Checklist finale
 
 - [ ] l'esempio compila con 64tass;
 - [ ] l'esempio è coerente con la lezione;

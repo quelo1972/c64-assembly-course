@@ -6,13 +6,13 @@
 
 ---
 
-## Obiettivi
+## 🎯 Obiettivi
 
 - capire cosa sono i registri della CPU;
 - distinguere A, X e Y;
 - capire perché il 6510 usa registri diversi per compiti diversi.
 
-## Introduzione
+## 🧠 Introduzione
 
 Un registro è una piccola memoria interna alla CPU.
 
@@ -70,7 +70,7 @@ RAM → A → RAM
 
 ---
 
-## Teoria
+## 📘 Teoria
 
 Un registro è una piccola memoria interna alla CPU, molto più veloce della RAM. È il posto dove la CPU tiene i dati su cui sta lavorando in questo preciso istante.
 
@@ -152,35 +152,35 @@ Quindi:
 
 ---
 
-## Come ragiona il 6510
+## 🤖 Come ragiona il 6510
 
 Il 6510 usa A come registro principale per i dati, mentre X e Y servono come supporto per contatori e indirizzamenti. Questa divisione semplifica molte operazioni comuni.
 
-## Esempio pratico
+## 💡 Esempio pratico
 
 Se il programma deve lavorare su una tabella, X o Y possono indicare la posizione corrente, mentre A contiene il dato attuale da elaborare.
 
-## Errori comuni
+## ⚠️ Errori comuni
 
 - confondere registri con celle di memoria;
 - pensare che X e Y siano identici ad A;
 - dimenticare che i registri sono molto più veloci della RAM.
 
-## Riassunto
+## 📌 Riassunto
 
 - A è l'accumulatore principale;
 - X e Y sono registri di supporto;
 - i registri sono dentro la CPU e non nella RAM.
 
-## Preparazione alla lezione successiva
+## 🔜 Preparazione alla lezione successiva
 
 Nella prossima lezione studieremo Stack Pointer e Program Counter, per capire come la CPU organizza il flusso del programma.
 
-## Approfondimento - Dentro il 6510
+## 🔎 Approfondimento - Dentro il 6510
 
 Nel 6510 il registro A è destinato alle operazioni principali, mentre X e Y sono progettati per puntare indirizzi e contare elementi in memoria.
 
-## Checklist finale
+## ✅ Checklist finale
 
 - [ ] l'esempio compila con 64tass;
 - [ ] l'esempio è coerente con la lezione;

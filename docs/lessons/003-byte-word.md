@@ -6,13 +6,13 @@
 
 ---
 
-## Obiettivi
+## 🎯 Obiettivi
 
 - capire il limite di un byte;
 - distinguere byte e word;
 - riconoscere il significato dell'overflow.
 
-## Introduzione
+## 🧠 Introduzione
 
 Un **byte** è un’unità di memoria composta da:
 
@@ -37,7 +37,7 @@ Quindi un byte può rappresentare:
 
 ---
 
-## Teoria
+## 📘 Teoria
 
 Nel 6510 i dati hanno dimensioni fisse. Un byte può contenere solo 8 bit, quindi ha un limite preciso. Quando si supera quel limite, la CPU riparte dall'inizio del range.
 
@@ -148,15 +148,15 @@ Fa solo quello che può fare con i bit disponibili.
 
 ---
 
-## Come ragiona il 6510
+## 🤖 Come ragiona il 6510
 
 Il 6510 non “capisce” il concetto di infinito. Sa solo che il registro disponibile ha un numero massimo di valori possibili, quindi l'overflow è un comportamento naturale del hardware.
 
-## Esempio pratico
+## 💡 Esempio pratico
 
 Se un contatore raggiunge 255, il passo successivo lo riporta a 0. Questo è esattamente il tipo di comportamento che si vede in molti programmi semplici del C64.
 
-## Errori comuni
+## ⚠️ Errori comuni
 
 - pensare che l'overflow sia un errore di programma;
 - dimenticare che un byte va da 0 a 255;
@@ -172,21 +172,21 @@ Se un contatore raggiunge 255, il passo successivo lo riporta a 0. Questo è esa
 
 ---
 
-## Riassunto
+## 📌 Riassunto
 
 - un byte contiene 8 bit e va da 0 a 255;
 - una word contiene 16 bit;
 - l'overflow è il comportamento naturale quando si supera il limite dei bit disponibili.
 
-## Preparazione alla lezione successiva
+## 🔜 Preparazione alla lezione successiva
 
 Nella prossima lezione studieremo la CPU MOS 6510 e capiremo come i registri e le istruzioni lavorano insieme per eseguire un programma.
 
-## Approfondimento - Dentro il 6510
+## 🔎 Approfondimento - Dentro il 6510
 
 Per il 6510 i bit sono la rappresentazione fisica dei dati. Capire l'overflow significa comprendere i limiti di questo livello hardware.
 
-## Checklist finale
+## ✅ Checklist finale
 
 - [ ] l'esempio compila con 64tass;
 - [ ] l'esempio è coerente con la lezione;
