@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-06 — Riepilogo modifiche recenti
+
+### Sintesi
+- Espansa la roadmap del corso in `.ai/roadmap.md` (moduli 0–14 + appendici).
+- Aggiornato `.ai/lesson-template.md` con una regola che richiede spiegazioni per le istruzioni citate prima della loro lezione dedicata.
+- Normalizzate e aggiunte lezioni fino alla 010; create esempi skeleton in `src/001`–`src/010` e compilati localmente con `64tass`.
+- Configurato MkDocs (`mkdocs.yml`) e installate le dipendenze; sito generabile localmente e pubblicato su GitHub Pages.
+- Aggiunta una GitHub Action CI che esegue `mkdocs build` e assembla gli esempi con `64tass`.
+- Aggiornati `docs/index.md` e `CHANGELOG.md` con le nuove lezioni.
+
 ## 2026-07-06
 
 ### Aggiunto
