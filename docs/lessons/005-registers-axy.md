@@ -12,7 +12,7 @@
 - distinguere A, X e Y;
 - capire perché il 6510 usa registri diversi per compiti diversi.
 
-# 🧠 Cos’è un registro?
+## Introduzione
 
 Un registro è una piccola memoria interna alla CPU.
 
@@ -24,7 +24,7 @@ Un registro è una piccola memoria interna alla CPU.
 
 ---
 
-# 📦 I tre registri principali
+## 📦 I tre registri principali
 
 Il 6510 ha 3 registri fondamentali:
 
@@ -36,7 +36,7 @@ Y  = Registro indice Y
 
 ---
 
-# ⚡ Registro A (Accumulatore)
+## ⚡ Registro A (Accumulatore)
 
 È il registro più importante.
 
@@ -58,7 +58,7 @@ LDA #$01
 
 ---
 
-# 🧠 Il concetto chiave
+## 🧠 Il concetto chiave
 
 Quasi tutte le operazioni passano da A.
 
@@ -74,7 +74,7 @@ RAM → A → RAM
 
 Un registro è una piccola memoria interna alla CPU, molto più veloce della RAM. È il posto dove la CPU tiene i dati su cui sta lavorando in questo preciso istante.
 
-# 📍 Registri X e Y
+## 📍 Registri X e Y
 
 Sono registri di supporto.
 
@@ -87,7 +87,7 @@ Servono per:
 
 ---
 
-# 🔁 Esempio mentale
+## 🔁 Esempio mentale
 
 Immagina:
 
@@ -97,7 +97,7 @@ Immagina:
 
 ---
 
-# 📦 Differenza tra A e X/Y
+## 📦 Differenza tra A e X/Y
 
 | Registro | Ruolo |
 |----------|------|
@@ -107,7 +107,7 @@ Immagina:
 
 ---
 
-# 🧠 Esempio semplice (concettuale)
+## 🧠 Esempio semplice (concettuale)
 
 ```asm
 LDA #$05
@@ -123,7 +123,7 @@ Significa:
 
 ---
 
-# ⚡ Perché servono tre registri?
+## ⚡ Perché servono tre registri?
 
 Perché la CPU può lavorare su più cose contemporaneamente:
 
@@ -133,7 +133,7 @@ Perché la CPU può lavorare su più cose contemporaneamente:
 
 ---
 
-# 🧠 Importante
+## 🧠 Importante
 
 I registri NON sono memoria RAM.
 
@@ -146,7 +146,7 @@ Quindi:
 
 ---
 
-# 💡 Concetto chiave
+## 💡 Concetto chiave
 
 > I registri sono il punto in cui i dati diventano “attivi”.
 
@@ -175,3 +175,14 @@ Se il programma deve lavorare su una tabella, X o Y possono indicare la posizion
 ## Preparazione alla lezione successiva
 
 Nella prossima lezione studieremo Stack Pointer e Program Counter, per capire come la CPU organizza il flusso del programma.
+
+## Approfondimento - Dentro il 6510
+
+Nel 6510 il registro A è destinato alle operazioni principali, mentre X e Y sono progettati per puntare indirizzi e contare elementi in memoria.
+
+## Checklist finale
+
+- [ ] l'esempio compila con 64tass;
+- [ ] l'esempio è coerente con la lezione;
+- [ ] indice, glossario e changelog sono aggiornati;
+- [ ] il contenuto è semplice e progressivo.

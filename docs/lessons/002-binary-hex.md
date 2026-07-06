@@ -11,7 +11,7 @@
 - riconoscere il valore dei bit in un byte;
 - leggere numeri in esadecimale come $D020.
 
-## 🧠 Perché ci serve?
+## Introduzione
 
 Il processore del Commodore 64 non lavora in decimale.
 
@@ -35,7 +35,7 @@ Tutto il resto è una nostra convenzione.
 
 Il processore del Commodore 64 non pensa in decimale. Per lui ogni informazione è una sequenza di bit, e noi usiamo binario ed esadecimale per rappresentarla in modo leggibile.
 
-# 🔢 Il sistema binario
+## 🔢 Il sistema binario
 
 Il sistema binario usa solo due cifre:
 
@@ -95,7 +95,7 @@ Un byte è composto da 8 bit:
 
 ---
 
-# ⚡ Il sistema esadecimale
+## ⚡ Il sistema esadecimale
 
 Scrivere binario è scomodo.
 
@@ -160,7 +160,7 @@ Binario  Hex  Dec
 
 ---
 
-# 🧮 Perché l’esadecimale è usato nel C64?
+## 🧮 Perché l’esadecimale è usato nel C64?
 
 Perché:
 
@@ -183,7 +183,7 @@ $D020
 
 ---
 
-# 🧠 Collegamento con il C64
+## 🧠 Collegamento con il C64
 
 Quando scriveremo:
 
@@ -213,7 +213,7 @@ Il valore $D020 può essere scritto come una sequenza di bit, ma per noi è molt
 - dimenticare che un byte è composto da 8 bit;
 - leggere $0A come “zero A” invece che come 10.
 
-# 🧪 Esercizi
+## 🧪 Esercizi
 
 1. Converti in decimale:
    - 00001111
@@ -239,3 +239,14 @@ Il valore $D020 può essere scritto come una sequenza di bit, ma per noi è molt
 ## Preparazione alla lezione successiva
 
 Nella prossima lezione parleremo di byte, word e overflow, e vedremo cosa succede quando superiamo 255.
+
+## Approfondimento - Dentro il 6510
+
+L'unità di controllo del 6510 vede numeri binari in ogni cella di memoria ed esadecimale è lo strumento che ci permette di descriverli con meno errori.
+
+## Checklist finale
+
+- [ ] l'esempio compila con 64tass;
+- [ ] l'esempio è coerente con la lezione;
+- [ ] indice, glossario e changelog sono aggiornati;
+- [ ] il contenuto è semplice e progressivo.

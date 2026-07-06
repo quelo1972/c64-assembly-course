@@ -12,7 +12,7 @@
 - distinguere byte e word;
 - riconoscere il significato dell'overflow.
 
-## 📦 Cos’è un byte?
+## Introduzione
 
 Un **byte** è un’unità di memoria composta da:
 
@@ -181,3 +181,14 @@ Se un contatore raggiunge 255, il passo successivo lo riporta a 0. Questo è esa
 ## Preparazione alla lezione successiva
 
 Nella prossima lezione studieremo la CPU MOS 6510 e capiremo come i registri e le istruzioni lavorano insieme per eseguire un programma.
+
+## Approfondimento - Dentro il 6510
+
+Per il 6510 i bit sono la rappresentazione fisica dei dati. Capire l'overflow significa comprendere i limiti di questo livello hardware.
+
+## Checklist finale
+
+- [ ] l'esempio compila con 64tass;
+- [ ] l'esempio è coerente con la lezione;
+- [ ] indice, glossario e changelog sono aggiornati;
+- [ ] il contenuto è semplice e progressivo.

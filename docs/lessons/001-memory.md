@@ -216,3 +216,14 @@ Alla fine di questa lezione dovresti aver capito che:
 ## Preparazione alla lezione successiva
 
 Nella prossima lezione studieremo il sistema binario e l'esadecimale, perché sono il linguaggio con cui il 6510 legge e scrive i numeri.
+
+## Approfondimento - Dentro il 6510
+
+Nel Commodore 64 la CPU vive in un mondo di indirizzi e valori. Anche il colore del bordo è solo un valore scritto in una posizione di memoria.
+
+## Checklist finale
+
+- [ ] l'esempio compila con 64tass;
+- [ ] l'esempio è coerente con la lezione;
+- [ ] indice, glossario e changelog sono aggiornati;
+- [ ] il contenuto è semplice e progressivo.

@@ -12,7 +12,7 @@
 - distinguere sorgente, assembler e memoria del C64;
 - riconoscere il ruolo di 64tass e VICE.
 
-# Introduzione
+## Introduzione
 
 Finora abbiamo studiato:
 
@@ -31,7 +31,7 @@ Ma c'è una domanda fondamentale:
 
 Un file Assembly è un testo che descrive istruzioni per la CPU. Per diventare eseguibile, quel testo deve essere tradotto in codice macchina e caricato nella memoria giusta.
 
-# Il file sorgente
+## Il file sorgente
 
 Quando scriviamo:
 
@@ -49,7 +49,7 @@ Contiene solo caratteri ASCII.
 
 ---
 
-# Il ruolo dell'assembler
+## Il ruolo dell'assembler
 
 L'assembler (nel nostro caso **64tass**) legge il file sorgente e traduce ogni istruzione nel corrispondente codice macchina.
 
@@ -69,7 +69,7 @@ dove `$60` è l'opcode dell'istruzione RTS.
 
 ---
 
-# Il file PRG
+## Il file PRG
 
 L'output dell'assembler è un file con estensione:
 
@@ -95,7 +95,7 @@ Per il nostro primo esempio:
 
 ---
 
-# Dal PRG alla memoria
+## Dal PRG alla memoria
 
 Quando VICE carica il file:
 
@@ -175,7 +175,7 @@ Se il sorgente contiene `* = $1000`, l'assembler produce un PRG che viene carica
 - dimenticare che il PRG contiene anche l'indirizzo di caricamento;
 - pensare che la CPU esegua direttamente il file `.asm`.
 
-# Esercizio
+## Esercizi
 
 Compila il programma:
 
@@ -205,3 +205,14 @@ In questa lezione hai imparato che:
 ## Preparazione alla lezione successiva
 
 Finalmente inizieremo a programmare. Studieremo la nostra prima vera istruzione, `LDA`, e vedremo cosa succede dentro la CPU quando un valore viene caricato nel registro A.
+
+## Approfondimento - Dentro il 6510
+
+Il processo di assemblaggio non fa altro che tradurre testo in byte, che poi il 6510 legge come istruzioni numeriche in memoria.
+
+## Checklist finale
+
+- [ ] l'esempio compila con 64tass;
+- [ ] l'esempio è coerente con la lezione;
+- [ ] indice, glossario e changelog sono aggiornati;
+- [ ] il contenuto è semplice e progressivo.
