@@ -10,3 +10,4 @@
 | Program Counter | Registro che indica la prossima istruzione |
 | Stack           | Area speciale della memoria                |
 | Little-endian   | Ordine dei byte usato dal 6510             |
+| Indirizzamento immediato | Modalità in cui il valore viene usato direttamente, senza leggere da memoria |

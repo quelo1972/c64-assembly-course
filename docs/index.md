@@ -18,6 +18,8 @@ Benvenuto nel corso completo di programmazione Assembly per Commodore 64.
 
 👉 [Lezione 006 - Dal sorgente all'esecuzione](lessons/006-from-source-to-execution.md)
 
+👉 [Lezione 007 - LDA e indirizzamento immediato](lessons/007-lda.md)
+
 ---
 
 ## 🎯 Obiettivo del corso
