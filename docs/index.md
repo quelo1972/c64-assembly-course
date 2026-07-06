@@ -20,6 +20,8 @@ Benvenuto nel corso completo di programmazione Assembly per Commodore 64.
 
 👉 [Lezione 007 - LDA e indirizzamento immediato](lessons/007-lda.md)
 
+👉 [Lezione 008 - STA e scrittura in memoria](lessons/008-sta.md)
+
 ---
 
 ## 🎯 Obiettivo del corso

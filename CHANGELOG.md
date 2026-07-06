@@ -5,6 +5,8 @@
 ### Aggiunto
 - Nuova lezione 007: LDA e indirizzamento immediato
 - Esempio pratico e README nella cartella src/007-lda
+- Nuova lezione 008: STA e scrittura in memoria
+- Esempio pratico e README nella cartella src/008-sta
 
 ### Modificato
 - Aggiornato l'indice del corso con la nuova lezione
