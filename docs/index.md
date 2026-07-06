@@ -22,6 +22,8 @@ Benvenuto nel corso completo di programmazione Assembly per Commodore 64.
 
 👉 [Lezione 008 - STA e scrittura in memoria](lessons/008-sta.md)
 
+👉 [Lezione 009 - Trasferimento tra registri](lessons/009-trasferimento-tra-registri.md)
+
 ---
 
 ## 🎯 Obiettivo del corso
