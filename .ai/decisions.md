@@ -43,7 +43,7 @@ Garantire che le lezioni e il sito generato rimangano coerenti e che il deploy G
 ## 2026-07-06
 
 Decisione:
-Ogni lezione deve usare esattamente le intestazioni indicate in `.ai/lesson-template.md`.
+Ogni lezione deve usare esattamente le intestazioni indicate in `.ai/lesson-template.md`, comprese le emoji associate.
 
 Motivazione:
 Rendere le verifiche di conformità oggettive e ridurre gli errori dovuti a titoli alternativi o emoji sostitutivi.

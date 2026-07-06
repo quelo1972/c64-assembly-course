@@ -36,21 +36,21 @@ Ogni esempio deve:
 
 # Regole per le lezioni
 
-Ogni lezione deve contenere esattamente queste intestazioni, con questo wording:
+Ogni lezione deve contenere esattamente queste intestazioni, con questo wording e le icone corrispondenti:
 
-* Obiettivi
-* Introduzione
-* Teoria
-* Come ragiona il 6510
-* Esempio pratico
-* Errori comuni
-* Esercizi
-* Riassunto
-* Preparazione alla lezione successiva
-* Approfondimento - Dentro il 6510
-* Checklist finale
+* 🎯 Obiettivi
+* 🧠 Introduzione
+* 📘 Teoria
+* 🤖 Come ragiona il 6510
+* 💡 Esempio pratico
+* ⚠️ Errori comuni
+* 🧪 Esercizi
+* 📌 Riassunto
+* 🔜 Preparazione alla lezione successiva
+* 🔎 Approfondimento - Dentro il 6510
+* ✅ Checklist finale
 
-Ogni nuova lezione deve essere confrontata con `.ai/lesson-template.md` prima del merge. Non sono accettabili sostituzioni come titoli con emoji al posto delle intestazioni standard.
+Ogni nuova lezione deve essere confrontata con `.ai/lesson-template.md` prima del merge. Le intestazioni devono corrispondere esattamente al template, compresi emoji e wording.
 
 ---
 

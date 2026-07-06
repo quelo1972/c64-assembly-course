@@ -1,32 +1,32 @@
 # Titolo
 
-> Usa esattamente queste intestazioni per ogni lezione. Non sostituire `Introduzione` con titoli alternativi, emoji o sinonimi.
+> Usa esattamente queste intestazioni per ogni lezione, comprese le icone. Non sostituire questi titoli con parole diverse, emoji diverse o sinonimi.
 
-## Obiettivi
+## 🎯 Obiettivi
 
-## Introduzione
+## 🧠 Introduzione
 
-## Teoria
+## 📘 Teoria
 
-## Come ragiona il 6510
+## 🤖 Come ragiona il 6510
 
-## Esempio pratico
+## 💡 Esempio pratico
 
-## Errori comuni
+## ⚠️ Errori comuni
 
-## Esercizi
+## 🧪 Esercizi
 
-## Riassunto
+## 📌 Riassunto
 
-## Preparazione alla lezione successiva
+## 🔜 Preparazione alla lezione successiva
 
-## Approfondimento - Dentro il 6510
+## 🔎 Approfondimento - Dentro il 6510
 
-## Checklist finale
+## ✅ Checklist finale
 
 - [ ] l'esempio compila con 64tass;
 - [ ] l'esempio è coerente con la lezione;
 - [ ] indice, glossario e changelog sono aggiornati;
 - [ ] il contenuto è semplice e progressivo.
 
-> Nota: le intestazioni devono essere esatte e presenti in ogni lezione. Le varianti di wording non sono accettate quando si valuta la conformità al template.
+> Nota: le intestazioni devono essere esatte e presenti in ogni lezione. Le varianti di wording o di emoji non sono accettate quando si valuta la conformità al template.
