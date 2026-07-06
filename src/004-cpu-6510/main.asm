@@ -8,4 +8,10 @@
     ldy #$02
     tax
 
+    ; simple observable loop using X as counter
+    ldx #$08
+cpu_loop:
+    dex
+    bne cpu_loop
+
     rts

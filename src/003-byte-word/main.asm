@@ -9,4 +9,9 @@
     adc #$01   ; 255 + 1 -> overflow
     sta $d020  ; show result in border (will be $00)
 
+    ldx #$10
+loop3:
+    dex
+    bne loop3
+
     rts

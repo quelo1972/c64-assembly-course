@@ -9,4 +9,11 @@
     ldx #$03
     txa
 
+    ; loop to demonstrate register changes
+    ldx #$04
+reg_loop:
+    dex
+    txa
+    bne reg_loop
+
     rts
