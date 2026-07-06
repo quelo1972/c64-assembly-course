@@ -197,6 +197,8 @@ significa:
 - carica il valore 10
 - scrivilo nel registro del bordo
 
+Nota: `LDA #value` carica il valore immediato nel registro `A` (accumulatore). `STA address` scrive il contenuto del registro `A` nell'indirizzo di memoria specificato. Qui usiamo questi comandi come esempio illustrativo; vedremo `LDA` e `STA` in dettaglio nelle lezioni dedicate.
+
 ---
 
 ## 🤖 Come ragiona il 6510

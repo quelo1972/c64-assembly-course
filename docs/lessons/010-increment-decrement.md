@@ -32,6 +32,15 @@ Queste istruzioni aggiornano i flag Zero e Negative in base al risultato.
 
 Sono spesso usate insieme a `BEQ`, `BNE`, `BPL`, `BMI` per creare cicli condizionati.
 
+Brevi definizioni (per chiarezza):
+
+- `BEQ` (Branch if EQual): salta se il flag Zero è settato (risultato = 0).
+- `BNE` (Branch if Not Equal): salta se il flag Zero non è settato (risultato ≠ 0).
+- `BPL` (Branch if PLus): salta se il flag Negative non è settato (risultato positivo o zero).
+- `BMI` (Branch if MInus): salta se il flag Negative è settato (risultato negativo).
+
+Queste brevi note spiegano il comportamento dei salti condizionati menzionati nell'esempio; approfondiremo i salti e le subroutine nella lezione dedicata.
+
 ---
 
 ## 🤖 Come ragiona il 6510
