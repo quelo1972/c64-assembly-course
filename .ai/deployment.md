@@ -5,7 +5,8 @@ Questo documento definisce la procedura corretta per pubblicare il sito MkDocs d
 ## Regole fondamentali
 
 * Il sito generato deve essere pubblicato dal branch `gh-pages`.
-* Il branch `main` non deve essere usato direttamente come sorgente Pages.
+* Il branch `main` è il branch di lavoro principale e deve contenere tutto il contenuto sorgente.
+* Il branch `gh-pages` è solo per la pubblicazione del sito generato e non deve essere usato per modifiche al contenuto.
 * La cartella `docs/` contiene i file Markdown sorgenti, non il sito generato.
 * La cartella `site/` è il sito generato da MkDocs e deve essere pubblicata così com'è.
 * La sorgente GitHub Pages deve essere impostata su `gh-pages` e `path: /`.
