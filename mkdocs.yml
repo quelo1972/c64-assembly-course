@@ -13,6 +13,8 @@ nav:
       - Lezione 006 - Dal sorgente all'esecuzione: lessons/006-from-source-to-execution.md
       - Lezione 007 - LDA e indirizzamento immediato: lessons/007-lda.md
       - Lezione 008 - STA e scrittura in memoria: lessons/008-sta.md
+      - Lezione 009 - Trasferimento tra registri: lessons/009-trasferimento-tra-registri.md
+      - Lezione 010 - Incremento e decremento: lessons/010-increment-decrement.md
 theme:
   name: readthedocs
 markdown_extensions:
