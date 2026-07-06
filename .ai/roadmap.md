@@ -1,99 +1,207 @@
 # Roadmap del corso
 
-> Stato: Bozza 1
+> Stato: Bozza 2 — roadmap estesa per coprire argomenti fondamentali e avanzati.
 
-Questa roadmap definisce il percorso completo del corso di programmazione Assembly per Commodore 64.
-
-L'ordine dei moduli è progettato in modo che ogni argomento introduca solo concetti necessari per comprendere il successivo.
+Questa roadmap definisce il percorso completo del corso di programmazione Assembly per Commodore 64. L'ordine dei moduli è pensato per introdurre un solo concetto alla volta, costruendo progressivamente competenze pratiche e conoscenze sull'hardware.
 
 ---
 
 # Modulo 0 – Ambiente di sviluppo
 
-* Toolchain
-* Git e GitHub
-* VSCodium
-* 64tass
-* VICE
-* GitHub Pages
+Contenuti:
 
-Mini-progetto: compilare ed eseguire il primo programma.
+* Toolchain: `64tass`, `vice`, build scripts
+* Git e GitHub: gestione del codice, branch e PR
+* Editor e strumenti: VS Code/VSCodium, debugger, terminale
+* Virtualizzazione: VICE e immagini disco
+* Automazione: Makefile / task per build ed esempi
+
+Mini-progetto: compilare ed eseguire il primo programma e pubblicare una versione del sito con MkDocs.
 
 ---
 
 # Modulo 1 – Fondamenti
 
-* Computer a 8 bit
-* Sistema binario
-* Sistema esadecimale
-* Byte e Word
-* Little-endian
-* Memoria
+Contenuti:
 
-Mini-progetto: analizzare un file PRG.
+* Architettura 8-bit: concetti chiave
+* Sistema binario e esadecimale
+* Byte, word e little-endian
+* Mappa di memoria del C64 (RAM, ROM, I/O)
+* Concetti di indirizzo e contenuto
+
+Mini-progetto: analizzare un file PRG e determinare l'indirizzo di caricamento e il contenuto di alcune celle.
 
 ---
 
 # Modulo 2 – CPU MOS 6510
 
-* Architettura
-* Registri
-* Program Counter
-* Stack Pointer
-* Status Register
-* Cicli macchina
+Contenuti:
 
-Mini-progetto: seguire passo passo l'esecuzione di un programma.
+* Struttura del 6510: registri principali (A,X,Y,SP,PC,SR)
+* Ciclo macchina, fetch/decode/execute
+* Flags e come interpretarli
+* Timing elementare delle istruzioni (concetti di cicli)
 
----
-
-# Modulo 3 – Linguaggio Assembly
-
-* Mnemonici
-* Opcode
-* Direttive
-* Etichette
-* Costanti
-* Organizzazione del codice
-
-Mini-progetto: creare il primo programma ben strutturato.
+Mini-progetto: tracciare l'esecuzione passo-passo di un piccolo programma e calcolare i cambi di PC e flags.
 
 ---
 
-# Modulo 4 – Prime istruzioni
+# Modulo 3 – Linguaggio Assembly e tooling
 
-* Caricamento dati
-* Trasferimento tra registri
-* Incremento e decremento
+Contenuti:
 
-Mini-progetto: modificare il colore del bordo.
+* Mnemonici e opcode
+* Direttive assembler, etichette e costanti
+* Macro semplici e organizzazione dei file sorgente
+* Convenzioni di stile e commenti
 
----
-
-# Modulo 5 – Modalità di indirizzamento
-
-* Immediate
-* Zero Page
-* Absolute
-* Indexed
-* Indirect
-* Relative
-
-Mini-progetto: confrontare le diverse modalità.
+Mini-progetto: creare un piccolo programma modulare con direttive e commenti chiari.
 
 ---
 
-# Moduli successivi
+# Modulo 4 – Prime istruzioni e pratiche
 
-* Salti e subroutine
-* Operazioni aritmetiche e logiche
-* Stack
-* Schermo
-* Tastiera
-* VIC-II
-* Sprite
-* SID
-* Interrupt
-* CIA
-* Ottimizzazione
-* Progetto finale
+Contenuti:
+
+* Caricamento dati: `LDA/LDX/LDY`
+* Trasferimento tra registri: `TAX/TAY/TXA/TYA`
+* Incremento/decremento: `INX/INY/DEX/DEY`
+* Uso dei registri come contatori
+
+Mini-progetto: modificare il colore del bordo con loop controllati da registri.
+
+---
+
+# Modulo 5 – Modalità di indirizzamento (dettagliato)
+
+Contenuti:
+
+* Immediate, Zero Page, Absolute
+* Indexed (X/Y), Indirect, Indirect Indexed
+* Relative addressing per salti condizionati
+* Implicazioni di performance e casi d'uso
+
+Mini-progetto: riscrivere lo stesso algoritmo usando diverse modalità di indirizzamento e confrontare il codice e i cicli macchina.
+
+---
+
+# Modulo 6 – Controllo del flusso e subroutine
+
+Contenuti:
+
+* Salti condizionati e incondizionati: `BEQ/BNE/BPL/BMI/JMP`
+* Subroutine: `JSR`/`RTS` e convenzioni di passaggio parametri
+* Stack e Stack Pointer: uso, preservazione dei registri
+
+Mini-progetto: implementare una libreria di utility (es: routine di stampa, delay) e chiamarla da un programma principale.
+
+---
+
+# Modulo 7 – Operazioni aritmetiche e logiche
+
+Contenuti:
+
+* Addizione e sottrazione con `ADC`/`SBC` (gestione carry)
+* Operazioni logiche: `AND/OR/EOR/ASL/LSR/ROL/ROR`
+* Moltiplicazione e divisione (algoritmi software)
+
+Mini-progetto: implementare routine di moltiplicazione e divisione a 8/16 bit.
+
+---
+
+# Modulo 8 – I/O e periferiche
+
+Contenuti:
+
+* Mappa I/O del C64: VIC-II, SID, CIA, porte joystick
+* Uso della memoria video e character/screen RAM
+* Accesso al kernel e chiamate ROM (KERNAL)
+
+Mini-progetto: scrivere una routine che legge joystick e aggiorna lo schermo.
+
+---
+
+# Modulo 9 – Grafica con VIC-II
+
+Contenuti:
+
+* Modalità testo vs bitmap
+* Sprites: definizione, posizionamento e collisione
+* Raster interrupts e sincronizzazione
+* Tiles, charset e scorrimento hardware
+
+Mini-progetto: creare una scena con sprite animati e semplice scrolling.
+
+---
+
+# Modulo 10 – Suono con SID
+
+Contenuti:
+
+* Registri principali del SID
+* Generazione di toni, inviluppi e filtri
+* Playback di semplici pattern musicali
+
+Mini-progetto: riprodurre una melodia semplice con il SID.
+
+---
+
+# Modulo 11 – Interrupt, CIA, e gestione tempo
+
+Contenuti:
+
+* Tipi di interrupt (NMI, IRQ)
+* CIA chips: timers, serial, keyboard matrix
+* Uso degli interrupt per timing e input
+
+Mini-progetto: usare un timer per generare eventi periodici controllati da interrupt.
+
+---
+
+# Modulo 12 – File system, cassette e disk I/O
+
+Contenuti:
+
+* Comunicazione con il drive 1541 (serial protocol)
+* Uso delle routine KERNAL per I/O su disco/nastro
+* Formati PRG e D64
+
+Mini-progetto: salvare e caricare dati semplici su disco (o immagine D64 in VICE).
+
+---
+
+# Modulo 13 – Ottimizzazione e tecniche avanzate
+
+Contenuti:
+
+* Ottimizzazione per cicli e memoria
+* Paging e bank switching (MEMORY MAP avanzata)
+* Tecniche di compressione e data packing
+
+Mini-progetto: ottimizzare una routine esistente per ridurre cicli e/o spazio.
+
+---
+
+# Modulo 14 – Progetto finale
+
+Contenuti:
+
+* Definizione del progetto (gioco o demo)
+* Pianificazione, modularizzazione e test
+* Packaging e release (PRG/D64 e sito)
+
+Mini-progetto: completare e presentare il progetto finale.
+
+---
+
+# Appendici e risorse
+
+* Glossario esteso
+* Mappe di memoria e riferimenti hardware
+* FAQ e troubleshooting per 64tass/VICE
+* Esempi pronti e script di build
+
+---
+
+Se vuoi, posso applicare questi aggiornamenti a `.ai/roadmap.md` (e poi committare). Procedo con la sostituzione del file.
