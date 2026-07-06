@@ -5,6 +5,12 @@
 
 ---
 
+## Obiettivi
+
+- capire perché il 6510 usa solo bit;
+- riconoscere il valore dei bit in un byte;
+- leggere numeri in esadecimale come $D020.
+
 ## 🧠 Perché ci serve?
 
 Il processore del Commodore 64 non lavora in decimale.
@@ -24,6 +30,10 @@ Capisce solo:
 Tutto il resto è una nostra convenzione.
 
 ---
+
+## Teoria
+
+Il processore del Commodore 64 non pensa in decimale. Per lui ogni informazione è una sequenza di bit, e noi usiamo binario ed esadecimale per rappresentarla in modo leggibile.
 
 # 🔢 Il sistema binario
 
@@ -189,6 +199,20 @@ significa:
 
 ---
 
+## Come ragiona il 6510
+
+Il 6510 non legge “dieci” o “quindici”: legge 0 e 1. L'esadecimale è soltanto una forma più compatta per scrivere questi bit.
+
+## Esempio pratico
+
+Il valore $D020 può essere scritto come una sequenza di bit, ma per noi è molto più semplice leggerlo come un numero esadecimale.
+
+## Errori comuni
+
+- confondere binario e decimale;
+- dimenticare che un byte è composto da 8 bit;
+- leggere $0A come “zero A” invece che come 10.
+
 # 🧪 Esercizi
 
 1. Converti in decimale:
@@ -206,10 +230,12 @@ significa:
 
 ---
 
-# 🔜 Prossima lezione
+## Riassunto
 
-Nella prossima lezione parleremo di:
+- il binario è il linguaggio naturale della CPU;
+- l'esadecimale è una forma più leggibile per rappresentare byte;
+- conoscere queste basi rende più semplice leggere indirizzi e valori nel C64.
 
-> **Byte, signed/unsigned e overflow**
+## Preparazione alla lezione successiva
 
-e vedremo cosa succede quando superiamo 255.
+Nella prossima lezione parleremo di byte, word e overflow, e vedremo cosa succede quando superiamo 255.

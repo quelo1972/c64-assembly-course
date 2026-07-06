@@ -6,6 +6,12 @@
 
 ---
 
+## Obiettivi
+
+- capire il percorso da un file `.asm` a un programma `.prg`;
+- distinguere sorgente, assembler e memoria del C64;
+- riconoscere il ruolo di 64tass e VICE.
+
 # Introduzione
 
 Finora abbiamo studiato:
@@ -20,6 +26,10 @@ Ma c'è una domanda fondamentale:
 > Come fa un file `.asm` a diventare un programma che il Commodore 64 può eseguire?
 
 ---
+
+## Teoria
+
+Un file Assembly è un testo che descrive istruzioni per la CPU. Per diventare eseguibile, quel testo deve essere tradotto in codice macchina e caricato nella memoria giusta.
 
 # Il file sorgente
 
@@ -151,6 +161,20 @@ MOS 6510
 
 ---
 
+## Come ragiona il 6510
+
+La CPU non vede file, cartelle o nomi. Quando il programma viene caricato, vede solo byte in memoria e segue l'indirizzo di partenza del PRG.
+
+## Esempio pratico
+
+Se il sorgente contiene `* = $1000`, l'assembler produce un PRG che viene caricato a partire da quell'indirizzo.
+
+## Errori comuni
+
+- confondere il file sorgente con il file eseguibile;
+- dimenticare che il PRG contiene anche l'indirizzo di caricamento;
+- pensare che la CPU esegua direttamente il file `.asm`.
+
 # Esercizio
 
 Compila il programma:
@@ -169,7 +193,7 @@ e osserva:
 
 ---
 
-# Riassunto
+## Riassunto
 
 In questa lezione hai imparato che:
 
@@ -178,14 +202,6 @@ In questa lezione hai imparato che:
 - il file `.prg` contiene anche l'indirizzo di caricamento;
 - il 6510 esegue solo i byte presenti in memoria.
 
----
+## Preparazione alla lezione successiva
 
-# Prossima lezione
-
-Finalmente inizieremo a programmare.
-
-Studieremo la nostra prima vera istruzione:
-
-> **LDA - Load Accumulator**
-
-e vedremo cosa succede dentro la CPU quando un valore viene caricato nel registro A.
+Finalmente inizieremo a programmare. Studieremo la nostra prima vera istruzione, `LDA`, e vedremo cosa succede dentro la CPU quando un valore viene caricato nel registro A.

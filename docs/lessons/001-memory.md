@@ -5,6 +5,12 @@
 
 ---
 
+## Obiettivi
+
+- capire come la CPU vede la memoria del C64;
+- distinguere indirizzo e contenuto;
+- riconoscere la differenza tra RAM e registri hardware.
+
 ## Introduzione
 
 Prima di imparare una sola istruzione Assembly è fondamentale capire una cosa:
@@ -16,6 +22,10 @@ Per il processore esistono soltanto **indirizzi di memoria** e **valori**.
 Tutto ciò che il Commodore 64 fa è il risultato di letture e scritture in memoria.
 
 ---
+
+## Teoria
+
+La memoria del C64 è una sequenza di celle, ognuna identificata da un indirizzo. Il 6510 legge e scrive byte in queste celle, e ogni byte ha un significato che dipende dall'hardware o dal programma.
 
 ## Lo spazio di indirizzamento
 
@@ -162,6 +172,20 @@ Sa soltanto che deve scrivere il valore **6** nell'indirizzo **$D020**.
 
 ---
 
+## Come ragiona il 6510
+
+La CPU non "vede" schermo, tastiera o colori. Per lei esistono soltanto indirizzi e valori. Quando un programma scrive un byte in $D020, non è la CPU a interpretarlo come colore: è il chip video VIC-II a farlo.
+
+## Esempio pratico
+
+Immaginiamo di voler cambiare il bordo. Il programma non parla di “blu”: scrive un byte nell'indirizzo corretto e lascia che l'hardware interpreti quel valore.
+
+## Errori comuni
+
+- confondere un indirizzo con il contenuto della cella;
+- pensare che la CPU conosca il colore direttamente;
+- dimenticare che alcuni indirizzi controllano hardware e non RAM semplice.
+
 ## Concetti fondamentali
 
 Alla fine di questa lezione dovresti aver capito che:
@@ -182,8 +206,13 @@ Alla fine di questa lezione dovresti aver capito che:
 
 ---
 
-## Nella prossima lezione
+## Riassunto
 
-Studieremo il **sistema binario** e il **sistema esadecimale**.
+- la memoria è una sequenza di indirizzi e contenuti;
+- il 6510 lavora sempre con byte;
+- alcuni indirizzi controllano hardware;
+- capire la memoria è il prerequisito per ogni programma Assembly.
 
-Impareremo a convertire rapidamente i numeri tra decimale, binario ed esadecimale, competenza indispensabile per leggere e scrivere programmi Assembly.
+## Preparazione alla lezione successiva
+
+Nella prossima lezione studieremo il sistema binario e l'esadecimale, perché sono il linguaggio con cui il 6510 legge e scrive i numeri.

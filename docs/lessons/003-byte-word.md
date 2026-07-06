@@ -6,6 +6,12 @@
 
 ---
 
+## Obiettivi
+
+- capire il limite di un byte;
+- distinguere byte e word;
+- riconoscere il significato dell'overflow.
+
 ## 📦 Cos’è un byte?
 
 Un **byte** è un’unità di memoria composta da:
@@ -30,6 +36,10 @@ Quindi un byte può rappresentare:
 👉 In totale: **256 valori possibili**
 
 ---
+
+## Teoria
+
+Nel 6510 i dati hanno dimensioni fisse. Un byte può contenere solo 8 bit, quindi ha un limite preciso. Quando si supera quel limite, la CPU riparte dall'inizio del range.
 
 ## ⚠️ Il limite del byte
 
@@ -138,6 +148,20 @@ Fa solo quello che può fare con i bit disponibili.
 
 ---
 
+## Come ragiona il 6510
+
+Il 6510 non “capisce” il concetto di infinito. Sa solo che il registro disponibile ha un numero massimo di valori possibili, quindi l'overflow è un comportamento naturale del hardware.
+
+## Esempio pratico
+
+Se un contatore raggiunge 255, il passo successivo lo riporta a 0. Questo è esattamente il tipo di comportamento che si vede in molti programmi semplici del C64.
+
+## Errori comuni
+
+- pensare che l'overflow sia un errore di programma;
+- dimenticare che un byte va da 0 a 255;
+- confondere byte e word.
+
 ## 🧪 Esercizi
 
 1. Quanto vale:
@@ -148,14 +172,12 @@ Fa solo quello che può fare con i bit disponibili.
 
 ---
 
-## 🔜 Prossima lezione
+## Riassunto
 
-Studieremo:
+- un byte contiene 8 bit e va da 0 a 255;
+- una word contiene 16 bit;
+- l'overflow è il comportamento naturale quando si supera il limite dei bit disponibili.
 
-> **La CPU MOS 6510**
+## Preparazione alla lezione successiva
 
-e inizieremo a capire:
-
-- registri
-- istruzioni
-- come la CPU esegue realmente un programma
+Nella prossima lezione studieremo la CPU MOS 6510 e capiremo come i registri e le istruzioni lavorano insieme per eseguire un programma.
