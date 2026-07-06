@@ -1,5 +1,7 @@
 # Titolo
 
+> Usa esattamente queste intestazioni per ogni lezione. Non sostituire `Introduzione` con titoli alternativi, emoji o sinonimi.
+
 ## Obiettivi
 
 ## Introduzione
@@ -26,3 +28,5 @@
 - [ ] l'esempio è coerente con la lezione;
 - [ ] indice, glossario e changelog sono aggiornati;
 - [ ] il contenuto è semplice e progressivo.
+
+> Nota: le intestazioni devono essere esatte e presenti in ogni lezione. Le varianti di wording non sono accettate quando si valuta la conformità al template.

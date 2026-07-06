@@ -36,7 +36,7 @@ Ogni esempio deve:
 
 # Regole per le lezioni
 
-Ogni lezione dovrebbe contenere:
+Ogni lezione deve contenere esattamente queste intestazioni, con questo wording:
 
 * Obiettivi
 * Introduzione
@@ -47,6 +47,10 @@ Ogni lezione dovrebbe contenere:
 * Esercizi
 * Riassunto
 * Preparazione alla lezione successiva
+* Approfondimento - Dentro il 6510
+* Checklist finale
+
+Ogni nuova lezione deve essere confrontata con `.ai/lesson-template.md` prima del merge. Non sono accettabili sostituzioni come titoli con emoji al posto delle intestazioni standard.
 
 ---
 
@@ -69,7 +73,9 @@ Prima di eseguire il push verificare:
 * il sito GitHub Pages continua a funzionare;
 * gli esempi compilano;
 * i link tra le lezioni sono corretti;
-* non sono stati introdotti file temporanei nel repository.
+* non sono stati introdotti file temporanei nel repository;
+* tutte le lezioni `docs/lessons/*.md` contengono le intestazioni del template esattamente come in `.ai/lesson-template.md`;
+* tutte le lezioni hanno `## Approfondimento - Dentro il 6510` e `## Checklist finale` quando previsto dal template.
 
 ---
 

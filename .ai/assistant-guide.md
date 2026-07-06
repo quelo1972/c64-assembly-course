@@ -56,15 +56,25 @@ Il codice deve essere spiegato riga per riga quando viene introdotta una nuova i
 
 # Struttura delle lezioni
 
-Ogni nuova lezione dovrebbe seguire il template del progetto e contenere:
+Ogni nuova lezione deve seguire il template del progetto e contenere tutte le intestazioni elencate in `.ai/lesson-template.md`.
 
-* obiettivi;
-* teoria;
-* come ragiona il 6510;
-* esempio pratico;
-* errori comuni;
-* esercizi;
-* riassunto.
+Le intestazioni sono vincolanti e devono essere usate esattamente come mostrato. Ogni variazione di wording o di emoji rispetto al template deve essere evitata.
+
+In particolare, ogni lezione deve includere:
+
+* Obiettivi;
+* Introduzione;
+* Teoria;
+* Come ragiona il 6510;
+* Esempio pratico;
+* Errori comuni;
+* Esercizi;
+* Riassunto;
+* Preparazione alla lezione successiva;
+* Approfondimento - Dentro il 6510;
+* Checklist finale.
+
+L'assistente deve controllare i file `docs/lessons/*.md` e correggere i titoli di sezione quando non sono conformi al template.
 
 ---
 

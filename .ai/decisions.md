@@ -37,3 +37,13 @@ Dopo la migrazione a MkDocs, ogni aggiornamento della documentazione deve essere
 
 Motivazione:
 Garantire che le lezioni e il sito generato rimangano coerenti e che il deploy GitHub Pages non fallisca.
+
+---
+
+## 2026-07-06
+
+Decisione:
+Ogni lezione deve usare esattamente le intestazioni indicate in `.ai/lesson-template.md`.
+
+Motivazione:
+Rendere le verifiche di conformità oggettive e ridurre gli errori dovuti a titoli alternativi o emoji sostitutivi.
