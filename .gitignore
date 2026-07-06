@@ -1,6 +1,12 @@
 # File generati dalla compilazione
 bin/
 
+# Ambiente Python locale
+.venv/
+
+# Sito generato da MkDocs
+site/
+
 # File temporanei di VS Code
 .vscode/*.log
 

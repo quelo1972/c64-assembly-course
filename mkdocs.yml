@@ -1,0 +1,28 @@
+site_name: C64 Assembly Course
+site_description: Corso di programmazione Assembly per Commodore 64
+site_author: quelo1972
+repo_url: https://github.com/quelo1972/c64-assembly-course
+nav:
+  - Home: index.md
+  - Lezioni:
+      - Lezione 001 - La memoria del Commodore 64: lessons/001-memory.md
+      - Lezione 002 - Sistema binario ed esadecimale: lessons/002-binary-hex.md
+      - Lezione 003 - Byte, Word e limiti della memoria: lessons/003-byte-word.md
+      - Lezione 004 - La CPU MOS 6510: lessons/004-cpu-6510.md
+      - Lezione 005 - Registri A, X e Y: lessons/005-registers-axy.md
+      - Lezione 006 - Dal sorgente all'esecuzione: lessons/006-from-source-to-execution.md
+      - Lezione 007 - LDA e indirizzamento immediato: lessons/007-lda.md
+      - Lezione 008 - STA e scrittura in memoria: lessons/008-sta.md
+theme:
+  name: readthedocs
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.superfences
+  - attr_list
+  - def_list
+extra:
+  social:
+    - type: github
+      link: https://github.com/quelo1972/c64-assembly-course
