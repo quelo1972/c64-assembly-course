@@ -102,6 +102,7 @@ L'assistente dovrebbe ricordare di:
 * mantenere aggiornati `mkdocs.yml` e `requirements.txt` se si aggiungono estensioni o si cambia il tema;
 * suggerire commit chiari e descrittivi;
 * mantenere il repository ordinato.
+* pubblicare il sito MkDocs su GitHub Pages usando il branch `gh-pages` e impostare la sorgente Pages su `gh-pages` / `/`.
 
 ---
 

@@ -76,6 +76,21 @@ Prima di eseguire il push verificare:
 * non sono stati introdotti file temporanei nel repository;
 * tutte le lezioni `docs/lessons/*.md` contengono le intestazioni del template esattamente come in `.ai/lesson-template.md`;
 * tutte le lezioni hanno `## Approfondimento - Dentro il 6510` e `## Checklist finale` quando previsto dal template.
+* la pubblicazione MkDocs usa il branch `gh-pages` e non il percorso `main/docs`.
+
+---
+
+# Pubblicazione MkDocs
+
+Per una pubblicazione coerente e ripetibile del sito MkDocs, seguire sempre questa procedura:
+
+1. Generare il sito localmente con `.venv/bin/mkdocs build`.
+2. Verificare che il sito locale sia corretto.
+3. Eseguire il deploy su GitHub Pages usando il branch `gh-pages`.
+4. Verificare che la configurazione GitHub Pages punti a `gh-pages` con `path: /`.
+5. Non usare `main/docs` come sorgente di Pages per questo progetto; `docs/` contiene le sorgenti markdown, non il sito generato.
+
+Questa procedura evita che la versione remota mostri un sito diverso da quella generata da MkDocs.
 
 ---
 
