@@ -6,25 +6,9 @@ Benvenuto nel corso completo di programmazione Assembly per Commodore 64.
 
 ## 📖 Inizia da qui
 
-👉 [Lezione 001 - Memoria](lessons/001-memory.md)
+👉 [Esplora i moduli del corso](modules/modulo-0.md)
 
-👉 [Lezione 002 - Binario ed esadecimale](lessons/002-binary-hex.md)
-
-👉 [Lezione 003 - Byte, word e overflow](lessons/003-byte-word.md)
-
-👉 [Lezione 004 - La CPU MOS 6510](lessons/004-cpu-6510.md)
-
-👉 [Lezione 005 - Registri A, X e Y](lessons/005-registers-axy.md)
-
-👉 [Lezione 006 - Dal sorgente all'esecuzione](lessons/006-from-source-to-execution.md)
-
-👉 [Lezione 007 - LDA e indirizzamento immediato](lessons/007-lda.md)
-
-👉 [Lezione 008 - STA e scrittura in memoria](lessons/008-sta.md)
-
-👉 [Lezione 009 - Trasferimento tra registri](lessons/009-trasferimento-tra-registri.md)
-
-👉 [Lezione 010 - Incremento e decremento](lessons/010-increment-decrement.md)
+Se preferisci scorrere direttamente le lezioni, le trovi elencate nei rispettivi indici dei moduli.
 
 ---
 

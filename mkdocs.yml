@@ -6,6 +6,7 @@ nav:
   - Home: index.md
   - Moduli:
       - Modulo 0 - Fondamenti:
+        - Modulo 0 - Indice: modules/modulo-0.md
           - Lezione 001 - La memoria del Commodore 64: lessons/001-memory.md
           - Lezione 002 - Sistema binario ed esadecimale: lessons/002-binary-hex.md
           - Lezione 003 - Byte, Word e limiti della memoria: lessons/003-byte-word.md
