@@ -1,4 +1,4 @@
-[🏠 Home](/index.md)
+[🏠 Home](../../../index.md)
 
 # Lezione 006 - Dal sorgente all'esecuzione
 
