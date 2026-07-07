@@ -13,6 +13,8 @@ Argomenti centrali sul controllo del flusso e l'uso delle subroutine.
 
 Implementare una libreria di utility (es: routine di stampa, delay) e chiamarla da un programma principale.
 
+- [Lezione 015 - Salti condizionati](modulo-6/lessons/015-salti-condizionati.md)
+- [Lezione 016 - Subroutine: JSR e RTS](modulo-6/lessons/016-subroutine-jsr-rts.md)
 ## Obiettivo
 
 Imparare a strutturare codice modulare e a gestire il flusso di esecuzione in modo affidabile.

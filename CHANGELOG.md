@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-07 — Aggiunte 4 nuove lezioni (013–016)
+
+### Nuove lezioni - Modulo 5 (Modalità di indirizzamento)
+- **Lezione 013 — Indirizzamento assoluto**: indirizzi a 16 bit, accesso a registri hardware (VIC-II, SID), comparazione con Zero Page, fetch/execute nel 6510
+- **Lezione 014 — Indirizzamento indicizzato**: indexing con X/Y per array e tabelle, wraparound in Zero Page, modalità ZP indicizzato vs assoluto indicizzato
+
+### Nuove lezioni - Modulo 6 (Controllo del flusso e subroutine)
+- **Lezione 015 — Salti condizionati**: flag Z/N, BEQ/BNE/BPL/BMI, relative addressing, implementazione di loop condizionali
+- **Lezione 016 — Subroutine: JSR e RTS**: chiamata a subroutine, stack pointer, preservazione di registri, passing di parametri via registri/Zero Page
+
+### Aggiornamenti tecnici
+- Corretto YAML in `mkdocs.yml`: titoli con due punti sono ora quotati (line 36: "Lezione 016 - Subroutine: JSR e RTS")
+- Tutte le 4 lezioni seguono il template pedagogico standard (11 sezioni: Obiettivi, Intro, Teoria, 6510, Esempio, Errori, Esercizi, Riassunto, Prep, Approfondimento, Checklist)
+- `mkdocs build` verificato, 0 errori
+
+---
+
 ## 2026-07-07 — Riorganizzazione modulare, helper script e nuove lezioni
 
 ### Struttura documentazione
