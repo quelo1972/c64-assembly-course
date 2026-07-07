@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Lezione 001 - La memoria del Commodore 64 - C64 Assembly Course</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Lezione 001 - La memoria del Commodore 64";
+        var mkdocs_page_input_path = "modules/modulo-1/lessons/001-memory.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> C64 Assembly Course
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Moduli</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 0 - Ambiente di sviluppo</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/">Modulo 0 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 1 - Fondamenti</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 1 - Indice</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 001 - La memoria del Commodore 64</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lo-spazio-di-indirizzamento">Lo spazio di indirizzamento</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#un-indirizzo-contiene-un-byte">Un indirizzo contiene un byte</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#la-memoria-come-una-fila-di-cassette">La memoria come una fila di cassette</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#la-zero-page">La Zero Page</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#la-memoria-non-contiene-solo-ram">La memoria non contiene solo RAM</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#un-esempio-famoso-d020">Un esempio famoso: $D020</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#concetti-fondamentali">Concetti fondamentali</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../002-binary-hex/">Lezione 002 - Sistema binario ed esadecimale</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../003-byte-word/">Lezione 003 - Byte, Word e limiti della memoria</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 2 - CPU MOS 6510</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-2/">Modulo 2 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-2/lessons/004-cpu-6510/">Lezione 004 - La CPU MOS 6510</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-2/lessons/005-registers-axy/">Lezione 005 - Registri A, X e Y</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 3 - Linguaggio e tooling</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-3/">Modulo 3 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-3/lessons/006-from-source-to-execution/">Lezione 006 - Dal sorgente all'esecuzione</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 4 - Prime istruzioni</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-4/">Modulo 4 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-4/lessons/007-lda/">Lezione 007 - LDA e indirizzamento immediato</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-4/lessons/008-sta/">Lezione 008 - STA e scrittura in memoria</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-4/lessons/009-trasferimento-tra-registri/">Lezione 009 - Trasferimento tra registri</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-4/lessons/010-increment-decrement/">Lezione 010 - Incremento e decremento</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 5 - Modalità di indirizzamento</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../modulo-5/">Modulo 5 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 6 - Controllo del flusso e subroutine</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../modulo-6/">Modulo 6 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 7 - Operazioni aritmetiche e logiche</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../modulo-7/">Modulo 7 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 8 - I/O e periferiche</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../modulo-8/">Modulo 8 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 9 - Grafica con VIC-II</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../modulo-9/">Modulo 9 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 10 - Suono con SID</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../modulo-10/">Modulo 10 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 11 - Interrupt, CIA e gestione tempo</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../modulo-11/">Modulo 11 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 12 - File system, cassette e disk I/O</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../modulo-12/">Modulo 12 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 13 - Ottimizzazione e tecniche avanzate</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../modulo-13/">Modulo 13 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 14 - Progetto finale</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../modulo-14/">Modulo 14 - Indice</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">C64 Assembly Course</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Moduli &raquo;</li>
+          <li>Modulo 1 - Fondamenti &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 001 - La memoria del Commodore 64</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-1/lessons/001-memory.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><a href="../../../../">🏠 Home</a></p>
+<h1 id="lezione-001-la-memoria-del-commodore-64">Lezione 001 - La memoria del Commodore 64<a class="headerlink" href="#lezione-001-la-memoria-del-commodore-64" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Obiettivo:</strong> comprendere come il processore MOS 6510 vede la memoria del Commodore 64.</p>
+</blockquote>
+<hr />
+<h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>capire come la CPU vede la memoria del C64;</li>
+<li>distinguere indirizzo e contenuto;</li>
+<li>riconoscere la differenza tra RAM e registri hardware.</li>
+</ul>
+<h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
+<p>Prima di imparare una sola istruzione Assembly è fondamentale capire una cosa:</p>
+<p><strong>la CPU non vede uno schermo, una tastiera o uno sprite.</strong></p>
+<p>Per il processore esistono soltanto <strong>indirizzi di memoria</strong> e <strong>valori</strong>.</p>
+<p>Tutto ciò che il Commodore 64 fa è il risultato di letture e scritture in memoria.</p>
+<hr />
+<h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
+<p>La memoria del C64 è una sequenza di celle, ognuna identificata da un indirizzo. Il 6510 legge e scrive byte in queste celle, e ogni byte ha un significato che dipende dall'hardware o dal programma.</p>
+<h2 id="lo-spazio-di-indirizzamento">Lo spazio di indirizzamento<a class="headerlink" href="#lo-spazio-di-indirizzamento" title="Permanent link">&para;</a></h2>
+<p>Il processore MOS 6510 dispone di <strong>16 linee di indirizzo</strong>.</p>
+<p>Ogni linea può assumere due stati:</p>
+<ul>
+<li>0</li>
+<li>1</li>
+</ul>
+<p>Con 16 bit è possibile rappresentare:</p>
+<p>2^16 = 65.536 indirizzi</p>
+<p>Gli indirizzi vanno da:</p>
+<pre class="highlight"><code>$0000</code></pre>
+<p>a</p>
+<pre class="highlight"><code>$FFFF</code></pre>
+<p>Questa è tutta la memoria che il processore può indirizzare in un dato momento.</p>
+<hr />
+<h2 id="un-indirizzo-contiene-un-byte">Un indirizzo contiene un byte<a class="headerlink" href="#un-indirizzo-contiene-un-byte" title="Permanent link">&para;</a></h2>
+<p>Ogni indirizzo contiene un solo byte.</p>
+<p>Un byte è composto da <strong>8 bit</strong> e può contenere un valore compreso tra:</p>
+<pre class="highlight"><code>0</code></pre>
+<p>e</p>
+<pre class="highlight"><code>255</code></pre>
+<p>oppure, in esadecimale:</p>
+<pre class="highlight"><code>$00</code></pre>
+<p>fino a</p>
+<pre class="highlight"><code>$FF</code></pre>
+<hr />
+<h2 id="la-memoria-come-una-fila-di-cassette">La memoria come una fila di cassette<a class="headerlink" href="#la-memoria-come-una-fila-di-cassette" title="Permanent link">&para;</a></h2>
+<p>Possiamo immaginare la memoria come una lunghissima fila di cassette postali.</p>
+<pre class="highlight"><code>Indirizzo     Contenuto
+
+$0000         25
+$0001         13
+$0002         255
+$0003         0
+$0004         42
+...
+$FFFF</code></pre>
+<p>Il processore legge e scrive continuamente questi valori.</p>
+<hr />
+<h2 id="la-zero-page">La Zero Page<a class="headerlink" href="#la-zero-page" title="Permanent link">&para;</a></h2>
+<p>I primi 256 byte della memoria prendono il nome di <strong>Zero Page</strong>.</p>
+<p>Comprendono gli indirizzi:</p>
+<pre class="highlight"><code>$0000</code></pre>
+<p>fino a</p>
+<pre class="highlight"><code>$00FF</code></pre>
+<p>Questa zona è molto importante perché il 6510 dispone di istruzioni dedicate che la rendono più veloce da utilizzare.</p>
+<p>Studieremo questo argomento in dettaglio nelle prossime lezioni.</p>
+<hr />
+<h2 id="la-memoria-non-contiene-solo-ram">La memoria non contiene solo RAM<a class="headerlink" href="#la-memoria-non-contiene-solo-ram" title="Permanent link">&para;</a></h2>
+<p>Nel Commodore 64 alcuni indirizzi non rappresentano memoria RAM.</p>
+<p>Ad esempio:</p>
+<table>
+<thead>
+<tr>
+<th>Intervallo</th>
+<th>Contenuto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$A000-$BFFF</td>
+<td>BASIC ROM</td>
+</tr>
+<tr>
+<td>$D000-$DFFF</td>
+<td>Registri hardware e caratteri</td>
+</tr>
+<tr>
+<td>$E000-$FFFF</td>
+<td>KERNAL ROM</td>
+</tr>
+</tbody>
+</table>
+<p>Più avanti vedremo che alcune di queste aree possono cambiare contenuto grazie al <strong>bank switching</strong> del 6510.</p>
+<hr />
+<h2 id="un-esempio-famoso-d020">Un esempio famoso: $D020<a class="headerlink" href="#un-esempio-famoso-d020" title="Permanent link">&para;</a></h2>
+<p>L'indirizzo:</p>
+<pre class="highlight"><code>$D020</code></pre>
+<p>è uno dei registri del chip video VIC-II.</p>
+<p>Scrivendo un numero in questo indirizzo si modifica il colore del bordo dello schermo.</p>
+<p>Ad esempio:</p>
+<pre class="highlight"><code>$06</code></pre>
+<p>corrisponde al colore blu.</p>
+<p>La CPU non sa cosa sia un colore.</p>
+<p>Sa soltanto che deve scrivere il valore <strong>6</strong> nell'indirizzo <strong>$D020</strong>.</p>
+<p>È il chip video a interpretare quel valore come un colore.</p>
+<hr />
+<h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
+<p>La CPU non "vede" schermo, tastiera o colori. Per lei esistono soltanto indirizzi e valori. Quando un programma scrive un byte in $D020, non è la CPU a interpretarlo come colore: è il chip video VIC-II a farlo.</p>
+<h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
+<p>Immaginiamo di voler cambiare il bordo. Il programma non parla di “blu”: scrive un byte nell'indirizzo corretto e lascia che l'hardware interpreti quel valore.</p>
+<h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
+<ul>
+<li>confondere un indirizzo con il contenuto della cella;</li>
+<li>pensare che la CPU conosca il colore direttamente;</li>
+<li>dimenticare che alcuni indirizzi controllano hardware e non RAM semplice.</li>
+</ul>
+<h2 id="concetti-fondamentali">Concetti fondamentali<a class="headerlink" href="#concetti-fondamentali" title="Permanent link">&para;</a></h2>
+<p>Alla fine di questa lezione dovresti aver capito che:</p>
+<ul>
+<li>la CPU lavora esclusivamente con indirizzi e valori;</li>
+<li>il Commodore 64 dispone di 65.536 indirizzi;</li>
+<li>ogni indirizzo contiene un byte;</li>
+<li>alcuni indirizzi controllano direttamente l'hardware.</li>
+</ul>
+<hr />
+<h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Perché il 6510 può indirizzare esattamente 65.536 celle di memoria?</li>
+<li>Che cos'è la Zero Page?</li>
+<li>Perché scrivere nell'indirizzo <code>$D020</code> modifica il colore del bordo?</li>
+<li>Qual è il valore massimo che può essere contenuto in un byte?</li>
+</ol>
+<hr />
+<h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
+<ul>
+<li>la memoria è una sequenza di indirizzi e contenuti;</li>
+<li>il 6510 lavora sempre con byte;</li>
+<li>alcuni indirizzi controllano hardware;</li>
+<li>capire la memoria è il prerequisito per ogni programma Assembly.</li>
+</ul>
+<h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
+<p>Nella prossima lezione studieremo il sistema binario e l'esadecimale, perché sono il linguaggio con cui il 6510 legge e scrive i numeri.</p>
+<h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
+<p>Nel Commodore 64 la CPU vive in un mondo di indirizzi e valori. Anche il colore del bordo è solo un valore scritto in una posizione di memoria.</p>
+<h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] l'esempio compila con 64tass;</li>
+<li>[ ] l'esempio è coerente con la lezione;</li>
+<li>[ ] indice, glossario e changelog sono aggiornati;</li>
+<li>[ ] il contenuto è semplice e progressivo.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../" class="btn btn-neutral float-left" title="Modulo 1 - Indice"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../002-binary-hex/" class="btn btn-neutral float-right" title="Lezione 002 - Sistema binario ed esadecimale">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/quelo1972/c64-assembly-course" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../002-binary-hex/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

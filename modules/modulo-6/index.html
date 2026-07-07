@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Modulo 6 - Indice - C64 Assembly Course</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Modulo 6 - Indice";
+        var mkdocs_page_input_path = "modules/modulo-6.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> C64 Assembly Course
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Moduli</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 0 - Ambiente di sviluppo</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../modulo-0/">Modulo 0 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 1 - Fondamenti</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../modulo-1/">Modulo 1 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../modulo-1/lessons/001-memory/">Lezione 001 - La memoria del Commodore 64</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../modulo-1/lessons/002-binary-hex/">Lezione 002 - Sistema binario ed esadecimale</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../modulo-1/lessons/003-byte-word/">Lezione 003 - Byte, Word e limiti della memoria</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 2 - CPU MOS 6510</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../modulo-2/">Modulo 2 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../modulo-2/lessons/004-cpu-6510/">Lezione 004 - La CPU MOS 6510</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../modulo-2/lessons/005-registers-axy/">Lezione 005 - Registri A, X e Y</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 3 - Linguaggio e tooling</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../modulo-3/">Modulo 3 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../modulo-3/lessons/006-from-source-to-execution/">Lezione 006 - Dal sorgente all'esecuzione</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 4 - Prime istruzioni</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../modulo-4/">Modulo 4 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../modulo-4/lessons/007-lda/">Lezione 007 - LDA e indirizzamento immediato</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../modulo-4/lessons/008-sta/">Lezione 008 - STA e scrittura in memoria</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../modulo-4/lessons/009-trasferimento-tra-registri/">Lezione 009 - Trasferimento tra registri</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../modulo-4/lessons/010-increment-decrement/">Lezione 010 - Incremento e decremento</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 5 - Modalità di indirizzamento</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../modulo-5/">Modulo 5 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Modulo 6 - Controllo del flusso e subroutine</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="./">Modulo 6 - Indice</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#contenuti">Contenuti</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mini-progetto">Mini-progetto</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#obiettivo">Obiettivo</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 7 - Operazioni aritmetiche e logiche</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../modulo-7/">Modulo 7 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 8 - I/O e periferiche</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../modulo-8/">Modulo 8 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 9 - Grafica con VIC-II</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../modulo-9/">Modulo 9 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 10 - Suono con SID</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../modulo-10/">Modulo 10 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 11 - Interrupt, CIA e gestione tempo</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../modulo-11/">Modulo 11 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 12 - File system, cassette e disk I/O</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../modulo-12/">Modulo 12 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 13 - Ottimizzazione e tecniche avanzate</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../modulo-13/">Modulo 13 - Indice</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Modulo 14 - Progetto finale</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../modulo-14/">Modulo 14 - Indice</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">C64 Assembly Course</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Moduli &raquo;</li>
+          <li>Modulo 4 - Prime istruzioni &raquo;</li>
+          <li>Modulo 6 - Controllo del flusso e subroutine &raquo;</li>
+      <li class="breadcrumb-item active">Modulo 6 - Indice</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-6.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="modulo-6-controllo-del-flusso-e-subroutine">Modulo 6 — Controllo del flusso e subroutine<a class="headerlink" href="#modulo-6-controllo-del-flusso-e-subroutine" title="Permanent link">&para;</a></h1>
+<p>Argomenti centrali sul controllo del flusso e l'uso delle subroutine.</p>
+<h2 id="contenuti">Contenuti<a class="headerlink" href="#contenuti" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Salti condizionati e incondizionati: <code>BEQ/BNE/BPL/BMI/JMP</code></li>
+<li>Subroutine: <code>JSR</code>/<code>RTS</code> e convenzioni di passaggio parametri</li>
+<li>Stack e Stack Pointer: uso e preservazione dei registri</li>
+</ul>
+<h2 id="mini-progetto">Mini-progetto<a class="headerlink" href="#mini-progetto" title="Permanent link">&para;</a></h2>
+<p>Implementare una libreria di utility (es: routine di stampa, delay) e chiamarla da un programma principale.</p>
+<h2 id="obiettivo">Obiettivo<a class="headerlink" href="#obiettivo" title="Permanent link">&para;</a></h2>
+<p>Imparare a strutturare codice modulare e a gestire il flusso di esecuzione in modo affidabile.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../modulo-5/" class="btn btn-neutral float-left" title="Modulo 5 - Indice"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../modulo-7/" class="btn btn-neutral float-right" title="Modulo 7 - Indice">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/quelo1972/c64-assembly-course" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../modulo-5/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../modulo-7/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
