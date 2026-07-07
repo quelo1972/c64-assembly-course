@@ -1,3 +1,18 @@
-# Modulo 5 — (Placeholder)
+# Modulo 5 — Modalità di indirizzamento (dettagliato)
 
-Contenuto in preparazione.
+In questo modulo esploriamo le modalità di indirizzamento supportate dal MOS 6510 e il loro impatto su codice, dimensioni e prestazioni.
+
+## Contenuti
+
+- Immediate, Zero Page, Absolute
+- Indexed (X/Y), Indirect, Indirect Indexed
+- Relative addressing per salti condizionati
+- Considerazioni di performance e casi d'uso
+
+## Mini-progetto
+
+Riscrivere un piccolo algoritmo usando diverse modalità di indirizzamento e confrontare codice e cicli macchina.
+
+## Obiettivo
+
+Capire quando e perché scegliere una modalità di indirizzamento per ottimizzare dimensione e velocità.
