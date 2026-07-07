@@ -1,24 +1,14 @@
-# Modulo 0 — Fondamenti
+# Modulo 0 — Ambiente di sviluppo
 
-Benvenuto nel Modulo 0. Questo modulo raccoglie le lezioni introduttive necessarie per affrontare il corso.
+Questo modulo raccoglie informazioni e strumenti per impostare l'ambiente di lavoro: toolchain (`64tass`), emulatori (VICE), script di build, e procedure per eseguire e testare i programmi PRG.
 
-## Lezioni incluse
+## Contenuti principali
 
-- [Lezione 001 - La memoria del Commodore 64](modulo-0/lessons/001-memory.md)
-- [Lezione 002 - Sistema binario ed esadecimale](modulo-0/lessons/002-binary-hex.md)
-- [Lezione 003 - Byte, Word e limiti della memoria](modulo-0/lessons/003-byte-word.md)
-- [Lezione 004 - La CPU MOS 6510](modulo-0/lessons/004-cpu-6510.md)
-- [Lezione 005 - Registri A, X e Y](modulo-0/lessons/005-registers-axy.md)
-- [Lezione 006 - Dal sorgente all'esecuzione](modulo-0/lessons/006-from-source-to-execution.md)
-- [Lezione 007 - LDA e indirizzamento immediato](modulo-0/lessons/007-lda.md)
-- [Lezione 008 - STA e scrittura in memoria](modulo-0/lessons/008-sta.md)
-- [Lezione 009 - Trasferimento tra registri](modulo-0/lessons/009-trasferimento-tra-registri.md)
-- [Lezione 010 - Incremento e decremento](modulo-0/lessons/010-increment-decrement.md)
+- Installazione e uso di `64tass`
+- Uso di VICE per testare i programmi
+- Script di build e automazione (Makefile)
+- Linee guida per commit, PR e pubblicazione del sito con MkDocs
 
-## Obiettivo del modulo
+## Obiettivo
 
-Fornire le basi di memoria, numerazione, registri e ciclo di sviluppo per iniziare a scrivere e testare piccoli esempi in Assembly per C64.
-
----
-
-Per la roadmap completa e la suddivisione in moduli vedi il file di progetto: .ai/roadmap.md (progetto).
+Permettere allo studente di avere un ambiente funzionante per scrivere, assemblare e testare codice Assembly per C64.
