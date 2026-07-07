@@ -6,20 +6,119 @@ L'obiettivo è mantenere il repository coerente, verificabile e facile da manten
 
 ---
 
-# Creazione di una nuova lezione
+## Struttura della documentazione
 
-Per ogni nuova lezione seguire sempre questi passaggi:
+Le lezioni vivono in:
 
-1. Creare il file della lezione in `docs/lessons/`.
-2. Creare la cartella corrispondente in `src/`.
-3. Preparare almeno un esempio Assembly compilabile.
-4. Verificare che l'esempio venga compilato con 64tass.
-5. Verificare l'esecuzione in VICE.
-6. Verificare brevemente la generazione del sito con `mkdocs build`.
-7. Aggiornare `docs/index.md`.
-8. Aggiornare, se necessario, il glossario.
-9. Aggiornare coerentemente `CHANGELOG.md`.
-10. Eseguire commit e push.
+```
+docs/modules/modulo-{N}/lessons/{NNN}-{slug}.md
+```
+
+Ogni modulo ha:
+- `docs/modules/modulo-{N}.md` — pagina indice del modulo
+- `docs/modules/modulo-{N}/lessons/` — cartella lezioni
+- `docs/modules/modulo-{N}/lessons/lesson-template.md` — template da copiare
+
+---
+
+## Creazione di una nuova lezione (metodo raccomandato)
+
+Usare lo script helper:
+
+```bash
+./scripts/new-lesson.sh <modulo> <numero> <slug> "<Titolo esteso>"
+# Esempio:
+./scripts/new-lesson.sh 5 013 "indirizzamento-assoluto" "Indirizzamento assoluto"
+```
+
+Lo script:
+1. Copia `lesson-template.md` nella cartella `lessons/` corretta
+2. Aggiorna l'indice del modulo (`docs/modules/modulo-N.md`)
+3. Aggiunge la voce nav in `mkdocs.yml`
+
+Dopo l'esecuzione:
+1. Scrivi il contenuto completo nel file creato
+2. Aggiungi l'esempio Assembly in `src/modulo-{N}/`
+3. Verifica che l'esempio compili con `64tass`
+4. Esegui `mkdocs build` e controlla i warning
+5. Aggiorna `CHANGELOG.md`
+6. Esegui commit e push su `main`
+7. Pubblica con `.venv/bin/mkdocs gh-deploy --clean -b gh-pages -r origin`
+
+---
+
+## Creazione manuale di una lezione
+
+Se preferisci senza lo script:
+
+1. Copia `docs/modules/modulo-{N}/lessons/lesson-template.md` → `{NNN}-{slug}.md`
+2. Compila tutte le sezioni del template (vedi `.ai/lesson-template.md`)
+3. Aggiungi la voce in `docs/modules/modulo-{N}.md` sotto `## Lezioni incluse`
+4. Aggiungi la voce nav in `mkdocs.yml` sotto il modulo corretto
+5. Segui i passi 2–7 del metodo raccomandato
+
+---
+
+## Regole per gli esempi
+
+Ogni esempio deve:
+
+* compilare senza warning o errori con `64tass --cbm-prg`;
+* essere il più piccolo possibile;
+* introdurre un solo concetto nuovo;
+* essere coerente con quanto spiegato nella lezione.
+
+---
+
+## Regole per le lezioni
+
+Ogni lezione deve contenere esattamente queste intestazioni, con questo wording e le icone corrispondenti:
+
+* 🎯 Obiettivi
+* 🧠 Introduzione
+* 📘 Teoria
+* 🤖 Come ragiona il 6510
+* 💡 Esempio pratico
+* ⚠️ Errori comuni
+* 🧪 Esercizi
+* 📌 Riassunto
+* 🔜 Preparazione alla lezione successiva
+* 🔎 Approfondimento - Dentro il 6510
+* ✅ Checklist finale
+
+Ogni nuova lezione deve essere confrontata con `.ai/lesson-template.md` prima del merge.
+
+Regola istruzioni: non citare o usare istruzioni Assembly senza fornire una breve spiegazione contestuale nella stessa lezione, a meno che l'istruzione sia già stata trattata in una lezione precedente.
+
+---
+
+## Deploy su GitHub Pages
+
+**Non modificare mai il branch `gh-pages` manualmente.**
+
+Per pubblicare:
+
+```bash
+.venv/bin/mkdocs gh-deploy --clean -b gh-pages -r origin
+```
+
+Per dettagli vedere `.ai/deployment.md`.
+
+---
+
+## Commit
+
+Messaggi di commit nel formato:
+
+```
+tipo(scope): descrizione breve
+
+# Esempi:
+docs(mod5): add lesson 013 - Indirizzamento assoluto
+feat(scripts): add new-lesson.sh helper
+fix(nav): correct mkdocs.yml indentation
+chore(docs): add lesson-template.md to modules 5-14
+```
 
 ---
 

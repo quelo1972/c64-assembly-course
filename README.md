@@ -22,6 +22,116 @@ Alla fine del corso sarai in grado di sviluppare software reale per C64.
 
 ---
 
+## 📚 Struttura del corso
+
+Il corso è suddiviso in **15 moduli** (0–14), ognuno con cartella dedicata:
+
+```
+docs/modules/
+  modulo-0/          # Ambiente di sviluppo (toolchain, VICE, MkDocs)
+  modulo-1/lessons/  # Fondamenti: memoria, binario, byte/word
+  modulo-2/lessons/  # CPU MOS 6510: registri, ciclo macchina
+  modulo-3/lessons/  # Linguaggio Assembly e tooling
+  modulo-4/lessons/  # Prime istruzioni: LDA, STA, INX, DEX...
+  modulo-5/lessons/  # Modalità di indirizzamento
+  modulo-6..14/      # Flusso, aritmetica, I/O, VIC-II, SID, disco...
+```
+
+Il sito del corso è disponibile su:
+**https://quelo1972.github.io/c64-assembly-course/**
+
+---
+
+## 🚀 Quick Start
+
+```bash
+git clone https://github.com/quelo1972/c64-assembly-course.git
+cd c64-assembly-course
+```
+
+Compila il primo esempio:
+
+```bash
+64tass --cbm-prg -o bin/hello.prg src/000-toolchain/hello.asm
+```
+
+Avvia il sito localmente:
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install mkdocs
+.venv/bin/mkdocs serve
+# → http://127.0.0.1:8000
+```
+
+---
+
+## ✍️ Aggiungere una nuova lezione
+
+Usa lo script helper:
+
+```bash
+./scripts/new-lesson.sh <modulo> <numero> <slug> "<Titolo esteso>"
+
+# Esempio:
+./scripts/new-lesson.sh 5 013 "indirizzamento-assoluto" "Indirizzamento assoluto"
+```
+
+Lo script:
+1. Copia `lesson-template.md` nella cartella `lessons/` corretta
+2. Aggiorna l'indice del modulo (`docs/modules/modulo-N.md`)
+3. Aggiunge la voce nav in `mkdocs.yml`
+4. Stampa i passi successivi
+
+Poi scrivi il contenuto, aggiorna `CHANGELOG.md` e:
+
+```bash
+git add . && git commit -m 'docs(modN): add lesson NNN - Titolo'
+.venv/bin/mkdocs gh-deploy --clean -b gh-pages -r origin
+```
+
+---
+
+## 🧰 Requisiti
+
+- WSL (Ubuntu consigliato)
+- Visual Studio Code
+- `64tass` (`/usr/bin/64tass`)
+- VICE (`x64sc`)
+- Git
+- Python 3 (per MkDocs)
+
+---
+
+## ⚙️ Build esempi Assembly
+
+```bash
+mkdir -p bin
+for d in src/*; do
+  if [ -f "$d/main.asm" ]; then
+    64tass --cbm-prg -o "bin/$(basename "$d").prg" "$d/main.asm"
+  fi
+done
+```
+
+---
+
+## 📖 Documentazione di progetto
+
+La cartella `.ai/` contiene le linee guida interne:
+
+| File | Contenuto |
+|------|-----------|
+| `.ai/project.md` | Filosofia e obiettivi |
+| `.ai/roadmap.md` | Struttura completa dei moduli 0–14 |
+| `.ai/workflow.md` | Processo di aggiunta lezioni e commit |
+| `.ai/lesson-template.md` | Template obbligatorio per le lezioni |
+| `.ai/assistant-guide.md` | Regole per il co-autore AI |
+| `.ai/deployment.md` | Procedura di deploy su GitHub Pages |
+| `.ai/glossary.md` | Glossario termini Assembly/C64 |
+
+---
+
 ## 🚀 Quick Start
 
 Clona il repository:
