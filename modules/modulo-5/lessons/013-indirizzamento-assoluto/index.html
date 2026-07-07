@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Lesson template - C64 Assembly Course</title>
+    <title>Lezione 013 - Indirizzamento assoluto - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Lesson template";
-        var mkdocs_page_input_path = "modules/modulo-6/lessons/lesson-template.md";
+        var mkdocs_page_name = "Lezione 013 - Indirizzamento assoluto";
+        var mkdocs_page_input_path = "modules/modulo-5/lessons/013-indirizzamento-assoluto.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Moduli</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="#">Modulo 0 - Ambiente di sviluppo</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/">Modulo 0 - Indice</a>
@@ -95,27 +95,59 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 5 - Modalità di indirizzamento</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/">Modulo 5 - Indice</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 5 - Modalità di indirizzamento</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 5 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/014-indirizzamento-indicizzato/">Lezione 014 - Indirizzamento indicizzato</a>
+                <li class="toctree-l2"><a class="reference internal" href="../014-indirizzamento-indicizzato/">Lezione 014 - Indirizzamento indicizzato</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/013-indirizzamento-assoluto/">Lezione 013 - Indirizzamento assoluto</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 013 - Indirizzamento assoluto</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#indirizzi-a-16-bit">Indirizzi a 16 bit</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sintassi">Sintassi</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#comparazione-modalita">Comparazione modalità</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
+    </li>
+    </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/011-modalita-immediata/">Lezione 011 - Indirizzamento immediato, revisited</a>
+                <li class="toctree-l2"><a class="reference internal" href="../011-modalita-immediata/">Lezione 011 - Indirizzamento immediato, revisited</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/012-zero-page/">Lezione 012 - Indirizzamento Zero Page</a>
+                <li class="toctree-l2"><a class="reference internal" href="../012-zero-page/">Lezione 012 - Indirizzamento Zero Page</a>
                 </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Modulo 6 - Controllo del flusso e subroutine</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 6 - Indice</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/">Modulo 6 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../016-subroutine-jsr-rts/">Lezione 016 - Subroutine: JSR e RTS</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/016-subroutine-jsr-rts/">Lezione 016 - Subroutine: JSR e RTS</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../015-salti-condizionati/">Lezione 015 - Salti condizionati</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/015-salti-condizionati/">Lezione 015 - Salti condizionati</a>
                 </li>
     </ul>
                   </li>
@@ -182,9 +214,11 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li class="breadcrumb-item active">Lesson template</li>
+          <li>Moduli &raquo;</li>
+          <li>Modulo 5 - Modalità di indirizzamento &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 013 - Indirizzamento assoluto</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-6/lessons/lesson-template.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-5/lessons/013-indirizzamento-assoluto.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -193,47 +227,113 @@
             <div class="section" itemprop="articleBody">
               
                 <p><a href="../../../../">🏠 Home</a></p>
-<h1 id="lezione-nnn-titolo-della-lezione">Lezione NNN — Titolo della lezione<a class="headerlink" href="#lezione-nnn-titolo-della-lezione" title="Permanent link">&para;</a></h1>
+<h1 id="lezione-013-indirizzamento-assoluto">Lezione 013 — Indirizzamento assoluto<a class="headerlink" href="#lezione-013-indirizzamento-assoluto" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Obiettivo:</strong> descrivere in una frase l'obiettivo concreto di questa lezione.</p>
+<p><strong>Obiettivo:</strong> capire come accedere a qualsiasi indirizzo di memoria (0–65535) con l'indirizzamento assoluto, e quando usarlo per registri hardware come VIC-II e SID.</p>
 </blockquote>
 <hr />
 <h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
 <ul>
-<li>punto 1</li>
-<li>punto 2</li>
-<li>punto 3</li>
+<li>comprendere la differenza tra indirizzi a 8 bit (Zero Page) e 16 bit (assoluto);</li>
+<li>usare l'indirizzamento assoluto per accedere a registri hardware;</li>
+<li>confrontare size e cicli: Zero Page vs Assoluto;</li>
+<li>scegliere la modalità giusta in base all'indirizzo.</li>
 </ul>
 <hr />
 <h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
-<p><em>Contestualizzare l'argomento rispetto a quanto già visto. Spiegare perché questo concetto è necessario adesso.</em></p>
+<p>La Zero Page è veloce e compatta, ma raggiunge solo i primi 256 byte di memoria (<code>$0000</code>–<code>$00FF</code>).</p>
+<p>I registri hardware del C64 (VIC-II, SID, CIA) sono però oltre la Zero Page:
+- VIC-II: <code>$D000</code>–<code>$D0FF</code>
+- SID: <code>$D400</code>–<code>$D7FF</code>
+- CIA: <code>$DC00</code>–<code>$DD00</code></p>
+<p>Per accedervi, usiamo l'<strong>indirizzamento assoluto</strong>: un indirizzo a <strong>16 bit</strong> che raggiunge qualsiasi cella.</p>
 <hr />
 <h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
-<p><em>Teoria essenziale, senza assumere conoscenze pregresse non ancora trattate nel corso.</em></p>
+<h3 id="indirizzi-a-16-bit">Indirizzi a 16 bit<a class="headerlink" href="#indirizzi-a-16-bit" title="Permanent link">&para;</a></h3>
+<p>Nella modalità assoluta, l'indirizzo occupa <strong>2 byte</strong> (16 bit):</p>
+<pre class="highlight"><code class="language-asm">LDA $D020      ; Zero Page (1 byte indirizzo) — NO, $D0 &gt; $FF
+LDA $D020      ; Assoluto (2 byte indirizzo) — indirizzo completo $D020</code></pre>
+<p>Quando <code>64tass</code> vede un indirizzo &gt; <code>$FF</code>, lo assembla automaticamente in modalità assoluta.</p>
+<h3 id="sintassi">Sintassi<a class="headerlink" href="#sintassi" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-asm">LDA $D020      ; legge il registro colore bordo VIC-II
+STA $D020      ; scrive nel registro colore bordo</code></pre>
+<p>L'indirizzo è a 16 bit little-endian in memoria:</p>
+<pre class="highlight"><code>Indirizzo in memoria   Byte basso   Byte alto
+$0801                  $20          $D0</code></pre>
+<h3 id="comparazione-modalita">Comparazione modalità<a class="headerlink" href="#comparazione-modalita" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Modalità</th>
+<th>Opcode</th>
+<th>Bytes</th>
+<th>Cicli</th>
+<th>Indirizzo max</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zero Page</td>
+<td><code>$A5</code></td>
+<td>2</td>
+<td>3</td>
+<td><code>$00FF</code></td>
+</tr>
+<tr>
+<td>Assoluto</td>
+<td><code>$AD</code></td>
+<td>3</td>
+<td>4</td>
+<td><code>$FFFF</code></td>
+</tr>
+</tbody>
+</table>
+<p>L'assoluto costa 1 byte in più e 1 ciclo, ma raggiunge ovunque.</p>
 <hr />
 <h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
-<p><em>Descrivere il comportamento del processore a livello di ciclo macchina, registri e flag.</em></p>
+<p><code>LDA $D020</code>:</p>
+<ol>
+<li><strong>Fetch opcode</strong>: legge <code>$AD</code> (opcode LDA assoluto)</li>
+<li><strong>Fetch byte basso</strong>: legge <code>$20</code> (parte bassa indirizzo)</li>
+<li><strong>Fetch byte alto</strong>: legge <code>$D0</code> (parte alta indirizzo)</li>
+<li><strong>Read memory</strong>: legge il contenuto di <code>$D020</code></li>
+<li><strong>Execute</strong>: scrive il valore in A</li>
+</ol>
+<p>In totale: <strong>3 byte</strong>, <strong>4 cicli</strong>.</p>
+<p>L'indirizzo viene ricostruito come <code>$D0</code> (alto) + <code>$20</code> (basso) = <code>$D020</code>.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Esempio minimo compilabile con 64tass
-; Nota: descrivere ogni istruzione usata la prima volta che appare.
+<pre class="highlight"><code class="language-asm">; Lezione 013 — Indirizzamento assoluto
+; Controlla registri VIC-II e SID
 *= $0801
 
-; codice qui</code></pre>
-<blockquote>
-<p>Nota: ogni istruzione Assembly usata per la prima volta deve essere accompagnata da una breve spiegazione (1-2 frasi) prima o subito dopo l'esempio.</p>
-</blockquote>
+; Nota: LDA indirizzo (assoluto) legge il byte da quell'indirizzo a 16 bit.
+; Nota: STA indirizzo (assoluto) scrive A in quell'indirizzo a 16 bit.
+
+; Cambia colore bordo (VIC-II $D020)
+LDA #$0B           ; carica il colore marrone
+STA $D020          ; scrivi nel registro colore bordo (assoluto)
+
+; Leggi il registro SID di controllo (SID $D404)
+LDA $D404          ; leggi il registro SID Control Voice 1
+STA $D020          ; rifletti il valore nel bordo (per debug)
+
+RTS</code></pre>
+<p>Compila:</p>
+<pre class="highlight"><code class="language-bash">64tass --cbm-prg -o bin/013.prg src/modulo-5/013.asm</code></pre>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Errore 1: descrizione e come evitarlo</li>
-<li>Errore 2: descrizione e come evitarlo</li>
+<li><strong>Confondere assoluto con Zero Page</strong>: <code>$D020</code> non è ZP (il byte alto <code>$D0</code> &gt; <code>$FF</code>). <code>64tass</code> lo assembla come assoluto automaticamente.</li>
+<li><strong>Dimenticare il byte basso dell'indirizzo</strong>: <code>$D020</code> è indivisibile. Non puoi usare <code>$D0</code> — è un indirizzo incompleto.</li>
+<li><strong>Assumere che assoluto sia lento</strong>: è solo 1 ciclo in più della ZP, spesso è una scelta ragionevole.</li>
 </ul>
 <hr />
 <h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Esercizio semplice.</li>
-<li>Esercizio avanzato.</li>
+<li>Leggi il colore bordo (<code>$D020</code>), incrementalo di 1 con <code>INC</code>, e riscrivilo.</li>
+<li>Leggi il colore sfondo (<code>$D021</code>) e scrivilo nel bordo.</li>
+<li>Usa un ciclo per azzerare 10 byte consecutivi a partire da <code>$D020</code>.</li>
 </ol>
 <hr />
 <h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
@@ -241,38 +341,71 @@
 <thead>
 <tr>
 <th>Concetto</th>
-<th>Spiegazione breve</th>
+<th>Spiegazione</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Termine1</td>
-<td>Definizione 1</td>
+<td>Indirizzamento assoluto</td>
+<td>Usa indirizzo a 16 bit per raggiungere qualsiasi cella</td>
 </tr>
 <tr>
-<td>Termine2</td>
-<td>Definizione 2</td>
+<td>Opcode</td>
+<td><code>$AD</code> per LDA assoluto</td>
+</tr>
+<tr>
+<td>Bytes</td>
+<td>3 (opcode + byte basso + byte alto)</td>
+</tr>
+<tr>
+<td>Cicli</td>
+<td>4 (1 in più della Zero Page)</td>
+</tr>
+<tr>
+<td>Uso tipico</td>
+<td>Registri hardware oltre <code>$00FF</code></td>
+</tr>
+<tr>
+<td>Endianness</td>
+<td>Little-endian (byte basso prima, alto dopo)</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
-<p><em>Anticipare brevemente il prossimo argomento e perché segue logicamente.</em></p>
+<p>Nella lezione 014 vedremo l'<strong>indirizzamento indicizzato</strong>: combina un indirizzo base con un indice nei registri X/Y per accedere a tabelle e array. Utile per cicli su memoria.</p>
 <hr />
 <h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
-<p><em>Dettagli opzionali per chi vuole approfondire il comportamento hardware.</em></p>
+<p>La mappa memoria del C64 usa indirizzi assoluti:</p>
+<pre class="highlight"><code>$0000–$00FF   Zero Page
+$0100–$01FF   Stack
+$0200–$3FFF   RAM libera (Basic RAM)
+$4000–$7FFF   Cartuccia ROM (normalmente libera)
+$8000–$9FFF   ROM BASIC (banked)
+$A000–$BFFF   Cartuccia ROM
+$C000–$CFFF   ROM KERNAL (banked)
+$D000–$D0FF   VIC-II (chip grafico)
+$D100–$D3FF   SID (chip audio)
+$D400–$D7FF   SID mirror
+$D800–$D8FF   Color RAM
+$DC00–$DDFF   CIA 1 e 2 (I/O, timer)
+$E000–$FFFF   ROM KERNAL</code></pre>
+<p>Ogni indirizzo è a 16 bit.</p>
 <hr />
 <h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
 <ul>
 <li>[ ] l'esempio compila con <code>64tass</code></li>
-<li>[ ] l'esempio è coerente con la lezione</li>
-<li>[ ] ogni istruzione nuova è spiegata prima dell'uso</li>
-<li>[ ] indice, glossario e changelog sono aggiornati</li>
-<li>[ ] il contenuto è semplice e progressivo</li>
+<li>[ ] la differenza tra ZP (<code>$40</code>) e assoluto (<code>$D020</code>) è chiara</li>
+<li>[ ] la struttura little-endian dell'indirizzo è compresa</li>
+<li>[ ] il contenuto è progressivo rispetto alle lezioni 011–012</li>
 </ul>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../014-indirizzamento-indicizzato/" class="btn btn-neutral float-left" title="Lezione 014 - Indirizzamento indicizzato"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../011-modalita-immediata/" class="btn btn-neutral float-right" title="Lezione 011 - Indirizzamento immediato, revisited">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -298,6 +431,10 @@
         </span>
     
     
+      <span><a href="../014-indirizzamento-indicizzato/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../011-modalita-immediata/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

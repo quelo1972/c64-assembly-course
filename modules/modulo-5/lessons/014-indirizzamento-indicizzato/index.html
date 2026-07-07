@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Lesson template - C64 Assembly Course</title>
+    <title>Lezione 014 - Indirizzamento indicizzato - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Lesson template";
-        var mkdocs_page_input_path = "modules/modulo-6/lessons/lesson-template.md";
+        var mkdocs_page_name = "Lezione 014 - Indirizzamento indicizzato";
+        var mkdocs_page_input_path = "modules/modulo-5/lessons/014-indirizzamento-indicizzato.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Moduli</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="#">Modulo 0 - Ambiente di sviluppo</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/">Modulo 0 - Indice</a>
@@ -95,27 +95,61 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 5 - Modalità di indirizzamento</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/">Modulo 5 - Indice</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 5 - Modalità di indirizzamento</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 5 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/014-indirizzamento-indicizzato/">Lezione 014 - Indirizzamento indicizzato</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 014 - Indirizzamento indicizzato</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#indirizzamento-indicizzato-con-x">Indirizzamento indicizzato con X</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sintassi">Sintassi</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#overflow-in-zero-page">Overflow in Zero Page</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#registri-x-e-y">Registri X e Y</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
+    </li>
+    </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/013-indirizzamento-assoluto/">Lezione 013 - Indirizzamento assoluto</a>
+                <li class="toctree-l2"><a class="reference internal" href="../013-indirizzamento-assoluto/">Lezione 013 - Indirizzamento assoluto</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/011-modalita-immediata/">Lezione 011 - Indirizzamento immediato, revisited</a>
+                <li class="toctree-l2"><a class="reference internal" href="../011-modalita-immediata/">Lezione 011 - Indirizzamento immediato, revisited</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/012-zero-page/">Lezione 012 - Indirizzamento Zero Page</a>
+                <li class="toctree-l2"><a class="reference internal" href="../012-zero-page/">Lezione 012 - Indirizzamento Zero Page</a>
                 </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Modulo 6 - Controllo del flusso e subroutine</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 6 - Indice</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/">Modulo 6 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../016-subroutine-jsr-rts/">Lezione 016 - Subroutine: JSR e RTS</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/016-subroutine-jsr-rts/">Lezione 016 - Subroutine: JSR e RTS</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../015-salti-condizionati/">Lezione 015 - Salti condizionati</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/015-salti-condizionati/">Lezione 015 - Salti condizionati</a>
                 </li>
     </ul>
                   </li>
@@ -182,9 +216,11 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li class="breadcrumb-item active">Lesson template</li>
+          <li>Moduli &raquo;</li>
+          <li>Modulo 5 - Modalità di indirizzamento &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 014 - Indirizzamento indicizzato</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-6/lessons/lesson-template.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-5/lessons/014-indirizzamento-indicizzato.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -193,47 +229,154 @@
             <div class="section" itemprop="articleBody">
               
                 <p><a href="../../../../">🏠 Home</a></p>
-<h1 id="lezione-nnn-titolo-della-lezione">Lezione NNN — Titolo della lezione<a class="headerlink" href="#lezione-nnn-titolo-della-lezione" title="Permanent link">&para;</a></h1>
+<h1 id="lezione-014-indirizzamento-indicizzato">Lezione 014 — Indirizzamento indicizzato<a class="headerlink" href="#lezione-014-indirizzamento-indicizzato" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Obiettivo:</strong> descrivere in una frase l'obiettivo concreto di questa lezione.</p>
+<p><strong>Obiettivo:</strong> capire come usare i registri X e Y per indicizzare un indirizzo base e accedere ad array e tabelle in modo elegante e efficiente.</p>
 </blockquote>
 <hr />
 <h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
 <ul>
-<li>punto 1</li>
-<li>punto 2</li>
-<li>punto 3</li>
+<li>comprendere l'indirizzamento indicizzato con X e Y;</li>
+<li>usare X/Y per scansionare tabelle e stringhe;</li>
+<li>confrontare cicli di Zero Page indicizzato vs assoluto indicizzato;</li>
+<li>implementare cicli su array.</li>
 </ul>
 <hr />
 <h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
-<p><em>Contestualizzare l'argomento rispetto a quanto già visto. Spiegare perché questo concetto è necessario adesso.</em></p>
+<p>Spesso vogliamo accedere a sequenze di byte: array, tabelle, stringhe.</p>
+<p>Potremmo scrivere:</p>
+<pre class="highlight"><code class="language-asm">LDA $0400      ; carica byte 0
+LDA $0401      ; carica byte 1
+LDA $0402      ; carica byte 2</code></pre>
+<p>Ma è noioso e ripetitivo. La soluzione: <strong>indirizzamento indicizzato</strong>.</p>
+<p>Carichiamo un indirizzo base in X (o Y) e l'istruzione legge da <code>indirizzo + X</code>.</p>
 <hr />
 <h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
-<p><em>Teoria essenziale, senza assumere conoscenze pregresse non ancora trattate nel corso.</em></p>
+<h3 id="indirizzamento-indicizzato-con-x">Indirizzamento indicizzato con X<a class="headerlink" href="#indirizzamento-indicizzato-con-x" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-asm">LDA $0400,X    ; legge da $0400 + valore di X</code></pre>
+<p>Se <code>X = $00</code>, legge <code>$0400</code>.
+Se <code>X = $05</code>, legge <code>$0405</code>.
+Se <code>X = $10</code>, legge <code>$0410</code>.</p>
+<h3 id="sintassi">Sintassi<a class="headerlink" href="#sintassi" title="Permanent link">&para;</a></h3>
+<p>Due varianti:</p>
+<table>
+<thead>
+<tr>
+<th>Forma</th>
+<th>Indirizzo max</th>
+<th>Opcode</th>
+<th>Bytes</th>
+<th>Cicli</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$40,X</code> (ZP)</td>
+<td><code>$FF</code></td>
+<td><code>$B5</code></td>
+<td>2</td>
+<td>4</td>
+<td>Piccoli array in ZP</td>
+</tr>
+<tr>
+<td><code>$0400,X</code> (assoluto)</td>
+<td><code>$FFFF</code></td>
+<td><code>$BD</code></td>
+<td>3</td>
+<td>4*</td>
+<td>Array in qualsiasi loc</td>
+</tr>
+</tbody>
+</table>
+<p>*+ 1 ciclo se attraversa boundary di pagina.</p>
+<h3 id="overflow-in-zero-page">Overflow in Zero Page<a class="headerlink" href="#overflow-in-zero-page" title="Permanent link">&para;</a></h3>
+<p>Se <code>X = $FF</code> e usi <code>$FF,X</code>, leggi da <code>$FE</code> (wrapping inside ZP).</p>
+<pre class="highlight"><code class="language-asm">LDX #$05
+LDA $FB,X      ; legge da $FB + $05 = $100 (wrap a $00 in ZP)</code></pre>
+<h3 id="registri-x-e-y">Registri X e Y<a class="headerlink" href="#registri-x-e-y" title="Permanent link">&para;</a></h3>
+<p>Entrambi possono fare indexing, con lievi differenze:</p>
+<table>
+<thead>
+<tr>
+<th>Operazione</th>
+<th>X</th>
+<th>Y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LDA n,X</code></td>
+<td>✓</td>
+<td>✗</td>
+</tr>
+<tr>
+<td><code>LDX n,Y</code></td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>LDA (n,X)</code></td>
+<td>✓</td>
+<td>✗</td>
+</tr>
+<tr>
+<td><code>LDA (n),Y</code></td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p>Per questa lezione: focus su <code>n,X</code> e <code>n,Y</code>.</p>
 <hr />
 <h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
-<p><em>Descrivere il comportamento del processore a livello di ciclo macchina, registri e flag.</em></p>
+<p><code>LDA $0400,X</code> con <code>X = $03</code>:</p>
+<ol>
+<li><strong>Fetch opcode</strong>: legge <code>$BD</code> (LDA assoluto, X)</li>
+<li><strong>Fetch byte basso</strong>: legge <code>$00</code></li>
+<li><strong>Fetch byte alto</strong>: legge <code>$04</code></li>
+<li><strong>Calculate address</strong>: <code>$0400 + X</code> = <code>$0400 + $03</code> = <code>$0403</code></li>
+<li><strong>Read memory</strong>: legge il contenuto di <code>$0403</code></li>
+<li><strong>Execute</strong>: scrive il valore in A</li>
+</ol>
+<p>In totale: <strong>3 byte</strong>, <strong>4 cicli</strong> (+ 1 se boundary).</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Esempio minimo compilabile con 64tass
-; Nota: descrivere ogni istruzione usata la prima volta che appare.
+<pre class="highlight"><code class="language-asm">; Lezione 014 — Indirizzamento indicizzato
+; Leggi una stringa da screen RAM e copia nella screen RAM sottostante
 *= $0801
 
-; codice qui</code></pre>
-<blockquote>
-<p>Nota: ogni istruzione Assembly usata per la prima volta deve essere accompagnata da una breve spiegazione (1-2 frasi) prima o subito dopo l'esempio.</p>
-</blockquote>
+; Nota: `LDA indirizzo,X` legge da (indirizzo + X).
+; Nota: `STA indirizzo,X` scrive A in (indirizzo + X).
+
+; Inizializza X come contatore
+LDX #$00       ; X = 0 (primo byte)
+
+; Loop: leggi 10 byte da $0400, scrivili in $0500
+loop:
+  LDA $0400,X  ; leggi byte da schermo + offset X
+  STA $0500,X  ; scrivi in seconda riga + offset X
+  INX           ; incrementa X
+  CPX #$0A      ; X == 10?
+  BNE loop       ; se no, ripeti
+
+RTS</code></pre>
+<p>Compila:</p>
+<pre class="highlight"><code class="language-bash">64tass --cbm-prg -o bin/014.prg src/modulo-5/014.asm</code></pre>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Errore 1: descrizione e come evitarlo</li>
-<li>Errore 2: descrizione e come evitarlo</li>
+<li><strong>Dimenticare di inizializzare X/Y</strong>: se non carichi il valore, leggerai da indirizzi casuali.</li>
+<li><strong>Overflow in Zero Page non inteso</strong>: <code>$FF,X</code> con <code>X=$01</code> legge da <code>$00</code>, non <code>$100</code>.</li>
+<li><strong>Confondere modalità</strong>: <code>LDA $0400,X</code> è assoluto; <code>LDA $40,X</code> è Zero Page.</li>
+<li><strong>Boundary crossing</strong>: l'indirizzamento assoluto indicizzato costa 1 ciclo extra se <code>indirizzo + X</code> attraversa un boundary di pagina (es. <code>$03FF + $01</code>).</li>
 </ul>
 <hr />
 <h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Esercizio semplice.</li>
-<li>Esercizio avanzato.</li>
+<li>Scrivi un ciclo che azzera 16 byte consecutivi a partire da <code>$0400</code>.</li>
+<li>Copia 8 byte da <code>$D800</code> (Color RAM) a <code>$0400</code> (Screen RAM).</li>
+<li>Leggi una tabella di colori (8 byte) e applicali in sequenza ai registri VIC-II (avanzato).</li>
 </ol>
 <hr />
 <h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
@@ -241,38 +384,88 @@
 <thead>
 <tr>
 <th>Concetto</th>
-<th>Spiegazione breve</th>
+<th>Spiegazione</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Termine1</td>
-<td>Definizione 1</td>
+<td>Indirizzamento indicizzato</td>
+<td><code>indirizzo,X</code> o <code>indirizzo,Y</code></td>
 </tr>
 <tr>
-<td>Termine2</td>
-<td>Definizione 2</td>
+<td>X / Y indexing</td>
+<td>Aggiunge il valore di X o Y all'indirizzo</td>
+</tr>
+<tr>
+<td>Modalità ZP indicizzato</td>
+<td><code>$40,X</code> (2 byte, 4 cicli)</td>
+</tr>
+<tr>
+<td>Modalità assoluta indicizzata</td>
+<td><code>$0400,X</code> (3 byte, 4 cicli + boundary)</td>
+</tr>
+<tr>
+<td>Wraparound</td>
+<td>In ZP, <code>$FF,X</code> con X=$01 legge da <code>$00</code></td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
-<p><em>Anticipare brevemente il prossimo argomento e perché segue logicamente.</em></p>
+<p>Nella lezione 015 vedremo i <strong>salti condizionati</strong>: come controllare il flusso di esecuzione in base ai flag del processore. Essenziale per loop e decisioni.</p>
 <hr />
 <h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
-<p><em>Dettagli opzionali per chi vuole approfondire il comportamento hardware.</em></p>
+<p>Opcode per modalità indicizzate:</p>
+<table>
+<thead>
+<tr>
+<th>Istruzione</th>
+<th>ZP,X</th>
+<th>Assoluto,X</th>
+<th>Cicli ZP</th>
+<th>Cicli Assoluto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LDA</td>
+<td><code>$B5</code></td>
+<td><code>$BD</code></td>
+<td>4</td>
+<td>4*</td>
+</tr>
+<tr>
+<td>STA</td>
+<td><code>$95</code></td>
+<td><code>$9D</code></td>
+<td>4</td>
+<td>5*</td>
+</tr>
+<tr>
+<td>INX</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>2</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>Boundary crossing aggiunge 1 ciclo a letture assolute indicizzate.</p>
 <hr />
 <h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
 <ul>
 <li>[ ] l'esempio compila con <code>64tass</code></li>
-<li>[ ] l'esempio è coerente con la lezione</li>
-<li>[ ] ogni istruzione nuova è spiegata prima dell'uso</li>
-<li>[ ] indice, glossario e changelog sono aggiornati</li>
-<li>[ ] il contenuto è semplice e progressivo</li>
+<li>[ ] il ciclo con X funziona e legge i byte giusti</li>
+<li>[ ] la differenza tra <code>$40,X</code> e <code>$0400,X</code> è chiara</li>
+<li>[ ] il contenuto è progressivo rispetto alle lezioni 011–013</li>
 </ul>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../" class="btn btn-neutral float-left" title="Modulo 5 - Indice"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../013-indirizzamento-assoluto/" class="btn btn-neutral float-right" title="Lezione 013 - Indirizzamento assoluto">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -298,6 +491,10 @@
         </span>
     
     
+      <span><a href="../../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../013-indirizzamento-assoluto/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
