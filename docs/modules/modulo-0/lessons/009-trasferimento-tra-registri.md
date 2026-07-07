@@ -1,4 +1,4 @@
-[🏠 Home](../index.md)
+[🏠 Home](../../index.md)
 # Lezione 009 - Trasferimento tra registri
 
 > **Obiettivo:** capire come il MOS 6510 copia valori tra i registri A, X e Y senza usare la memoria.

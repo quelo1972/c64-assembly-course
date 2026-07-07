@@ -1,4 +1,4 @@
-[🏠 Home](../index.md)
+[🏠 Home](../../index.md)
 
 # Lezione 005 - Registri A, X e Y
 

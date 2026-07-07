@@ -1,4 +1,4 @@
-[🏠 Home](../index.md)
+[🏠 Home](../../index.md)
 
 # Lezione 003 - Byte, Word e limiti della memoria
 

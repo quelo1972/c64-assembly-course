@@ -31,4 +31,4 @@ Fornire le basi di memoria, numerazione, registri e ciclo di sviluppo per inizia
 
 ---
 
-Per la roadmap completa e la suddivisione in moduli vedi il file di progetto: [`.ai/roadmap.md`](../../.ai/roadmap.md).
+Per la roadmap completa e la suddivisione in moduli vedi il file di progetto: .ai/roadmap.md (progetto).
