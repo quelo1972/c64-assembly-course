@@ -5,18 +5,26 @@ repo_url: https://github.com/quelo1972/c64-assembly-course
 nav:
   - Home: index.md
   - Moduli:
-    - Modulo 0 - Fondamenti:
+    - Modulo 0 - Ambiente di sviluppo:
       - Modulo 0 - Indice: modules/modulo-0.md
-      - Lezione 001 - La memoria del Commodore 64: modules/modulo-0/lessons/001-memory.md
-      - Lezione 002 - Sistema binario ed esadecimale: modules/modulo-0/lessons/002-binary-hex.md
-      - Lezione 003 - Byte, Word e limiti della memoria: modules/modulo-0/lessons/003-byte-word.md
-      - Lezione 004 - La CPU MOS 6510: modules/modulo-0/lessons/004-cpu-6510.md
-      - Lezione 005 - Registri A, X e Y: modules/modulo-0/lessons/005-registers-axy.md
-      - Lezione 006 - Dal sorgente all'esecuzione: modules/modulo-0/lessons/006-from-source-to-execution.md
-      - Lezione 007 - LDA e indirizzamento immediato: modules/modulo-0/lessons/007-lda.md
-      - Lezione 008 - STA e scrittura in memoria: modules/modulo-0/lessons/008-sta.md
-      - Lezione 009 - Trasferimento tra registri: modules/modulo-0/lessons/009-trasferimento-tra-registri.md
-      - Lezione 010 - Incremento e decremento: modules/modulo-0/lessons/010-increment-decrement.md
+    - Modulo 1 - Fondamenti:
+      - Modulo 1 - Indice: modules/modulo-1.md
+      - Lezione 001 - La memoria del Commodore 64: modules/modulo-1/lessons/001-memory.md
+      - Lezione 002 - Sistema binario ed esadecimale: modules/modulo-1/lessons/002-binary-hex.md
+      - Lezione 003 - Byte, Word e limiti della memoria: modules/modulo-1/lessons/003-byte-word.md
+    - Modulo 2 - CPU MOS 6510:
+      - Modulo 2 - Indice: modules/modulo-2.md
+      - Lezione 004 - La CPU MOS 6510: modules/modulo-2/lessons/004-cpu-6510.md
+      - Lezione 005 - Registri A, X e Y: modules/modulo-2/lessons/005-registers-axy.md
+    - Modulo 3 - Linguaggio e tooling:
+      - Modulo 3 - Indice: modules/modulo-3.md
+      - Lezione 006 - Dal sorgente all'esecuzione: modules/modulo-3/lessons/006-from-source-to-execution.md
+    - Modulo 4 - Prime istruzioni:
+      - Modulo 4 - Indice: modules/modulo-4.md
+      - Lezione 007 - LDA e indirizzamento immediato: modules/modulo-4/lessons/007-lda.md
+      - Lezione 008 - STA e scrittura in memoria: modules/modulo-4/lessons/008-sta.md
+      - Lezione 009 - Trasferimento tra registri: modules/modulo-4/lessons/009-trasferimento-tra-registri.md
+      - Lezione 010 - Incremento e decremento: modules/modulo-4/lessons/010-increment-decrement.md
 theme:
   name: readthedocs
 markdown_extensions:
