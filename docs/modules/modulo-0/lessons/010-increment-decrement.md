@@ -1,4 +1,4 @@
-[🏠 Home](../../index.md)
+[🏠 Home](/index.md)
 # Lezione 010 - Incremento e decremento
 
 > **Obiettivo:** imparare le istruzioni `INX`, `INY`, `DEX`, `DEY` e il loro uso pratico.
