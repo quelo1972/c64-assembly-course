@@ -13,7 +13,11 @@ In questo modulo esploriamo le modalità di indirizzamento supportate dal MOS 65
 
 Riscrivere un piccolo algoritmo usando diverse modalità di indirizzamento e confrontare codice e cicli macchina.
 
-- [Lezione 011 - Modalità di indirizzamento immediato](modulo-5/lessons/011-modalita-immediata.md)
+## Lezioni incluse
+
+- [Lezione 011 - Indirizzamento immediato, revisited](modulo-5/lessons/011-modalita-immediata.md)
+- [Lezione 012 - Indirizzamento Zero Page](modulo-5/lessons/012-zero-page.md)
+
 ## Obiettivo
 
 Capire quando e perché scegliere una modalità di indirizzamento per ottimizzare dimensione e velocità.

@@ -25,27 +25,28 @@ nav:
       - Lezione 008 - STA e scrittura in memoria: modules/modulo-4/lessons/008-sta.md
       - Lezione 009 - Trasferimento tra registri: modules/modulo-4/lessons/009-trasferimento-tra-registri.md
       - Lezione 010 - Incremento e decremento: modules/modulo-4/lessons/010-increment-decrement.md
-      - Modulo 5 - Modalità di indirizzamento:
-        - Modulo 5 - Indice: modules/modulo-5.md
-      - Lezione 011 - Modalità di indirizzamento immediato: modules/modulo-5/lessons/011-modalita-immediata.md
-      - Modulo 6 - Controllo del flusso e subroutine:
-        - Modulo 6 - Indice: modules/modulo-6.md
-      - Modulo 7 - Operazioni aritmetiche e logiche:
-        - Modulo 7 - Indice: modules/modulo-7.md
-      - Modulo 8 - I/O e periferiche:
-        - Modulo 8 - Indice: modules/modulo-8.md
-      - Modulo 9 - Grafica con VIC-II:
-        - Modulo 9 - Indice: modules/modulo-9.md
-      - Modulo 10 - Suono con SID:
-        - Modulo 10 - Indice: modules/modulo-10.md
-      - Modulo 11 - Interrupt, CIA e gestione tempo:
-        - Modulo 11 - Indice: modules/modulo-11.md
-      - Modulo 12 - File system, cassette e disk I/O:
-        - Modulo 12 - Indice: modules/modulo-12.md
-      - Modulo 13 - Ottimizzazione e tecniche avanzate:
-        - Modulo 13 - Indice: modules/modulo-13.md
-      - Modulo 14 - Progetto finale:
-        - Modulo 14 - Indice: modules/modulo-14.md
+    - Modulo 5 - Modalità di indirizzamento:
+      - Modulo 5 - Indice: modules/modulo-5.md
+      - Lezione 011 - Indirizzamento immediato, revisited: modules/modulo-5/lessons/011-modalita-immediata.md
+      - Lezione 012 - Indirizzamento Zero Page: modules/modulo-5/lessons/012-zero-page.md
+    - Modulo 6 - Controllo del flusso e subroutine:
+      - Modulo 6 - Indice: modules/modulo-6.md
+    - Modulo 7 - Operazioni aritmetiche e logiche:
+      - Modulo 7 - Indice: modules/modulo-7.md
+    - Modulo 8 - I/O e periferiche:
+      - Modulo 8 - Indice: modules/modulo-8.md
+    - Modulo 9 - Grafica con VIC-II:
+      - Modulo 9 - Indice: modules/modulo-9.md
+    - Modulo 10 - Suono con SID:
+      - Modulo 10 - Indice: modules/modulo-10.md
+    - Modulo 11 - Interrupt, CIA e gestione tempo:
+      - Modulo 11 - Indice: modules/modulo-11.md
+    - Modulo 12 - File system, cassette e disk I/O:
+      - Modulo 12 - Indice: modules/modulo-12.md
+    - Modulo 13 - Ottimizzazione e tecniche avanzate:
+      - Modulo 13 - Indice: modules/modulo-13.md
+    - Modulo 14 - Progetto finale:
+      - Modulo 14 - Indice: modules/modulo-14.md
 theme:
   name: readthedocs
 markdown_extensions:
