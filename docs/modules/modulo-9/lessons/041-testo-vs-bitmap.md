@@ -52,15 +52,18 @@ La CPU non "disegna" pixel da sola: scrive valori nei registri e nelle aree RAM 
 ## 💡 Esempio pratico
 
 ```asm
-; Lezione 041 - Setup base modalita testo e riempimento prima riga
+; Lezione 041 - Confronto pratico: testo -> bitmap
 *= $0801
 
 SCREEN_RAM = $0400
 COLOR_RAM  = $D800
 BORDER     = $D020
 BG0        = $D021
+VIC_CTRL1  = $D011
+VIC_MPTR   = $D018
 
 start:
+    ; fase 1: modalita testo (riempie la prima riga)
     LDA #$00
     STA BG0          ; sfondo nero
     LDA #$06
@@ -76,10 +79,20 @@ fill_row:
     CPX #$28         ; 40 colonne
     BNE fill_row
 
+    ; fase 2: passaggio minimo a bitmap mode
+    ; ORA imposta bit a 1 mantenendo gli altri invariati
+    LDA VIC_CTRL1
+    ORA #%00100000   ; bit 5 = bitmap mode ON
+    STA VIC_CTRL1
+
+    ; D018: screen RAM = $0400 (high nibble=1), bitmap = $2000 (bit 3 = 1)
+    LDA #$18
+    STA VIC_MPTR
+
     RTS
 ```
 
-`STA` salva un valore in memoria o registro I/O. `CPX` confronta X con un limite. `BNE` continua il ciclo finche il confronto non risulta uguale.
+`STA` salva un valore in memoria o registro I/O. `CPX` confronta X con un limite. `BNE` continua il ciclo finche il confronto non risulta uguale. `ORA` imposta bit specifici senza azzerare gli altri bit del registro.
 
 ---
 

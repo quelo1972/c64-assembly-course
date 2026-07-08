@@ -11,3 +11,7 @@
 | Stack           | Area speciale della memoria                |
 | Little-endian   | Ordine dei byte usato dal 6510             |
 | Indirizzamento immediato | Modalità in cui il valore viene usato direttamente, senza leggere da memoria |
+| Raster line     | Riga video corrente scandita dal VIC-II    |
+| Raster IRQ      | Interrupt generato su una specifica raster line |
+| Sprite pointer  | Byte che indica al VIC-II dove leggere i dati sprite |
+| Bitmap mode     | Modalità grafica a pixel con framebuffer dedicato |

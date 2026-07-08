@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-07-08 — Correzioni didattiche modulo 9 (review)
+
+### Correzioni principali
+- Lezione 041: aggiunto passaggio pratico a bitmap mode (`$D011` bit 5) e set memoria VIC (`$D018`).
+- Lezione 042: esempio collisione reso osservabile con sprite 0 + sprite 1 sovrapposti.
+- Lezione 043: esempio raster IRQ reso piu robusto con masking CIA e chaining a IRQ KERNAL.
+- Lezione 044: aggiornato scroll su `$D016` con pattern read-modify-write per preservare bit non-scroll.
+
+### Allineamento contenuti
+- Aggiornato glossario con termini: raster line, raster IRQ, sprite pointer, bitmap mode.
+
+---
+
 ## 2026-07-08 — Modulo 9 avviato: lezioni 041-044 (grafica VIC-II)
 
 ### Nuove lezioni

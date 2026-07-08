@@ -57,9 +57,19 @@ VIC_RASTER    = $D012
 VIC_IRQ_STAT  = $D019
 VIC_IRQ_MASK  = $D01A
 BORDER        = $D020
+CIA1_ICR      = $DC0D
+CIA2_ICR      = $DD0D
+KERNAL_IRQ    = $EA31
 
 setup:
     SEI
+
+    ; disabilita IRQ CIA per evitare interferenze durante il setup
+    LDA #$7F
+    STA CIA1_ICR
+    STA CIA2_ICR
+    LDA CIA1_ICR
+    LDA CIA2_ICR
 
     LDA #<irq_handler
     STA IRQ_VECTOR_LO
@@ -78,6 +88,11 @@ main:
     JMP main
 
 irq_handler:
+    ; salva registri prima di modificare stato CPU
+    PHA
+    TXA
+    PHA
+    TYA
     PHA
 
     LDA #$05
@@ -87,10 +102,16 @@ irq_handler:
     STA VIC_IRQ_STAT    ; acknowledge IRQ raster
 
     PLA
-    RTI
+    TAY
+    PLA
+    TAX
+    PLA
+
+    ; chaining al gestore KERNAL standard
+    JMP KERNAL_IRQ
 ```
 
-`SEI` disabilita interrupt durante setup. `CLI` li riabilita. `RTI` ritorna da interrupt e ripristina lo stato CPU salvato dall'hardware.
+`SEI` disabilita interrupt durante setup. `CLI` li riabilita. `JMP KERNAL_IRQ` concatena il nostro handler al flusso IRQ standard del sistema.
 
 ---
 
