@@ -16,6 +16,7 @@ Questa distinzione evita confusione didattica: la CPU esegue opcode, l'assembler
 - [Appendice 005 - Riferimento completo 64tass (oltre il corso)](005-riferimento-completo-64tass.md)
 - [Appendice 006 - Reference CLI e diagnostica 64tass](006-reference-cli-e-diagnostica-64tass.md)
 - [Appendice 007 - Linguaggio avanzato 64tass non usato nel corso](007-linguaggio-avanzato-64tass-non-usato-nel-corso.md)
+- [Appendice 008 - SID multipli su U64EII e C64U](008-sid-multipli-u64eii-c64u.md)
 
 ## Come usare queste appendici
 

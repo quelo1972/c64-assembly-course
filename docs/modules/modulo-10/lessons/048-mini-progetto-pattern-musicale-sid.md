@@ -168,6 +168,8 @@ Nel modulo 11 passeremo alla gestione del tempo con interrupt e CIA, fondamental
 
 Un player robusto separa logica musicale (pattern) da timing hardware (interrupt). In questo esempio il timing e a busy-wait per chiarezza; nel mondo reale spesso si usa IRQ periodico.
 
+Per estendere questo player a configurazioni moderne con piu SID attivi in contemporanea, vedi [Appendice 008 - SID multipli su U64EII e C64U](../../../appendici/008-sid-multipli-u64eii-c64u.md).
+
 ---
 
 ## ✅ Checklist finale

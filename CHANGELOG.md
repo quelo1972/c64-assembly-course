@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-08 — Nuova appendice tecnica: SID multipli su U64EII/C64U
+
+### Nuova pagina
+- `docs/appendici/008-sid-multipli-u64eii-c64u.md`
+
+### Copertura aggiunta
+- Architettura multi-SID su board moderne (concetto, addressing, routing audio).
+- Strategie software robuste: fallback mono, profili runtime, mirror/split writing.
+- Pitfall pratici (clipping, mismatch modello SID, detection non affidabile).
+
+### Aggiornamenti struttura
+- Aggiornato indice appendici (`docs/appendici/index.md`).
+- Aggiornata home docs (`docs/index.md`).
+- Aggiornata nav MkDocs (`mkdocs.yml`) mantenendo Appendici in fondo.
+- Inserito link cliccabile all'appendice nella lezione finale del modulo 10 (`docs/modules/modulo-10/lessons/048-mini-progetto-pattern-musicale-sid.md`).
+
 ## 2026-07-08 — Modulo 10 avviato: lezioni 045-048 (suono con SID)
 
 ### Nuove lezioni
