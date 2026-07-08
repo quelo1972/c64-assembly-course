@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Lezione 061 - Definizione e pianificazione del progetto finale - C64 Assembly Course</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Lezione 061 - Definizione e pianificazione del progetto finale";
+        var mkdocs_page_input_path = "modules/modulo-14/lessons/061-definizione-pianificazione-progetto.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> C64 Assembly Course
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Moduli</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 0 - Ambiente di sviluppo</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/">Modulo 0 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/lessons/001-toolchain-setup/">Lezione 001 — Toolchain e setup del progetto</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/lessons/002-git-github/">Lezione 002 — Git e GitHub: versionamento e collaborazione</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/lessons/003-vs-code-setup/">Lezione 003 — VS Code: setup e debugging Assembly</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/lessons/004-vice-immagini-disco/">Lezione 004 — VICE: configurazione e immagini disco</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/lessons/005-automazione-makefile/">Lezione 005 — Automazione: Makefile e task build</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 1 - Fondamenti</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-1/">Modulo 1 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-1/lessons/006-memory/">Lezione 006 — La memoria del Commodore 64</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-1/lessons/007-binary-hex/">Lezione 007 — Sistema binario ed esadecimale</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-1/lessons/008-byte-word/">Lezione 008 — Byte, Word e limiti della memoria</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 2 - CPU MOS 6510</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-2/">Modulo 2 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-2/lessons/009-cpu-6510/">Lezione 009 — La CPU MOS 6510</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-2/lessons/010-registers-axy/">Lezione 010 — Registri A, X e Y</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 3 - Linguaggio e tooling</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-3/">Modulo 3 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-3/lessons/011-from-source-to-execution/">Lezione 011 — Dal sorgente all'esecuzione</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-3/lessons/012-mnemonici-e-opcode/">Lezione 012 — Mnemonici e opcode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-3/lessons/013-direttive-assembler/">Lezione 013 — Direttive assembler, etichette e costanti</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-3/lessons/014-macro-e-organizzazione/">Lezione 014 — Macro e organizzazione del codice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 4 - Prime istruzioni</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-4/">Modulo 4 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-4/lessons/015-lda/">Lezione 015 — LDA e indirizzamento immediato</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-4/lessons/016-sta/">Lezione 016 — STA e scrittura in memoria</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-4/lessons/017-trasferimento-tra-registri/">Lezione 017 — Trasferimento tra registri</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-4/lessons/018-increment-decrement/">Lezione 018 — Incremento e decremento</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-4/lessons/019-store-operations/">Lezione 019 — Store operations: STA, STX, STY</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 5 - Modalità di indirizzamento</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/">Modulo 5 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/020-modalita-immediata/">Lezione 020 — Indirizzamento immediato, revisited</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/021-zero-page/">Lezione 021 — Indirizzamento Zero Page</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/022-indirizzamento-assoluto/">Lezione 022 — Indirizzamento assoluto</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/023-indirizzamento-indicizzato/">Lezione 023 — Indirizzamento indicizzato</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/024-indirizzamento-indiretto/">Lezione 024 — Indirizzamento indiretto</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/025-indirizzamento-indiretto-indicizzato/">Lezione 025 — Indirizzamento indiretto indicizzato</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 6 - Controllo del flusso e subroutine</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/">Modulo 6 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/026-salti-condizionati/">Lezione 026 — Salti condizionati</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/027-subroutine-jsr-rts/">Lezione 027 — Subroutine: JSR e RTS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/028-salti-su-carry-overflow/">Lezione 028 — Salti condizionati: Carry e Overflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/029-stack-avanzato/">Lezione 029 — Operazioni di stack avanzate</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 7 - Operazioni aritmetiche e logiche</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/">Modulo 7 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/030-incremento-decremento-memoria/">Lezione 030 — Incremento e decremento in memoria</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/031-compare-bit-operations/">Lezione 031 — Compare e BIT test operations</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/032-addizione-sottrazione/">Lezione 032 — Addizione e sottrazione: ADC e SBC</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/033-operazioni-logiche/">Lezione 033 — Operazioni logiche: AND, ORA, EOR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/034-shift-operations/">Lezione 034 — Shift operations: ASL, LSR, ROL, ROR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/035-moltiplicazione/">Lezione 035 — Moltiplicazione: algoritmi software</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/036-divisione/">Lezione 036 — Divisione: algoritmi software</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 8 - I/O e periferiche</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-8/">Modulo 8 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-8/lessons/037-mappa-io-c64-vic-sid-cia/">Lezione 037 — Mappa I/O del C64: VIC-II, SID, CIA</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-8/lessons/038-screen-ram-color-ram/">Lezione 038 — Screen RAM e Color RAM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-8/lessons/039-kernal-chiamate-rom-io/">Lezione 039 — KERNAL: chiamate ROM per I/O</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-8/lessons/040-mini-progetto-joystick-schermo/">Lezione 040 — Mini-progetto: joystick e schermo</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 9 - Grafica con VIC-II</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/">Modulo 9 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/lessons/041-testo-vs-bitmap/">Lezione 041 - Modalita testo vs bitmap</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/lessons/042-sprite-definizione-posizionamento-collisioni/">Lezione 042 - Sprite: definizione, posizionamento e collisioni</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/lessons/043-raster-interrupts-sincronizzazione/">Lezione 043 - Raster interrupts e sincronizzazione video</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/lessons/044-mini-progetto-sprite-scrolling/">Lezione 044 - Mini-progetto: scena con sprite animati e scrolling</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 10 - Suono con SID</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-10/">Modulo 10 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-10/lessons/045-registri-principali-sid/">Lezione 045 - Registri principali del SID</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-10/lessons/046-generazione-toni-e-forme-d-onda/">Lezione 046 - Generazione di toni e forme d'onda</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-10/lessons/047-inviluppi-adsr-e-filtri-sid/">Lezione 047 - Inviluppi ADSR e filtri SID</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-10/lessons/048-mini-progetto-pattern-musicale-sid/">Lezione 048 - Mini-progetto: playback di un pattern musicale SID</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 11 - Interrupt, CIA e gestione tempo</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/">Modulo 11 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/lessons/049-tipi-interrupt-irq-nmi-brk/">Lezione 049 - Tipi di interrupt: IRQ, NMI e BRK</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/lessons/050-gestione-interrupt-cli-sei-rti-mask/">Lezione 050 - Gestione interrupt: CLI, SEI, RTI e mask</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/lessons/051-cia-timer-serial-keyboard-matrix/">Lezione 051 - CIA: timer, seriale e keyboard matrix</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/lessons/052-mini-progetto-timer-cia-eventi-periodici/">Lezione 052 - Mini-progetto: timer CIA per eventi periodici</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 12 - File system, cassette e disk I/O</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-12/">Modulo 12 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-12/lessons/053-seriale-iec-drive-1541/">Lezione 053 - Comunicazione seriale IEC e drive 1541</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-12/lessons/054-kernal-io-disco-nastro/">Lezione 054 - Routine KERNAL per I/O su disco e nastro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-12/lessons/055-formati-prg-d64/">Lezione 055 - Formati PRG e D64</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-12/lessons/056-mini-progetto-save-load-dati/">Lezione 056 - Mini-progetto: salvataggio e caricamento dati</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 13 - Ottimizzazione e tecniche avanzate</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-13/">Modulo 13 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-13/lessons/057-ottimizzazione-cicli-memoria/">Lezione 057 - Ottimizzazione per cicli e memoria</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-13/lessons/058-paging-bank-switching-avanzato/">Lezione 058 - Paging e bank switching (memory map avanzata)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-13/lessons/059-compressione-data-packing/">Lezione 059 - Tecniche di compressione e data packing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-13/lessons/060-mini-progetto-ottimizzazione-routine/">Lezione 060 - Mini-progetto: ottimizzazione di una routine</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 14 - Progetto finale</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 14 - Indice</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 061 - Definizione e pianificazione del progetto finale</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../062-modularizzazione-test-packaging/">Lezione 062 - Modularizzazione, test e packaging</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../063-release-pubblicazione-progetto/">Lezione 063 - Release e pubblicazione del progetto</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../064-progetto-finale-completo/">Lezione 064 - Progetto finale completo</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Appendici</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../appendici/">Appendici - Indice</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../appendici/001-regole-sintattiche-64tass/">Appendice 001 - Regole sintattiche del 64tass</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../appendici/002-direttive-e-comandi-64tass/">Appendice 002 - Direttive e comandi specifici 64tass</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../appendici/003-macro-scope-organizzazione/">Appendice 003 - Macro, scope e organizzazione del codice</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../appendici/004-confine-mos6510-vs-64tass/">Appendice 004 - Mappa di confine: MOS 6510 vs 64tass</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../appendici/005-riferimento-completo-64tass/">Appendice 005 - Riferimento completo 64tass (oltre il corso)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../appendici/006-reference-cli-e-diagnostica-64tass/">Appendice 006 - Reference CLI e diagnostica 64tass</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../appendici/007-linguaggio-avanzato-64tass-non-usato-nel-corso/">Appendice 007 - Linguaggio avanzato 64tass non usato nel corso</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../appendici/008-sid-multipli-u64eii-c64u/">Appendice 008 - SID multipli su U64EII e C64U</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">C64 Assembly Course</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Moduli &raquo;</li>
+          <li>Modulo 14 - Progetto finale &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 061 - Definizione e pianificazione del progetto finale</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-14/lessons/061-definizione-pianificazione-progetto.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><a href="../../../../">🏠 Home</a></p>
+<h1 id="lezione-061-definizione-e-pianificazione-del-progetto-finale">Lezione 061 - Definizione e pianificazione del progetto finale<a class="headerlink" href="#lezione-061-definizione-e-pianificazione-del-progetto-finale" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Obiettivo:</strong> impostare scope, obiettivi e milestone del progetto finale (gioco o demo) in modo realistico.</p>
+</blockquote>
+<hr />
+<h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>definire un progetto fattibile su C64;</li>
+<li>separare requisiti minimi da funzionalita opzionali;</li>
+<li>costruire una roadmap incrementale;</li>
+<li>evitare scope creep nelle fasi iniziali.</li>
+</ul>
+<hr />
+<h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
+<p>Il modulo finale non e solo codice: e gestione del progetto. Una pianificazione chiara riduce blocchi e aumenta probabilita di arrivare a una release completa.</p>
+<hr />
+<h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
+<p>Struttura minima consigliata:</p>
+<ul>
+<li><strong>Core loop</strong>: cosa fa il programma a ogni tick/frame;</li>
+<li><strong>Input/Output</strong>: tastiera/joystick, video, audio;</li>
+<li><strong>Persistenza</strong> (opzionale): load/save;</li>
+<li><strong>Build/Release</strong>: PRG o D64 finale.</li>
+</ul>
+<p>Roadmap in sprint brevi:</p>
+<ol>
+<li>prototipo eseguibile;</li>
+<li>feature base complete;</li>
+<li>rifinitura e ottimizzazione;</li>
+<li>packaging e pubblicazione.</li>
+</ol>
+<hr />
+<h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
+<p>Il 6510 premia design semplici: loop corto, stato esplicito, responsabilita nette tra moduli. Una buona architettura riduce il costo delle modifiche tardive.</p>
+<hr />
+<h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-asm">; Lezione 061 - Skeleton progetto finale
+*= $0801
+
+BORDER = $D020
+
+start:
+    JSR init
+
+main_loop:
+    JSR input_step
+    JSR update_step
+    JSR render_step
+    JMP main_loop
+
+init:
+    LDA #$00
+    STA BORDER
+    RTS
+
+input_step:
+    RTS
+
+update_step:
+    RTS
+
+render_step:
+    INC BORDER
+    RTS</code></pre>
+<p><code>RTS</code> termina una subroutine e torna al chiamante: e la base della modularizzazione del progetto.</p>
+<hr />
+<h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
+<ul>
+<li>partire da feature avanzate senza core funzionante;</li>
+<li>non fissare un MVP minimo;</li>
+<li>mescolare logica, rendering e I/O in un blocco unico.</li>
+</ul>
+<hr />
+<h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Definisci un MVP in 5 punti massimi.</li>
+<li>Scrivi 3 milestone con criterio "done" verificabile.</li>
+<li>Aggiungi una backlog opzionale separata dal core.</li>
+</ol>
+<hr />
+<h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Obiettivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>definizione</td>
+<td>ridurre ambiguita</td>
+</tr>
+<tr>
+<td>pianificazione</td>
+<td>rendere il lavoro incrementale</td>
+</tr>
+<tr>
+<td>skeleton</td>
+<td>validare architettura</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
+<p>Nella prossima lezione organizzeremo il progetto in moduli testabili con pipeline di build e packaging.</p>
+<hr />
+<h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
+<p>La complessita su 8-bit si controlla con disciplina architetturale: interfacce semplici tra routine e cambi piccoli ma verificabili.</p>
+<hr />
+<h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] l'esempio compila con 64tass;</li>
+<li>[ ] l'esempio è coerente con la lezione;</li>
+<li>[ ] indice, glossario e changelog sono aggiornati;</li>
+<li>[ ] il contenuto è semplice e progressivo.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../" class="btn btn-neutral float-left" title="Modulo 14 - Indice"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../062-modularizzazione-test-packaging/" class="btn btn-neutral float-right" title="Lezione 062 - Modularizzazione, test e packaging">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/quelo1972/c64-assembly-course" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../062-modularizzazione-test-packaging/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
