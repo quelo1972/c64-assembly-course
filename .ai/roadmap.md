@@ -1,6 +1,6 @@
 # Roadmap del corso
 
-> Stato: Bozza 2 — roadmap estesa per coprire argomenti fondamentali e avanzati.
+> Stato: Bozza 2 — allineata al workflow incrementale del corso.
 
 Questa roadmap definisce il percorso completo del corso di programmazione Assembly per Commodore 64. L'ordine dei moduli è pensato per introdurre un solo concetto alla volta, costruendo progressivamente competenze pratiche e conoscenze sull'hardware.
 
@@ -232,7 +232,3 @@ Mini-progetto: completare e presentare il progetto finale.
 * Mappe di memoria e riferimenti hardware
 * FAQ e troubleshooting per 64tass/VICE
 * Esempi pronti e script di build
-
----
-
-Se vuoi, posso applicare questi aggiornamenti a `.ai/roadmap.md` (e poi committare). Procedo con la sostituzione del file.
