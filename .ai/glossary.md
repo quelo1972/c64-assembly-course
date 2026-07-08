@@ -15,3 +15,9 @@
 | Raster IRQ      | Interrupt generato su una specifica raster line |
 | Sprite pointer  | Byte che indica al VIC-II dove leggere i dati sprite |
 | Bitmap mode     | Modalità grafica a pixel con framebuffer dedicato |
+| SID             | Chip audio del C64 (MOS 6581/8580) |
+| Waveform        | Forma d'onda dell'oscillatore (triangle, saw, pulse, noise) |
+| ADSR            | Inviluppo della nota: Attack, Decay, Sustain, Release |
+| Gate            | Bit di controllo che avvia o rilascia una nota SID |
+| Cutoff          | Frequenza di taglio del filtro SID |
+| Resonance       | Enfasi attorno alla frequenza di taglio del filtro |

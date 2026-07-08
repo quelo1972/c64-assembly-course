@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-08 — Modulo 10 avviato: lezioni 045-048 (suono con SID)
+
+### Nuove lezioni
+- **Lezione 045 - Registri principali del SID**
+- **Lezione 046 - Generazione di toni e forme d'onda**
+- **Lezione 047 - Inviluppi ADSR e filtri SID**
+- **Lezione 048 - Mini-progetto: playback di un pattern musicale SID**
+
+### Copertura roadmap modulo 10
+- Registri principali del SID
+- Generazione di toni, inviluppi e filtri
+- Playback di semplici pattern musicali
+
+### Allineamento contenuti
+- Aggiornato glossario con termini SID: waveform, ADSR, gate, cutoff, resonance.
+
 ## 2026-07-08 — Estensione appendici: reference 64tass completa (oltre il corso)
 
 ### Nuove pagine

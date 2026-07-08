@@ -71,6 +71,10 @@ nav:
       - "Lezione 044 - Mini-progetto: scena con sprite animati e scrolling": modules/modulo-9/lessons/044-mini-progetto-sprite-scrolling.md
     - Modulo 10 - Suono con SID:
       - "Modulo 10 - Indice": modules/modulo-10.md
+      - "Lezione 045 - Registri principali del SID": modules/modulo-10/lessons/045-registri-principali-sid.md
+      - "Lezione 046 - Generazione di toni e forme d'onda": modules/modulo-10/lessons/046-generazione-toni-e-forme-d-onda.md
+      - "Lezione 047 - Inviluppi ADSR e filtri SID": modules/modulo-10/lessons/047-inviluppi-adsr-e-filtri-sid.md
+      - "Lezione 048 - Mini-progetto: playback di un pattern musicale SID": modules/modulo-10/lessons/048-mini-progetto-pattern-musicale-sid.md
     - Modulo 11 - Interrupt, CIA e gestione tempo:
       - "Modulo 11 - Indice": modules/modulo-11.md
     - Modulo 12 - File system, cassette e disk I/O:
