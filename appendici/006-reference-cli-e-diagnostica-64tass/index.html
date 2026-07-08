@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Appendice 004 - Mappa di confine: MOS 6510 vs 64tass - C64 Assembly Course</title>
+    <title>Appendice 006 - Reference CLI e diagnostica 64tass - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Appendice 004 - Mappa di confine: MOS 6510 vs 64tass";
-        var mkdocs_page_input_path = "appendici/004-confine-mos6510-vs-64tass.md";
+        var mkdocs_page_name = "Appendice 006 - Reference CLI e diagnostica 64tass";
+        var mkdocs_page_input_path = "appendici/006-reference-cli-e-diagnostica-64tass.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -234,25 +234,31 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../003-macro-scope-organizzazione/">Appendice 003 - Macro, scope e organizzazione del codice</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Appendice 004 - Mappa di confine: MOS 6510 vs 64tass</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-regola-di-classificazione-immediata">1. Regola di classificazione immediata</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-mappa-pratica">2. Mappa pratica</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-esempio-annotato-riga-per-riga">3. Esempio annotato riga per riga</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#4-domande-diagnostiche-debug-mentale">4. Domande diagnostiche (debug mentale)</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#5-esempi-di-confusione-tipica">5. Esempi di confusione tipica</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#6-checklist-finale-rapida">6. Checklist finale rapida</a>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../004-confine-mos6510-vs-64tass/">Appendice 004 - Mappa di confine: MOS 6510 vs 64tass</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../005-riferimento-completo-64tass/">Appendice 005 - Riferimento completo 64tass (oltre il corso)</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../006-reference-cli-e-diagnostica-64tass/">Appendice 006 - Reference CLI e diagnostica 64tass</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Appendice 006 - Reference CLI e diagnostica 64tass</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-sintassi-base">1) Sintassi base</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-output-e-formati">2) Output e formati</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-operazione-generale">3) Operazione generale</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-cpu-target-selection">4) CPU target selection</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-label-e-listing">5) Label e listing</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-diagnostica-warningerror">6) Diagnostica (warning/error)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-utility-options">7) Utility options</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8-profili-consigliati-pronti-alluso">8) Profili consigliati (pronti all'uso)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#9-nota-pratica-per-questo-repository">9) Nota pratica per questo repository</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../007-linguaggio-avanzato-64tass-non-usato-nel-corso/">Appendice 007 - Linguaggio avanzato 64tass non usato nel corso</a>
                   </li>
@@ -272,9 +278,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Appendici &raquo;</li>
-      <li class="breadcrumb-item active">Appendice 004 - Mappa di confine: MOS 6510 vs 64tass</li>
+      <li class="breadcrumb-item active">Appendice 006 - Reference CLI e diagnostica 64tass</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/appendici/004-confine-mos6510-vs-64tass.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/appendici/006-reference-cli-e-diagnostica-64tass.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -283,109 +289,182 @@
             <div class="section" itemprop="articleBody">
               
                 <p><a href="../../">🏠 Home</a></p>
-<h1 id="appendice-004-mappa-di-confine-mos-6510-vs-64tass">Appendice 004 - Mappa di confine: MOS 6510 vs 64tass<a class="headerlink" href="#appendice-004-mappa-di-confine-mos-6510-vs-64tass" title="Permanent link">&para;</a></h1>
+<h1 id="appendice-006-reference-cli-e-diagnostica-64tass">Appendice 006 - Reference CLI e diagnostica 64tass<a class="headerlink" href="#appendice-006-reference-cli-e-diagnostica-64tass" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>Obiettivo: avere una mappa decisionale rapida per capire se un costrutto appartiene alla CPU o all'assembler.</p>
+<p>Obiettivo: avere una reference operativa completa della command line 64tass, incluse warning policy e output tooling.</p>
 </blockquote>
 <hr />
-<h2 id="1-regola-di-classificazione-immediata">1. Regola di classificazione immediata<a class="headerlink" href="#1-regola-di-classificazione-immediata" title="Permanent link">&para;</a></h2>
-<p>Se il costrutto:</p>
+<h2 id="1-sintassi-base">1) Sintassi base<a class="headerlink" href="#1-sintassi-base" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-bash">64tass [OPTIONS...] SOURCES</code></pre>
+<p>Versione rilevata nel workspace: <code>64tass Turbo Assembler Macro V1.59.3120</code>.</p>
+<hr />
+<h2 id="2-output-e-formati">2) Output e formati<a class="headerlink" href="#2-output-e-formati" title="Permanent link">&para;</a></h2>
+<p>Opzioni output principali:</p>
 <ul>
-<li>produce azione a runtime sul processore, e istruzione CPU;</li>
-<li>modifica struttura del sorgente o emissione byte in build, e direttiva assembler.</li>
+<li><code>-o</code>, <code>--output</code></li>
+<li><code>--output-append</code></li>
+<li><code>--no-output</code></li>
+<li><code>--output-section</code></li>
+<li><code>--output-exec</code></li>
+<li><code>--map</code>, <code>--map-append</code>, <code>--no-map</code></li>
+<li><code>-b</code>, <code>--nostart</code></li>
+<li><code>-f</code>, <code>--flat</code></li>
+<li><code>-n</code>, <code>--nonlinear</code></li>
+<li><code>-X</code>, <code>--long-address</code></li>
+</ul>
+<p>Formati disponibili:</p>
+<ul>
+<li><code>--cbm-prg</code></li>
+<li><code>--atari-xex</code></li>
+<li><code>--apple-ii</code></li>
+<li><code>--intel-hex</code></li>
+<li><code>--mos-hex</code></li>
+<li><code>--s-record</code></li>
+<li><code>--c256-pgx</code></li>
+<li><code>--c256-pgz</code></li>
 </ul>
 <hr />
-<h2 id="2-mappa-pratica">2. Mappa pratica<a class="headerlink" href="#2-mappa-pratica" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Costrutto</th>
-<th>Categoria</th>
-<th>Fase</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>LDA</code>, <code>STA</code>, <code>ADC</code>, <code>JSR</code>, <code>RTS</code></td>
-<td>MOS 6510</td>
-<td>Runtime</td>
-</tr>
-<tr>
-<td>Label (<code>LOOP:</code>)</td>
-<td>64tass</td>
-<td>Assemblaggio</td>
-</tr>
-<tr>
-<td>Costanti (<code>NAME = value</code>)</td>
-<td>64tass</td>
-<td>Assemblaggio</td>
-</tr>
-<tr>
-<td><code>*= $0801</code></td>
-<td>64tass</td>
-<td>Assemblaggio</td>
-</tr>
-<tr>
-<td><code>.byte/.word/.text</code></td>
-<td>64tass</td>
-<td>Assemblaggio</td>
-</tr>
-<tr>
-<td><code>.include</code></td>
-<td>64tass</td>
-<td>Assemblaggio</td>
-</tr>
-<tr>
-<td><code>.macro/.endm</code></td>
-<td>64tass</td>
-<td>Assemblaggio</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="3-esempio-annotato-riga-per-riga">3. Esempio annotato riga per riga<a class="headerlink" href="#3-esempio-annotato-riga-per-riga" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">*= $0801              ; [64tass] posizione di assemblaggio
-
-BORDER = $D020        ; [64tass] simbolo costante
-
-START:                ; [64tass] label
-    LDA #$00          ; [MOS 6510] opcode A9
-    STA BORDER        ; [MOS 6510] opcode 8D + indirizzo risolto da 64tass
-    RTS               ; [MOS 6510] opcode 60</code></pre>
-<p>Interpretazione corretta:</p>
+<h2 id="3-operazione-generale">3) Operazione generale<a class="headerlink" href="#3-operazione-generale" title="Permanent link">&para;</a></h2>
 <ul>
-<li>64tass risolve <code>BORDER</code> in <code>$D020</code> durante build;</li>
-<li>il 6510 in esecuzione vede solo byte macchina, non i nomi simbolici.</li>
+<li><code>-a</code>, <code>--ascii</code></li>
+<li><code>-B</code>, <code>--long-branch</code></li>
+<li><code>-C</code>, <code>--case-sensitive</code></li>
+<li><code>-D &lt;label&gt;=&lt;value&gt;</code></li>
+<li><code>-I &lt;path&gt;</code></li>
+<li><code>-M</code>, <code>--dependencies</code></li>
+<li><code>--dependencies-append</code></li>
+<li><code>--make-phony</code></li>
+<li><code>-q</code>, <code>--quiet</code></li>
+<li><code>-T</code>, <code>--tasm-compatible</code></li>
 </ul>
 <hr />
-<h2 id="4-domande-diagnostiche-debug-mentale">4. Domande diagnostiche (debug mentale)<a class="headerlink" href="#4-domande-diagnostiche-debug-mentale" title="Permanent link">&para;</a></h2>
-<p>Quando qualcosa non torna, chiediti:</p>
-<ol>
-<li>Errore di sintassi/assembler o errore logico CPU?</li>
-<li>Il simbolo e stato risolto correttamente?</li>
-<li>L'istruzione scelta modifica i flag attesi?</li>
-<li>Sto misurando un effetto di build o runtime?</li>
-</ol>
-<hr />
-<h2 id="5-esempi-di-confusione-tipica">5. Esempi di confusione tipica<a class="headerlink" href="#5-esempi-di-confusione-tipica" title="Permanent link">&para;</a></h2>
+<h2 id="4-cpu-target-selection">4) CPU target selection<a class="headerlink" href="#4-cpu-target-selection" title="Permanent link">&para;</a></h2>
 <ul>
-<li>"La macro e lenta": in realta il costo e del codice espanso.</li>
-<li>"La label contiene un valore": in realta e un riferimento risolto in indirizzo.</li>
-<li>"<code>.word</code> esegue una conversione runtime": no, emette byte in output.</li>
+<li><code>--m65xx</code></li>
+<li><code>-i</code>, <code>--m6502</code></li>
+<li><code>-c</code>, <code>--m65c02</code></li>
+<li><code>--m65ce02</code></li>
+<li><code>-t</code>, <code>--m65dtv02</code></li>
+<li><code>-x</code>, <code>--m65816</code></li>
+<li><code>-e</code>, <code>--m65el02</code></li>
+<li><code>--mr65c02</code></li>
+<li><code>--mw65c02</code></li>
+<li><code>--m4510</code></li>
 </ul>
 <hr />
-<h2 id="6-checklist-finale-rapida">6. Checklist finale rapida<a class="headerlink" href="#6-checklist-finale-rapida" title="Permanent link">&para;</a></h2>
+<h2 id="5-label-e-listing">5) Label e listing<a class="headerlink" href="#5-label-e-listing" title="Permanent link">&para;</a></h2>
+<p>Label output:</p>
 <ul>
-<li>Separazione CPU/assembler esplicitata nei materiali?</li>
-<li>Nuove direttive introdotte con spiegazione di fase (build vs runtime)?</li>
-<li>Esempi verificabili con <code>64tass</code> e osservabili in VICE?</li>
+<li><code>-l</code>, <code>--labels</code></li>
+<li><code>--labels-append</code></li>
+<li><code>--normal-labels</code></li>
+<li><code>--export-labels</code></li>
+<li><code>--vice-labels</code></li>
+<li><code>--vice-labels-numeric</code></li>
+<li><code>--dump-labels</code></li>
+<li><code>--simple-labels</code></li>
+<li><code>--labels-root</code></li>
+<li><code>--labels-section</code></li>
+<li><code>--labels-add-prefix</code></li>
 </ul>
+<p>Assembly listing:</p>
+<ul>
+<li><code>-L</code>, <code>--list</code></li>
+<li><code>--list-append</code></li>
+<li><code>-m</code>, <code>--no-monitor</code></li>
+<li><code>-s</code>, <code>--no-source</code></li>
+<li><code>--line-numbers</code></li>
+<li><code>--tab-size</code></li>
+<li><code>--verbose-list</code></li>
+</ul>
+<hr />
+<h2 id="6-diagnostica-warningerror">6) Diagnostica (warning/error)<a class="headerlink" href="#6-diagnostica-warningerror" title="Permanent link">&para;</a></h2>
+<p>Controllo globale:</p>
+<ul>
+<li><code>-w</code>, <code>--no-warn</code></li>
+<li><code>-Wall</code></li>
+<li><code>-Werror</code></li>
+<li><code>-Werror=&lt;name&gt;</code></li>
+<li><code>-Wno-error=&lt;name&gt;</code></li>
+<li><code>-E</code>, <code>--error</code></li>
+<li><code>--error-append</code></li>
+<li><code>--no-error</code></li>
+<li><code>--no-caret-diag</code></li>
+<li><code>--macro-caret-diag</code></li>
+</ul>
+<p>Warning switch (inventario esteso):</p>
+<ul>
+<li><code>-Walias</code></li>
+<li><code>-Walign</code></li>
+<li><code>-Waltmode</code></li>
+<li><code>-Wbranch-page</code></li>
+<li><code>-Wcase-symbol</code></li>
+<li><code>-Wimmediate</code></li>
+<li><code>-Wimplied-reg</code></li>
+<li><code>-Wleading-zeros</code></li>
+<li><code>-Wlong-branch</code></li>
+<li><code>-Wmacro-prefix</code></li>
+<li><code>-Wno-deprecated</code></li>
+<li><code>-Wno-float-compare</code></li>
+<li><code>-Wno-float-round</code></li>
+<li><code>-Wno-ignored</code></li>
+<li><code>-Wno-jmp-bug</code></li>
+<li><code>-Wno-label-left</code></li>
+<li><code>-Wno-page</code></li>
+<li><code>-Wno-wrap-addr</code></li>
+<li><code>-Wno-wrap-bank0</code></li>
+<li><code>-Wno-wrap-dpage</code></li>
+<li><code>-Wno-wrap-mem</code></li>
+<li><code>-Wno-wrap-pbank</code></li>
+<li><code>-Wno-wrap-pc</code></li>
+<li><code>-Wno-pitfalls</code></li>
+<li><code>-Wno-portable</code></li>
+<li><code>-Wno-priority</code></li>
+<li><code>-Wno-size-larger</code></li>
+<li><code>-Wno-star-assign</code></li>
+<li><code>-Wold-equal</code></li>
+<li><code>-Woptimize</code></li>
+<li><code>-Wshadow</code></li>
+<li><code>-Wstrict-bool</code></li>
+<li><code>-Wunused</code></li>
+<li><code>-Wunused-macro</code></li>
+<li><code>-Wunused-const</code></li>
+<li><code>-Wunused-label</code></li>
+<li><code>-Wunused-variable</code></li>
+</ul>
+<hr />
+<h2 id="7-utility-options">7) Utility options<a class="headerlink" href="#7-utility-options" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>-?</code>, <code>--help</code></li>
+<li><code>--usage</code></li>
+<li><code>-V</code>, <code>--version</code></li>
+</ul>
+<p>Supporto option file:</p>
+<ul>
+<li><code>@argsfile</code> per caricare opzioni da file.</li>
+</ul>
+<hr />
+<h2 id="8-profili-consigliati-pronti-alluso">8) Profili consigliati (pronti all'uso)<a class="headerlink" href="#8-profili-consigliati-pronti-alluso" title="Permanent link">&para;</a></h2>
+<p>Profilo sviluppo didattico C64:</p>
+<pre class="highlight"><code class="language-bash">64tass --cbm-prg -a -Wall -Wshadow -Wunused -o bin/out.prg src/main.asm</code></pre>
+<p>Profilo strict CI:</p>
+<pre class="highlight"><code class="language-bash">64tass --cbm-prg -a -Wall -Werror -Wshadow -Wstrict-bool -Wunused -o bin/out.prg src/main.asm</code></pre>
+<p>Profilo compatibilita TASM legacy:</p>
+<pre class="highlight"><code class="language-bash">64tass -T -C -a --cbm-prg -o bin/out.prg src/legacy.asm</code></pre>
+<p>Profilo debug (listing + labels VICE):</p>
+<pre class="highlight"><code class="language-bash">64tass --cbm-prg -a -L build/listing.txt --vice-labels -l build/vice.lbl -o bin/out.prg src/main.asm</code></pre>
+<hr />
+<h2 id="9-nota-pratica-per-questo-repository">9) Nota pratica per questo repository<a class="headerlink" href="#9-nota-pratica-per-questo-repository" title="Permanent link">&para;</a></h2>
+<p>Per il sito/documentazione del corso, i comandi validati sono:</p>
+<pre class="highlight"><code class="language-bash">.venv/bin/mkdocs build -q
+.venv/bin/mkdocs gh-deploy --clean -b gh-pages -r origin</code></pre>
+<p>Per esempi C64 del corso, il formato atteso e normalmente <code>--cbm-prg</code>.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../003-macro-scope-organizzazione/" class="btn btn-neutral float-left" title="Appendice 003 - Macro, scope e organizzazione del codice"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../005-riferimento-completo-64tass/" class="btn btn-neutral float-right" title="Appendice 005 - Riferimento completo 64tass (oltre il corso)">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../005-riferimento-completo-64tass/" class="btn btn-neutral float-left" title="Appendice 005 - Riferimento completo 64tass (oltre il corso)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../007-linguaggio-avanzato-64tass-non-usato-nel-corso/" class="btn btn-neutral float-right" title="Appendice 007 - Linguaggio avanzato 64tass non usato nel corso">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -412,10 +491,10 @@ START:                ; [64tass] label
         </span>
     
     
-      <span><a href="../003-macro-scope-organizzazione/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../005-riferimento-completo-64tass/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../005-riferimento-completo-64tass/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../007-linguaggio-avanzato-64tass-non-usato-nel-corso/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

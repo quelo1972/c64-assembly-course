@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Appendice 004 - Mappa di confine: MOS 6510 vs 64tass - C64 Assembly Course</title>
+    <title>Appendice 005 - Riferimento completo 64tass (oltre il corso) - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Appendice 004 - Mappa di confine: MOS 6510 vs 64tass";
-        var mkdocs_page_input_path = "appendici/004-confine-mos6510-vs-64tass.md";
+        var mkdocs_page_name = "Appendice 005 - Riferimento completo 64tass (oltre il corso)";
+        var mkdocs_page_input_path = "appendici/005-riferimento-completo-64tass.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -234,23 +234,33 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../003-macro-scope-organizzazione/">Appendice 003 - Macro, scope e organizzazione del codice</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Appendice 004 - Mappa di confine: MOS 6510 vs 64tass</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../004-confine-mos6510-vs-64tass/">Appendice 004 - Mappa di confine: MOS 6510 vs 64tass</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Appendice 005 - Riferimento completo 64tass (oltre il corso)</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-regola-di-classificazione-immediata">1. Regola di classificazione immediata</a>
+    <li class="toctree-l2"><a class="reference internal" href="#1-fonti-e-versione">1) Fonti e versione</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-mappa-pratica">2. Mappa pratica</a>
+    <li class="toctree-l2"><a class="reference internal" href="#2-mappa-completa-delle-aree-64tass">2) Mappa completa delle aree 64tass</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-esempio-annotato-riga-per-riga">3. Esempio annotato riga per riga</a>
+    <li class="toctree-l2"><a class="reference internal" href="#3-direttive-assembler-64tass-inventario-esteso">3) Direttive assembler 64tass (inventario esteso)</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#4-domande-diagnostiche-debug-mentale">4. Domande diagnostiche (debug mentale)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#4-funzioni-built-in-64tass-inventario-esteso">4) Funzioni built-in 64tass (inventario esteso)</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#5-esempi-di-confusione-tipica">5. Esempi di confusione tipica</a>
+    <li class="toctree-l2"><a class="reference internal" href="#5-tipi-built-in">5) Tipi built-in</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#6-checklist-finale-rapida">6. Checklist finale rapida</a>
+    <li class="toctree-l2"><a class="reference internal" href="#6-modello-datiespressioni-feature-avanzate">6) Modello dati/espressioni (feature avanzate)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-pseudo-instructions-e-alias">7) Pseudo-instructions e alias</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8-compatibilita-turbo-assembler-tasm">8) Compatibilita Turbo Assembler (TASM)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#9-cpu-target-supportati-da-64tass">9) CPU target supportati da 64tass</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#10-link-rapidi-reference-ufficiale">10) Link rapidi reference ufficiale</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#11-come-usare-questa-appendice-nel-corso">11) Come usare questa appendice nel corso</a>
     </li>
     </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../005-riferimento-completo-64tass/">Appendice 005 - Riferimento completo 64tass (oltre il corso)</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../006-reference-cli-e-diagnostica-64tass/">Appendice 006 - Reference CLI e diagnostica 64tass</a>
                   </li>
@@ -272,9 +282,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Appendici &raquo;</li>
-      <li class="breadcrumb-item active">Appendice 004 - Mappa di confine: MOS 6510 vs 64tass</li>
+      <li class="breadcrumb-item active">Appendice 005 - Riferimento completo 64tass (oltre il corso)</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/appendici/004-confine-mos6510-vs-64tass.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/appendici/005-riferimento-completo-64tass.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -283,109 +293,286 @@
             <div class="section" itemprop="articleBody">
               
                 <p><a href="../../">🏠 Home</a></p>
-<h1 id="appendice-004-mappa-di-confine-mos-6510-vs-64tass">Appendice 004 - Mappa di confine: MOS 6510 vs 64tass<a class="headerlink" href="#appendice-004-mappa-di-confine-mos-6510-vs-64tass" title="Permanent link">&para;</a></h1>
+<h1 id="appendice-005-riferimento-completo-64tass-oltre-il-corso">Appendice 005 - Riferimento completo 64tass (oltre il corso)<a class="headerlink" href="#appendice-005-riferimento-completo-64tass-oltre-il-corso" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>Obiettivo: avere una mappa decisionale rapida per capire se un costrutto appartiene alla CPU o all'assembler.</p>
+<p>Obiettivo: avere un riferimento esteso su 64tass anche per feature non usate direttamente nelle lezioni.</p>
 </blockquote>
 <hr />
-<h2 id="1-regola-di-classificazione-immediata">1. Regola di classificazione immediata<a class="headerlink" href="#1-regola-di-classificazione-immediata" title="Permanent link">&para;</a></h2>
-<p>Se il costrutto:</p>
+<h2 id="1-fonti-e-versione">1) Fonti e versione<a class="headerlink" href="#1-fonti-e-versione" title="Permanent link">&para;</a></h2>
+<p>Questo riferimento integra:</p>
 <ul>
-<li>produce azione a runtime sul processore, e istruzione CPU;</li>
-<li>modifica struttura del sorgente o emissione byte in build, e direttiva assembler.</li>
+<li>output locale <code>64tass --help</code> (workspace): <code>64tass v1.59.3120</code>;</li>
+<li>manuale online ufficiale 64tass (<code>tass64.sourceforge.net</code>), che al momento riporta <code>v1.60</code>.</li>
 </ul>
+<p>Nota: alcune feature possono variare tra versioni. In caso di dubbi, vale sempre la versione installata nel tuo ambiente build.</p>
 <hr />
-<h2 id="2-mappa-pratica">2. Mappa pratica<a class="headerlink" href="#2-mappa-pratica" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Costrutto</th>
-<th>Categoria</th>
-<th>Fase</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>LDA</code>, <code>STA</code>, <code>ADC</code>, <code>JSR</code>, <code>RTS</code></td>
-<td>MOS 6510</td>
-<td>Runtime</td>
-</tr>
-<tr>
-<td>Label (<code>LOOP:</code>)</td>
-<td>64tass</td>
-<td>Assemblaggio</td>
-</tr>
-<tr>
-<td>Costanti (<code>NAME = value</code>)</td>
-<td>64tass</td>
-<td>Assemblaggio</td>
-</tr>
-<tr>
-<td><code>*= $0801</code></td>
-<td>64tass</td>
-<td>Assemblaggio</td>
-</tr>
-<tr>
-<td><code>.byte/.word/.text</code></td>
-<td>64tass</td>
-<td>Assemblaggio</td>
-</tr>
-<tr>
-<td><code>.include</code></td>
-<td>64tass</td>
-<td>Assemblaggio</td>
-</tr>
-<tr>
-<td><code>.macro/.endm</code></td>
-<td>64tass</td>
-<td>Assemblaggio</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="3-esempio-annotato-riga-per-riga">3. Esempio annotato riga per riga<a class="headerlink" href="#3-esempio-annotato-riga-per-riga" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">*= $0801              ; [64tass] posizione di assemblaggio
-
-BORDER = $D020        ; [64tass] simbolo costante
-
-START:                ; [64tass] label
-    LDA #$00          ; [MOS 6510] opcode A9
-    STA BORDER        ; [MOS 6510] opcode 8D + indirizzo risolto da 64tass
-    RTS               ; [MOS 6510] opcode 60</code></pre>
-<p>Interpretazione corretta:</p>
-<ul>
-<li>64tass risolve <code>BORDER</code> in <code>$D020</code> durante build;</li>
-<li>il 6510 in esecuzione vede solo byte macchina, non i nomi simbolici.</li>
-</ul>
-<hr />
-<h2 id="4-domande-diagnostiche-debug-mentale">4. Domande diagnostiche (debug mentale)<a class="headerlink" href="#4-domande-diagnostiche-debug-mentale" title="Permanent link">&para;</a></h2>
-<p>Quando qualcosa non torna, chiediti:</p>
+<h2 id="2-mappa-completa-delle-aree-64tass">2) Mappa completa delle aree 64tass<a class="headerlink" href="#2-mappa-completa-delle-aree-64tass" title="Permanent link">&para;</a></h2>
+<p>Aree principali coperte dalla reference ufficiale:</p>
 <ol>
-<li>Errore di sintassi/assembler o errore logico CPU?</li>
-<li>Il simbolo e stato risolto correttamente?</li>
-<li>L'istruzione scelta modifica i flag attesi?</li>
-<li>Sto misurando un effetto di build o runtime?</li>
+<li>Usage tips</li>
+<li>Expressions and data types</li>
+<li>Compiler directives</li>
+<li>Pseudo instructions</li>
+<li>Turbo Assembler compatibility</li>
+<li>Command line options</li>
+<li>Messages (warning/error/fatal)</li>
+<li>Default translations and escape sequences</li>
+<li>Opcode tables per CPU target</li>
 </ol>
+<p>Questa appendice e pensata come "indice tecnico" trasversale alle appendici 001-004.</p>
 <hr />
-<h2 id="5-esempi-di-confusione-tipica">5. Esempi di confusione tipica<a class="headerlink" href="#5-esempi-di-confusione-tipica" title="Permanent link">&para;</a></h2>
+<h2 id="3-direttive-assembler-64tass-inventario-esteso">3) Direttive assembler 64tass (inventario esteso)<a class="headerlink" href="#3-direttive-assembler-64tass-inventario-esteso" title="Permanent link">&para;</a></h2>
+<p>Elenco esteso (alfabetico) delle direttive citate nella reference ufficiale:</p>
 <ul>
-<li>"La macro e lenta": in realta il costo e del codice espanso.</li>
-<li>"La label contiene un valore": in realta e un riferimento risolto in indirizzo.</li>
-<li>"<code>.word</code> esegue una conversione runtime": no, emette byte in output.</li>
+<li><code>.addr</code></li>
+<li><code>.al</code></li>
+<li><code>.align</code></li>
+<li><code>.alignblk</code></li>
+<li><code>.alignind</code></li>
+<li><code>.alignpageind</code></li>
+<li><code>.as</code></li>
+<li><code>.assert</code></li>
+<li><code>.autsiz</code></li>
+<li><code>.bend</code></li>
+<li><code>.binary</code></li>
+<li><code>.binclude</code></li>
+<li><code>.bfor</code></li>
+<li><code>.block</code></li>
+<li><code>.break</code></li>
+<li><code>.breakif</code></li>
+<li><code>.brept</code></li>
+<li><code>.bwhile</code></li>
+<li><code>.byte</code></li>
+<li><code>.case</code></li>
+<li><code>.cdef</code></li>
+<li><code>.cerror</code></li>
+<li><code>.char</code></li>
+<li><code>.check</code></li>
+<li><code>.comment</code></li>
+<li><code>.continue</code></li>
+<li><code>.continueif</code></li>
+<li><code>.cpu</code></li>
+<li><code>.cwarn</code></li>
+<li><code>.databank</code></li>
+<li><code>.default</code></li>
+<li><code>.dint</code></li>
+<li><code>.dpage</code></li>
+<li><code>.dsection</code></li>
+<li><code>.dstruct</code></li>
+<li><code>.dunion</code></li>
+<li><code>.dword</code></li>
+<li><code>.edef</code></li>
+<li><code>.elif</code></li>
+<li><code>.else</code></li>
+<li><code>.elsif</code></li>
+<li><code>.enc</code></li>
+<li><code>.encode</code></li>
+<li><code>.end</code></li>
+<li><code>.endalignblk</code></li>
+<li><code>.endblock</code></li>
+<li><code>.endc</code></li>
+<li><code>.endcomment</code></li>
+<li><code>.endencode</code></li>
+<li><code>.endf</code></li>
+<li><code>.endfor</code></li>
+<li><code>.endfunction</code></li>
+<li><code>.endif</code></li>
+<li><code>.endlogical</code></li>
+<li><code>.endm</code></li>
+<li><code>.endmacro</code></li>
+<li><code>.endn</code></li>
+<li><code>.endnamespace</code></li>
+<li><code>.endp</code></li>
+<li><code>.endpage</code></li>
+<li><code>.endproc</code></li>
+<li><code>.endrept</code></li>
+<li><code>.ends</code></li>
+<li><code>.endsection</code></li>
+<li><code>.endsegment</code></li>
+<li><code>.endstruct</code></li>
+<li><code>.endswitch</code></li>
+<li><code>.endu</code></li>
+<li><code>.endunion</code></li>
+<li><code>.endv</code></li>
+<li><code>.endvirtual</code></li>
+<li><code>.endweak</code></li>
+<li><code>.endwhile</code></li>
+<li><code>.endwith</code></li>
+<li><code>.eor</code></li>
+<li><code>.error</code></li>
+<li><code>.fi</code></li>
+<li><code>.fill</code></li>
+<li><code>.for</code></li>
+<li><code>.from</code></li>
+<li><code>.function</code></li>
+<li><code>.goto</code></li>
+<li><code>.here</code></li>
+<li><code>.hidemac</code></li>
+<li><code>.if</code></li>
+<li><code>.ifeq</code></li>
+<li><code>.ifmi</code></li>
+<li><code>.ifne</code></li>
+<li><code>.ifpl</code></li>
+<li><code>.include</code></li>
+<li><code>.lbl</code></li>
+<li><code>.lint</code></li>
+<li><code>.logical</code></li>
+<li><code>.long</code></li>
+<li><code>.macro</code></li>
+<li><code>.mansiz</code></li>
+<li><code>.namespace</code></li>
+<li><code>.next</code></li>
+<li><code>.null</code></li>
+<li><code>.offs</code></li>
+<li><code>.option</code></li>
+<li><code>.page</code></li>
+<li><code>.pend</code></li>
+<li><code>.proc</code></li>
+<li><code>.proff</code></li>
+<li><code>.pron</code></li>
+<li><code>.ptext</code></li>
+<li><code>.rept</code></li>
+<li><code>.rta</code></li>
+<li><code>.section</code></li>
+<li><code>.seed</code></li>
+<li><code>.segment</code></li>
+<li><code>.send</code></li>
+<li><code>.sfunction</code></li>
+<li><code>.shift</code></li>
+<li><code>.shiftl</code></li>
+<li><code>.showmac</code></li>
+<li><code>.sint</code></li>
+<li><code>.struct</code></li>
+<li><code>.switch</code></li>
+<li><code>.tdef</code></li>
+<li><code>.text</code></li>
+<li><code>.union</code></li>
+<li><code>.var</code></li>
+<li><code>.virtual</code></li>
+<li><code>.warn</code></li>
+<li><code>.weak</code></li>
+<li><code>.while</code></li>
+<li><code>.with</code></li>
+<li><code>.word</code></li>
+<li><code>.xl</code></li>
+<li><code>.xs</code></li>
 </ul>
 <hr />
-<h2 id="6-checklist-finale-rapida">6. Checklist finale rapida<a class="headerlink" href="#6-checklist-finale-rapida" title="Permanent link">&para;</a></h2>
+<h2 id="4-funzioni-built-in-64tass-inventario-esteso">4) Funzioni built-in 64tass (inventario esteso)<a class="headerlink" href="#4-funzioni-built-in-64tass-inventario-esteso" title="Permanent link">&para;</a></h2>
+<p>Funzioni matematiche e utility (elenco esteso):</p>
 <ul>
-<li>Separazione CPU/assembler esplicitata nei materiali?</li>
-<li>Nuove direttive introdotte con spiegazione di fase (build vs runtime)?</li>
-<li>Esempi verificabili con <code>64tass</code> e osservabili in VICE?</li>
+<li><code>abs</code>, <code>acos</code>, <code>asin</code>, <code>atan</code>, <code>atan2</code></li>
+<li><code>cbrt</code>, <code>ceil</code>, <code>cos</code>, <code>cosh</code></li>
+<li><code>deg</code>, <code>exp</code>, <code>floor</code>, <code>frac</code></li>
+<li><code>hypot</code>, <code>log</code>, <code>log10</code>, <code>pow</code></li>
+<li><code>rad</code>, <code>round</code>, <code>sign</code>, <code>sin</code>, <code>sinh</code></li>
+<li><code>sqrt</code>, <code>tan</code>, <code>tanh</code>, <code>trunc</code></li>
 </ul>
+<p>Funzioni byte/numeriche:</p>
+<ul>
+<li><code>byte</code>, <code>char</code></li>
+<li><code>word</code>, <code>sint</code></li>
+<li><code>long</code>, <code>lint</code></li>
+<li><code>dword</code>, <code>dint</code></li>
+<li><code>addr</code>, <code>rta</code></li>
+</ul>
+<p>Funzioni strutturali e dati:</p>
+<ul>
+<li><code>all</code>, <code>any</code>, <code>binary</code>, <code>format</code></li>
+<li><code>len</code>, <code>random</code>, <code>range</code>, <code>repr</code></li>
+<li><code>size</code>, <code>sort</code></li>
+</ul>
+<hr />
+<h2 id="5-tipi-built-in">5) Tipi built-in<a class="headerlink" href="#5-tipi-built-in" title="Permanent link">&para;</a></h2>
+<p>Tipi citati dalla reference:</p>
+<ul>
+<li><code>address</code></li>
+<li><code>bits</code></li>
+<li><code>bool</code></li>
+<li><code>bytes</code></li>
+<li><code>code</code></li>
+<li><code>dict</code></li>
+<li><code>float</code></li>
+<li><code>gap</code></li>
+<li><code>int</code></li>
+<li><code>list</code></li>
+<li><code>str</code></li>
+<li><code>symbol</code></li>
+<li><code>tuple</code></li>
+<li><code>type</code></li>
+</ul>
+<hr />
+<h2 id="6-modello-datiespressioni-feature-avanzate">6) Modello dati/espressioni (feature avanzate)<a class="headerlink" href="#6-modello-datiespressioni-feature-avanzate" title="Permanent link">&para;</a></h2>
+<p>64tass include feature avanzate non comuni in assembler classici:</p>
+<ul>
+<li>interi arbitrary precision;</li>
+<li>bit string e byte string con slicing/indexing;</li>
+<li>float e operatori misti;</li>
+<li>liste, tuple, dizionari;</li>
+<li>funzioni custom (<code>.sfunction</code>, <code>.function</code>);</li>
+<li>broadcasting su operazioni tra collezioni;</li>
+<li>range generation e trasformazioni compile-time.</li>
+</ul>
+<p>Queste feature sono potenti ma fuori dal "core beginner path" del corso.</p>
+<hr />
+<h2 id="7-pseudo-instructions-e-alias">7) Pseudo-instructions e alias<a class="headerlink" href="#7-pseudo-instructions-e-alias" title="Permanent link">&para;</a></h2>
+<p>Aree principali:</p>
+<ul>
+<li>alias mnemonici (es. <code>BLT/BGE</code>, <code>SHL/SHR</code>);</li>
+<li>generic instructions (<code>LDR</code>, <code>STR</code>, <code>PSH</code>, <code>PUL</code>, ecc.);</li>
+<li>always-taken branch pseudo (<code>GEQ</code>, <code>GNE</code>, <code>GCC</code>, ...);</li>
+<li>long branch support (automatico con opzione CLI dedicata).</li>
+</ul>
+<hr />
+<h2 id="8-compatibilita-turbo-assembler-tasm">8) Compatibilita Turbo Assembler (TASM)<a class="headerlink" href="#8-compatibilita-turbo-assembler-tasm" title="Permanent link">&para;</a></h2>
+<p>Area dedicata in manuale:</p>
+<ul>
+<li>migrazione sorgenti legacy;</li>
+<li>differenze su parser espressioni e operatori;</li>
+<li>macro/reference differences;</li>
+<li>bug storici non replicati.</li>
+</ul>
+<p>Opzione chiave: <code>--tasm-compatible</code>.</p>
+<hr />
+<h2 id="9-cpu-target-supportati-da-64tass">9) CPU target supportati da 64tass<a class="headerlink" href="#9-cpu-target-supportati-da-64tass" title="Permanent link">&para;</a></h2>
+<p>Famiglie principali:</p>
+<ul>
+<li>6502 / 65xx standard</li>
+<li>6502i (NMOS + illegal opcodes)</li>
+<li>65C02 (CMOS)</li>
+<li>R65C02 / W65C02</li>
+<li>65DTV02</li>
+<li>65816</li>
+<li>65EL02</li>
+<li>65CE02</li>
+<li>4510</li>
+<li>45GS02</li>
+</ul>
+<p>Quindi 64tass e molto piu ampio del solo contesto C64/MOS 6510.</p>
+<hr />
+<h2 id="10-link-rapidi-reference-ufficiale">10) Link rapidi reference ufficiale<a class="headerlink" href="#10-link-rapidi-reference-ufficiale" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Manuale: https://tass64.sourceforge.net/</li>
+<li>Direttive: https://tass64.sourceforge.net/#directives</li>
+<li>Funzioni: https://tass64.sourceforge.net/#functions</li>
+<li>Tipi: https://tass64.sourceforge.net/#types</li>
+<li>Opzioni CLI: https://tass64.sourceforge.net/#commandline-options</li>
+<li>Messaggi diagnostici: https://tass64.sourceforge.net/#messages</li>
+<li>Opcode tables: https://tass64.sourceforge.net/#opcodes</li>
+</ul>
+<hr />
+<h2 id="11-come-usare-questa-appendice-nel-corso">11) Come usare questa appendice nel corso<a class="headerlink" href="#11-come-usare-questa-appendice-nel-corso" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Studente beginner: continua con i moduli e usa questa appendice solo come dizionario tecnico.</li>
+<li>Studente intermedio: usa questa appendice per capire differenze tra "assembler language" e "CPU ISA".</li>
+<li>Studente avanzato: usa questa appendice come mappa per metaprogrammazione e build pipeline sofisticate.</li>
+</ol>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../003-macro-scope-organizzazione/" class="btn btn-neutral float-left" title="Appendice 003 - Macro, scope e organizzazione del codice"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../005-riferimento-completo-64tass/" class="btn btn-neutral float-right" title="Appendice 005 - Riferimento completo 64tass (oltre il corso)">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../004-confine-mos6510-vs-64tass/" class="btn btn-neutral float-left" title="Appendice 004 - Mappa di confine: MOS 6510 vs 64tass"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../006-reference-cli-e-diagnostica-64tass/" class="btn btn-neutral float-right" title="Appendice 006 - Reference CLI e diagnostica 64tass">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -412,10 +599,10 @@ START:                ; [64tass] label
         </span>
     
     
-      <span><a href="../003-macro-scope-organizzazione/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../004-confine-mos6510-vs-64tass/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../005-riferimento-completo-64tass/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../006-reference-cli-e-diagnostica-64tass/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
