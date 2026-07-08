@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Lezione 030 - Moltiplicazione: algoritmi software - C64 Assembly Course</title>
+    <title>Lezione 033 - VS Code: setup e debugging Assembly - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Lezione 030 - Moltiplicazione: algoritmi software";
-        var mkdocs_page_input_path = "modules/modulo-7/lessons/030-moltiplicazione.md";
+        var mkdocs_page_name = "Lezione 033 - VS Code: setup e debugging Assembly";
+        var mkdocs_page_input_path = "modules/modulo-0/lessons/033-vs-code-setup.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -45,19 +45,65 @@
               </ul>
               <p class="caption"><span class="caption-text">Moduli</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 0 - Ambiente di sviluppo</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/">Modulo 0 - Indice</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 0 - Ambiente di sviluppo</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 0 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/lessons/035-automazione-makefile/">Lezione 035 - Automazione: Makefile e task build</a>
+                <li class="toctree-l2"><a class="reference internal" href="../035-automazione-makefile/">Lezione 035 - Automazione: Makefile e task build</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/lessons/034-vice-immagini-disco/">Lezione 034 - VICE: configurazione e immagini disco</a>
+                <li class="toctree-l2"><a class="reference internal" href="../034-vice-immagini-disco/">Lezione 034 - VICE: configurazione e immagini disco</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/lessons/033-vs-code-setup/">Lezione 033 - VS Code: setup e debugging Assembly</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 033 - VS Code: setup e debugging Assembly</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#estensioni-essenziali">Estensioni essenziali</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#file-vscodesettingsjson">File .vscode/settings.json</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#file-tasksjson">File tasks.json</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#debugging-in-vice">Debugging in VICE</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-vs-code">🤖 Come ragiona VS Code</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#syntax-highlighting">Syntax highlighting</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#build-task">Build task</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#setup-workspace">Setup workspace</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#build-e-run">Build e run</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-vs-code">🔎 Approfondimento — Dentro VS Code</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
+    </li>
+    </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/lessons/032-git-github/">Lezione 032 - Git e GitHub: versionamento e collaborazione</a>
+                <li class="toctree-l2"><a class="reference internal" href="../032-git-github/">Lezione 032 - Git e GitHub: versionamento e collaborazione</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/lessons/000-toolchain-setup/">Lezione 000 - Toolchain e setup del progetto</a>
+                <li class="toctree-l2"><a class="reference internal" href="../000-toolchain-setup/">Lezione 000 - Toolchain e setup del progetto</a>
                 </li>
     </ul>
                   </li>
@@ -145,55 +191,23 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 7 - Operazioni aritmetiche e logiche</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 7 - Indice</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 7 - Operazioni aritmetiche e logiche</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/">Modulo 7 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../031-divisione/">Lezione 031 - Divisione: algoritmi software</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/031-divisione/">Lezione 031 - Divisione: algoritmi software</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 030 - Moltiplicazione: algoritmi software</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#algoritmo-shift-and-add">Algoritmo shift-and-add</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#pseudo-codice">Pseudo-codice</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#performance">Performance</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/030-moltiplicazione/">Lezione 030 - Moltiplicazione: algoritmi software</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../026-shift-operations/">Lezione 026 - Shift operations: ASL, LSR, ROL, ROR</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/026-shift-operations/">Lezione 026 - Shift operations: ASL, LSR, ROL, ROR</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../025-operazioni-logiche/">Lezione 025 - Operazioni logiche: AND, ORA, EOR</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/025-operazioni-logiche/">Lezione 025 - Operazioni logiche: AND, ORA, EOR</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../024-addizione-sottrazione/">Lezione 024 - Addizione e sottrazione: ADC e SBC</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/024-addizione-sottrazione/">Lezione 024 - Addizione e sottrazione: ADC e SBC</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../022-compare-bit-operations/">Lezione 022 - Compare e BIT test operations</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/022-compare-bit-operations/">Lezione 022 - Compare e BIT test operations</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../021-incremento-decremento-memoria/">Lezione 021 - Incremento e decremento in memoria</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/021-incremento-decremento-memoria/">Lezione 021 - Incremento e decremento in memoria</a>
                 </li>
     </ul>
                   </li>
@@ -255,10 +269,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Moduli &raquo;</li>
-          <li>Modulo 7 - Operazioni aritmetiche e logiche &raquo;</li>
-      <li class="breadcrumb-item active">Lezione 030 - Moltiplicazione: algoritmi software</li>
+          <li>Modulo 0 - Ambiente di sviluppo &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 033 - VS Code: setup e debugging Assembly</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-7/lessons/030-moltiplicazione.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-0/lessons/033-vs-code-setup.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -267,187 +281,227 @@
             <div class="section" itemprop="articleBody">
               
                 <p><a href="../../../../">🏠 Home</a></p>
-<h1 id="lezione-030-moltiplicazione-algoritmi-software">Lezione 030 — Moltiplicazione: algoritmi software<a class="headerlink" href="#lezione-030-moltiplicazione-algoritmi-software" title="Permanent link">&para;</a></h1>
+<h1 id="lezione-033-vs-code-setup-e-debugging-assembly">Lezione 033 — VS Code: setup e debugging Assembly<a class="headerlink" href="#lezione-033-vs-code-setup-e-debugging-assembly" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Obiettivo:</strong> capire come implementare moltiplicazione di interi usando solo istruzioni base del 6510.</p>
+<p><strong>Obiettivo:</strong> configurare VS Code per scrivere, compilare e debuggare Assembly per il C64.</p>
 </blockquote>
 <hr />
 <h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
 <ul>
-<li>comprendere l'algoritmo shift-and-add per moltiplicazione;</li>
-<li>implementare moltiplicazione 8x8 → 16 bit;</li>
-<li>usare shift e loop per operazioni iterative;</li>
-<li>verificare overflow e carry.</li>
+<li>installare VS Code e le estensioni necessarie;</li>
+<li>configurare syntax highlighting per Assembly;</li>
+<li>settare task di build per 64tass;</li>
+<li>usare debugger e breakpoint in VICE;</li>
+<li>organizzare workspace efficacemente.</li>
 </ul>
 <hr />
 <h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
-<p>Il 6510 non ha un'istruzione <code>MUL</code>. Invece usiamo:</p>
+<p>VS Code è leggero e potente. Per Assembly C64 abbiamo bisogno di:</p>
 <ol>
-<li>Shift left (ASL) per moltiplicare per 2</li>
-<li>Add (ADC) per accumul summare</li>
-<li>Loop fino a completamento</li>
+<li><strong>Syntax highlighting</strong>: riconoscere mnemonici e direttive</li>
+<li><strong>Build tasks</strong>: compilare con 64tass</li>
+<li><strong>Debugger</strong>: connettere VICE e settare breakpoint</li>
+<li><strong>File organization</strong>: navigare agevolmente tra moduli</li>
 </ol>
-<p>Esempio: 5 × 3</p>
-<pre class="highlight"><code>5 = 0000 0101
-3 = 0000 0011
-
-Bit 0 di 3 = 1 → somma 5 &lt;&lt; 0 = 5
-Bit 1 di 3 = 1 → somma 5 &lt;&lt; 1 = 10
-Bit 2 di 3 = 0 → salta
-
-Risultato: 5 + 10 = 15 ✓</code></pre>
 <hr />
 <h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
-<h3 id="algoritmo-shift-and-add">Algoritmo shift-and-add<a class="headerlink" href="#algoritmo-shift-and-add" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code>result = 0
-for each bit in multiplier:
-  if bit = 1:
-    result += multiplicand
-  multiplicand &lt;&lt;= 1  (shift left)</code></pre>
-<h3 id="pseudo-codice">Pseudo-codice<a class="headerlink" href="#pseudo-codice" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code>mult (A × X → Y:A)
-{
-  Y = 0              ; byte alto risultato
-  result_lo = A      ; inizializza risultato basso (A era il moltiplicando)
-
-  for i = 0 to 7:
-    if (X &amp; 1) = 1:
-      result_lo += result_lo
-      if carry: Y++
-    X &gt;&gt;= 1
-    result_lo &lt;&lt;= 1
-    if carry: Y++
-}</code></pre>
-<h3 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h3>
+<h3 id="estensioni-essenziali">Estensioni essenziali<a class="headerlink" href="#estensioni-essenziali" title="Permanent link">&para;</a></h3>
+<p>Per Assembly 6502/6510:</p>
 <ul>
-<li>Moltiplicazione 8x8: 8 iterazioni</li>
-<li>Cicli per iterazione: 10–15</li>
-<li>Totale: ~120 cicli (vs ~50 per una CPU con MUL)</li>
+<li><strong>6502 Assembly</strong> (ottimo syntax highlighting)</li>
+<li><strong>ASM Code Lens</strong> (reference code)</li>
+<li><strong>LLDB Debugger</strong> (debugging)</li>
+<li><strong>Build Task Runner</strong> (esecuzione task)</li>
 </ul>
+<h3 id="file-vscodesettingsjson">File <code>.vscode/settings.json</code><a class="headerlink" href="#file-vscodesettingsjson" title="Permanent link">&para;</a></h3>
+<p>Personalizza comportamento di VS Code:</p>
+<pre class="highlight"><code class="language-json">{
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "[asm]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "files.exclude": {
+    "**/*.prg": true,
+    "**/*.d64": false
+  }
+}</code></pre>
+<h3 id="file-tasksjson">File <code>tasks.json</code><a class="headerlink" href="#file-tasksjson" title="Permanent link">&para;</a></h3>
+<p>Definisci task di build:</p>
+<pre class="highlight"><code class="language-json">{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build C64",
+      "type": "shell",
+      "command": "64tass",
+      "args": [
+        "--cbm-prg",
+        "-o",
+        "${workspaceFolder}/bin/output.prg",
+        "${file}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Run in VICE",
+      "type": "shell",
+      "command": "x64",
+      "args": ["${workspaceFolder}/bin/output.prg"],
+      "dependsOn": "Build C64"
+    }
+  ]
+}</code></pre>
+<h3 id="debugging-in-vice">Debugging in VICE<a class="headerlink" href="#debugging-in-vice" title="Permanent link">&para;</a></h3>
+<p>VICE supporta debugger via monitor socket. Abilita in VICE:</p>
+<pre class="highlight"><code>Settings → Debugging → Monitor socket at port 6510</code></pre>
+<p>Poi in VS Code, configura <code>launch.json</code>:</p>
+<pre class="highlight"><code class="language-json">{
+  "configurations": [
+    {
+      "name": "VICE Debugger",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/output.prg",
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}</code></pre>
 <hr />
-<h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
-<p><code>mult 5 × 3</code>:</p>
+<h2 id="come-ragiona-vs-code">🤖 Come ragiona VS Code<a class="headerlink" href="#come-ragiona-vs-code" title="Permanent link">&para;</a></h2>
+<h3 id="syntax-highlighting">Syntax highlighting<a class="headerlink" href="#syntax-highlighting" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>A = 5</strong> (moltiplicando), <strong>X = 3</strong> (moltiplicatore)</li>
-<li><strong>Y = 0</strong>, <strong>result = 5</strong></li>
-<li><strong>Iterazione 0</strong>: X &amp; 1 = 1 → add 5, risultato = 10, shift X → 1</li>
-<li><strong>Iterazione 1</strong>: X &amp; 1 = 1 → add 10, risultato = 20, carry → Y = 1, shift X → 0</li>
-<li><strong>Iterazioni 2–7</strong>: X = 0, skip</li>
-<li><strong>Risultato</strong>: Y:A = $00:15 = 15 ✓</li>
+<li>Riconosce estensione <code>.asm</code></li>
+<li>Carica regole dell'estensione "6502 Assembly"</li>
+<li>Colora mnemonici, registri, commenti</li>
+<li>Aggiorna in real-time</li>
+</ol>
+<h3 id="build-task">Build task<a class="headerlink" href="#build-task" title="Permanent link">&para;</a></h3>
+<p>Quando premi <code>Ctrl+Shift+B</code>:</p>
+<ol>
+<li>VS Code cerca <code>tasks.json</code></li>
+<li>Esegue il task con <code>"isDefault": true</code></li>
+<li>Cattura stdout/stderr</li>
+<li>Mostra errori nel pannello "Problems"</li>
 </ol>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 030 — Moltiplicazione
-; Moltiplicazione 8x8 → 16 bit
-*= $0801
+<h3 id="setup-workspace">Setup workspace<a class="headerlink" href="#setup-workspace" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-bash"># Crea .vscode/settings.json
+mkdir -p .vscode
 
-; Chiamata: LDA moltiplicando, LDX moltiplicatore, JSR mult
-; Risultato: Y:A (Y=byte alto, A=byte basso)
+cat &gt; .vscode/settings.json &lt;&lt; 'EOF'
+{
+  "editor.fontSize": 13,
+  "editor.tabSize": 2,
+  "[asm]": {
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "on"
+  },
+  "files.associations": {
+    "*.asm": "asm"
+  }
+}
+EOF
 
-mult:
-  ; A = moltiplicando
-  ; X = moltiplicatore
-  ; Risultato: Y:A
-
-  LDY #$00        ; Y = 0 (accumulo byte alto)
-  LSR             ; shift A a destra per preparare
-  BEQ done        ; se A = 0, risultato = 0
-
-  ASL             ; shift A a sinistra (restore)
-  STA temp        ; temp = moltiplicando
-
-  LDA #$00        ; A = 0 (accumulo byte basso)
-  LDY #$00        ; Y = 0 (accumulo byte alto)
-
-loop:
-  LSR temp        ; shift moltiplicando
-  BCC skip_add    ; se bit = 0, skip add
-
-  CLC
-  ADC X           ; somma moltiplicatore
-  BCC skip_carry
-  INY             ; incrementa Y se carry
-
-skip_carry:
-  ASL X           ; shift moltiplicatore a sinistra
-  DEC temp        ; decrementa contatore
-  BNE loop
-
-skip_add:
-  LDY #$00        ; TODO: fix accumulo Y
-
-done:
-  RTS
-
-temp = $02        ; temporaneo Zero Page</code></pre>
+# Crea .vscode/tasks.json
+cat &gt; .vscode/tasks.json &lt;&lt; 'EOF'
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build C64 Program",
+      "type": "shell",
+      "command": "64tass",
+      "args": ["--cbm-prg", "-o", "bin/output.prg", "${file}"],
+      "group": {"kind": "build", "isDefault": true},
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
+EOF</code></pre>
+<h3 id="build-e-run">Build e run<a class="headerlink" href="#build-e-run" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-bash"># In VS Code, premi Ctrl+Shift+B per eseguire build task
+# oppure da terminale:
+cd c64-assembly-course
+64tass --cbm-prg -o bin/output.prg src/example.asm
+x64 bin/output.prg</code></pre>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Carry non gestito</strong>: dimenticare di propagare il carry al byte alto</li>
-<li><strong>Ordine degli shift</strong>: shift moltiplicando vs moltiplicatore</li>
-<li><strong>Loop infinito</strong>: contatore non decrementato correttamente</li>
-<li><strong>Overflow</strong>: se risultato &gt; 65535, perde i bit alti</li>
+<li><strong>Estensione sbagliata</strong>: "ARM Assembly" non supporta 6502</li>
+<li><strong>Task non trovato</strong>: assicura che <code>tasks.json</code> sia in <code>.vscode/</code></li>
+<li><strong>Breakpoint non funziona</strong>: VICE deve avere debugger abilitato</li>
+<li><strong>Path relativi</strong>: usa <code>${workspaceFolder}</code> per portabilità</li>
 </ul>
 <hr />
 <h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Implementa moltiplicazione 16x16 usando il metodo shift-and-add</li>
-<li>Misura i cicli della tua routine vs ASL loop</li>
-<li>Estendi a moltiplicazione di interi negativi (signed)</li>
+<li>Installa 6502 Assembly extension</li>
+<li>Crea <code>tasks.json</code> con build task</li>
+<li>Compila un programma con <code>Ctrl+Shift+B</code></li>
+<li>Configura VICE debugger e metti un breakpoint</li>
 </ol>
 <hr />
 <h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Concetto</th>
-<th>Spiegazione</th>
+<th>Componente</th>
+<th>Scopo</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Shift-and-add</td>
-<td>Algoritmo fondamentale per moltiplicazione</td>
+<td>Estensioni</td>
+<td>Syntax highlighting, tools</td>
 </tr>
 <tr>
-<td>Bit testing</td>
-<td>Controllo di ogni bit del moltiplicatore</td>
+<td>settings.json</td>
+<td>Personalizzazione editor</td>
 </tr>
 <tr>
-<td>Carry propagation</td>
-<td>Gestione dell'overflow tra byte</td>
+<td>tasks.json</td>
+<td>Build automation</td>
 </tr>
 <tr>
-<td>Performance</td>
-<td>~120 cicli per moltiplicazione 8x8</td>
+<td>VICE debugger</td>
+<td>Breakpoint e step-through</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
-<p>Nella lezione 031 vedremo la divisione usando il metodo opposto: shift e sottrazione.</p>
+<p>Nella lezione 034 vedremo VICE configuration e immagini disco.</p>
 <hr />
-<h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
-<p>Algoritmi alternativi:</p>
-<ol>
-<li><strong>Lookup table</strong>: tabella precalcolata (più veloce, meno memoria)</li>
-<li><strong>Shifted accumulator</strong>: usa A come accumulo shifting</li>
-<li><strong>BCD multiply</strong>: per aritmetica decimale</li>
-</ol>
+<h2 id="approfondimento-dentro-vs-code">🔎 Approfondimento — Dentro VS Code<a class="headerlink" href="#approfondimento-dentro-vs-code" title="Permanent link">&para;</a></h2>
+<p><strong>Remote SSH Debug:</strong></p>
+<p>Se usi WSL, puoi debuggare in container SSH e collegare VICE remoto.</p>
+<p><strong>Keybindings personalizzati:</strong></p>
+<pre class="highlight"><code class="language-json">{
+  "key": "ctrl+shift+r",
+  "command": "workbench.action.tasks.runTask",
+  "args": "Build and Run"
+}</code></pre>
 <hr />
 <h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
 <ul>
-<li>[ ] L'esempio compila</li>
-<li>[ ] La moltiplicazione funziona per almeno 3 casi di test</li>
-<li>[ ] Il carry è gestito correttamente</li>
-<li>[ ] Il contenuto è progressivo rispetto alle lezioni precedenti</li>
+<li>[ ] VS Code installato</li>
+<li>[ ] 6502 Assembly extension funzionante</li>
+<li>[ ] tasks.json creato e testato</li>
+<li>[ ] Build task esegue 64tass</li>
+<li>[ ] VICE apre dopo build</li>
 </ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../031-divisione/" class="btn btn-neutral float-left" title="Lezione 031 - Divisione: algoritmi software"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../026-shift-operations/" class="btn btn-neutral float-right" title="Lezione 026 - Shift operations: ASL, LSR, ROL, ROR">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../034-vice-immagini-disco/" class="btn btn-neutral float-left" title="Lezione 034 - VICE: configurazione e immagini disco"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../032-git-github/" class="btn btn-neutral float-right" title="Lezione 032 - Git e GitHub: versionamento e collaborazione">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -474,10 +528,10 @@ temp = $02        ; temporaneo Zero Page</code></pre>
         </span>
     
     
-      <span><a href="../031-divisione/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../034-vice-immagini-disco/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../026-shift-operations/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../032-git-github/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
