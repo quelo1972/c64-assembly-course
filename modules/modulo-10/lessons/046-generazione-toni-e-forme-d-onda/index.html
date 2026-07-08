@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Lezione 043 - Raster interrupts e sincronizzazione video - C64 Assembly Course</title>
+    <title>Lezione 046 - Generazione di toni e forme d'onda - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Lezione 043 - Raster interrupts e sincronizzazione video";
-        var mkdocs_page_input_path = "modules/modulo-9/lessons/043-raster-interrupts-sincronizzazione.md";
+        var mkdocs_page_name = "Lezione 046 - Generazione di toni e forme d\u0027onda";
+        var mkdocs_page_input_path = "modules/modulo-10/lessons/046-generazione-toni-e-forme-d-onda.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -179,15 +179,27 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 9 - Grafica con VIC-II</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 9 - Grafica con VIC-II</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/">Modulo 9 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/lessons/041-testo-vs-bitmap/">Lezione 041 - Modalita testo vs bitmap</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/lessons/042-sprite-definizione-posizionamento-collisioni/">Lezione 042 - Sprite: definizione, posizionamento e collisioni</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/lessons/043-raster-interrupts-sincronizzazione/">Lezione 043 - Raster interrupts e sincronizzazione video</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/lessons/044-mini-progetto-sprite-scrolling/">Lezione 044 - Mini-progetto: scena con sprite animati e scrolling</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 10 - Suono con SID</a>
     <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 9 - Indice</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 10 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../041-testo-vs-bitmap/">Lezione 041 - Modalita testo vs bitmap</a>
+                <li class="toctree-l2"><a class="reference internal" href="../045-registri-principali-sid/">Lezione 045 - Registri principali del SID</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../042-sprite-definizione-posizionamento-collisioni/">Lezione 042 - Sprite: definizione, posizionamento e collisioni</a>
-                </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 043 - Raster interrupts e sincronizzazione video</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 046 - Generazione di toni e forme d'onda</a>
     <ul class="current">
     <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
     </li>
@@ -213,21 +225,9 @@
     </li>
     </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../044-mini-progetto-sprite-scrolling/">Lezione 044 - Mini-progetto: scena con sprite animati e scrolling</a>
+                <li class="toctree-l2"><a class="reference internal" href="../047-inviluppi-adsr-e-filtri-sid/">Lezione 047 - Inviluppi ADSR e filtri SID</a>
                 </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 10 - Suono con SID</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-10/">Modulo 10 - Indice</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-10/lessons/045-registri-principali-sid/">Lezione 045 - Registri principali del SID</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-10/lessons/046-generazione-toni-e-forme-d-onda/">Lezione 046 - Generazione di toni e forme d'onda</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-10/lessons/047-inviluppi-adsr-e-filtri-sid/">Lezione 047 - Inviluppi ADSR e filtri SID</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-10/lessons/048-mini-progetto-pattern-musicale-sid/">Lezione 048 - Mini-progetto: playback di un pattern musicale SID</a>
+                <li class="toctree-l2"><a class="reference internal" href="../048-mini-progetto-pattern-musicale-sid/">Lezione 048 - Mini-progetto: playback di un pattern musicale SID</a>
                 </li>
     </ul>
                   </li>
@@ -290,10 +290,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Moduli &raquo;</li>
-          <li>Modulo 9 - Grafica con VIC-II &raquo;</li>
-      <li class="breadcrumb-item active">Lezione 043 - Raster interrupts e sincronizzazione video</li>
+          <li>Modulo 10 - Suono con SID &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 046 - Generazione di toni e forme d'onda</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-9/lessons/043-raster-interrupts-sincronizzazione.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-10/lessons/046-generazione-toni-e-forme-d-onda.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -302,116 +302,133 @@
             <div class="section" itemprop="articleBody">
               
                 <p><a href="../../../../">🏠 Home</a></p>
-<h1 id="lezione-043-raster-interrupts-e-sincronizzazione-video">Lezione 043 - Raster interrupts e sincronizzazione video<a class="headerlink" href="#lezione-043-raster-interrupts-e-sincronizzazione-video" title="Permanent link">&para;</a></h1>
+<h1 id="lezione-046-generazione-di-toni-e-forme-donda">Lezione 046 - Generazione di toni e forme d'onda<a class="headerlink" href="#lezione-046-generazione-di-toni-e-forme-donda" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Obiettivo:</strong> sincronizzare aggiornamenti grafici con il raster per ridurre flicker e ottenere timing stabile.</p>
+<p><strong>Obiettivo:</strong> produrre toni controllati scegliendo frequenza, waveform e gestione corretta del gate.</p>
 </blockquote>
 <hr />
 <h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
 <ul>
-<li>capire cos'e una raster line;</li>
-<li>configurare un IRQ raster minimo;</li>
-<li>distinguere aggiornamenti in main loop vs IRQ;</li>
-<li>riconoscere i rischi di sincronizzazione non controllata.</li>
+<li>capire la relazione tra registro frequenza e altezza percepita;</li>
+<li>usare le forme d'onda principali del SID;</li>
+<li>accendere e spegnere una nota con gate on/off;</li>
+<li>creare una piccola routine di test timbrico.</li>
 </ul>
 <hr />
 <h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
-<p>Se aggiorni grafica in momenti casuali, puoi ottenere flicker o tearing. Con un raster interrupt chiedi al VIC-II di interrompere la CPU su una linea specifica, cosi l'update avviene in un punto temporale prevedibile.</p>
+<p>Dopo aver visto i registri, passiamo al cuore sonoro: oscillatore + waveform. La stessa frequenza su triangle, sawtooth o pulse produce timbri molto diversi.</p>
+<p>Per controllare inizio/fine nota usiamo il bit gate nel registro CONTROL.</p>
 <hr />
 <h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
-<p>Registri chiave (schema base):</p>
+<p>Per la voce 1:</p>
 <ul>
-<li><code>$D012</code>: linea raster target;</li>
-<li><code>$D01A</code>: abilita sorgenti IRQ VIC-II;</li>
-<li><code>$D019</code>: acknowledge IRQ VIC-II;</li>
-<li>vettore IRQ CPU in RAM: <code>$0314/$0315</code>.</li>
+<li>frequenza: <code>$D400/$D401</code></li>
+<li>controllo waveform/gate: <code>$D404</code></li>
 </ul>
-<p>Flusso semplice:</p>
-<ol>
-<li>scrivi indirizzo handler in <code>$0314/$0315</code>;</li>
-<li>imposti linea raster in <code>$D012</code>;</li>
-<li>abiliti bit IRQ raster in <code>$D01A</code>;</li>
-<li>nel handler fai lavoro breve e azzeri flag in <code>$D019</code>.</li>
-</ol>
+<p>Bit tipici in <code>CONTROL</code>:</p>
+<ul>
+<li>bit 0: GATE (1 nota attiva, 0 rilascio)</li>
+<li>bit 4: TRIANGLE</li>
+<li>bit 5: SAWTOOTH</li>
+<li>bit 6: PULSE</li>
+<li>bit 7: NOISE</li>
+</ul>
+<p>Esempi rapidi:</p>
+<ul>
+<li>triangle + gate: <code>%00010001</code></li>
+<li>sawtooth + gate: <code>%00100001</code></li>
+<li>pulse + gate: <code>%01000001</code></li>
+</ul>
+<p>Nota: il SID permette combinazioni di waveform, ma per iniziare e meglio usare una forma alla volta.</p>
 <hr />
 <h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
-<p>Quando arriva la linea raster impostata, la CPU salva contesto implicito dell'interrupt e salta all'handler. Il codice IRQ deve essere corto e deterministico. Se non riconosci l'IRQ su <code>$D019</code>, l'interrupt puo ripetersi in modo anomalo.</p>
+<p>Il 6510 cambia i registri "a scatti". Ogni scrittura puo alterare subito il suono. Per questo conviene definire un ordine: prima frequenza e ADSR, poi gate on; per spegnere, gate off.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 043 - Raster IRQ minimale
+<pre class="highlight"><code class="language-asm">; Lezione 046 - Tone test: triangle, saw, pulse
 *= $0801
 
-IRQ_VECTOR_LO = $0314
-IRQ_VECTOR_HI = $0315
-VIC_RASTER    = $D012
-VIC_IRQ_STAT  = $D019
-VIC_IRQ_MASK  = $D01A
-BORDER        = $D020
-CIA1_ICR      = $DC0D
-CIA2_ICR      = $DD0D
-KERNAL_IRQ    = $EA31
+SID_V1_FREQ_LO = $D400
+SID_V1_FREQ_HI = $D401
+SID_V1_PW_LO   = $D402
+SID_V1_PW_HI   = $D403
+SID_V1_CTRL    = $D404
+SID_V1_AD      = $D405
+SID_V1_SR      = $D406
+SID_VOL        = $D418
 
-setup:
-    SEI
+start:
+    LDA #$0F
+    STA SID_VOL
 
-    ; disabilita IRQ CIA per evitare interferenze durante il setup
-    LDA #$7F
-    STA CIA1_ICR
-    STA CIA2_ICR
-    LDA CIA1_ICR
-    LDA CIA2_ICR
+    ; ADSR veloce per test
+    LDA #$11
+    STA SID_V1_AD
+    LDA #$F1
+    STA SID_V1_SR
 
-    LDA #&lt;irq_handler
-    STA IRQ_VECTOR_LO
-    LDA #&gt;irq_handler
-    STA IRQ_VECTOR_HI
+    ; frequenza test
+    LDA #$00
+    STA SID_V1_FREQ_LO
+    LDA #$28
+    STA SID_V1_FREQ_HI
 
-    LDA #$64
-    STA VIC_RASTER      ; linea raster 100
+    ; pulse width media
+    LDA #$00
+    STA SID_V1_PW_LO
+    LDA #$08
+    STA SID_V1_PW_HI
 
-    LDA #%00000001
-    STA VIC_IRQ_MASK    ; abilita IRQ raster
+triangle_note:
+    LDA #%00010001
+    STA SID_V1_CTRL
+    JSR delay
+    LDA #%00010000
+    STA SID_V1_CTRL
+    JSR delay
 
-    CLI
+saw_note:
+    LDA #%00100001
+    STA SID_V1_CTRL
+    JSR delay
+    LDA #%00100000
+    STA SID_V1_CTRL
+    JSR delay
 
-main:
-    JMP main
+pulse_note:
+    LDA #%01000001
+    STA SID_V1_CTRL
+    JSR delay
+    LDA #%01000000
+    STA SID_V1_CTRL
+    JSR delay
 
-irq_handler:
-    ; salva registri prima di modificare stato CPU
-    PHA
-    TXA
-    PHA
-    TYA
-    PHA
+    JMP triangle_note
 
-    LDA #$05
-    STA BORDER          ; segnale visivo nel punto raster
-
-    LDA #%00000001
-    STA VIC_IRQ_STAT    ; acknowledge IRQ raster
-
-    PLA
-    TAY
-    PLA
-    TAX
-    PLA
-
-    ; chaining al gestore KERNAL standard
-    JMP KERNAL_IRQ</code></pre>
-<p><code>SEI</code> disabilita interrupt durante setup. <code>CLI</code> li riabilita. <code>JMP KERNAL_IRQ</code> concatena il nostro handler al flusso IRQ standard del sistema.</p>
+delay:
+    LDY #$20
+d1:
+    LDX #$FF
+d2:
+    DEX
+    BNE d2
+    DEY
+    BNE d1
+    RTS</code></pre>
+<p><code>JSR</code> salta a subroutine salvando il ritorno sullo stack. <code>RTS</code> torna al chiamante.</p>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
-<li>dimenticare acknowledge su <code>$D019</code>;</li>
-<li>fare troppo lavoro nell'IRQ;</li>
-<li>non proteggere i registri usati nell'handler.</li>
+<li>spegnere la nota azzerando tutto <code>CONTROL</code> senza criterio;</li>
+<li>non impostare <code>PW</code> quando usi pulse;</li>
+<li>fare delay troppo brevi e non percepire differenze timbriche.</li>
 </ul>
 <hr />
 <h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Cambia colore bordo in due linee raster diverse.</li>
-<li>Muovi lo sprite solo da IRQ e confronta fluidita col main loop.</li>
+<li>Sostituisci la frequenza test con tre frequenze diverse in sequenza.</li>
+<li>Prova noise waveform e descrivi differenze con triangle.</li>
+<li>Modifica pulse width (<code>$D402/$D403</code>) e annota come cambia il suono.</li>
 </ol>
 <hr />
 <h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
@@ -419,30 +436,30 @@ irq_handler:
 <thead>
 <tr>
 <th>Concetto</th>
-<th>Spiegazione breve</th>
+<th>Pratica</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Raster IRQ</td>
-<td>Trigger temporizzato su linea video</td>
+<td>Frequenza</td>
+<td>Definisce altezza nota</td>
 </tr>
 <tr>
-<td><code>$D012</code></td>
-<td>Selezione linea raster</td>
+<td>Waveform</td>
+<td>Definisce timbro</td>
 </tr>
 <tr>
-<td><code>$D019</code></td>
-<td>Conferma/clear evento IRQ VIC-II</td>
+<td>Gate</td>
+<td>Accende/spegne la nota</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
-<p>Ora uniamo i pezzi: sprite, sincronizzazione raster, charset/tiles e semplice scrolling hardware in un mini-progetto completo.</p>
+<p>La prossima lezione introduce inviluppi ADSR e filtri SID per modellare dinamica e colore timbrico.</p>
 <hr />
 <h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
-<p>Una pipeline robusta separa update logico (main) e update video critico (IRQ). Questa divisione riduce jitter e rende il comportamento piu prevedibile frame-to-frame.</p>
+<p>L'ordine delle scritture su registri audio e una forma di "protocollo software": prima setup stabile, poi trigger (gate). Questo riduce artefatti.</p>
 <hr />
 <h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
 <ul>
@@ -455,8 +472,8 @@ irq_handler:
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../042-sprite-definizione-posizionamento-collisioni/" class="btn btn-neutral float-left" title="Lezione 042 - Sprite: definizione, posizionamento e collisioni"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../044-mini-progetto-sprite-scrolling/" class="btn btn-neutral float-right" title="Lezione 044 - Mini-progetto: scena con sprite animati e scrolling">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../045-registri-principali-sid/" class="btn btn-neutral float-left" title="Lezione 045 - Registri principali del SID"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../047-inviluppi-adsr-e-filtri-sid/" class="btn btn-neutral float-right" title="Lezione 047 - Inviluppi ADSR e filtri SID">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -483,10 +500,10 @@ irq_handler:
         </span>
     
     
-      <span><a href="../042-sprite-definizione-posizionamento-collisioni/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../045-registri-principali-sid/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../044-mini-progetto-sprite-scrolling/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../047-inviluppi-adsr-e-filtri-sid/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
