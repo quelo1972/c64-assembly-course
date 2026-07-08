@@ -59,6 +59,18 @@ Se preferisci senza lo script:
 
 ---
 
+## Regola posizione Appendici (navigazione web)
+
+Le **Appendici** devono comparire **sempre in fondo** alla navigazione del corso nel sito MkDocs.
+
+Regole operative:
+
+1. In `mkdocs.yml`, la sezione `Appendici` deve essere l'ultima sezione della `nav`.
+2. Nessun nuovo modulo o sezione del corso deve essere aggiunto dopo `Appendici`.
+3. In `docs/index.md`, il blocco "Appendici" deve rimanere dopo l'elenco dei moduli.
+
+---
+
 ## Regole per gli esempi
 
 Ogni esempio deve:
@@ -176,6 +188,7 @@ Prima di eseguire il push verificare:
 * tutte le lezioni `docs/lessons/*.md` contengono le intestazioni del template esattamente come in `.ai/lesson-template.md`;
 * tutte le lezioni hanno `## Approfondimento - Dentro il 6510` e `## Checklist finale` quando previsto dal template.
 * la pubblicazione MkDocs usa il branch `gh-pages` e non il percorso `main/docs`.
+* la sezione `Appendici` e in fondo alla navigazione (`mkdocs.yml`) e in fondo al blocco moduli in `docs/index.md`.
 
 ---
 
