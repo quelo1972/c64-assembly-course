@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Lezione 017 - Indirizzamento indiretto - C64 Assembly Course</title>
+    <title>Lezione 026 - Shift operations: ASL, LSR, ROL, ROR - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Lezione 017 - Indirizzamento indiretto";
-        var mkdocs_page_input_path = "modules/modulo-5/lessons/017-indirizzamento-indiretto.md";
+        var mkdocs_page_name = "Lezione 026 - Shift operations: ASL, LSR, ROL, ROR";
+        var mkdocs_page_input_path = "modules/modulo-7/lessons/026-shift-operations.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -97,55 +97,21 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 5 - Modalità di indirizzamento</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 5 - Indice</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 5 - Modalità di indirizzamento</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/">Modulo 5 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../018-indirizzamento-indiretto-indicizzato/">Lezione 018 - Indirizzamento indiretto indicizzato</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/018-indirizzamento-indiretto-indicizzato/">Lezione 018 - Indirizzamento indiretto indicizzato</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 017 - Indirizzamento indiretto</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#sintassi-e-operazione">Sintassi e operazione</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#wraparound-in-zero-page">Wraparound in Zero Page</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#opcode-e-performance">Opcode e performance</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#uso-comune">Uso comune</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/017-indirizzamento-indiretto/">Lezione 017 - Indirizzamento indiretto</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../014-indirizzamento-indicizzato/">Lezione 014 - Indirizzamento indicizzato</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/014-indirizzamento-indicizzato/">Lezione 014 - Indirizzamento indicizzato</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../013-indirizzamento-assoluto/">Lezione 013 - Indirizzamento assoluto</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/013-indirizzamento-assoluto/">Lezione 013 - Indirizzamento assoluto</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../011-modalita-immediata/">Lezione 011 - Indirizzamento immediato, revisited</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/011-modalita-immediata/">Lezione 011 - Indirizzamento immediato, revisited</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../012-zero-page/">Lezione 012 - Indirizzamento Zero Page</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/012-zero-page/">Lezione 012 - Indirizzamento Zero Page</a>
                 </li>
     </ul>
                   </li>
@@ -163,19 +129,61 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 7 - Operazioni aritmetiche e logiche</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/">Modulo 7 - Indice</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 7 - Operazioni aritmetiche e logiche</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 7 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/026-shift-operations/">Lezione 026 - Shift operations: ASL, LSR, ROL, ROR</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 026 - Shift operations: ASL, LSR, ROL, ROR</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#asl-arithmetic-shift-left">ASL (Arithmetic Shift Left)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lsr-logical-shift-right">LSR (Logical Shift Right)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rol-rotate-left">ROL (Rotate Left)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ror-rotate-right">ROR (Rotate Right)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#flag-e-opcode">Flag e opcode</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#asl-con-a-81-1000-0001-c-0">ASL con A = $81 (1000 0001), C = 0</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ror-con-a-01-0000-0001-c-1">ROR con A = $01 (0000 0001), C = 1</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
+    </li>
+    </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/025-operazioni-logiche/">Lezione 025 - Operazioni logiche: AND, ORA, EOR</a>
+                <li class="toctree-l2"><a class="reference internal" href="../025-operazioni-logiche/">Lezione 025 - Operazioni logiche: AND, ORA, EOR</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/024-addizione-sottrazione/">Lezione 024 - Addizione e sottrazione: ADC e SBC</a>
+                <li class="toctree-l2"><a class="reference internal" href="../024-addizione-sottrazione/">Lezione 024 - Addizione e sottrazione: ADC e SBC</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/022-compare-bit-operations/">Lezione 022 - Compare e BIT test operations</a>
+                <li class="toctree-l2"><a class="reference internal" href="../022-compare-bit-operations/">Lezione 022 - Compare e BIT test operations</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/021-incremento-decremento-memoria/">Lezione 021 - Incremento e decremento in memoria</a>
+                <li class="toctree-l2"><a class="reference internal" href="../021-incremento-decremento-memoria/">Lezione 021 - Incremento e decremento in memoria</a>
                 </li>
     </ul>
                   </li>
@@ -237,10 +245,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Moduli &raquo;</li>
-          <li>Modulo 5 - Modalità di indirizzamento &raquo;</li>
-      <li class="breadcrumb-item active">Lezione 017 - Indirizzamento indiretto</li>
+          <li>Modulo 7 - Operazioni aritmetiche e logiche &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 026 - Shift operations: ASL, LSR, ROL, ROR</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-5/lessons/017-indirizzamento-indiretto.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-7/lessons/026-shift-operations.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -249,179 +257,233 @@
             <div class="section" itemprop="articleBody">
               
                 <p><a href="../../../../">🏠 Home</a></p>
-<h1 id="lezione-017-indirizzamento-indiretto">Lezione 017 — Indirizzamento indiretto<a class="headerlink" href="#lezione-017-indirizzamento-indiretto" title="Permanent link">&para;</a></h1>
+<h1 id="lezione-026-shift-operations-asl-lsr-rol-ror">Lezione 026 — Shift operations: ASL, LSR, ROL, ROR<a class="headerlink" href="#lezione-026-shift-operations-asl-lsr-rol-ror" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Obiettivo:</strong> capire come usare l'indirizzamento indiretto per accedere a memoria usando un puntatore memorizzato in Zero Page.</p>
+<p><strong>Obiettivo:</strong> capire come spostare i bit a sinistra/destra usando ASL (Arithmetic Shift Left), LSR (Logical Shift Right), ROL (Rotate Left), ROR (Rotate Right).</p>
 </blockquote>
 <hr />
 <h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
 <ul>
-<li>comprendere l'indirizzamento indiretto (JMP indiretto e LDA indiretto);</li>
-<li>usare Zero Page come contenitore di indirizzi puntatori;</li>
-<li>applicare l'indirizzamento indiretto per traversare strutture dati dinamiche;</li>
-<li>confrontare con altre modalità di indirizzamento.</li>
+<li>comprendere ASL, LSR, ROL, ROR e le loro differenze;</li>
+<li>usare shift per moltiplicazione/divisione veloci;</li>
+<li>usare rotate per manipolazione circolare di bit;</li>
+<li>implementare operazioni di bit shifting multi-byte.</li>
 </ul>
 <hr />
 <h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
-<p>Finora abbiamo usato indirizzi concreti: <code>LDA $D020</code>, <code>LDA $0400,X</code>.</p>
-<p>Ma spesso vogliamo <strong>indirizzare un indirizzo contenuto in memoria</strong>.</p>
-<p>Esempi:
-- Un puntatore a una stringa
-- Un indirizzo di una tabella dati
-- Una routine calcolata dinamicamente</p>
-<p><strong>Indirizzamento indiretto</strong> risolve questo: <code>LDA (addr)</code> legge l'indirizzo da <code>addr</code> e da lì carica il dato.</p>
+<p>A volte vogliamo <strong>spostare i bit</strong> a sinistra o destra:</p>
+<ul>
+<li><strong>Shift left</strong>: sposta tutti i bit verso sinistra, bit più basso diventa 0</li>
+<li><strong>Shift right</strong>: sposta tutti i bit verso destra, bit più alto diventa 0</li>
+<li><strong>Rotate</strong>: sposta ma "avvolge" il bit che esce al lato opposto</li>
+</ul>
+<p>Usi:
+- Moltiplicazione/divisione veloci per 2
+- Manipolazione di dati compattati
+- Estrazione di bit da byte</p>
 <hr />
 <h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
-<h3 id="sintassi-e-operazione">Sintassi e operazione<a class="headerlink" href="#sintassi-e-operazione" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code class="language-asm">LDA ($40)      ; legge l'indirizzo da $40 e $41, poi legge il dato da quell'indirizzo</code></pre>
-<ol>
-<li>Leggi il byte basso da <code>$40</code></li>
-<li>Leggi il byte alto da <code>$41</code></li>
-<li>Riconstruisci l'indirizzo (16 bit)</li>
-<li>Leggi il dato da quell'indirizzo</li>
-</ol>
-<p>Se <code>$40</code> contiene <code>$00</code> e <code>$41</code> contiene <code>$04</code>, l'indirizzo è <code>$0400</code>.</p>
-<h3 id="wraparound-in-zero-page">Wraparound in Zero Page<a class="headerlink" href="#wraparound-in-zero-page" title="Permanent link">&para;</a></h3>
-<p>Se usi <code>LDA ($FF)</code>, il 6510 legge:
-- Byte basso da <code>$FF</code>
-- Byte alto da <code>$00</code> (wrapping in Zero Page!)</p>
-<p>Non da <code>$100</code>.</p>
-<h3 id="opcode-e-performance">Opcode e performance<a class="headerlink" href="#opcode-e-performance" title="Permanent link">&para;</a></h3>
+<h3 id="asl-arithmetic-shift-left">ASL (Arithmetic Shift Left)<a class="headerlink" href="#asl-arithmetic-shift-left" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-asm">ASL            ; A ← A &lt;&lt; 1 (shift a sinistra)
+ASL addr       ; memoria[addr] ← memoria[addr] &lt;&lt; 1</code></pre>
+<p>Operazione:
+<pre class="highlight"><code>Bit: 7 6 5 4 3 2 1 0
+     ↙ ↙ ↙ ↙ ↙ ↙ ↙
+         C ← 0</code></pre></p>
+<p>Il bit 7 va in C, il bit 0 diventa 0.</p>
+<h3 id="lsr-logical-shift-right">LSR (Logical Shift Right)<a class="headerlink" href="#lsr-logical-shift-right" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-asm">LSR            ; A ← A &gt;&gt; 1 (shift a destra)
+LSR addr       ; memoria[addr] ← memoria[addr] &gt;&gt; 1</code></pre>
+<p>Operazione:
+<pre class="highlight"><code>Bit: 7 6 5 4 3 2 1 0
+             ↘ ↘ ↘ ↘ ↘ ↘ ↘ ↘
+         C ←
+              0 →</code></pre></p>
+<p>Il bit 0 va in C, il bit 7 diventa 0.</p>
+<h3 id="rol-rotate-left">ROL (Rotate Left)<a class="headerlink" href="#rol-rotate-left" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-asm">ROL            ; ruota A a sinistra via carry</code></pre>
+<p>Operazione:
+<pre class="highlight"><code>Bit: 7 6 5 4 3 2 1 0
+     ↙ ↙ ↙ ↙ ↙ ↙ ↙
+         C ← ↺ ← C</code></pre></p>
+<p>Il bit 7 va in C, C va nel bit 0.</p>
+<h3 id="ror-rotate-right">ROR (Rotate Right)<a class="headerlink" href="#ror-rotate-right" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-asm">ROR            ; ruota A a destra via carry</code></pre>
+<p>Operazione:
+<pre class="highlight"><code>Bit: 7 6 5 4 3 2 1 0
+                   ↘ ↘ ↘ ↘ ↘ ↘ ↘ ↘
+         C → ↻ → C</code></pre></p>
+<p>Il bit 0 va in C, C va nel bit 7.</p>
+<h3 id="flag-e-opcode">Flag e opcode<a class="headerlink" href="#flag-e-opcode" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Modalità</th>
-<th>Opcode</th>
+<th>Istruzione</th>
+<th>Opcode (A)</th>
 <th>Bytes</th>
 <th>Cicli</th>
+<th>Flag</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Indiretto (JMP)</td>
-<td><code>$6C</code></td>
-<td>3</td>
-<td>5</td>
+<td>ASL A</td>
+<td><code>$0A</code></td>
+<td>1</td>
+<td>2</td>
+<td>Z, N, C</td>
 </tr>
 <tr>
-<td>Indiretto (LDA)</td>
-<td><code>$B2</code></td>
+<td>LSR A</td>
+<td><code>$4A</code></td>
+<td>1</td>
 <td>2</td>
-<td>5*</td>
+<td>Z, N, C</td>
+</tr>
+<tr>
+<td>ROL A</td>
+<td><code>$2A</code></td>
+<td>1</td>
+<td>2</td>
+<td>Z, N, C</td>
+</tr>
+<tr>
+<td>ROR A</td>
+<td><code>$6A</code></td>
+<td>1</td>
+<td>2</td>
+<td>Z, N, C</td>
 </tr>
 </tbody>
 </table>
-<p>*Con 64tass e C64, il 6510 usa JMP <code>($xxxx)</code> indiretto, ma LDA usa diverse modalità.</p>
-<h3 id="uso-comune">Uso comune<a class="headerlink" href="#uso-comune" title="Permanent link">&para;</a></h3>
-<p>L'indirizzamento indiretto è utile per:
-- <strong>Puntatori a funzioni</strong>: JSR ($40) salta a una subroutine il cui indirizzo è in <code>$40</code>/$41`
-- <strong>Traversal di liste</strong>: memorizza l'indirizzo della prossima cella, salta a quella
-- <strong>Tabelle dinamiche</strong>: carica l'indirizzo della tabella in Zero Page, traversa</p>
+<p>Anche ASL/LSR/ROL/ROR supportano memoria (Zero Page, Absolute, con indexing).</p>
 <hr />
 <h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
-<p><code>LDA ($40)</code> con <code>$40</code> = <code>$00</code>, <code>$41</code> = <code>$04</code>:</p>
+<h3 id="asl-con-a-81-1000-0001-c-0"><code>ASL</code> con A = $81 (1000 0001), C = 0<a class="headerlink" href="#asl-con-a-81-1000-0001-c-0" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Fetch opcode</strong>: legge <code>$B2</code> (LDA indiretto) — nota: questo dipende dal modo di addressing</li>
-<li><strong>Fetch puntatore</strong>: legge <code>$40</code> (indirizzo del puntatore)</li>
-<li><strong>Read indirizzo basso</strong>: legge il byte basso da <code>$40</code> → <code>$00</code></li>
-<li><strong>Read indirizzo alto</strong>: legge il byte alto da <code>$41</code> → <code>$04</code></li>
-<li><strong>Reconstruct address</strong>: <code>$0400</code></li>
-<li><strong>Read memory</strong>: legge il contenuto di <code>$0400</code></li>
-<li><strong>Execute</strong>: scrive in A</li>
+<li><strong>Fetch opcode</strong>: <code>$0A</code></li>
+<li><strong>Shift</strong>: sposta tutti i bit a sinistra
+   <pre class="highlight"><code>1000 0001 → 0000 0010, C = 1 (bit 7 uscito)</code></pre></li>
+<li><strong>Set flags</strong>: Z=0, N=0, C=1</li>
 </ol>
-<p>In totale: <strong>2–3 byte</strong>, <strong>5+ cicli</strong>.</p>
+<h3 id="ror-con-a-01-0000-0001-c-1"><code>ROR</code> con A = $01 (0000 0001), C = 1<a class="headerlink" href="#ror-con-a-01-0000-0001-c-1" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Fetch opcode</strong>: <code>$6A</code></li>
+<li><strong>Rotate</strong>: sposta via carry
+   <pre class="highlight"><code>0000 0001 → 1000 0000, C = 1 (bit 0 in C, C in bit 7)</code></pre></li>
+<li><strong>Set flags</strong>: Z=0, N=1, C=1</li>
+</ol>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 017 — Indirizzamento indiretto
-; Usa puntatori in Zero Page per accedere a dati
+<pre class="highlight"><code class="language-asm">; Lezione 026 — Shift operations
+; Spostamento e rotazione di bit
 *= $0801
 
-; Nota: LDA (indirizzo_puntatore) legge da un indirizzo memorizzato in ZP
+; Moltiplicazione per 2 (shift left)
+LDA #$50       ; 0101 0000
+ASL            ; shift a sinistra → 1010 0000 = $A0 (moltiplicato per 2)
 
-; Inizializza il puntatore in $40/$41
-; Vogliamo puntare a $D020 (VIC-II)
-LDA #$20       ; byte basso di $D020
-STA $40
-LDA #$D0       ; byte alto di $D020
-STA $41
+; Divisione per 2 (logical shift right)
+LDA #$80       ; 1000 0000
+LSR            ; shift a destra → 0100 0000 = $40 (diviso per 2)
 
-; Ora usa il puntatore
-LDA ($40)      ; legge il valore attuale di $D020
-INC            ; incrementa
-STA ($40)      ; scrive il nuovo valore in $D020
+; Estrai il bit 7 con rotate
+LDA #$80       ; 1000 0000
+ROL            ; ruota a sinistra → 0000 0000 con C=1
+BCS bit7_set   ; salta se bit 7 era settato
 
-RTS</code></pre>
+; Multi-byte shift (es: 16 bit left shift)
+CLC            ; azzera carry
+LDA $02        ; byte basso
+ASL            ; shift a sinistra
+STA $02        ; salva byte basso
+
+LDA $03        ; byte alto
+ROL            ; ruota con carry dal byte basso
+STA $03        ; salva byte alto
+
+bit7_set:
+  RTS</code></pre>
 <p>Compila:</p>
-<pre class="highlight"><code class="language-bash">64tass --cbm-prg -o bin/017.prg src/modulo-5/017.asm</code></pre>
+<pre class="highlight"><code class="language-bash">64tass --cbm-prg -o bin/026.prg src/modulo-7/026.asm</code></pre>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Wraparound Zero Page</strong>: <code>($FF)</code> legge da <code>$FF</code> e <code>$00</code>, non da <code>$FF</code> e <code>$100</code>.</li>
-<li><strong>Puntatori non inizializzati</strong>: se il puntatore in Zero Page non è settato, leggi dati casuali.</li>
-<li><strong>Endianness</strong>: ricorda che il byte basso è in <code>addr</code>, byte alto in <code>addr + 1</code>.</li>
+<li><strong>Confondere ASL con ROL</strong>: ASL azzera il bit 0, ROL lo prende dal carry.</li>
+<li><strong>LSR e ROR</strong>: LSR azzera il bit 7, ROR lo prende dal carry.</li>
+<li><strong>Multi-byte shifts</strong>: devi concatenare gli shift via carry, ASL per il primo byte, ROL/ROR per i successivi.</li>
+<li><strong>Carry non pulito</strong>: prima di una sequenza di shift, usa CLC per azzera il carry.</li>
 </ul>
 <hr />
 <h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Crea un puntatore a <code>$0400</code>, leggi il primo byte, incrementalo e scrivilo back.</li>
-<li>Usa due puntatori per copiare dati da una locazione a un'altra.</li>
-<li>Crea un array di puntatori e traversa dinamicamente.</li>
+<li>Moltiplica un numero per 4: <code>ASL</code> due volte.</li>
+<li>Dividi per 8: <code>LSR</code> tre volte.</li>
+<li>Ruota A a sinistra 8 volte (rotazione completa): <code>ROL</code> 8 volte e verifica che torna al valore originale.</li>
 </ol>
 <hr />
 <h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Concetto</th>
-<th>Spiegazione</th>
+<th>Istruzione</th>
+<th>Effetto</th>
+<th>Carry</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Indirizzamento indiretto</td>
-<td><code>(indirizzo_puntatore)</code> legge da un indirizzo</td>
+<td>ASL</td>
+<td>Shift left, bit 7 → C</td>
+<td>Bit 7</td>
 </tr>
 <tr>
-<td>Puntatore</td>
-<td>Indirizzo memorizzato in ZP (2 byte)</td>
+<td>LSR</td>
+<td>Shift right, 0 ← C</td>
+<td>Bit 0</td>
 </tr>
 <tr>
-<td>Opcode</td>
-<td>Dipende dall'istruzione (JMP <code>$6C</code>, LDA <code>$B2</code>)</td>
+<td>ROL</td>
+<td>Rotate left via C</td>
+<td>Bit 7</td>
 </tr>
 <tr>
-<td>Cicli</td>
-<td>5+ (dipende da boundary crossing)</td>
-</tr>
-<tr>
-<td>Wraparound</td>
-<td>In Zero Page, <code>($FF)</code> wraps a <code>$00</code></td>
+<td>ROR</td>
+<td>Rotate right via C</td>
+<td>Bit 0</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
-<p>Nella lezione 018 vedremo l'<strong>indirizzamento indiretto indicizzato</strong>: combina puntatori con indexing per accedere a array di strutture.</p>
+<p>Con la lezione 026, abbiamo coperto tutti i comandi fondamentali del 6510. Prossimi moduli: I/O, periferiche, grafica, sound.</p>
 <hr />
 <h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
-<p>L'indirizzamento indiretto è usato anche per:</p>
-<pre class="highlight"><code class="language-asm">JSR ($40)      ; salta a una subroutine il cui indirizzo è in $40/$41
-JMP ($40)      ; salta incondizionatamente a $40/$41</code></pre>
-<p>Nota: JMP ha un bug storico nel 6502/6510 con page boundary crossing, ma è stato corretto nei processori successivi.</p>
+<p><strong>Moltiplicazione veloce per potenze di 2:</strong></p>
+<pre class="highlight"><code class="language-asm">LDA #$10
+ASL            ; * 2 = $20
+ASL            ; * 4 = $40
+ASL            ; * 8 = $80 (nota: overflow se LSB = 1 in origine)</code></pre>
+<p><strong>Divisione veloce:</strong></p>
+<pre class="highlight"><code class="language-asm">LDA #$80
+LSR            ; / 2 = $40
+LSR            ; / 4 = $20
+LSR            ; / 8 = $10</code></pre>
 <hr />
 <h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
 <ul>
 <li>[ ] l'esempio compila con <code>64tass</code></li>
-<li>[ ] il puntatore viene inizializzato correttamente</li>
-<li>[ ] il valore è letto e scritto attraverso il puntatore</li>
+<li>[ ] ASL/LSR funzionano per shift</li>
+<li>[ ] ROL/ROR funzionano per rotate</li>
+<li>[ ] il multi-byte shift funziona via carry</li>
 <li>[ ] il contenuto è progressivo rispetto alle lezioni precedenti</li>
 </ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../018-indirizzamento-indiretto-indicizzato/" class="btn btn-neutral float-left" title="Lezione 018 - Indirizzamento indiretto indicizzato"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../014-indirizzamento-indicizzato/" class="btn btn-neutral float-right" title="Lezione 014 - Indirizzamento indicizzato">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../" class="btn btn-neutral float-left" title="Modulo 7 - Indice"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../025-operazioni-logiche/" class="btn btn-neutral float-right" title="Lezione 025 - Operazioni logiche: AND, ORA, EOR">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -448,10 +510,10 @@ JMP ($40)      ; salta incondizionatamente a $40/$41</code></pre>
         </span>
     
     
-      <span><a href="../018-indirizzamento-indiretto-indicizzato/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../014-indirizzamento-indicizzato/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../025-operazioni-logiche/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
