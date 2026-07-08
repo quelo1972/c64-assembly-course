@@ -82,6 +82,11 @@ Contenuti:
 * Relative addressing per salti condizionati
 * Implicazioni di performance e casi d'uso
 
+**Comandi coperti:**
+- `LDA/LDX/LDY` (caricamento con tutte le modalità)
+- `STA/STX/STY` (archiviazione)
+- Implicit e Absolute modalità avanzate
+
 Mini-progetto: riscrivere lo stesso algoritmo usando diverse modalità di indirizzamento e confrontare il codice e i cicli macchina.
 
 ---
@@ -90,21 +95,40 @@ Mini-progetto: riscrivere lo stesso algoritmo usando diverse modalità di indiri
 
 Contenuti:
 
-* Salti condizionati e incondizionati: `BEQ/BNE/BPL/BMI/JMP`
+* Salti condizionati su flag Z/N: `BEQ/BNE/BPL/BMI`
+* Salti condizionati su flag C/V: `BCC/BCS/BVC/BVS`
+* Salti incondizionati: `JMP`
 * Subroutine: `JSR`/`RTS` e convenzioni di passaggio parametri
 * Stack e Stack Pointer: uso, preservazione dei registri
+* Operazioni di stack: `PHA/PLA/PHP/PLP`, trasferimenti `TSX/TXS`
+
+**Comandi coperti:**
+- `BEQ/BNE/BPL/BMI/BCC/BCS/BVC/BVS` (tutti i salti condizionati)
+- `JMP`, `JSR`, `RTS`
+- `PHA/PLA/PHP/PLP/TSX/TXS`
 
 Mini-progetto: implementare una libreria di utility (es: routine di stampa, delay) e chiamarla da un programma principale.
 
 ---
 
-# Modulo 7 – Operazioni aritmetiche e logiche
+# Modulo 7 – Operazioni aritmetiche, logiche e di memoria
 
 Contenuti:
 
 * Addizione e sottrazione con `ADC`/`SBC` (gestione carry)
 * Operazioni logiche: `AND/OR/EOR/ASL/LSR/ROL/ROR`
+* Test di bit: `BIT` (confronto senza modifica)
+* Incremento/decremento di memoria: `INC/DEC` (non solo registri)
+* Compare operations: `CMP/CPX/CPY` (confronto con flag)
 * Moltiplicazione e divisione (algoritmi software)
+
+**Comandi coperti:**
+- `ADC/SBC` (con carry)
+- `AND/ORA/EOR` (logici bit)
+- `ASL/LSR/ROL/ROR` (shift)
+- `INC/DEC` (memoria e registri)
+- `CMP/CPX/CPY` (compare)
+- `BIT` (bit test)
 
 Mini-progetto: implementare routine di moltiplicazione e divisione a 8/16 bit.
 
@@ -152,8 +176,15 @@ Mini-progetto: riprodurre una melodia semplice con il SID.
 Contenuti:
 
 * Tipi di interrupt (NMI, IRQ)
+* Gestione interrupt: `CLI/SEI` (enable/disable interrupt flag), `RTI` (return from interrupt)
 * CIA chips: timers, serial, keyboard matrix
 * Uso degli interrupt per timing e input
+* Flag di stato e interrupt mask
+
+**Comandi coperti:**
+- `CLI/SEI` (clear/set interrupt disable)
+- `RTI` (return from interrupt)
+- `BRK` (break/interrupt)
 
 Mini-progetto: usare un timer per generare eventi periodici controllati da interrupt.
 

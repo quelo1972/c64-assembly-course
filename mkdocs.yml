@@ -27,16 +27,22 @@ nav:
       - Lezione 010 - Incremento e decremento: modules/modulo-4/lessons/010-increment-decrement.md
     - Modulo 5 - Modalità di indirizzamento:
       - Modulo 5 - Indice: modules/modulo-5.md
+      - "Lezione 018 - Indirizzamento indiretto indicizzato": modules/modulo-5/lessons/018-indirizzamento-indiretto-indicizzato.md
+      - Lezione 017 - Indirizzamento indiretto: modules/modulo-5/lessons/017-indirizzamento-indiretto.md
       - Lezione 014 - Indirizzamento indicizzato: modules/modulo-5/lessons/014-indirizzamento-indicizzato.md
       - Lezione 013 - Indirizzamento assoluto: modules/modulo-5/lessons/013-indirizzamento-assoluto.md
       - Lezione 011 - Indirizzamento immediato, revisited: modules/modulo-5/lessons/011-modalita-immediata.md
       - Lezione 012 - Indirizzamento Zero Page: modules/modulo-5/lessons/012-zero-page.md
     - Modulo 6 - Controllo del flusso e subroutine:
       - Modulo 6 - Indice: modules/modulo-6.md
+      - Lezione 020 - Operazioni di stack avanzate: modules/modulo-6/lessons/020-stack-avanzato.md
+      - "Lezione 019 - Salti condizionati: Carry e Overflow": modules/modulo-6/lessons/019-salti-su-carry-overflow.md
       - "Lezione 016 - Subroutine: JSR e RTS": modules/modulo-6/lessons/016-subroutine-jsr-rts.md
       - Lezione 015 - Salti condizionati: modules/modulo-6/lessons/015-salti-condizionati.md
     - Modulo 7 - Operazioni aritmetiche e logiche:
       - Modulo 7 - Indice: modules/modulo-7.md
+      - "Lezione 022 - Compare e BIT test operations": modules/modulo-7/lessons/022-compare-bit-operations.md
+      - Lezione 021 - Incremento e decremento in memoria: modules/modulo-7/lessons/021-incremento-decremento-memoria.md
     - Modulo 8 - I/O e periferiche:
       - Modulo 8 - Indice: modules/modulo-8.md
     - Modulo 9 - Grafica con VIC-II:
