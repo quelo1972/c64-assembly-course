@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>011 from source to execution - C64 Assembly Course</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "011 from source to execution";
+        var mkdocs_page_input_path = "modules/modulo-3/lessons/011-from-source-to-execution.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> C64 Assembly Course
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Moduli</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 0 - Ambiente di sviluppo</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/">Modulo 0 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/033-automazione-makefile.md">Lezione 033 - Automazione: Makefile e task build</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/032-vice-immagini-disco.md">Lezione 032 - VICE: configurazione e immagini disco</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/027-vs-code-setup.md">Lezione 027 - VS Code: setup e debugging Assembly</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/034-git-github.md">Lezione 034 - Git e GitHub: versionamento e collaborazione</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/029-toolchain-setup.md">Lezione 029 - Toolchain e setup del progetto</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 1 - Fondamenti</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-1/">Modulo 1 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-1/lessons/029-memory.md">Lezione 029 - La memoria del Commodore 64</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-1/lessons/034-binary-hex.md">Lezione 034 - Sistema binario ed esadecimale</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-1/lessons/027-byte-word.md">Lezione 027 - Byte, Word e limiti della memoria</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 2 - CPU MOS 6510</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-2/">Modulo 2 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-2/lessons/032-cpu-6510.md">Lezione 032 - La CPU MOS 6510</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-2/lessons/033-registers-axy.md">Lezione 033 - Registri A, X e Y</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 3 - Linguaggio e tooling</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 3 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../023-macro-e-organizzazione.md">Lezione 023 - Macro e organizzazione del codice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../036-direttive-assembler.md">Lezione 036 - Direttive assembler, etichette e costanti</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../035-mnemonici-e-opcode.md">Lezione 035 - Mnemonici e opcode</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../029-from-source-to-execution.md">Lezione 029 - Dal sorgente all'esecuzione</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 4 - Prime istruzioni</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-4/">Modulo 4 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/028-store-operations.md">Lezione 028 - Store operations: STA, STX, STY</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/034-lda.md">Lezione 034 - LDA e indirizzamento immediato</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/027-sta.md">Lezione 027 - STA e scrittura in memoria</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/032-trasferimento-tra-registri.md">Lezione 032 - Trasferimento tra registri</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/033-increment-decrement.md">Lezione 033 - Incremento e decremento</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 5 - Modalità di indirizzamento</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/">Modulo 5 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/033-indirizzamento-indiretto-indicizzato.md">Lezione 033 - Indirizzamento indiretto indicizzato</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/032-indirizzamento-indiretto.md">Lezione 032 - Indirizzamento indiretto</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/023-indirizzamento-indicizzato/">Lezione 023 - Indirizzamento indicizzato</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/036-indirizzamento-assoluto.md">Lezione 036 - Indirizzamento assoluto</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/029-modalita-immediata.md">Lezione 029 - Indirizzamento immediato, revisited</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/035-zero-page.md">Lezione 035 - Indirizzamento Zero Page</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 6 - Controllo del flusso e subroutine</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/">Modulo 6 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/029-stack-avanzato/">Lezione 029 - Operazioni di stack avanzate</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/028-salti-su-carry-overflow/">Lezione 028 - Salti condizionati: Carry e Overflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/027-subroutine-jsr-rts/">Lezione 027 - Subroutine: JSR e RTS</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-6/lessons/034-salti-condizionati.md">Lezione 034 - Salti condizionati</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 7 - Operazioni aritmetiche e logiche</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/">Modulo 7 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/036-divisione/">Lezione 036 - Divisione: algoritmi software</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/035-moltiplicazione/">Lezione 035 - Moltiplicazione: algoritmi software</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/034-shift-operations/">Lezione 034 - Shift operations: ASL, LSR, ROL, ROR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/033-operazioni-logiche/">Lezione 033 - Operazioni logiche: AND, ORA, EOR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/032-addizione-sottrazione/">Lezione 032 - Addizione e sottrazione: ADC e SBC</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-7/lessons/036-compare-bit-operations.md">Lezione 036 - Compare e BIT test operations</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-7/lessons/035-incremento-decremento-memoria.md">Lezione 035 - Incremento e decremento in memoria</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 8 - I/O e periferiche</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-8/">Modulo 8 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 9 - Grafica con VIC-II</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/">Modulo 9 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 10 - Suono con SID</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-10/">Modulo 10 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 11 - Interrupt, CIA e gestione tempo</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/">Modulo 11 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 12 - File system, cassette e disk I/O</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-12/">Modulo 12 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 13 - Ottimizzazione e tecniche avanzate</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-13/">Modulo 13 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 14 - Progetto finale</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-14/">Modulo 14 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">C64 Assembly Course</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">011 from source to execution</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-3/lessons/011-from-source-to-execution.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><a href="../../../../">🏠 Home</a></p>
+<h1 id="lezione-006-dal-sorgente-allesecuzione">Lezione 006 - Dal sorgente all'esecuzione<a class="headerlink" href="#lezione-006-dal-sorgente-allesecuzione" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Obiettivo:</strong> capire cosa succede quando un file Assembly diventa un programma eseguibile sul Commodore 64.</p>
+</blockquote>
+<hr />
+<h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>capire il percorso da un file <code>.asm</code> a un programma <code>.prg</code>;</li>
+<li>distinguere sorgente, assembler e memoria del C64;</li>
+<li>riconoscere il ruolo di 64tass e VICE.</li>
+</ul>
+<h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
+<p>Finora abbiamo studiato:</p>
+<ul>
+<li>la memoria</li>
+<li>il sistema binario</li>
+<li>la CPU</li>
+<li>i registri</li>
+</ul>
+<p>Ma c'è una domanda fondamentale:</p>
+<blockquote>
+<p>Come fa un file <code>.asm</code> a diventare un programma che il Commodore 64 può eseguire?</p>
+</blockquote>
+<hr />
+<h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
+<p>Un file Assembly è un testo che descrive istruzioni per la CPU. Per diventare eseguibile, quel testo deve essere tradotto in codice macchina e caricato nella memoria giusta.</p>
+<h2 id="il-file-sorgente">Il file sorgente<a class="headerlink" href="#il-file-sorgente" title="Permanent link">&para;</a></h2>
+<p>Quando scriviamo:</p>
+<pre class="highlight"><code class="language-asm">* = $1000
+
+    rts</code></pre>
+<p>stiamo creando un semplice file di testo.</p>
+<p>Per il computer questo file non è ancora un programma.</p>
+<p>Contiene solo caratteri ASCII.</p>
+<hr />
+<h2 id="il-ruolo-dellassembler">Il ruolo dell'assembler<a class="headerlink" href="#il-ruolo-dellassembler" title="Permanent link">&para;</a></h2>
+<p>L'assembler (nel nostro caso <strong>64tass</strong>) legge il file sorgente e traduce ogni istruzione nel corrispondente codice macchina.</p>
+<p>Ad esempio:</p>
+<pre class="highlight"><code>RTS</code></pre>
+<p>diventa:</p>
+<pre class="highlight"><code>60</code></pre>
+<p>dove <code>$60</code> è l'opcode dell'istruzione RTS.</p>
+<hr />
+<h2 id="il-file-prg">Il file PRG<a class="headerlink" href="#il-file-prg" title="Permanent link">&para;</a></h2>
+<p>L'output dell'assembler è un file con estensione:</p>
+<pre class="highlight"><code>.prg</code></pre>
+<p>Un file PRG del Commodore 64 inizia con due byte speciali:</p>
+<pre class="highlight"><code>00 10</code></pre>
+<p>Questi rappresentano l'indirizzo di caricamento <code>$1000</code> (little-endian).</p>
+<p>Subito dopo troviamo il codice macchina.</p>
+<p>Per il nostro primo esempio:</p>
+<pre class="highlight"><code>00 10 60</code></pre>
+<hr />
+<h2 id="dal-prg-alla-memoria">Dal PRG alla memoria<a class="headerlink" href="#dal-prg-alla-memoria" title="Permanent link">&para;</a></h2>
+<p>Quando VICE carica il file:</p>
+<pre class="highlight"><code>hello.prg</code></pre>
+<p>succede questo:</p>
+<ol>
+<li>legge i primi due byte (<code>00 10</code>);</li>
+<li>capisce che il programma va caricato da <code>$1000</code>;</li>
+<li>copia il resto del file in memoria;</li>
+<li>il programma è pronto per essere eseguito.</li>
+</ol>
+<hr />
+<p>Nota rapida: <code>RTS</code> (ReTurn from Subroutine) è l'istruzione che termina una subroutine tornando all'indirizzo chiamante. In semplici esempi <code>RTS</code> appare come istruzione finale per terminare l'esecuzione.</p>
+<h1 id="come-ragiona-il-6510">Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h1>
+<p>La CPU non sa cosa sia un file.</p>
+<p>Quando il programma parte, vede solo:</p>
+<pre class="highlight"><code>Memoria
+
+$1000 → 60</code></pre>
+<p>Legge <code>$60</code> e sa che significa:</p>
+<pre class="highlight"><code>RTS</code></pre>
+<p>Per la CPU non esistono Assembly, PRG o file.</p>
+<p>Esiste solo memoria.</p>
+<hr />
+<h1 id="dietro-le-quinte">Dietro le quinte<a class="headerlink" href="#dietro-le-quinte" title="Permanent link">&para;</a></h1>
+<p>Il percorso completo è:</p>
+<pre class="highlight"><code>main.asm
+      │
+      ▼
+64tass
+      │
+      ▼
+hello.prg
+      │
+      ▼
+VICE
+      │
+      ▼
+RAM del Commodore 64
+      │
+      ▼
+MOS 6510</code></pre>
+<hr />
+<h2 id="come-ragiona-il-6510_1">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510_1" title="Permanent link">&para;</a></h2>
+<p>La CPU non vede file, cartelle o nomi. Quando il programma viene caricato, vede solo byte in memoria e segue l'indirizzo di partenza del PRG.</p>
+<h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
+<p>Se il sorgente contiene <code>* = $1000</code>, l'assembler produce un PRG che viene caricato a partire da quell'indirizzo.</p>
+<h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
+<ul>
+<li>confondere il file sorgente con il file eseguibile;</li>
+<li>dimenticare che il PRG contiene anche l'indirizzo di caricamento;</li>
+<li>pensare che la CPU esegua direttamente il file <code>.asm</code>.</li>
+</ul>
+<h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
+<p>Compila il programma:</p>
+<pre class="highlight"><code class="language-asm">* = $1000
+
+    rts</code></pre>
+<p>e osserva:</p>
+<ul>
+<li>viene creato <code>hello.prg</code>;</li>
+<li>il file è più grande di un solo byte;</li>
+<li>i primi due byte indicano l'indirizzo di caricamento.</li>
+</ul>
+<hr />
+<h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
+<p>In questa lezione hai imparato che:</p>
+<ul>
+<li>un file <code>.asm</code> è semplice testo;</li>
+<li>64tass lo traduce in codice macchina;</li>
+<li>il file <code>.prg</code> contiene anche l'indirizzo di caricamento;</li>
+<li>il 6510 esegue solo i byte presenti in memoria.</li>
+</ul>
+<h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
+<p>Finalmente inizieremo a programmare. Studieremo la nostra prima vera istruzione, <code>LDA</code>, e vedremo cosa succede dentro la CPU quando un valore viene caricato nel registro A.</p>
+<p>Nota: <code>LDA #value</code> carica un valore immediato nel registro <code>A</code> (accumulatore). Questa breve nota introduce il mnemonico che sarà spiegato in dettaglio nella lezione dedicata.</p>
+<h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
+<p>Il processo di assemblaggio non fa altro che tradurre testo in byte, che poi il 6510 legge come istruzioni numeriche in memoria.</p>
+<h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] l'esempio compila con 64tass;</li>
+<li>[ ] l'esempio è coerente con la lezione;</li>
+<li>[ ] indice, glossario e changelog sono aggiornati;</li>
+<li>[ ] il contenuto è semplice e progressivo.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/quelo1972/c64-assembly-course" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

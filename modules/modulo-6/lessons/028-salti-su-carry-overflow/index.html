@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Lezione 028 - Salti condizionati: Carry e Overflow - C64 Assembly Course</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Lezione 028 - Salti condizionati: Carry e Overflow";
+        var mkdocs_page_input_path = "modules/modulo-6/lessons/028-salti-su-carry-overflow.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> C64 Assembly Course
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Moduli</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 0 - Ambiente di sviluppo</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/">Modulo 0 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/033-automazione-makefile.md">Lezione 033 - Automazione: Makefile e task build</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/032-vice-immagini-disco.md">Lezione 032 - VICE: configurazione e immagini disco</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/027-vs-code-setup.md">Lezione 027 - VS Code: setup e debugging Assembly</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/034-git-github.md">Lezione 034 - Git e GitHub: versionamento e collaborazione</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/029-toolchain-setup.md">Lezione 029 - Toolchain e setup del progetto</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 1 - Fondamenti</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-1/">Modulo 1 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-1/lessons/029-memory.md">Lezione 029 - La memoria del Commodore 64</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-1/lessons/034-binary-hex.md">Lezione 034 - Sistema binario ed esadecimale</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-1/lessons/027-byte-word.md">Lezione 027 - Byte, Word e limiti della memoria</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 2 - CPU MOS 6510</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-2/">Modulo 2 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-2/lessons/032-cpu-6510.md">Lezione 032 - La CPU MOS 6510</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-2/lessons/033-registers-axy.md">Lezione 033 - Registri A, X e Y</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 3 - Linguaggio e tooling</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-3/">Modulo 3 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-3/lessons/023-macro-e-organizzazione.md">Lezione 023 - Macro e organizzazione del codice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-3/lessons/036-direttive-assembler.md">Lezione 036 - Direttive assembler, etichette e costanti</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-3/lessons/035-mnemonici-e-opcode.md">Lezione 035 - Mnemonici e opcode</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-3/lessons/029-from-source-to-execution.md">Lezione 029 - Dal sorgente all'esecuzione</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 4 - Prime istruzioni</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-4/">Modulo 4 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/028-store-operations.md">Lezione 028 - Store operations: STA, STX, STY</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/034-lda.md">Lezione 034 - LDA e indirizzamento immediato</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/027-sta.md">Lezione 027 - STA e scrittura in memoria</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/032-trasferimento-tra-registri.md">Lezione 032 - Trasferimento tra registri</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/033-increment-decrement.md">Lezione 033 - Incremento e decremento</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 5 - Modalità di indirizzamento</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/">Modulo 5 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/033-indirizzamento-indiretto-indicizzato.md">Lezione 033 - Indirizzamento indiretto indicizzato</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/032-indirizzamento-indiretto.md">Lezione 032 - Indirizzamento indiretto</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/023-indirizzamento-indicizzato/">Lezione 023 - Indirizzamento indicizzato</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/036-indirizzamento-assoluto.md">Lezione 036 - Indirizzamento assoluto</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/029-modalita-immediata.md">Lezione 029 - Indirizzamento immediato, revisited</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/035-zero-page.md">Lezione 035 - Indirizzamento Zero Page</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 6 - Controllo del flusso e subroutine</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 6 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../029-stack-avanzato/">Lezione 029 - Operazioni di stack avanzate</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 028 - Salti condizionati: Carry e Overflow</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#flag-c-carry">Flag C (Carry)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#flag-v-overflow">Flag V (oVerflow)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#salti-su-carry">Salti su Carry</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#salti-su-overflow">Salti su Overflow</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../027-subroutine-jsr-rts/">Lezione 027 - Subroutine: JSR e RTS</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../034-salti-condizionati.md">Lezione 034 - Salti condizionati</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 7 - Operazioni aritmetiche e logiche</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/">Modulo 7 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/036-divisione/">Lezione 036 - Divisione: algoritmi software</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/035-moltiplicazione/">Lezione 035 - Moltiplicazione: algoritmi software</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/034-shift-operations/">Lezione 034 - Shift operations: ASL, LSR, ROL, ROR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/033-operazioni-logiche/">Lezione 033 - Operazioni logiche: AND, ORA, EOR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/032-addizione-sottrazione/">Lezione 032 - Addizione e sottrazione: ADC e SBC</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-7/lessons/036-compare-bit-operations.md">Lezione 036 - Compare e BIT test operations</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-7/lessons/035-incremento-decremento-memoria.md">Lezione 035 - Incremento e decremento in memoria</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 8 - I/O e periferiche</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-8/">Modulo 8 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 9 - Grafica con VIC-II</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/">Modulo 9 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 10 - Suono con SID</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-10/">Modulo 10 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 11 - Interrupt, CIA e gestione tempo</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/">Modulo 11 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 12 - File system, cassette e disk I/O</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-12/">Modulo 12 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 13 - Ottimizzazione e tecniche avanzate</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-13/">Modulo 13 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 14 - Progetto finale</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-14/">Modulo 14 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">C64 Assembly Course</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Moduli &raquo;</li>
+          <li>Modulo 6 - Controllo del flusso e subroutine &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 028 - Salti condizionati: Carry e Overflow</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-6/lessons/028-salti-su-carry-overflow.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><a href="../../../../">🏠 Home</a></p>
+<h1 id="lezione-028-salti-condizionati-carry-e-overflow">Lezione 028 — Salti condizionati: Carry e Overflow<a class="headerlink" href="#lezione-028-salti-condizionati-carry-e-overflow" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Obiettivo:</strong> capire come usare i flag C (Carry) e V (oVerflow) per condizionare salti, utili in operazioni aritmetiche.</p>
+</blockquote>
+<hr />
+<h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>comprendere il flag C (Carry) e quando viene settato;</li>
+<li>comprendere il flag V (oVerflow) per aritmetica signed;</li>
+<li>usare BCC/BCS per salti su carry;</li>
+<li>usare BVC/BVS per salti su overflow;</li>
+<li>implementare logica di validazione su aritmetica.</li>
+</ul>
+<hr />
+<h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
+<p>Finora abbiamo usato BEQ/BNE (flag Z) e BPL/BMI (flag N).</p>
+<p>Il flag <strong>C (Carry)</strong> è settato da operazioni aritmetiche quando c'è overflow:
+- <code>ADC</code> crea carry se il risultato &gt; 255
+- <code>SBC</code> crea carry se il risultato &lt; 0 (borrow)</p>
+<p>Il flag <strong>V (oVerflow)</strong> è settato quando il risultato signed è fuori range:
+- Range signed: -128 a +127
+- Se sommi due positivi e ottieni un negativo, V = 1</p>
+<p>Questi flag sono fondamentali per validare operazioni aritmetiche.</p>
+<hr />
+<h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
+<h3 id="flag-c-carry">Flag C (Carry)<a class="headerlink" href="#flag-c-carry" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Istruzione</th>
+<th>Causa C = 1</th>
+<th>Causa C = 0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADC</td>
+<td>Risultato &gt; 255</td>
+<td>Risultato ≤ 255</td>
+</tr>
+<tr>
+<td>SBC</td>
+<td>Risultato &lt; 0 (borrow)</td>
+<td>Risultato ≥ 0</td>
+</tr>
+<tr>
+<td>ASL</td>
+<td>Bit 7 del risultato</td>
+<td>Bit 7 = 0</td>
+</tr>
+<tr>
+<td>LSR</td>
+<td>Bit 0 del risultato</td>
+<td>Bit 0 = 0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flag-v-overflow">Flag V (oVerflow)<a class="headerlink" href="#flag-v-overflow" title="Permanent link">&para;</a></h3>
+<p>Setato se il risultato <strong>signed</strong> è fuori range:</p>
+<pre class="highlight"><code class="language-asm">LDA #$7F       ; +127 (max positivo)
+ADC #$02       ; aggiungi 2
+; risultato = 129 (fuori range)
+; V = 1 (overflow)</code></pre>
+<h3 id="salti-su-carry">Salti su Carry<a class="headerlink" href="#salti-su-carry" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Istruzione</th>
+<th>Salta se</th>
+<th>Opcode</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BCC</td>
+<td>C = 0 (no carry)</td>
+<td><code>$90</code></td>
+<td>Risultato OK</td>
+</tr>
+<tr>
+<td>BCS</td>
+<td>C = 1 (carry)</td>
+<td><code>$B0</code></td>
+<td>Overflow aritmetico</td>
+</tr>
+</tbody>
+</table>
+<h3 id="salti-su-overflow">Salti su Overflow<a class="headerlink" href="#salti-su-overflow" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Istruzione</th>
+<th>Salta se</th>
+<th>Opcode</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BVC</td>
+<td>V = 0 (no overflow)</td>
+<td><code>$50</code></td>
+<td>Risultato signed OK</td>
+</tr>
+<tr>
+<td>BVS</td>
+<td>V = 1 (overflow)</td>
+<td><code>$70</code></td>
+<td>Overflow signed</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
+<p><code>ADC #$80</code> con A = $80:</p>
+<ol>
+<li><strong>Fetch opcode</strong>: <code>$69</code> (ADC immediato)</li>
+<li><strong>Fetch dato</strong>: <code>$80</code></li>
+<li><strong>Add</strong>: A + $80 = $80 + $80 = $100</li>
+<li><strong>Set flags</strong>:</li>
+<li>Risultato troncato a 8 bit = $00 → Z = 1</li>
+<li>Carry da bit 7 → C = 1</li>
+<li>Overflow signed (negativo + negativo = positivo) → V = 1</li>
+</ol>
+<p>Dopo questa operazione:
+- BCS salta (carry è settato)
+- BVS salta (overflow è settato)
+- BEQ salta (risultato è zero)</p>
+<hr />
+<h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-asm">; Lezione 019 — Salti su Carry e Overflow
+; Valida operazioni aritmetiche
+*= $0801
+
+; Somma con validazione di carry
+LDA #$FF       ; carica 255
+ADC #$02       ; aggiungi 2 → risultato = $101 = 1 con C=1
+
+BCS carry_set  ; se c'è carry, salta
+JMP no_carry
+
+carry_set:
+  LDA #$05     ; colore verde (debug)
+  JMP set_color
+
+no_carry:
+  LDA #$01     ; colore bianco (debug)
+
+set_color:
+  STA $D020    ; visualizza il risultato nel bordo
+  RTS</code></pre>
+<p>Compila:</p>
+<pre class="highlight"><code class="language-bash">64tass --cbm-prg -o bin/019.prg src/modulo-6/019.asm</code></pre>
+<hr />
+<h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Confondere C e V</strong>: C è per operazioni unsigned, V per signed.</li>
+<li><strong>Dimenticare che ADC/SBC cambiano C</strong>: ogni addizione/sottrazione setta questi flag.</li>
+<li><strong>Assumere V dalla semplice somma</strong>: V è un concetto signed, è complesso. Usa solo se sai cosa fai.</li>
+</ul>
+<hr />
+<h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Scrivi un loop che somma numeri finché non c'è carry, poi ferma.</li>
+<li>Valida una sottrazione: se borrow (C=1 dopo SBC), il risultato era negativo.</li>
+<li>Implementa un sommatore con validazione di overflow.</li>
+</ol>
+<hr />
+<h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concetto</th>
+<th>Spiegazione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flag C</td>
+<td>Carry da operazioni unsigned</td>
+</tr>
+<tr>
+<td>Flag V</td>
+<td>Overflow da operazioni signed</td>
+</tr>
+<tr>
+<td>BCC / BCS</td>
+<td>Salta su Carry Clear / Carry Set</td>
+</tr>
+<tr>
+<td>BVC / BVS</td>
+<td>Salta su oVerflow Clear / oVerflow Set</td>
+</tr>
+<tr>
+<td>ADC / SBC</td>
+<td>Setta entrambi C e V</td>
+</tr>
+<tr>
+<td>Shift (ASL/LSR)</td>
+<td>Setta C dal bit trascinato</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
+<p>Nella lezione 020 vedremo <strong>operazioni di stack avanzate</strong>: TSX/TXS, PHP/PLP per salvare/ripristinare lo status processor.</p>
+<hr />
+<h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
+<p><strong>Flag di stato nel 6510 (SR):</strong></p>
+<pre class="highlight"><code>7: N (Negative)
+6: V (oVerflow)      ← Lezione 019
+5: unused
+4: B (Break)
+3: D (Decimal)
+2: I (Interrupt Disable)
+1: Z (Zero)
+0: C (Carry)         ← Lezione 019</code></pre>
+<p>ADC e SBC setta C, Z, N, V in base al risultato.</p>
+<hr />
+<h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] l'esempio compila con <code>64tass</code></li>
+<li>[ ] i salti su carry funzionano correttamente</li>
+<li>[ ] la logica condizionale su carry è chiara</li>
+<li>[ ] il contenuto è progressivo rispetto alle lezioni precedenti</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../029-stack-avanzato/" class="btn btn-neutral float-left" title="Lezione 029 - Operazioni di stack avanzate"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../027-subroutine-jsr-rts/" class="btn btn-neutral float-right" title="Lezione 027 - Subroutine: JSR e RTS">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/quelo1972/c64-assembly-course" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../029-stack-avanzato/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../027-subroutine-jsr-rts/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

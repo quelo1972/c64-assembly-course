@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>014 macro e organizzazione - C64 Assembly Course</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "014 macro e organizzazione";
+        var mkdocs_page_input_path = "modules/modulo-3/lessons/014-macro-e-organizzazione.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> C64 Assembly Course
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Moduli</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 0 - Ambiente di sviluppo</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/">Modulo 0 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/033-automazione-makefile.md">Lezione 033 - Automazione: Makefile e task build</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/032-vice-immagini-disco.md">Lezione 032 - VICE: configurazione e immagini disco</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/027-vs-code-setup.md">Lezione 027 - VS Code: setup e debugging Assembly</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/034-git-github.md">Lezione 034 - Git e GitHub: versionamento e collaborazione</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/029-toolchain-setup.md">Lezione 029 - Toolchain e setup del progetto</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 1 - Fondamenti</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-1/">Modulo 1 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-1/lessons/029-memory.md">Lezione 029 - La memoria del Commodore 64</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-1/lessons/034-binary-hex.md">Lezione 034 - Sistema binario ed esadecimale</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-1/lessons/027-byte-word.md">Lezione 027 - Byte, Word e limiti della memoria</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 2 - CPU MOS 6510</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-2/">Modulo 2 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-2/lessons/032-cpu-6510.md">Lezione 032 - La CPU MOS 6510</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-2/lessons/033-registers-axy.md">Lezione 033 - Registri A, X e Y</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 3 - Linguaggio e tooling</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 3 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../023-macro-e-organizzazione.md">Lezione 023 - Macro e organizzazione del codice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../036-direttive-assembler.md">Lezione 036 - Direttive assembler, etichette e costanti</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../035-mnemonici-e-opcode.md">Lezione 035 - Mnemonici e opcode</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../029-from-source-to-execution.md">Lezione 029 - Dal sorgente all'esecuzione</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 4 - Prime istruzioni</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-4/">Modulo 4 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/028-store-operations.md">Lezione 028 - Store operations: STA, STX, STY</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/034-lda.md">Lezione 034 - LDA e indirizzamento immediato</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/027-sta.md">Lezione 027 - STA e scrittura in memoria</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/032-trasferimento-tra-registri.md">Lezione 032 - Trasferimento tra registri</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/033-increment-decrement.md">Lezione 033 - Incremento e decremento</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 5 - Modalità di indirizzamento</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/">Modulo 5 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/033-indirizzamento-indiretto-indicizzato.md">Lezione 033 - Indirizzamento indiretto indicizzato</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/032-indirizzamento-indiretto.md">Lezione 032 - Indirizzamento indiretto</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/023-indirizzamento-indicizzato/">Lezione 023 - Indirizzamento indicizzato</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/036-indirizzamento-assoluto.md">Lezione 036 - Indirizzamento assoluto</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/029-modalita-immediata.md">Lezione 029 - Indirizzamento immediato, revisited</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/035-zero-page.md">Lezione 035 - Indirizzamento Zero Page</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 6 - Controllo del flusso e subroutine</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/">Modulo 6 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/029-stack-avanzato/">Lezione 029 - Operazioni di stack avanzate</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/028-salti-su-carry-overflow/">Lezione 028 - Salti condizionati: Carry e Overflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/027-subroutine-jsr-rts/">Lezione 027 - Subroutine: JSR e RTS</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-6/lessons/034-salti-condizionati.md">Lezione 034 - Salti condizionati</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 7 - Operazioni aritmetiche e logiche</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/">Modulo 7 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/036-divisione/">Lezione 036 - Divisione: algoritmi software</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/035-moltiplicazione/">Lezione 035 - Moltiplicazione: algoritmi software</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/034-shift-operations/">Lezione 034 - Shift operations: ASL, LSR, ROL, ROR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/033-operazioni-logiche/">Lezione 033 - Operazioni logiche: AND, ORA, EOR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/032-addizione-sottrazione/">Lezione 032 - Addizione e sottrazione: ADC e SBC</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-7/lessons/036-compare-bit-operations.md">Lezione 036 - Compare e BIT test operations</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-7/lessons/035-incremento-decremento-memoria.md">Lezione 035 - Incremento e decremento in memoria</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 8 - I/O e periferiche</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-8/">Modulo 8 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 9 - Grafica con VIC-II</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/">Modulo 9 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 10 - Suono con SID</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-10/">Modulo 10 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 11 - Interrupt, CIA e gestione tempo</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/">Modulo 11 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 12 - File system, cassette e disk I/O</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-12/">Modulo 12 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 13 - Ottimizzazione e tecniche avanzate</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-13/">Modulo 13 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 14 - Progetto finale</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-14/">Modulo 14 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">C64 Assembly Course</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">014 macro e organizzazione</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-3/lessons/014-macro-e-organizzazione.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><a href="../../../../">🏠 Home</a></p>
+<h1 id="lezione-023-macro-e-organizzazione-del-codice">Lezione 023 — Macro e organizzazione del codice<a class="headerlink" href="#lezione-023-macro-e-organizzazione-del-codice" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Obiettivo:</strong> capire come usare macro per riutilizzare codice e organizzare programmi complessi in moduli.</p>
+</blockquote>
+<hr />
+<h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>comprendere le macro e come definirle;</li>
+<li>riutilizzare blocchi di codice con macro;</li>
+<li>organizzare programmi in file separati;</li>
+<li>usare include per modularizzazione.</li>
+</ul>
+<hr />
+<h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
+<p>Spesso ripeti lo stesso codice:</p>
+<pre class="highlight"><code class="language-asm">LDA $D020
+ADC #$01
+STA $D020</code></pre>
+<p>Invece di copiare-incollare, puoi definire una <strong>macro</strong>:</p>
+<pre class="highlight"><code class="language-asm">inc_border
+  LDA $D020
+  ADC #$01
+  STA $D020
+.endm</code></pre>
+<p>Poi usarla come comando:</p>
+<pre class="highlight"><code class="language-asm">inc_border      ; espande a 3 istruzioni</code></pre>
+<hr />
+<h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
+<h3 id="definizione-di-macro">Definizione di macro<a class="headerlink" href="#definizione-di-macro" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-asm">.macro inc_register
+  ADC #$01
+.endm</code></pre>
+<h3 id="parametri">Parametri<a class="headerlink" href="#parametri" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-asm">.macro inc_at addr
+  LDA addr
+  ADC #$01
+  STA addr
+.endm
+
+inc_at $D020   ; incrementa bordo
+inc_at $D021   ; incrementa sfondo</code></pre>
+<h3 id="include-per-moduli">Include per moduli<a class="headerlink" href="#include-per-moduli" title="Permanent link">&para;</a></h3>
+<p>File <code>utils.asm</code>:</p>
+<pre class="highlight"><code class="language-asm">.macro delay_cycles count
+  ; loop di delay
+.endm</code></pre>
+<p>Main file:</p>
+<pre class="highlight"><code class="language-asm">.include "utils.asm"
+
+delay_cycles 10</code></pre>
+<h3 id="organizzazione-file">Organizzazione file<a class="headerlink" href="#organizzazione-file" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code>src/
+  main.asm           ; programma principale
+  utils.asm          ; routine riutilizzabili
+  hardware.asm       ; definizioni hardware
+  constants.asm      ; costanti globali</code></pre>
+<hr />
+<h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
+<p>Quando trovi una macro:</p>
+<pre class="highlight"><code class="language-asm">.macro inc_border
+  LDA $D020
+  ADC #$01
+  STA $D020
+.endm
+
+inc_border</code></pre>
+<ol>
+<li><strong>Definizione</strong>: 64tass memorizza le 3 istruzioni</li>
+<li><strong>Invocazione</strong>: quando vede <code>inc_border</code>, espande in-place</li>
+<li><strong>Assembly</strong>: le 3 istruzioni vengono assemblate</li>
+</ol>
+<p>Risultato: come se avessi scritto le 3 istruzioni direttamente.</p>
+<hr />
+<h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-asm">; Lezione 029 — Macro e organizzazione
+; main.asm
+.include "constants.asm"
+.include "utils.asm"
+
+* = program_start
+
+init:
+  set_border_color color_red
+  clear_screen
+
+loop:
+  inc_border
+  delay_ms 10
+  JMP loop
+
+program_start = $0801</code></pre>
+<p>File <code>constants.asm</code>:</p>
+<pre class="highlight"><code class="language-asm">color_red = $02
+color_blue = $06
+screen_ram = $0400
+screen_size = 1000
+border_register = $D020</code></pre>
+<p>File <code>utils.asm</code>:</p>
+<pre class="highlight"><code class="language-asm">.macro set_border_color color
+  LDA #color
+  STA border_register
+.endm
+
+.macro clear_screen
+  LDA #$00
+  LDX #$00
+loop_clear:
+  STA screen_ram,X
+  INX
+  CPX #screen_size
+  BNE loop_clear
+.endm
+
+.macro inc_border
+  LDA border_register
+  ADC #$01
+  STA border_register
+.endm
+
+.macro delay_ms milliseconds
+  ; delay loop (semplificato)
+  LDX #milliseconds
+loop_delay:
+  DEX
+  BNE loop_delay
+.endm</code></pre>
+<hr />
+<h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Macro ricorsive</strong>: una macro che chiama se stessa causa stack overflow</li>
+<li><strong>Conflitti di nome</strong>: una macro non può avere lo stesso nome di una label</li>
+<li><strong>Scope dei parametri</strong>: i parametri della macro sono locali</li>
+<li><strong>Include path</strong>: controlla che i file include siano nel path giusto</li>
+</ul>
+<hr />
+<h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Crea 3 macro per operazioni comuni (delay, color change, write)</li>
+<li>Organizza il codice dei moduli precedenti in file separati con include</li>
+<li>Scrivi una macro con parametri che assembla un loop</li>
+</ol>
+<hr />
+<h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concetto</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Macro</td>
+<td>Riutilizza blocchi di codice</td>
+</tr>
+<tr>
+<td>Parametri</td>
+<td>Rendi le macro generiche</td>
+</tr>
+<tr>
+<td>Include</td>
+<td>Importa da altri file</td>
+</tr>
+<tr>
+<td>Modularizzazione</td>
+<td>Organizza in file logici</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
+<p>Nella lezione 030 vedremo come implementare moltiplicazione usando solo istruzioni base.</p>
+<hr />
+<h2 id="approfondimento-dentro-64tass">🔎 Approfondimento — Dentro 64tass<a class="headerlink" href="#approfondimento-dentro-64tass" title="Permanent link">&para;</a></h2>
+<p>64tass supporta anche:</p>
+<pre class="highlight"><code class="language-asm">.struct Point
+  x: 1    ; 1 byte
+  y: 1
+.endstruct
+
+.align 256   ; allinea al prossimo multiplo di 256</code></pre>
+<hr />
+<h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] L'esempio compila</li>
+<li>[ ] Le macro sono definite e usate</li>
+<li>[ ] Il codice è organizzato in file</li>
+<li>[ ] Il contenuto è progressivo rispetto alle lezioni precedenti</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/quelo1972/c64-assembly-course" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

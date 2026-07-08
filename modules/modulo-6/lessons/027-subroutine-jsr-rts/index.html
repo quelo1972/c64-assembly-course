@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Lezione 027 - Subroutine: JSR e RTS - C64 Assembly Course</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Lezione 027 - Subroutine: JSR e RTS";
+        var mkdocs_page_input_path = "modules/modulo-6/lessons/027-subroutine-jsr-rts.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> C64 Assembly Course
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Moduli</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 0 - Ambiente di sviluppo</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/">Modulo 0 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/033-automazione-makefile.md">Lezione 033 - Automazione: Makefile e task build</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/032-vice-immagini-disco.md">Lezione 032 - VICE: configurazione e immagini disco</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/027-vs-code-setup.md">Lezione 027 - VS Code: setup e debugging Assembly</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/034-git-github.md">Lezione 034 - Git e GitHub: versionamento e collaborazione</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-0/lessons/029-toolchain-setup.md">Lezione 029 - Toolchain e setup del progetto</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 1 - Fondamenti</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-1/">Modulo 1 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-1/lessons/029-memory.md">Lezione 029 - La memoria del Commodore 64</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-1/lessons/034-binary-hex.md">Lezione 034 - Sistema binario ed esadecimale</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-1/lessons/027-byte-word.md">Lezione 027 - Byte, Word e limiti della memoria</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 2 - CPU MOS 6510</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-2/">Modulo 2 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-2/lessons/032-cpu-6510.md">Lezione 032 - La CPU MOS 6510</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-2/lessons/033-registers-axy.md">Lezione 033 - Registri A, X e Y</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 3 - Linguaggio e tooling</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-3/">Modulo 3 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-3/lessons/023-macro-e-organizzazione.md">Lezione 023 - Macro e organizzazione del codice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-3/lessons/036-direttive-assembler.md">Lezione 036 - Direttive assembler, etichette e costanti</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-3/lessons/035-mnemonici-e-opcode.md">Lezione 035 - Mnemonici e opcode</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-3/lessons/029-from-source-to-execution.md">Lezione 029 - Dal sorgente all'esecuzione</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 4 - Prime istruzioni</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-4/">Modulo 4 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/028-store-operations.md">Lezione 028 - Store operations: STA, STX, STY</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/034-lda.md">Lezione 034 - LDA e indirizzamento immediato</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/027-sta.md">Lezione 027 - STA e scrittura in memoria</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/032-trasferimento-tra-registri.md">Lezione 032 - Trasferimento tra registri</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-4/lessons/033-increment-decrement.md">Lezione 033 - Incremento e decremento</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 5 - Modalità di indirizzamento</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/">Modulo 5 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/033-indirizzamento-indiretto-indicizzato.md">Lezione 033 - Indirizzamento indiretto indicizzato</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/032-indirizzamento-indiretto.md">Lezione 032 - Indirizzamento indiretto</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/023-indirizzamento-indicizzato/">Lezione 023 - Indirizzamento indicizzato</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/036-indirizzamento-assoluto.md">Lezione 036 - Indirizzamento assoluto</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/029-modalita-immediata.md">Lezione 029 - Indirizzamento immediato, revisited</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-5/lessons/035-zero-page.md">Lezione 035 - Indirizzamento Zero Page</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 6 - Controllo del flusso e subroutine</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 6 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../029-stack-avanzato/">Lezione 029 - Operazioni di stack avanzate</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../028-salti-su-carry-overflow/">Lezione 028 - Salti condizionati: Carry e Overflow</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 027 - Subroutine: JSR e RTS</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#jsr-e-rts">JSR e RTS</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lo-stack">Lo Stack</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#preservare-registri">Preservare registri</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#passing-dei-parametri">Passing dei parametri</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="" href="../034-salti-condizionati.md">Lezione 034 - Salti condizionati</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 7 - Operazioni aritmetiche e logiche</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/">Modulo 7 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/036-divisione/">Lezione 036 - Divisione: algoritmi software</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/035-moltiplicazione/">Lezione 035 - Moltiplicazione: algoritmi software</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/034-shift-operations/">Lezione 034 - Shift operations: ASL, LSR, ROL, ROR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/033-operazioni-logiche/">Lezione 033 - Operazioni logiche: AND, ORA, EOR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/032-addizione-sottrazione/">Lezione 032 - Addizione e sottrazione: ADC e SBC</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-7/lessons/036-compare-bit-operations.md">Lezione 036 - Compare e BIT test operations</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../modulo-7/lessons/035-incremento-decremento-memoria.md">Lezione 035 - Incremento e decremento in memoria</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 8 - I/O e periferiche</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-8/">Modulo 8 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 9 - Grafica con VIC-II</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/">Modulo 9 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 10 - Suono con SID</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-10/">Modulo 10 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 11 - Interrupt, CIA e gestione tempo</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/">Modulo 11 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 12 - File system, cassette e disk I/O</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-12/">Modulo 12 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 13 - Ottimizzazione e tecniche avanzate</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-13/">Modulo 13 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 14 - Progetto finale</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-14/">Modulo 14 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">C64 Assembly Course</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Moduli &raquo;</li>
+          <li>Modulo 6 - Controllo del flusso e subroutine &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 027 - Subroutine: JSR e RTS</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-6/lessons/027-subroutine-jsr-rts.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><a href="../../../../">🏠 Home</a></p>
+<h1 id="lezione-027-subroutine-jsr-e-rts">Lezione 027 — Subroutine: JSR e RTS<a class="headerlink" href="#lezione-027-subroutine-jsr-e-rts" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Obiettivo:</strong> capire come organizzare il codice in subroutine chiamabili, usare JSR per saltare, RTS per rientrare, e sfruttare lo stack per salvare l'indirizzo di ritorno.</p>
+</blockquote>
+<hr />
+<h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>comprendere cosa sono le subroutine e perché sono utili;</li>
+<li>usare JSR per chiamare una subroutine;</li>
+<li>usare RTS per rientrare al chiamante;</li>
+<li>capire come lo stack salva l'indirizzo di ritorno;</li>
+<li>preservare i registri quando necessario.</li>
+</ul>
+<hr />
+<h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
+<p>Finora abbiamo scritto programmi lineari: fetch → decode → execute → RTS.</p>
+<p>Ma spesso vogliamo <strong>riutilizzare codice</strong>. Se devo stampare molti messaggi, voglio una funzione unica, non copiarla ogni volta.</p>
+<p><strong>JSR</strong> (Jump to SubRoutine) chiama una subroutine.
+<strong>RTS</strong> (ReTurn from Subroutine) rientra.</p>
+<p>Lo <strong>stack</strong> (in memoria <code>$0100</code>–<code>$01FF</code>) salva automaticamente l'indirizzo di ritorno.</p>
+<hr />
+<h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
+<h3 id="jsr-e-rts">JSR e RTS<a class="headerlink" href="#jsr-e-rts" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-asm">main:
+  JSR print_msg  ; salta a print_msg, salva PC sullo stack
+  ; il codice di print_msg esegue
+  ; ... quando incontra RTS, lo stack è usato per rientrare qui
+  RTS
+
+print_msg:
+  ; codice della subroutine
+  RTS            ; ritorna al chiamante</code></pre>
+<h3 id="lo-stack">Lo Stack<a class="headerlink" href="#lo-stack" title="Permanent link">&para;</a></h3>
+<p>Il 6510 ha uno <strong>Stack Pointer</strong> (SP, in <code>$0100</code> | SP):</p>
+<pre class="highlight"><code>$01FF          top dello stack
+$01FE
+...
+$0100          bottom dello stack
+SP             punta al prossimo slot libero</code></pre>
+<p><strong>JSR</strong> fa un PUSH dell'indirizzo (PC - 1) sullo stack.
+<strong>RTS</strong> fa un POP dell'indirizzo e salta.</p>
+<h3 id="preservare-registri">Preservare registri<a class="headerlink" href="#preservare-registri" title="Permanent link">&para;</a></h3>
+<p>Se una subroutine usa X, Y, A, potrebbe danneggiare il codice del chiamante:</p>
+<pre class="highlight"><code class="language-asm">main:
+  LDX #$10
+  JSR delay      ; delay modifica X!
+  ; X è stato cambiato — problema!</code></pre>
+<p>Soluzione: usare lo stack per salvare registri:</p>
+<pre class="highlight"><code class="language-asm">delay:
+  PHA            ; salva A sullo stack
+  ; lavora con A
+  PLA            ; ripristina A
+  RTS</code></pre>
+<h3 id="passing-dei-parametri">Passing dei parametri<a class="headerlink" href="#passing-dei-parametri" title="Permanent link">&para;</a></h3>
+<p>I parametri passati a una subroutine di solito vanno in registri:</p>
+<pre class="highlight"><code class="language-asm">; Chiama una subroutine che stampa il valore in A
+LDA #$41       ; 'A'
+JSR print_char
+
+print_char:
+  ; usa A per stampare
+  RTS</code></pre>
+<p>Oppure in Zero Page:</p>
+<pre class="highlight"><code class="language-asm">STA $02        ; parametro in $02
+JSR myfunc
+
+myfunc:
+  LDA $02
+  ; lavora
+  RTS</code></pre>
+<hr />
+<h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
+<p><code>JSR print_msg</code> quando PC = <code>$0803</code>:</p>
+<ol>
+<li><strong>Fetch JSR</strong>: legge opcode <code>$20</code></li>
+<li><strong>Fetch indirizzo</strong>: legge <code>$08</code> e <code>$09</code> (indirizzo subroutine)</li>
+<li><strong>Stack operations</strong>: </li>
+<li>Salva byte alto di (PC - 1) sullo stack</li>
+<li>Salva byte basso di (PC - 1) sullo stack</li>
+<li>Decrementa SP di 2</li>
+<li><strong>Jump</strong>: PC = <code>$0809</code> (indirizzo subroutine)</li>
+</ol>
+<p>Quando RTS:
+1. <strong>Stack operations</strong>:
+   - Incrementa SP di 2
+   - Legge byte basso dallo stack
+   - Legge byte alto dallo stack
+2. <strong>Jump</strong>: PC = indirizzo salvato + 1</p>
+<p>In totale: <strong>JSR 3 byte, 6 cicli; RTS 1 byte, 6 cicli</strong>.</p>
+<hr />
+<h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-asm">; Lezione 016 — Subroutine: JSR e RTS
+; Chiama una subroutine per stampare caratteri
+*= $0801
+
+; Nota: JSR indirizzo salta a una subroutine, salva PC sullo stack.
+; Nota: RTS rientra al chiamante usando lo stack.
+; Nota: PHA salva A sullo stack; PLA ripristina.
+
+main:
+  LDA #$42       ; 'B'
+  JSR print_char
+
+  LDA #$05       ; colore verde
+  JSR set_border
+
+  RTS            ; fine programma
+
+; Subroutine: stampa il carattere in A
+print_char:
+  PHA            ; salva A
+  STA $0400      ; scrivi nella screen RAM
+  PLA            ; ripristina A
+  RTS
+
+; Subroutine: setta il colore bordo (A contiene il colore)
+set_border:
+  PHA
+  STA $D020      ; scrivi nel registro VIC-II
+  PLA
+  RTS</code></pre>
+<p>Compila:</p>
+<pre class="highlight"><code class="language-bash">64tass --cbm-prg -o bin/016.prg src/modulo-6/016.asm</code></pre>
+<hr />
+<h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Dimenticare RTS</strong>: se una subroutine non termina con RTS, il flusso continua nel codice seguente (bug).</li>
+<li><strong>Non preservare registri</strong>: se una subroutine modifica A, X, Y senza salvarli, il codice chiamante si rompe silenziosamente.</li>
+<li><strong>Overflow dello stack</strong>: troppe chiamate annidate o troppe PUSH senza POP fanno sovrascrivere la stack area. Rare, ma possibili.</li>
+<li><strong>JSR a indirizzi calcolati</strong>: JSR non usa modalità indicizzate. Per salti calcolati usi JMP $0400,X (lezione successiva).</li>
+</ul>
+<hr />
+<h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Scrivi una subroutine che azzera 10 byte da un indirizzo base.</li>
+<li>Crea due subroutine: una che setta il bordo a un colore, una che setta lo sfondo. Chiamale dal main.</li>
+<li>Scrivi una subroutine di delay che riceve il numero di iterazioni in A.</li>
+</ol>
+<hr />
+<h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concetto</th>
+<th>Spiegazione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JSR</td>
+<td>Jump to SubRoutine; salva PC sullo stack</td>
+</tr>
+<tr>
+<td>RTS</td>
+<td>ReTurn from Subroutine; usa PC dallo stack</td>
+</tr>
+<tr>
+<td>Stack</td>
+<td>Area di memoria <code>$0100</code>–<code>$01FF</code></td>
+</tr>
+<tr>
+<td>SP</td>
+<td>Stack Pointer; punta al prossimo slot libero</td>
+</tr>
+<tr>
+<td>PHA / PLA</td>
+<td>Push/Pop accumulatore</td>
+</tr>
+<tr>
+<td>Preservazione</td>
+<td>Salva registri modificati prima di usarli</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
+<p>Nella lezione 017 vedremo altri salti: <strong>JMP</strong> (salto incondizionato) e <strong>BRK</strong> (breakpoint), oltre a modalità di indirizzamento indirette per subroutine calcolate.</p>
+<hr />
+<h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
+<p><strong>JSR</strong> salva PC - 1 (l'indirizzo dell'ultimo byte di JSR):</p>
+<pre class="highlight"><code>PC = $0803, JSR at $0803–$0805
+JSR salva PC - 1 = $0804 (byte alto + byte basso)</code></pre>
+<p>Quando <strong>RTS</strong> legge dal stack, aggiunge 1: ritorna a <code>$0804 + 1 = $0805</code>.</p>
+<p>Questo è cruciale per evitare salti infiniti.</p>
+<hr />
+<h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] l'esempio compila con <code>64tass</code></li>
+<li>[ ] le subroutine vengono richiamate e rientrano correttamente</li>
+<li>[ ] i registri sono preservati quando necessario</li>
+<li>[ ] il contenuto è progressivo rispetto alle lezioni precedenti</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../028-salti-su-carry-overflow/" class="btn btn-neutral float-left" title="Lezione 028 - Salti condizionati: Carry e Overflow"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../modulo-7/" class="btn btn-neutral float-right" title="Modulo 7 - Indice">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/quelo1972/c64-assembly-course" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../028-salti-su-carry-overflow/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../../modulo-7/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
