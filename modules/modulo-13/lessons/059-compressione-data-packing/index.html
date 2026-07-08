@@ -389,14 +389,12 @@ decode_next:
     STA value
     INY
 
-    LDY count
 write_loop:
     LDA value
     STA DST,X
     INX
-    DEY
+    DEC count
     BNE write_loop
-
     JMP decode_next
 
 done:
@@ -409,7 +407,7 @@ value:
 
 * = SRC
     .byte 10,$41, 5,$20, 10,$42, 0</code></pre>
-<p><code>DEY</code> decrementa Y e aggiorna i flag; con <code>BNE</code> ottieni un loop controllato da contatore.</p>
+<p><code>DEC count</code> decrementa il contatore del run e aggiorna i flag; con <code>BNE</code> ottieni un loop controllato da conteggio esplicito.</p>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>

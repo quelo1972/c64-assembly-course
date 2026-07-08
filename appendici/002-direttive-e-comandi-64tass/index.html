@@ -304,6 +304,16 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#7-esempio-didattico-completo">7. Esempio didattico completo</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8-costrutti-64tass-effettivamente-usati-nel-corso-moduli-0-14">8. Costrutti 64tass effettivamente usati nel corso (moduli 0-14)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#direttive-ricorrenti">Direttive ricorrenti</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sintassi-assembler-usata-frequentemente">Sintassi assembler usata frequentemente</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#comando-cli-64tass-usato-nel-workflow-corso">Comando CLI 64tass usato nel workflow corso</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../003-macro-scope-organizzazione/">Appendice 003 - Macro, scope e organizzazione del codice</a>
@@ -470,6 +480,29 @@ START:
 <li><code>.text</code>, <code>.macro</code>, <code>*=</code>, costante <code>BORDER</code> sono 64tass;</li>
 <li><code>LDA</code>, <code>STA</code>, <code>RTS</code> sono istruzioni CPU.</li>
 </ul>
+<hr />
+<h2 id="8-costrutti-64tass-effettivamente-usati-nel-corso-moduli-0-14">8. Costrutti 64tass effettivamente usati nel corso (moduli 0-14)<a class="headerlink" href="#8-costrutti-64tass-effettivamente-usati-nel-corso-moduli-0-14" title="Permanent link">&para;</a></h2>
+<p>Per mantenere allineamento pratico tra teoria e lezioni, ecco il set di costrutti 64tass realmente usati nei listati del corso.</p>
+<h3 id="direttive-ricorrenti">Direttive ricorrenti<a class="headerlink" href="#direttive-ricorrenti" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>.byte</code></li>
+<li><code>.word</code></li>
+<li><code>.text</code></li>
+<li><code>.fill</code></li>
+<li><code>.include</code></li>
+<li><code>.macro</code> / <code>.endm</code></li>
+<li><code>.align</code></li>
+<li><code>.struct</code> / <code>.endstruct</code> (casi avanzati)</li>
+</ul>
+<h3 id="sintassi-assembler-usata-frequentemente">Sintassi assembler usata frequentemente<a class="headerlink" href="#sintassi-assembler-usata-frequentemente" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>*= $0801</code> (location counter / indirizzo di assemblaggio)</li>
+<li><code>NAME = $D020</code> (costanti simboliche)</li>
+<li><code>#&lt;label</code> e <code>#&gt;label</code> (byte basso/alto di un indirizzo)</li>
+</ul>
+<h3 id="comando-cli-64tass-usato-nel-workflow-corso">Comando CLI 64tass usato nel workflow corso<a class="headerlink" href="#comando-cli-64tass-usato-nel-workflow-corso" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-bash">64tass --cbm-prg -o bin/output.prg src/percorso/main.asm</code></pre>
+<p>Per la reference completa di opzioni CLI (warning policy, listing, target multipli), vedi Appendice 006.</p>
               
             </div>
           </div><footer>
