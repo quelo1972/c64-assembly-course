@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-08 — Estensione appendici: reference 64tass completa (oltre il corso)
+
+### Nuove pagine
+- `docs/appendici/005-riferimento-completo-64tass.md`
+- `docs/appendici/006-reference-cli-e-diagnostica-64tass.md`
+- `docs/appendici/007-linguaggio-avanzato-64tass-non-usato-nel-corso.md`
+
+### Copertura aggiunta
+- Inventario esteso direttive 64tass.
+- Inventario esteso funzioni e tipi built-in.
+- Reference completa command line (output, target CPU, listing, warning policy, label export).
+- Sezione su feature avanzate non usate nel percorso beginner (namespace, section, function, metaprogrammazione compile-time, pseudo-instructions, compatibilita TASM).
+
+### Aggiornamenti struttura
+- Aggiornato indice appendici (`docs/appendici/index.md`) con le nuove voci 005-007.
+- Aggiornata home docs (`docs/index.md`) con i link alle nuove appendici.
+- Aggiornata nav MkDocs (`mkdocs.yml`) mantenendo la sezione Appendici in fondo come da workflow.
+
 ## 2026-07-08 — Correzioni didattiche modulo 9 (review)
 
 ### Correzioni principali
