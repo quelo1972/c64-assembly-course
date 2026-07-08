@@ -4,9 +4,9 @@ Questo modulo copre i concetti di base necessari per capire il funzionamento del
 
 ## Lezioni incluse
 
-- [Lezione 001 - La memoria del Commodore 64](modulo-1/lessons/006-memory.md)
-- [Lezione 002 - Sistema binario ed esadecimale](modulo-1/lessons/007-binary-hex.md)
-- [Lezione 003 - Byte, Word e limiti della memoria](modulo-1/lessons/008-byte-word.md)
+- [Lezione 006 - La memoria del Commodore 64](modulo-1/lessons/006-memory.md)
+- [Lezione 007 - Sistema binario ed esadecimale](modulo-1/lessons/007-binary-hex.md)
+- [Lezione 008 - Byte, Word e limiti della memoria](modulo-1/lessons/008-byte-word.md)
 
 ## Obiettivo
 
