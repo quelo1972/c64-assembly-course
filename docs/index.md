@@ -26,6 +26,14 @@ Se preferisci scorrere direttamente le lezioni, eccole raggruppate per moduli:
 - [Modulo 13 - Ottimizzazione e tecniche avanzate](modules/modulo-13.md)
 - [Modulo 14 - Progetto finale](modules/modulo-14.md)
 
+## 📚 Appendici
+
+- [Appendici - Indice](appendici/index.md)
+- [Appendice 001 - Regole sintattiche del 64tass](appendici/001-regole-sintattiche-64tass.md)
+- [Appendice 002 - Direttive e comandi specifici 64tass](appendici/002-direttive-e-comandi-64tass.md)
+- [Appendice 003 - Macro, scope e organizzazione del codice](appendici/003-macro-scope-organizzazione.md)
+- [Appendice 004 - Mappa di confine: MOS 6510 vs 64tass](appendici/004-confine-mos6510-vs-64tass.md)
+
 ---
 
 ## 🎯 Obiettivo del corso

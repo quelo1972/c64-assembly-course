@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-08 — Nuova sezione Appendici: distinzione completa MOS 6510 vs 64tass
+
+### Nuove pagine
+- `docs/appendici/index.md`
+- `docs/appendici/001-regole-sintattiche-64tass.md`
+- `docs/appendici/002-direttive-e-comandi-64tass.md`
+- `docs/appendici/003-macro-scope-organizzazione.md`
+- `docs/appendici/004-confine-mos6510-vs-64tass.md`
+
+### Aggiornamenti struttura
+- Aggiornata home docs con sezione Appendici.
+- Aggiornata navigazione in `mkdocs.yml` con sezione `Appendici`.
+
+### Obiettivo didattico
+- Rendere esplicita e verificabile la differenza tra:
+  - istruzioni runtime del MOS 6510;
+  - direttive e costrutti di build specifici di 64tass.
+
+---
+
 ## 2026-07-08 — Riduzione warning MkDocs: nav moduli 9-14 + esclusione template
 
 ### Aggiornamenti
