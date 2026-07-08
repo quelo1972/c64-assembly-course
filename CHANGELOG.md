@@ -1,5 +1,45 @@
 # Changelog
 
+## 2026-07-08 — Quality Assurance: 6 lezioni di gap-filling (000, 027-029, 030-031)
+
+### Roadmap Verification & Gap Analysis
+Analisi completa della roadmap `.ai/roadmap.md` vs lezioni create:
+- ✅ Modulo 0: **Toolchain & environment** (aggiunto Lezione 000)
+- ✅ Modulo 3: Completato linguaggio assembler (aggiunte Lezioni 027–029)
+- ✅ Modulo 7: Completate operazioni math (aggiunte Lezioni 030–031)
+- 📋 Moduli 8–14: Ancora da valutare (roadmap esiste, lezioni facoltative)
+
+### Nuove lezioni di gap-filling
+
+#### Modulo 0 — Ambiente di sviluppo
+- **Lezione 000 — Toolchain e setup del progetto**: Overview di 64tass, VICE, VS Code, Git, MkDocs, workflow build-test-deploy, primo programma, errori comuni
+
+#### Modulo 3 — Linguaggio e tooling (completamento)
+- **Lezione 027 — Mnemonici e opcode**: Traduzione mnemonici → opcode, tabelle 6510, come 64tass traduce, lettura binario grezzo
+- **Lezione 028 — Direttive assembler, etichette e costanti**: Direttive *, =, .byte, .word, .text, organizzazione simbolica, costanti hardware
+- **Lezione 029 — Macro e organizzazione del codice**: Definizione macro, parametri, include, modularizzazione multi-file
+
+#### Modulo 7 — Operazioni aritmetiche e logiche (completamento)
+- **Lezione 030 — Moltiplicazione: algoritmi software**: Shift-and-add, 8x8→16bit, propagazione carry, performance ~120 cicli
+- **Lezione 031 — Divisione: algoritmi software**: Shift-and-subtract, 16÷8, gestione borrow, remainder, divisione per zero
+
+### Statistiche
+
+| Metrica | Valore |
+|---------|--------|
+| Nuove lezioni | 6 |
+| Righe di contenuto | ~1800 |
+| Moduli completati | 3 (0, 3, 7) |
+| **Totale lezioni** | **32** |
+| Coverage roadmap | 100% core topics |
+
+### Build & Deploy
+- MkDocs build: 0 errori, 0 warning
+- GitHub Pages: Deployed commit c618e1e
+- URL: https://quelo1972.github.io/c64-assembly-course/
+
+---
+
 ## 2026-07-08 — Completamento complessivo: 10 lezioni supplementari (017–026) e aggiornamenti roadmap
 
 ### Sessione Phase 2: 6 lezioni su comandi critici (017–022)
