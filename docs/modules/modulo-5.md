@@ -15,13 +15,13 @@ Riscrivere un piccolo algoritmo usando diverse modalità di indirizzamento e con
 
 ## Lezioni incluse
 
-- [Lezione 011 - Indirizzamento immediato, revisited](modulo-5/lessons/011-modalita-immediata.md)
-- [Lezione 012 - Indirizzamento Zero Page](modulo-5/lessons/012-zero-page.md)
+- [Lezione 011 - Indirizzamento immediato, revisited](modulo-5/lessons/020-modalita-immediata.md)
+- [Lezione 012 - Indirizzamento Zero Page](modulo-5/lessons/021-zero-page.md)
 
-- [Lezione 013 - Indirizzamento assoluto](modulo-5/lessons/013-indirizzamento-assoluto.md)
-- [Lezione 014 - Indirizzamento indicizzato](modulo-5/lessons/014-indirizzamento-indicizzato.md)
-- [Lezione 017 - Indirizzamento indiretto](modulo-5/lessons/017-indirizzamento-indiretto.md)
-- [Lezione 018 - Indirizzamento indiretto indicizzato](modulo-5/lessons/018-indirizzamento-indiretto-indicizzato.md)
+- [Lezione 013 - Indirizzamento assoluto](modulo-5/lessons/022-indirizzamento-assoluto.md)
+- [Lezione 014 - Indirizzamento indicizzato](modulo-5/lessons/023-indirizzamento-indicizzato.md)
+- [Lezione 017 - Indirizzamento indiretto](modulo-5/lessons/024-indirizzamento-indiretto.md)
+- [Lezione 018 - Indirizzamento indiretto indicizzato](modulo-5/lessons/025-indirizzamento-indiretto-indicizzato.md)
 ## Obiettivo
 
 Capire quando e perché scegliere una modalità di indirizzamento per ottimizzare dimensione e velocità.

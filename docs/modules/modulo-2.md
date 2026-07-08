@@ -8,8 +8,8 @@ Argomenti principali relativi alla CPU, registri e al ciclo macchina.
 
 ## Lezioni incluse
 
-- [Lezione 004 - La CPU MOS 6510](modulo-2/lessons/004-cpu-6510.md)
-- [Lezione 005 - Registri A, X e Y](modulo-2/lessons/005-registers-axy.md)
+- [Lezione 004 - La CPU MOS 6510](modulo-2/lessons/009-cpu-6510.md)
+- [Lezione 005 - Registri A, X e Y](modulo-2/lessons/010-registers-axy.md)
 
 ## Obiettivo
 
