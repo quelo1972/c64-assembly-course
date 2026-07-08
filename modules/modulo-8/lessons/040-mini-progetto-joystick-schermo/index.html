@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Lezione 002 — Git e GitHub: versionamento e collaborazione - C64 Assembly Course</title>
+    <title>Lezione 040 — Mini-progetto: joystick e schermo - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Lezione 002 \u2014 Git e GitHub: versionamento e collaborazione";
-        var mkdocs_page_input_path = "modules/modulo-0/lessons/002-git-github.md";
+        var mkdocs_page_name = "Lezione 040 \u2014 Mini-progetto: joystick e schermo";
+        var mkdocs_page_input_path = "modules/modulo-8/lessons/040-mini-progetto-joystick-schermo.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -45,59 +45,19 @@
               </ul>
               <p class="caption"><span class="caption-text">Moduli</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 0 - Ambiente di sviluppo</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 0 - Indice</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 0 - Ambiente di sviluppo</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/">Modulo 0 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../001-toolchain-setup/">Lezione 001 — Toolchain e setup del progetto</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/lessons/001-toolchain-setup/">Lezione 001 — Toolchain e setup del progetto</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 002 — Git e GitHub: versionamento e collaborazione</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#git-3-stati-fondamentali">Git: 3 stati fondamentali</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#comandi-git-essenziali">Comandi Git essenziali</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#github-flusso-collaborativo">GitHub: flusso collaborativo</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-git">🤖 Come ragiona Git</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#setup-iniziale">Setup iniziale</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#workflow-tipico">Workflow tipico</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#sincronizzazione">Sincronizzazione</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-git">🔎 Approfondimento — Dentro Git</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/lessons/002-git-github/">Lezione 002 — Git e GitHub: versionamento e collaborazione</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../003-vs-code-setup/">Lezione 003 — VS Code: setup e debugging Assembly</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/lessons/003-vs-code-setup/">Lezione 003 — VS Code: setup e debugging Assembly</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../004-vice-immagini-disco/">Lezione 004 — VICE: configurazione e immagini disco</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/lessons/004-vice-immagini-disco/">Lezione 004 — VICE: configurazione e immagini disco</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../005-automazione-makefile/">Lezione 005 — Automazione: Makefile e task build</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/lessons/005-automazione-makefile/">Lezione 005 — Automazione: Makefile e task build</a>
                 </li>
     </ul>
                   </li>
@@ -205,17 +165,41 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 8 - I/O e periferiche</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-8/">Modulo 8 - Indice</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 8 - I/O e periferiche</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 8 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-8/lessons/037-mappa-io-c64-vic-sid-cia/">Lezione 037 — Mappa I/O del C64: VIC-II, SID, CIA</a>
+                <li class="toctree-l2"><a class="reference internal" href="../037-mappa-io-c64-vic-sid-cia/">Lezione 037 — Mappa I/O del C64: VIC-II, SID, CIA</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-8/lessons/038-screen-ram-color-ram/">Lezione 038 — Screen RAM e Color RAM</a>
+                <li class="toctree-l2"><a class="reference internal" href="../038-screen-ram-color-ram/">Lezione 038 — Screen RAM e Color RAM</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-8/lessons/039-kernal-chiamate-rom-io/">Lezione 039 — KERNAL: chiamate ROM per I/O</a>
+                <li class="toctree-l2"><a class="reference internal" href="../039-kernal-chiamate-rom-io/">Lezione 039 — KERNAL: chiamate ROM per I/O</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-8/lessons/040-mini-progetto-joystick-schermo/">Lezione 040 — Mini-progetto: joystick e schermo</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 040 — Mini-progetto: joystick e schermo</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
+    </li>
+    </ul>
                 </li>
     </ul>
                   </li>
@@ -235,10 +219,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Moduli &raquo;</li>
-          <li>Modulo 0 - Ambiente di sviluppo &raquo;</li>
-      <li class="breadcrumb-item active">Lezione 002 — Git e GitHub: versionamento e collaborazione</li>
+          <li>Modulo 8 - I/O e periferiche &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 040 — Mini-progetto: joystick e schermo</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-0/lessons/002-git-github.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-8/lessons/040-mini-progetto-joystick-schermo.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -247,187 +231,161 @@
             <div class="section" itemprop="articleBody">
               
                 <p><a href="../../../../">🏠 Home</a></p>
-<h1 id="lezione-2-git-e-github-versionamento-e-collaborazione">Lezione 2 — Git e GitHub: versionamento e collaborazione<a class="headerlink" href="#lezione-2-git-e-github-versionamento-e-collaborazione" title="Permanent link">&para;</a></h1>
+<h1 id="lezione-040-mini-progetto-joystick-e-schermo">Lezione 040 - Mini-progetto: joystick e schermo<a class="headerlink" href="#lezione-040-mini-progetto-joystick-e-schermo" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Obiettivo:</strong> comprendere Git e GitHub per tracciare cambiamenti, collaborare e condividere codice Assembly.</p>
+<p><strong>Obiettivo:</strong> integrare lettura joystick, aggiornamento Screen RAM e feedback visivo in un loop continuo.</p>
 </blockquote>
 <hr />
 <h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
 <ul>
-<li>comprendere versioning e perché serve;</li>
-<li>usare Git per commit, branch e history;</li>
-<li>settare repository remoto su GitHub;</li>
-<li>collaborare via pull request;</li>
-<li>gestire merge e conflitti.</li>
+<li>leggere direzioni joystick da CIA1;</li>
+<li>aggiornare una posizione cursore su schermo;</li>
+<li>separare logica input e logica rendering;</li>
+<li>costruire una base riusabile per giochi semplici.</li>
 </ul>
 <hr />
 <h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
-<p>Quando scrivi codice Assembly, hai bisogno di:</p>
-<ol>
-<li><strong>Tracciare cambiamenti</strong>: chi ha modificato cosa e quando</li>
-<li><strong>Tornare indietro</strong>: se sbagli, ripristini versioni precedenti</li>
-<li><strong>Collaborare</strong>: più persone lavorano sullo stesso codice</li>
-<li><strong>Condividere</strong>: pubblica il lavoro online</li>
-</ol>
-<p><strong>Git</strong> è lo strumento di versionamento standard. <strong>GitHub</strong> è il servizio cloud per repository remoti.</p>
+<p>Questa lezione chiude il modulo 8 con un mini-progetto completo: un cursore che si muove sulla prima riga in base al joystick. Useremo input hardware reale e output diretto su memoria video.</p>
 <hr />
 <h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
-<h3 id="git-3-stati-fondamentali">Git: 3 stati fondamentali<a class="headerlink" href="#git-3-stati-fondamentali" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code>Working Dir → Staging Area → Repository (commits)</code></pre>
+<p>Componenti del mini-progetto:</p>
 <ul>
-<li><strong>Working Dir</strong>: file modificati localmente</li>
-<li><strong>Staging Area</strong>: file pronti per commit</li>
-<li><strong>Repository</strong>: cronologia di commit</li>
+<li>input: <code>CIA1 Port A</code> (<code>$DC00</code>), bit attivi bassi;</li>
+<li>stato: posizione cursore (<code>cursor_x</code>) in RAM;</li>
+<li>output: scrittura in <code>Screen RAM</code> (<code>$0400 + x</code>).</li>
 </ul>
-<h3 id="comandi-git-essenziali">Comandi Git essenziali<a class="headerlink" href="#comandi-git-essenziali" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code class="language-bash">git init                    # Crea repository locale
-git add .                   # Aggiungi file a staging
-git commit -m "messaggio"   # Salva snapshot
-git log                     # Vedi cronologia
-git status                  # Vedi stato working dir
-git diff                    # Vedi differenze
-git branch                  # Crea/lista branch
-git checkout -b feature     # Crea e switch a branch
-git merge feature           # Merge branch in main
-git push origin main        # Carica su GitHub
-git pull origin main        # Scarica da GitHub</code></pre>
-<h3 id="github-flusso-collaborativo">GitHub: flusso collaborativo<a class="headerlink" href="#github-flusso-collaborativo" title="Permanent link">&para;</a></h3>
+<p>Strategia:</p>
 <ol>
-<li>Fork repository</li>
-<li>Crea branch locale</li>
-<li>Commit e push</li>
-<li>Apri Pull Request</li>
-<li>Review e merge</li>
-<li>Main aggiornato</li>
+<li>cancella vecchia posizione;</li>
+<li>leggi joystick;</li>
+<li>aggiorna coordinata con limiti (0..39);</li>
+<li>disegna nuova posizione;</li>
+<li>ripeti.</li>
 </ol>
 <hr />
-<h2 id="come-ragiona-git">🤖 Come ragiona Git<a class="headerlink" href="#come-ragiona-git" title="Permanent link">&para;</a></h2>
-<p>Quando esegui <code>git commit</code>:</p>
-<ol>
-<li><strong>Snapshot</strong>: Git cattura lo stato di tutti i file</li>
-<li><strong>Hash</strong>: Genera un hash univoco per il commit (es: <code>a3f5b2c</code>)</li>
-<li><strong>Metadata</strong>: Salva autore, data, messaggio</li>
-<li><strong>Puntatore</strong>: Il branch punta al nuovo commit</li>
-</ol>
-<p>Quando fai <code>git log</code>:</p>
-<pre class="highlight"><code>a3f5b2c (HEAD -&gt; main) docs: add lesson 035
-8ea7f4e docs: update CHANGELOG
-c618e1e docs: add 6 critical lessons</code></pre>
-<p>HEAD punta sempre al commit attuale.</p>
+<h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
+<p>Il loop principale e composto da piccole subroutine:</p>
+<ul>
+<li><code>erase_cursor</code> e <code>draw_cursor</code> lavorano su <code>$0400,X</code>;</li>
+<li><code>read_input</code> legge <code>$DC00</code> e decide incremento/decremento;</li>
+<li>confronti (<code>CPX</code>) e salti (<code>BCC/BCS</code>) evitano uscita dai limiti.</li>
+</ul>
+<p>Questo approccio rende il programma piu leggibile e modulare.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<h3 id="setup-iniziale">Setup iniziale<a class="headerlink" href="#setup-iniziale" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code class="language-bash"># Clona il repository
-git clone https://github.com/quelo1972/c64-assembly-course.git
-cd c64-assembly-course
+<pre class="highlight"><code class="language-asm">; Lezione 040 - Mini progetto joystick + schermo
+*= $0801
 
-# Configura identità
-git config user.name "Your Name"
-git config user.email "email@example.com"</code></pre>
-<h3 id="workflow-tipico">Workflow tipico<a class="headerlink" href="#workflow-tipico" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code class="language-bash"># Crea feature branch
-git checkout -b add-sprite-lesson
+cursor_x = $02
 
-# Modifica file, salva, test
-echo "Lezione su sprite..." &gt; docs/sprite-lesson.md
+start:
+  LDA #$00
+  STA cursor_x
 
-# Vedi lo stato
-git status
+main_loop:
+  JSR erase_cursor
+  JSR read_input
+  JSR draw_cursor
+  JMP main_loop
 
-# Aggiungi e commit
-git add docs/sprite-lesson.md
-git commit -m "docs: add sprite lesson"
+erase_cursor:
+  LDX cursor_x
+  LDA #$20        ; spazio
+  STA $0400,X
+  RTS
 
-# Carica su GitHub
-git push origin add-sprite-lesson
+read_input:
+  LDA $DC00
 
-# Su GitHub: apri Pull Request, review, merge</code></pre>
-<h3 id="sincronizzazione">Sincronizzazione<a class="headerlink" href="#sincronizzazione" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code class="language-bash"># Scarica cambiamenti dal main
-git pull origin main
+  AND #%00000100  ; LEFT (0 = premuto)
+  BNE check_right
 
-# Risolvi conflitti se ce ne sono (edit file manualmente)
-git add .
-git commit -m "Resolve merge conflicts"
-git push origin add-sprite-lesson</code></pre>
+  LDX cursor_x
+  CPX #$00
+  BEQ check_right
+  DEX
+  STX cursor_x
+
+check_right:
+  LDA $DC00
+  AND #%00001000  ; RIGHT (0 = premuto)
+  BNE done_input
+
+  LDX cursor_x
+  CPX #$27        ; 39 decimale
+  BEQ done_input
+  INX
+  STX cursor_x
+
+done_input:
+  RTS
+
+draw_cursor:
+  LDX cursor_x
+  LDA #$51        ; codice simbolo cursore (esempio)
+  STA $0400,X
+  LDA #$01        ; bianco
+  STA $D800,X
+  RTS</code></pre>
+<p><code>JSR</code> divide il programma in blocchi logici. <code>AND</code> applica maschere ai bit joystick. <code>CPX</code> impone i limiti schermata.</p>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Commit messaggi vaghi</strong>: scrivere "fix" invece di "fix: stack overflow in multiplication routine"</li>
-<li><strong>Commita file grandi</strong>: binari PRG non dovrebbero essere in repo (usa .gitignore)</li>
-<li><strong>Forget to pull</strong>: prima di lavorare, scarica i cambiamenti dal main</li>
-<li><strong>Conflitti non risolti</strong>: Git ferma merge se ci sono conflitti</li>
-<li><strong>Perdere lavoro</strong>: salva sempre con <code>git add</code> prima di <code>checkout</code> o <code>reset</code></li>
+<li>Non cancellare la posizione precedente: resta una scia di caratteri.</li>
+<li>Usare bit joystick errati (LEFT/RIGHT invertiti).</li>
+<li>Dimenticare i limiti 0..39 e uscire dalla riga.</li>
 </ul>
 <hr />
 <h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Clona il repository del corso</li>
-<li>Crea un branch locale, aggiungi una nuova lezione stub, commit e push</li>
-<li>Apri una Pull Request e vedi il flusso GitHub</li>
-<li>Risolvi un merge conflict manualmente (crea il scenario)</li>
+<li>Aggiungi supporto UP/DOWN su due righe diverse.</li>
+<li>Usa un colore diverso quando il cursore e in movimento.</li>
+<li>Aggiungi una piccola delay routine per rallentare il movimento.</li>
 </ol>
 <hr />
 <h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Comando</th>
-<th>Effetto</th>
+<th>Concetto</th>
+<th>Spiegazione breve</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>git add</code></td>
-<td>Stage file per commit</td>
+<td>Loop di gioco base</td>
+<td>Input -&gt; update -&gt; render</td>
 </tr>
 <tr>
-<td><code>git commit -m</code></td>
-<td>Salva snapshot con messaggio</td>
+<td>Stato in RAM</td>
+<td><code>cursor_x</code> mantiene la posizione</td>
 </tr>
 <tr>
-<td><code>git push origin branch</code></td>
-<td>Carica branch remoto</td>
-</tr>
-<tr>
-<td><code>git pull origin main</code></td>
-<td>Scarica e merge da remoto</td>
-</tr>
-<tr>
-<td><code>git branch</code></td>
-<td>Crea/lista branch</td>
-</tr>
-<tr>
-<td><code>git log</code></td>
-<td>Vedi cronologia commit</td>
+<td>I/O integrato</td>
+<td>CIA1 per input, Screen/Color RAM per output</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
-<p>Nella lezione 033 configureremo VS Code per Assembly e debugging.</p>
+<p>Dal prossimo modulo andiamo oltre il testo: grafica VIC-II con sprite, raster e tecniche per animazioni.</p>
 <hr />
-<h2 id="approfondimento-dentro-git">🔎 Approfondimento — Dentro Git<a class="headerlink" href="#approfondimento-dentro-git" title="Permanent link">&para;</a></h2>
-<p><strong>Merge vs Rebase:</strong></p>
-<pre class="highlight"><code class="language-bash">git merge feature       # Crea commit merge (storia non-lineare)
-git rebase feature      # Riscrive history (lineare, più pulita)</code></pre>
-<p><strong>Stash per lavoro temporaneo:</strong></p>
-<pre class="highlight"><code class="language-bash">git stash              # Salva lavoro non-committed
-git stash pop          # Ripristina</code></pre>
+<h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
+<p>Separare il codice in subroutine riduce la complessita cognitiva e facilita il profiling: puoi misurare cicli per blocco (<code>input</code>, <code>update</code>, <code>render</code>) e ottimizzare dove serve.</p>
 <hr />
 <h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
 <ul>
-<li>[ ] Git installato e configurato</li>
-<li>[ ] Repository clonato e testato</li>
-<li>[ ] Push/pull funzionano</li>
-<li>[ ] Capisco il flusso branch → commit → PR</li>
+<li>[ ] l'esempio compila con <code>64tass</code></li>
+<li>[ ] l'esempio e coerente con la lezione</li>
+<li>[ ] ogni istruzione nuova e spiegata prima dell'uso</li>
+<li>[ ] indice, glossario e changelog sono aggiornati</li>
+<li>[ ] il contenuto e semplice e progressivo</li>
 </ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../001-toolchain-setup/" class="btn btn-neutral float-left" title="Lezione 001 — Toolchain e setup del progetto"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../003-vs-code-setup/" class="btn btn-neutral float-right" title="Lezione 003 — VS Code: setup e debugging Assembly">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../039-kernal-chiamate-rom-io/" class="btn btn-neutral float-left" title="Lezione 039 — KERNAL: chiamate ROM per I/O"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -454,10 +412,8 @@ git stash pop          # Ripristina</code></pre>
         </span>
     
     
-      <span><a href="../001-toolchain-setup/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../039-kernal-chiamate-rom-io/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../003-vs-code-setup/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
