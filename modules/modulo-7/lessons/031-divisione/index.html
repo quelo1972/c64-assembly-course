@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Lezione 025 - Operazioni logiche: AND, ORA, EOR - C64 Assembly Course</title>
+    <title>Lezione 031 - Divisione: algoritmi software - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Lezione 025 - Operazioni logiche: AND, ORA, EOR";
-        var mkdocs_page_input_path = "modules/modulo-7/lessons/025-operazioni-logiche.md";
+        var mkdocs_page_name = "Lezione 031 - Divisione: algoritmi software";
+        var mkdocs_page_input_path = "modules/modulo-7/lessons/031-divisione.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -141,13 +141,7 @@
     <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 7 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../031-divisione/">Lezione 031 - Divisione: algoritmi software</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../030-moltiplicazione/">Lezione 030 - Moltiplicazione: algoritmi software</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../026-shift-operations/">Lezione 026 - Shift operations: ASL, LSR, ROL, ROR</a>
-                </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 025 - Operazioni logiche: AND, ORA, EOR</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 031 - Divisione: algoritmi software</a>
     <ul class="current">
     <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
     </li>
@@ -155,23 +149,15 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#and-bitwise-and">AND (Bitwise AND)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#algoritmo-shift-and-subtract">Algoritmo shift-and-subtract</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#ora-bitwise-or">ORA (Bitwise OR)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#pseudo-codice">Pseudo-codice</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#eor-bitwise-xor-exclusive-or">EOR (Bitwise XOR / EXclusive OR)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#opcode-e-flag">Opcode e flag</a>
+    <li class="toctree-l4"><a class="reference internal" href="#performance">Performance</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#and-0f-con-aa5-1010-0101">AND #$0F con A=$A5 (1010 0101)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#ora-f0-con-a0a-0000-1010">ORA #$F0 con A=$0A (0000 1010)</a>
-    </li>
-        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
     </li>
@@ -188,6 +174,12 @@
     <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
     </li>
     </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../030-moltiplicazione/">Lezione 030 - Moltiplicazione: algoritmi software</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../026-shift-operations/">Lezione 026 - Shift operations: ASL, LSR, ROL, ROR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../025-operazioni-logiche/">Lezione 025 - Operazioni logiche: AND, ORA, EOR</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../024-addizione-sottrazione/">Lezione 024 - Addizione e sottrazione: ADC e SBC</a>
                 </li>
@@ -256,9 +248,9 @@
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Moduli &raquo;</li>
           <li>Modulo 7 - Operazioni aritmetiche e logiche &raquo;</li>
-      <li class="breadcrumb-item active">Lezione 025 - Operazioni logiche: AND, ORA, EOR</li>
+      <li class="breadcrumb-item active">Lezione 031 - Divisione: algoritmi software</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-7/lessons/025-operazioni-logiche.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-7/lessons/031-divisione.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -267,161 +259,123 @@
             <div class="section" itemprop="articleBody">
               
                 <p><a href="../../../../">🏠 Home</a></p>
-<h1 id="lezione-025-operazioni-logiche-and-ora-eor">Lezione 025 — Operazioni logiche: AND, ORA, EOR<a class="headerlink" href="#lezione-025-operazioni-logiche-and-ora-eor" title="Permanent link">&para;</a></h1>
+<h1 id="lezione-031-divisione-algoritmi-software">Lezione 031 — Divisione: algoritmi software<a class="headerlink" href="#lezione-031-divisione-algoritmi-software" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Obiettivo:</strong> capire come manipolare bit usando operazioni logiche AND (AND), ORA (OR), EOR (XOR) per maschere e combinazioni di bit.</p>
+<p><strong>Obiettivo:</strong> capire come implementare divisione di interi usando shift e sottrazione.</p>
 </blockquote>
 <hr />
 <h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
 <ul>
-<li>comprendere AND, ORA, EOR e la loro tavola di verità;</li>
-<li>usare AND per estrarre bit (maschere);</li>
-<li>usare ORA per settare bit;</li>
-<li>usare EOR per invertire bit;</li>
-<li>implementare logica di manipolazione di bit.</li>
+<li>comprendere l'algoritmo shift-and-subtract per divisione;</li>
+<li>implementare divisione 16 ÷ 8 → quoziente + resto;</li>
+<li>usare carry e borrow nella divisione;</li>
+<li>verificare corner cases (divisione per zero, overflow).</li>
 </ul>
 <hr />
 <h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
-<p>A volte vogliamo manipolare <strong>singoli bit</strong> o <strong>gruppi di bit</strong>.</p>
-<p>Esempi:
-- Estrarre il bit 7 da A: <code>AND #$80</code>
-- Settare il bit 3: <code>ORA #$08</code>
-- Invertire il bit 0: <code>EOR #$01</code></p>
-<p>Le operazioni logiche bit-by-bit risolvono questi problemi.</p>
+<p>Divisione è il contrario di moltiplicazione:</p>
+<pre class="highlight"><code>15 ÷ 3
+
+Risultato: quoziente = 5, resto = 0</code></pre>
+<p>Algoritmo: shift a sinistra il divisore finché non è &gt; dividendo, quindi sottrai e continua.</p>
 <hr />
 <h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
-<h3 id="and-bitwise-and">AND (Bitwise AND)<a class="headerlink" href="#and-bitwise-and" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code class="language-asm">AND operand    ; A ← A AND operand (bit-by-bit)</code></pre>
-<p>Truth table:
-<pre class="highlight"><code>A | op | result
---|----|---------
-0 | 0  | 0
-0 | 1  | 0
-1 | 0  | 0
-1 | 1  | 1</code></pre></p>
-<p>Uso: <strong>estrarre bit</strong>. Una maschera di 1 conserva i bit, una maschera di 0 azzera.</p>
-<h3 id="ora-bitwise-or">ORA (Bitwise OR)<a class="headerlink" href="#ora-bitwise-or" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code class="language-asm">ORA operand    ; A ← A ORA operand (bit-by-bit)</code></pre>
-<p>Truth table:
-<pre class="highlight"><code>A | op | result
---|----|---------
-0 | 0  | 0
-0 | 1  | 1
-1 | 0  | 1
-1 | 1  | 1</code></pre></p>
-<p>Uso: <strong>settare bit</strong>. Una maschera di 1 setta i bit, una maschera di 0 non li modifica.</p>
-<h3 id="eor-bitwise-xor-exclusive-or">EOR (Bitwise XOR / EXclusive OR)<a class="headerlink" href="#eor-bitwise-xor-exclusive-or" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code class="language-asm">EOR operand    ; A ← A EOR operand (bit-by-bit)</code></pre>
-<p>Truth table:
-<pre class="highlight"><code>A | op | result
---|----|---------
-0 | 0  | 0
-0 | 1  | 1
-1 | 0  | 1
-1 | 1  | 0</code></pre></p>
-<p>Uso: <strong>invertire (toggle) bit</strong>. Una maschera di 1 inverte, una maschera di 0 non modifica.</p>
-<h3 id="opcode-e-flag">Opcode e flag<a class="headerlink" href="#opcode-e-flag" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Istruzione</th>
-<th>Opcode (immediato)</th>
-<th>Bytes</th>
-<th>Cicli</th>
-<th>Flag</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AND</td>
-<td><code>$29</code></td>
-<td>2</td>
-<td>2</td>
-<td>Z, N</td>
-</tr>
-<tr>
-<td>ORA</td>
-<td><code>$09</code></td>
-<td>2</td>
-<td>2</td>
-<td>Z, N</td>
-</tr>
-<tr>
-<td>EOR</td>
-<td><code>$49</code></td>
-<td>2</td>
-<td>2</td>
-<td>Z, N</td>
-</tr>
-</tbody>
-</table>
-<p>Settano Z e N, non modificano C o V.</p>
+<h3 id="algoritmo-shift-and-subtract">Algoritmo shift-and-subtract<a class="headerlink" href="#algoritmo-shift-and-subtract" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code>quoziente = 0
+for i = 0 to 15:
+  quoziente &lt;&lt;= 1
+  if (dividendo &gt;= divisore):
+    dividendo -= divisore
+    quoziente |= 1
+  divisore &gt;&gt;= 1</code></pre>
+<h3 id="pseudo-codice">Pseudo-codice<a class="headerlink" href="#pseudo-codice" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code>div (A:X ÷ Y → A=quoziente, X=resto)
+{
+  quoziente = 0
+
+  for i = 0 to 7:
+    quoziente &lt;&lt;= 1
+    if divisor_hi bit:
+      quoziente |= 1
+    divisor &gt;&gt;= 1
+}</code></pre>
+<h3 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Divisione 16 ÷ 8: 8 iterazioni</li>
+<li>Cicli per iterazione: 15–20</li>
+<li>Totale: ~150 cicli</li>
+</ul>
 <hr />
 <h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
-<h3 id="and-0f-con-aa5-1010-0101"><code>AND #$0F</code> con A=$A5 (1010 0101)<a class="headerlink" href="#and-0f-con-aa5-1010-0101" title="Permanent link">&para;</a></h3>
+<p><code>div 15 ÷ 3</code>:</p>
 <ol>
-<li><strong>Fetch opcode</strong>: <code>$29</code></li>
-<li><strong>Fetch operando</strong>: <code>$0F</code> (0000 1111)</li>
-<li><strong>AND bit-by-bit</strong>:
-   <pre class="highlight"><code>1010 0101
-0000 1111
----------
-0000 0101 = $05</code></pre></li>
-<li><strong>Set flags</strong>: Z=0 (risultato ≠ 0), N=0 (bit 7 = 0)</li>
-</ol>
-<h3 id="ora-f0-con-a0a-0000-1010"><code>ORA #$F0</code> con A=$0A (0000 1010)<a class="headerlink" href="#ora-f0-con-a0a-0000-1010" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Fetch opcode</strong>: <code>$09</code></li>
-<li><strong>Fetch operando</strong>: <code>$F0</code> (1111 0000)</li>
-<li><strong>ORA bit-by-bit</strong>:
-   <pre class="highlight"><code>0000 1010
-1111 0000
----------
-1111 1010 = $FA</code></pre></li>
-<li><strong>Set flags</strong>: Z=0, N=1 (bit 7 = 1)</li>
+<li><strong>Y = 3</strong> (divisore)</li>
+<li><strong>A = 15</strong> (dividendo hi), <strong>X = 0</strong> (dividendo lo)</li>
+<li><strong>Iterazione 0</strong>: A = 00, shift, A &gt;= Y? No</li>
+<li><strong>Iterazione 1</strong>: A = 01, shift, A &gt;= Y? No</li>
+<li><strong>Iterazione 2</strong>: A = 03, A &gt;= Y? Yes → sottrai Y, A = 0, quoziente |= 1</li>
+<li><strong>Iterazioni 3–7</strong>: A &lt; Y, skip</li>
+<li><strong>Risultato</strong>: A = 5 (quoziente), X = 0 (resto) ✓</li>
 </ol>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 025 — Operazioni logiche
-; Manipolazione di bit
+<pre class="highlight"><code class="language-asm">; Lezione 031 — Divisione
+; Divisione 16 ÷ 8 → quoziente + resto
 *= $0801
 
-; Estrai il nibble basso (4 bit bassi)
-LDA #$A5       ; 1010 0101
-AND #$0F       ; AND con 0000 1111
-; Risultato: 0000 0101 = $05 (nibble basso estratto)
+; Chiamata: LDA div_hi, LDX div_lo, LDY divisore, JSR div
+; Risultato: A = quoziente, X = resto
 
-; Setta il bit 3 (aggiungi $08)
-LDA #$42       ; 0100 0010
-ORA #$08       ; ORA con 0000 1000
-; Risultato: 0100 1010 = $4A (bit 3 settato)
+div:
+  ; A = dividendo byte alto
+  ; X = dividendo byte basso
+  ; Y = divisore
+  ; Risultato: A = quoziente, X = resto
 
-; Inverti il bit 7
-LDA #$00       ; 0000 0000
-EOR #$80       ; EOR con 1000 0000
-; Risultato: 1000 0000 = $80 (bit 7 invertito da 0 a 1)
+  CMP #$00       ; se divisore = 0, errore
+  BEQ err_div0
 
-; Azzera i bit alti (mantieni i bassi)
-LDA #$FF       ; 1111 1111
-AND #$0F       ; AND con 0000 1111
-; Risultato: 0000 1111 = $0F (solo nibble basso)
+  ; Setup
+  LDA #$00       ; A = quoziente
+  STX remainder  ; remainder = dividendo basso
 
-RTS</code></pre>
-<p>Compila:</p>
-<pre class="highlight"><code class="language-bash">64tass --cbm-prg -o bin/025.prg src/modulo-7/025.asm</code></pre>
+  LDX #$08       ; 8 iterazioni per 8 bit
+
+loop:
+  ASL remainder  ; shift remainder (dividendo)
+  ROL            ; rotate quoziente (accumula risultato)
+
+  SEC
+  SBC Y          ; sottrai divisore
+  BCC skip       ; se &lt; 0 (borrow), skip
+
+  ; quoziente risultato |= 1 (carry)
+  ORA #$01
+
+skip:
+  DEX
+  BNE loop
+
+  STX remainder  ; remainder = il valore di X (che è rimasto)
+
+err_div0:
+  RTS
+
+remainder = $02</code></pre>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Confondere AND/ORA</strong>: AND azzera i bit, ORA li setta.</li>
-<li><strong>Invertire la maschera</strong>: se vuoi estrarre i bit bassi, usa <code>AND #$0F</code>, non <code>AND #$F0</code>.</li>
-<li><strong>EOR per azzera</strong>: EOR inverte, non azzera. Per azzera, usa <code>AND #$00</code> o <code>LDA #$00</code>.</li>
+<li><strong>Divisione per zero</strong>: verificare se Y = 0</li>
+<li><strong>Shift non sincronizzato</strong>: remainder e quoziente devono shiftare insieme via carry</li>
+<li><strong>Borrow vs carry</strong>: SBC setta carry se NO borrow (A &gt;= Y)</li>
+<li><strong>Overflow in divisione</strong>: se quoziente &gt; 255, perde bit</li>
 </ul>
 <hr />
 <h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Estrai il bit 7 da A usando AND: <code>AND #$80</code> e verifica con BEQ/BMI.</li>
-<li>Setta il bit 5: <code>ORA #$20</code>.</li>
-<li>Inverti tutti i bit usando <code>EOR #$FF</code> (il complemento).</li>
+<li>Implementa divisione 32 ÷ 16 (dividendo 32-bit, divisore 16-bit)</li>
+<li>Estendi a divisione con resto ben definito</li>
+<li>Implementa divisione di numeri negativi (signed)</li>
 </ol>
 <hr />
 <h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
@@ -434,55 +388,49 @@ RTS</code></pre>
 </thead>
 <tbody>
 <tr>
-<td>AND</td>
-<td>Azzera i bit dove la maschera è 0</td>
+<td>Shift-and-subtract</td>
+<td>Algoritmo per divisione</td>
 </tr>
 <tr>
-<td>ORA</td>
-<td>Setta i bit dove la maschera è 1</td>
+<td>Quoziente</td>
+<td>Risultato della divisione (A)</td>
 </tr>
 <tr>
-<td>EOR</td>
-<td>Inverte i bit dove la maschera è 1</td>
+<td>Resto</td>
+<td>Residuo della divisione (X)</td>
 </tr>
 <tr>
-<td>Flag</td>
-<td>Z, N modificati; C, V non modificati</td>
-</tr>
-<tr>
-<td>Uso tipico</td>
-<td>Maschere, flag checking, bit toggling</td>
+<td>Borrow tracking</td>
+<td>Gestione del segno in sottrazione</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
-<p>Nella lezione 026 vedremo <strong>Shift operations</strong>: ASL, LSR, ROL, ROR per spostare i bit a sinistra/destra.</p>
+<p>Con la lezione 031, abbiamo completato la copertuta dei comandi base e le operazioni fondamentali. Prossimi moduli: I/O, periferiche, grafica.</p>
 <hr />
 <h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
-<p><strong>Applicazioni pratiche:</strong></p>
-<pre class="highlight"><code class="language-asm">; Controlla se il bit 7 è settato
-BIT $40        ; oppure: LDA $40 AND #$80
-BEQ bit7_not_set
-
-; Azzera il byte pari di colore
-LDA $D020      ; leggi colore
-AND #$0F       ; mantieni solo nibble basso (azzera alto)
-STA $D020      ; scrivi back</code></pre>
+<p><strong>Metodi alternativi:</strong></p>
+<ol>
+<li><strong>Lookup table</strong>: per divisori fissi (veloce)</li>
+<li><strong>Newton-Raphson</strong>: per divisione veloce (complesso)</li>
+<li><strong>BCD divide</strong>: per aritmetica decimale</li>
+</ol>
 <hr />
 <h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
 <ul>
-<li>[ ] l'esempio compila con <code>64tass</code></li>
-<li>[ ] AND, ORA, EOR funzionano correttamente</li>
-<li>[ ] le maschere di bit sono corrette</li>
-<li>[ ] il contenuto è progressivo rispetto alle lezioni precedenti</li>
+<li>[ ] L'esempio compila</li>
+<li>[ ] La divisione funziona per almeno 3 casi di test</li>
+<li>[ ] Il borrow è gestito correttamente</li>
+<li>[ ] Il resto è calcolato correttamente</li>
+<li>[ ] Il contenuto è progressivo rispetto alle lezioni precedenti</li>
 </ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../026-shift-operations/" class="btn btn-neutral float-left" title="Lezione 026 - Shift operations: ASL, LSR, ROL, ROR"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../024-addizione-sottrazione/" class="btn btn-neutral float-right" title="Lezione 024 - Addizione e sottrazione: ADC e SBC">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../" class="btn btn-neutral float-left" title="Modulo 7 - Indice"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../030-moltiplicazione/" class="btn btn-neutral float-right" title="Lezione 030 - Moltiplicazione: algoritmi software">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -509,10 +457,10 @@ STA $D020      ; scrivi back</code></pre>
         </span>
     
     
-      <span><a href="../026-shift-operations/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../024-addizione-sottrazione/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../030-moltiplicazione/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
