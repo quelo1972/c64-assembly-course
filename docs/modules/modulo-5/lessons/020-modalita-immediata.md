@@ -159,6 +159,10 @@ Lo stesso mnemonico `LDA` ha opcode diversi a seconda della modalità:
 
 ---
 
+## 🔎 Approfondimento - Dentro il 6510
+
+La stabilita del software su C64 dipende da una disciplina costante: passi piccoli, stato esplicito e ordine prevedibile nelle scritture su memoria e I/O. Questo approccio riduce errori difficili da tracciare nelle fasi successive del corso.
+
 ## ✅ Checklist finale
 
 - [ ] l'esempio compila con `64tass`

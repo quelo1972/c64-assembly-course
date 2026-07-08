@@ -234,6 +234,10 @@ Nella lezione 030 vedremo come implementare moltiplicazione usando solo istruzio
 
 ---
 
+## 🔎 Approfondimento - Dentro il 6510
+
+La stabilita del software su C64 dipende da una disciplina costante: passi piccoli, stato esplicito e ordine prevedibile nelle scritture su memoria e I/O. Questo approccio riduce errori difficili da tracciare nelle fasi successive del corso.
+
 ## ✅ Checklist finale
 
 - [ ] L'esempio compila

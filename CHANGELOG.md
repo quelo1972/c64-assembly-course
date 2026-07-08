@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-08 — Quality fix globale: conformita template lezioni storiche
+
+### Intervento
+- Bonificate lezioni storiche (moduli 0, 2, 3, 4, 5, 6, 7) per allineamento alle intestazioni obbligatorie del template.
+- Inserite sezioni mancanti dove assenti (`Come ragiona il 6510`, `Esercizi`, `Preparazione alla lezione successiva`, `Approfondimento - Dentro il 6510`).
+
+### Esito verifica
+- Gap template globali: da **34** a **0**.
+- Build MkDocs globale: **OK**.
+
 ## 2026-07-08 — Modulo 11 avviato: lezioni 049-052 (interrupt, CIA, tempo)
 
 ### Nuove lezioni

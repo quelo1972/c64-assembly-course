@@ -266,6 +266,18 @@ build: $(OBJECTS)
 
 ---
 
+## 🤖 Come ragiona il 6510
+
+Anche in questa lezione il 6510 segue un flusso semplice: esegue istruzioni in sequenza, aggiorna registri e memoria, e interagisce con l hardware tramite registri I/O quando necessario.
+
+## 🔜 Preparazione alla lezione successiva
+
+Nella prossima lezione useremo questi concetti come base e aggiungeremo un livello in piu di controllo sul flusso del programma e sulla relazione tra CPU e periferiche.
+
+## 🔎 Approfondimento - Dentro il 6510
+
+La stabilita del software su C64 dipende da una disciplina costante: passi piccoli, stato esplicito e ordine prevedibile nelle scritture su memoria e I/O. Questo approccio riduce errori difficili da tracciare nelle fasi successive del corso.
+
 ## ✅ Checklist finale
 
 - [ ] Makefile creato e testato

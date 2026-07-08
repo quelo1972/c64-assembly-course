@@ -242,6 +242,14 @@ Se usi WSL, puoi debuggare in container SSH e collegare VICE remoto.
 
 ---
 
+## 🤖 Come ragiona il 6510
+
+Anche in questa lezione il 6510 segue un flusso semplice: esegue istruzioni in sequenza, aggiorna registri e memoria, e interagisce con l hardware tramite registri I/O quando necessario.
+
+## 🔎 Approfondimento - Dentro il 6510
+
+La stabilita del software su C64 dipende da una disciplina costante: passi piccoli, stato esplicito e ordine prevedibile nelle scritture su memoria e I/O. Questo approccio riduce errori difficili da tracciare nelle fasi successive del corso.
+
 ## ✅ Checklist finale
 
 - [ ] VS Code installato

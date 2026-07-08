@@ -180,6 +180,12 @@ Nella prossima lezione studieremo Stack Pointer e Program Counter, per capire co
 
 Nel 6510 il registro A è destinato alle operazioni principali, mentre X e Y sono progettati per puntare indirizzi e contare elementi in memoria.
 
+## 🧪 Esercizi
+
+1. Ripeti l esempio principale variando un parametro alla volta e annota cosa cambia.
+2. Verifica i registri o i flag coinvolti dopo ogni passaggio chiave.
+3. Riscrivi l esempio in forma minima mantenendo lo stesso risultato.
+
 ## ✅ Checklist finale
 
 - [ ] l'esempio compila con 64tass;
