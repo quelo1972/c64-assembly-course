@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Lesson template - C64 Assembly Course</title>
+    <title>Lezione 020 - Operazioni di stack avanzate - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Lesson template";
-        var mkdocs_page_input_path = "modules/modulo-7/lessons/lesson-template.md";
+        var mkdocs_page_name = "Lezione 020 - Operazioni di stack avanzate";
+        var mkdocs_page_input_path = "modules/modulo-6/lessons/020-stack-avanzato.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Moduli</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="#">Modulo 0 - Ambiente di sviluppo</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/">Modulo 0 - Indice</a>
@@ -113,27 +113,71 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 6 - Controllo del flusso e subroutine</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/">Modulo 6 - Indice</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 6 - Controllo del flusso e subroutine</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 6 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/020-stack-avanzato/">Lezione 020 - Operazioni di stack avanzate</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 020 - Operazioni di stack avanzate</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#tsx-e-txs">TSX e TXS</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#php-e-plp">PHP e PLP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#uso-comune">Uso comune</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#stack-pointer-nel-6510">Stack Pointer nel 6510</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#tsx">TSX</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#txs">TXS</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#php">PHP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#plp">PLP</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
+    </li>
+    </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/019-salti-su-carry-overflow/">Lezione 019 - Salti condizionati: Carry e Overflow</a>
+                <li class="toctree-l2"><a class="reference internal" href="../019-salti-su-carry-overflow/">Lezione 019 - Salti condizionati: Carry e Overflow</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/016-subroutine-jsr-rts/">Lezione 016 - Subroutine: JSR e RTS</a>
+                <li class="toctree-l2"><a class="reference internal" href="../016-subroutine-jsr-rts/">Lezione 016 - Subroutine: JSR e RTS</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-6/lessons/015-salti-condizionati/">Lezione 015 - Salti condizionati</a>
+                <li class="toctree-l2"><a class="reference internal" href="../015-salti-condizionati/">Lezione 015 - Salti condizionati</a>
                 </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Modulo 7 - Operazioni aritmetiche e logiche</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 7 - Indice</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/">Modulo 7 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../022-compare-bit-operations/">Lezione 022 - Compare e BIT test operations</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/022-compare-bit-operations/">Lezione 022 - Compare e BIT test operations</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../021-incremento-decremento-memoria/">Lezione 021 - Incremento e decremento in memoria</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-7/lessons/021-incremento-decremento-memoria/">Lezione 021 - Incremento e decremento in memoria</a>
                 </li>
     </ul>
                   </li>
@@ -194,9 +238,11 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li class="breadcrumb-item active">Lesson template</li>
+          <li>Moduli &raquo;</li>
+          <li>Modulo 6 - Controllo del flusso e subroutine &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 020 - Operazioni di stack avanzate</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-7/lessons/lesson-template.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-6/lessons/020-stack-avanzato.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -205,47 +251,165 @@
             <div class="section" itemprop="articleBody">
               
                 <p><a href="../../../../">🏠 Home</a></p>
-<h1 id="lezione-nnn-titolo-della-lezione">Lezione NNN — Titolo della lezione<a class="headerlink" href="#lezione-nnn-titolo-della-lezione" title="Permanent link">&para;</a></h1>
+<h1 id="lezione-020-operazioni-di-stack-avanzate">Lezione 020 — Operazioni di stack avanzate<a class="headerlink" href="#lezione-020-operazioni-di-stack-avanzate" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Obiettivo:</strong> descrivere in una frase l'obiettivo concreto di questa lezione.</p>
+<p><strong>Obiettivo:</strong> capire come usare TSX/TXS/PHP/PLP per manipolare direttamente lo stack pointer e salvare il processor status.</p>
 </blockquote>
 <hr />
 <h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
 <ul>
-<li>punto 1</li>
-<li>punto 2</li>
-<li>punto 3</li>
+<li>comprendere i trasferimenti TSX/TXS tra X e Stack Pointer;</li>
+<li>usare PHP/PLP per salvare e ripristinare il processor status;</li>
+<li>manipolare direttamente lo stack;</li>
+<li>implementare logica di diagnostica su stack.</li>
 </ul>
 <hr />
 <h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
-<p><em>Contestualizzare l'argomento rispetto a quanto già visto. Spiegare perché questo concetto è necessario adesso.</em></p>
+<p>Finora abbiamo usato PHA/PLA per salvare A.</p>
+<p>Ma spesso vogliamo:
+- <strong>Leggere o scrivere lo Stack Pointer</strong>: TSX (Transfer Stack to X), TXS (Transfer X to Stack)
+- <strong>Salvare i flag</strong>: PHP (Push Processor status), PLP (Pull Processor status)</p>
+<p>Queste operazioni sono essenziali per:
+- Salvare/ripristinare lo stato completo del processore
+- Manipolare lo stack per trucchi avanzati
+- Diagnosticare lo stato della stack durante debugging</p>
 <hr />
 <h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
-<p><em>Teoria essenziale, senza assumere conoscenze pregresse non ancora trattate nel corso.</em></p>
+<h3 id="tsx-e-txs">TSX e TXS<a class="headerlink" href="#tsx-e-txs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Istruzione</th>
+<th>Effetto</th>
+<th>Flag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TSX</td>
+<td>X ← SP</td>
+<td>Z, N</td>
+</tr>
+<tr>
+<td>TXS</td>
+<td>SP ← X</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TSX</strong> copia lo Stack Pointer in X (leggi dove è lo stack).
+<strong>TXS</strong> copia X nello Stack Pointer (scrivi dove deve essere lo stack).</p>
+<h3 id="php-e-plp">PHP e PLP<a class="headerlink" href="#php-e-plp" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Istruzione</th>
+<th>Effetto</th>
+<th>Cicli</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PHP</td>
+<td>Stack ← SR (processor status)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>PLP</td>
+<td>SR ← Stack</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PHP</strong> salva i flag (N, V, B, D, I, Z, C) sullo stack in una sola istruzione.
+<strong>PLP</strong> ripristina i flag dallo stack.</p>
+<h3 id="uso-comune">Uso comune<a class="headerlink" href="#uso-comune" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-asm">; Salva tutti i flag
+PHP
+
+; Cambia i flag (es: ADC modifica Z, C, V, N)
+LDA #$7F
+ADC #$01
+
+; Ripristina i flag originali
+PLP</code></pre>
+<h3 id="stack-pointer-nel-6510">Stack Pointer nel 6510<a class="headerlink" href="#stack-pointer-nel-6510" title="Permanent link">&para;</a></h3>
+<p>Lo Stack Pointer (SP) è contenuto in <code>$0100 + SP</code>.</p>
+<p>Lo stack cresce verso il basso (dalla <code>$01FF</code> verso <code>$0100</code>).</p>
+<pre class="highlight"><code>SP = $FF → stack in $01FF
+SP = $00 → stack in $0100</code></pre>
+<p>Quando fai PUSH, SP viene decrementato.
+Quando fai POP, SP viene incrementato.</p>
 <hr />
 <h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
-<p><em>Descrivere il comportamento del processore a livello di ciclo macchina, registri e flag.</em></p>
+<h3 id="tsx">TSX<a class="headerlink" href="#tsx" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Fetch opcode</strong>: <code>$BA</code></li>
+<li><strong>Read SP</strong>: legge il valore corrente dello SP</li>
+<li><strong>Transfer</strong>: X ← SP</li>
+<li><strong>Set flags</strong>: Z se X = 0, N se X ≥ $80</li>
+</ol>
+<h3 id="txs">TXS<a class="headerlink" href="#txs" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Fetch opcode</strong>: <code>$9A</code></li>
+<li><strong>Write SP</strong>: SP ← X</li>
+<li><strong>No flags changed</strong></li>
+</ol>
+<h3 id="php">PHP<a class="headerlink" href="#php" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Fetch opcode</strong>: <code>$08</code></li>
+<li><strong>Prepare status</strong>: raccoglie i flag in un byte</li>
+<li><strong>Push</strong>: decrementa SP e scrive il byte sullo stack</li>
+</ol>
+<h3 id="plp">PLP<a class="headerlink" href="#plp" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Fetch opcode</strong>: <code>$28</code></li>
+<li><strong>Pop</strong>: incrementa SP e legge il byte dallo stack</li>
+<li><strong>Restore</strong>: carica il byte nei flag</li>
+</ol>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Esempio minimo compilabile con 64tass
-; Nota: descrivere ogni istruzione usata la prima volta che appare.
+<pre class="highlight"><code class="language-asm">; Lezione 020 — Operazioni di stack avanzate
+; Salva e ripristina lo stato del processore
 *= $0801
 
-; codice qui</code></pre>
-<blockquote>
-<p>Nota: ogni istruzione Assembly usata per la prima volta deve essere accompagnata da una breve spiegazione (1-2 frasi) prima o subito dopo l'esempio.</p>
-</blockquote>
+; Salva i flag attuali
+PHP
+
+; Simula un'operazione che cambia i flag
+LDA #$FF
+ADC #$01       ; overflow, carry, ecc.
+
+; Qui i flag sono cambiati
+
+; Ripristina i flag originali
+PLP
+
+; I flag sono tornati allo stato prima dell'ADC
+
+; Leggi lo Stack Pointer attuale
+TSX            ; X ← SP
+; X contiene ora il valore dello SP (per debug)
+
+; Modifica lo SP (attenzione! è pericoloso)
+; TXS            ; SP ← X
+
+RTS</code></pre>
+<p>Compila:</p>
+<pre class="highlight"><code class="language-bash">64tass --cbm-prg -o bin/020.prg src/modulo-6/020.asm</code></pre>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Errore 1: descrizione e come evitarlo</li>
-<li>Errore 2: descrizione e come evitarlo</li>
+<li><strong>Confondere TSX con PHA</strong>: TSX modifica X ma non usa lo stack. PHA modifica lo stack.</li>
+<li><strong>Usare TXS senza sapere cosa fai</strong>: modificare lo SP può rompere lo stack. Usa solo se intendi salvare/ripristinare in coppia.</li>
+<li><strong>Dimenticare che PHP salva il flag B</strong>: il flag B è settato a 1 da PHP quando pushato, e a 0 in altre circostanze.</li>
 </ul>
 <hr />
 <h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Esercizio semplice.</li>
-<li>Esercizio avanzato.</li>
+<li>Usa TSX per leggere il valore dello SP e scrivilo nel bordo (per debug).</li>
+<li>Salva i flag con PHP, cambia A con diverse operazioni, ripristina con PLP.</li>
+<li>Usa TXS per spostare lo stack (avanzato, pericoloso!).</li>
 </ol>
 <hr />
 <h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
@@ -253,38 +417,66 @@
 <thead>
 <tr>
 <th>Concetto</th>
-<th>Spiegazione breve</th>
+<th>Spiegazione</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Termine1</td>
-<td>Definizione 1</td>
+<td>TSX</td>
+<td>Transfer Stack Pointer to X</td>
 </tr>
 <tr>
-<td>Termine2</td>
-<td>Definizione 2</td>
+<td>TXS</td>
+<td>Transfer X to Stack Pointer</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>Push Processor status on stack</td>
+</tr>
+<tr>
+<td>PLP</td>
+<td>Pull Processor status from stack</td>
+</tr>
+<tr>
+<td>Stack Pointer</td>
+<td>Contiene l'offset di $0100–$01FF</td>
+</tr>
+<tr>
+<td>Processor Status</td>
+<td>Byte contente tutti i 6 flag</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
-<p><em>Anticipare brevemente il prossimo argomento e perché segue logicamente.</em></p>
+<p>Nella lezione 021 vedremo <strong>INC/DEC in memoria</strong>: come incrementare/decrementare direttamente celle di memoria, oltre ai registri.</p>
 <hr />
 <h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
-<p><em>Dettagli opzionali per chi vuole approfondire il comportamento hardware.</em></p>
+<p><strong>Byte di processor status (salvato da PHP):</strong></p>
+<pre class="highlight"><code>Bit 7: N (Negative)
+Bit 6: V (oVerflow)
+Bit 5: unused (sempre 1 quando pushato)
+Bit 4: B (Break flag)
+Bit 3: D (Decimal mode)
+Bit 2: I (Interrupt Disable)
+Bit 1: Z (Zero)
+Bit 0: C (Carry)</code></pre>
+<p>PHP aggiunge il bit B e il bit 5 come 1 quando salva.</p>
 <hr />
 <h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
 <ul>
 <li>[ ] l'esempio compila con <code>64tass</code></li>
-<li>[ ] l'esempio è coerente con la lezione</li>
-<li>[ ] ogni istruzione nuova è spiegata prima dell'uso</li>
-<li>[ ] indice, glossario e changelog sono aggiornati</li>
-<li>[ ] il contenuto è semplice e progressivo</li>
+<li>[ ] TSX legge correttamente lo Stack Pointer</li>
+<li>[ ] PHP/PLP salvano e ripristinano i flag</li>
+<li>[ ] il contenuto è progressivo rispetto alle lezioni precedenti</li>
 </ul>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../" class="btn btn-neutral float-left" title="Modulo 6 - Indice"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../019-salti-su-carry-overflow/" class="btn btn-neutral float-right" title="Lezione 019 - Salti condizionati: Carry e Overflow">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -310,6 +502,10 @@
         </span>
     
     
+      <span><a href="../../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../019-salti-su-carry-overflow/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

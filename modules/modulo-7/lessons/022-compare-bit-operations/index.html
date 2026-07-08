@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Lesson template - C64 Assembly Course</title>
+    <title>Lezione 022 - Compare e BIT test operations - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Lesson template";
-        var mkdocs_page_input_path = "modules/modulo-7/lessons/lesson-template.md";
+        var mkdocs_page_name = "Lezione 022 - Compare e BIT test operations";
+        var mkdocs_page_input_path = "modules/modulo-7/lessons/022-compare-bit-operations.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Moduli</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="#">Modulo 0 - Ambiente di sviluppo</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/">Modulo 0 - Indice</a>
@@ -127,11 +127,51 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 7 - Operazioni aritmetiche e logiche</a>
-    <ul>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 7 - Operazioni aritmetiche e logiche</a>
+    <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 7 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../022-compare-bit-operations/">Lezione 022 - Compare e BIT test operations</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 022 - Compare e BIT test operations</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cmp-cpx-cpy">CMP, CPX, CPY</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#opcode-e-cicli">Opcode e cicli</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bit-bit-test">BIT - Bit test</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#opcode-e-cicli_1">Opcode e cicli</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cmp-50-con-a-40">CMP #$50 con A = $40</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bit-40-con-a-ff-e-memoria40-c0">BIT $40 con A = $FF e memoria[$40] = $C0</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
+    </li>
+    </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../021-incremento-decremento-memoria/">Lezione 021 - Incremento e decremento in memoria</a>
                 </li>
@@ -194,9 +234,11 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li class="breadcrumb-item active">Lesson template</li>
+          <li>Moduli &raquo;</li>
+          <li>Modulo 7 - Operazioni aritmetiche e logiche &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 022 - Compare e BIT test operations</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-7/lessons/lesson-template.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-7/lessons/022-compare-bit-operations.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -205,47 +247,207 @@
             <div class="section" itemprop="articleBody">
               
                 <p><a href="../../../../">🏠 Home</a></p>
-<h1 id="lezione-nnn-titolo-della-lezione">Lezione NNN — Titolo della lezione<a class="headerlink" href="#lezione-nnn-titolo-della-lezione" title="Permanent link">&para;</a></h1>
+<h1 id="lezione-022-compare-e-bit-test-operations">Lezione 022 — Compare e BIT test operations<a class="headerlink" href="#lezione-022-compare-e-bit-test-operations" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Obiettivo:</strong> descrivere in una frase l'obiettivo concreto di questa lezione.</p>
+<p><strong>Obiettivo:</strong> capire come usare CMP/CPX/CPY per confrontare senza modifica, e BIT per testare bit specifici.</p>
 </blockquote>
 <hr />
 <h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
 <ul>
-<li>punto 1</li>
-<li>punto 2</li>
-<li>punto 3</li>
+<li>comprendere CMP, CPX, CPY e come settano i flag;</li>
+<li>usare BIT per testare bit specifici di una cella;</li>
+<li>implementare logica di confronto complessa;</li>
+<li>scegliere tra CMP e BIT a seconda del caso d'uso.</li>
 </ul>
 <hr />
 <h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
-<p><em>Contestualizzare l'argomento rispetto a quanto già visto. Spiegare perché questo concetto è necessario adesso.</em></p>
+<p>Spesso vogliamo <strong>confrontare valori senza modificarli</strong>.</p>
+<p><code>CMP A, memoria</code> è come <code>SBC</code> ma non modifica A:</p>
+<pre class="highlight"><code class="language-asm">CMP #$50       ; confronta A con $50
+; A rimane invariato
+; Ma Z, C, N sono settati in base al risultato</code></pre>
+<p><code>BIT</code> è ancora più specifico: testa se <strong>certi bit</strong> di una cella sono settati.</p>
 <hr />
 <h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
-<p><em>Teoria essenziale, senza assumere conoscenze pregresse non ancora trattate nel corso.</em></p>
+<h3 id="cmp-cpx-cpy">CMP, CPX, CPY<a class="headerlink" href="#cmp-cpx-cpy" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Istruzione</th>
+<th>Operazione</th>
+<th>Flag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CMP</td>
+<td>A - memoria</td>
+<td>Z, C, N</td>
+</tr>
+<tr>
+<td>CPX</td>
+<td>X - memoria</td>
+<td>Z, C, N</td>
+</tr>
+<tr>
+<td>CPY</td>
+<td>Y - memoria</td>
+<td>Z, C, N</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sottrae senza modificare il registro</strong>, ma setta:
+- <strong>Z = 1</strong>: se A == memoria (risultato = 0)
+- <strong>C = 0</strong>: se A &lt; memoria (borrow)
+- <strong>C = 1</strong>: se A ≥ memoria (no borrow)
+- <strong>N = 1</strong>: se A &lt; memoria (signed)</p>
+<h3 id="opcode-e-cicli">Opcode e cicli<a class="headerlink" href="#opcode-e-cicli" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Istruzione</th>
+<th>Immediato</th>
+<th>Zero Page</th>
+<th>Absolute</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CMP</td>
+<td><code>$C9</code> (2 cicli)</td>
+<td><code>$C5</code> (3)</td>
+<td><code>$CD</code> (4)</td>
+</tr>
+<tr>
+<td>CPX</td>
+<td><code>$E0</code> (2)</td>
+<td><code>$E4</code> (3)</td>
+<td><code>$EC</code> (4)</td>
+</tr>
+<tr>
+<td>CPY</td>
+<td><code>$C0</code> (2)</td>
+<td><code>$C4</code> (3)</td>
+<td><code>$CC</code> (4)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bit-bit-test">BIT - Bit test<a class="headerlink" href="#bit-bit-test" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-asm">BIT addr       ; testa i bit di addr senza modificare A</code></pre>
+<p><strong>BIT</strong> setta i flag direttamente dai bit della cella:</p>
+<ol>
+<li><strong>Z</strong>: è 1 se (A AND memoria) = 0</li>
+<li><strong>N</strong>: prende il bit 7 di memoria (non di A!)</li>
+<li><strong>V</strong>: prende il bit 6 di memoria</li>
+</ol>
+<p>A rimane invariato.</p>
+<h3 id="opcode-e-cicli_1">Opcode e cicli<a class="headerlink" href="#opcode-e-cicli_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Modalità</th>
+<th>Opcode</th>
+<th>Bytes</th>
+<th>Cicli</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zero Page</td>
+<td><code>$24</code></td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Absolute</td>
+<td><code>$2C</code></td>
+<td>3</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
-<p><em>Descrivere il comportamento del processore a livello di ciclo macchina, registri e flag.</em></p>
+<h3 id="cmp-50-con-a-40"><code>CMP #$50</code> con A = $40<a class="headerlink" href="#cmp-50-con-a-40" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Fetch opcode</strong>: <code>$C9</code></li>
+<li><strong>Fetch dato</strong>: <code>$50</code></li>
+<li><strong>Subtract</strong>: A - $50 = $40 - $50 = -$10 (risultato negativo)</li>
+<li><strong>Set flags</strong>:</li>
+<li>Z = 0 (risultato non è zero)</li>
+<li>C = 0 (A &lt; $50, c'è borrow)</li>
+<li>N = 1 (risultato è negativo)</li>
+</ol>
+<p>Dopo: BCS <strong>non salta</strong> (carry = 0), BPL <strong>non salta</strong> (N = 1).</p>
+<h3 id="bit-40-con-a-ff-e-memoria40-c0"><code>BIT $40</code> con A = $FF e memoria[$40] = $C0<a class="headerlink" href="#bit-40-con-a-ff-e-memoria40-c0" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Fetch opcode</strong>: <code>$24</code></li>
+<li><strong>Fetch indirizzo</strong>: <code>$40</code></li>
+<li><strong>Read</strong>: legge memoria[$40] = $C0 = 1100 0000</li>
+<li><strong>Test</strong>: A AND $C0 = $FF AND $C0 = $C0 ≠ 0</li>
+<li><strong>Set flags</strong>:</li>
+<li>Z = 0 (A AND memoria ≠ 0)</li>
+<li>N = 1 (bit 7 di memoria = 1)</li>
+<li>V = 1 (bit 6 di memoria = 1)</li>
+</ol>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Esempio minimo compilabile con 64tass
-; Nota: descrivere ogni istruzione usata la prima volta che appare.
+<pre class="highlight"><code class="language-asm">; Lezione 022 — Compare e BIT test operations
+; Confronta valori e testa bit
 *= $0801
 
-; codice qui</code></pre>
-<blockquote>
-<p>Nota: ogni istruzione Assembly usata per la prima volta deve essere accompagnata da una breve spiegazione (1-2 frasi) prima o subito dopo l'esempio.</p>
-</blockquote>
+; Variabile in Zero Page
+value = $02
+
+; Carica un valore
+LDA #$50
+
+; Confronta con una soglia
+CMP #$40
+BCC below    ; salta se A &lt; $40
+; A &gt;= $40
+LDA #$03     ; colore ciano
+JMP set_color
+
+below:
+  LDA #$01   ; colore bianco
+
+set_color:
+  STA $D020  ; visualizza il risultato
+
+; Testa se un bit è settato
+BIT value    ; testa memoria[value]
+BMI bit7set  ; salta se bit 7 è settato
+; bit 7 non è settato
+BVC bit6notset
+; bit 6 è settato
+JMP done
+
+bit7set:
+  ; bit 7 è settato
+  JMP done
+
+bit6notset:
+  ; bit 6 non è settato
+  JMP done
+
+done:
+  RTS</code></pre>
+<p>Compila:</p>
+<pre class="highlight"><code class="language-bash">64tass --cbm-prg -o bin/022.prg src/modulo-7/022.asm</code></pre>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Errore 1: descrizione e come evitarlo</li>
-<li>Errore 2: descrizione e come evitarlo</li>
+<li><strong>Confondere CMP con SBC</strong>: CMP non modifica A, SBC sì.</li>
+<li><strong>Dimenticare il significato di C</strong>: C = 0 significa A &lt; memoria (borrow). C = 1 significa A ≥ memoria.</li>
+<li><strong>Usare BIT per test complessi</strong>: BIT testa solo bit 6 e 7 via N/V. Per altri bit, usi AND e CMP.</li>
 </ul>
 <hr />
 <h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Esercizio semplice.</li>
-<li>Esercizio avanzato.</li>
+<li>Confronta A con una serie di soglie e salta a routine diverse.</li>
+<li>Usa BIT per testare se il bit 7 di una variabile è settato.</li>
+<li>Implementa un validatore: se A &lt; 100 AND A &gt; 50, procedi; altrimenti ritorna.</li>
 </ol>
 <hr />
 <h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
@@ -253,38 +455,62 @@
 <thead>
 <tr>
 <th>Concetto</th>
-<th>Spiegazione breve</th>
+<th>Spiegazione</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Termine1</td>
-<td>Definizione 1</td>
+<td>CMP / CPX / CPY</td>
+<td>Confronta senza modifica, setta Z/C/N</td>
 </tr>
 <tr>
-<td>Termine2</td>
-<td>Definizione 2</td>
+<td>Z flag</td>
+<td>1 se uguali, 0 se diversi</td>
+</tr>
+<tr>
+<td>C flag</td>
+<td>0 se A &lt; memoria, 1 se A ≥ memoria</td>
+</tr>
+<tr>
+<td>BIT</td>
+<td>Testa A AND memoria, setta Z da risultato</td>
+</tr>
+<tr>
+<td>N/V da BIT</td>
+<td>Prendono i bit 7/6 di memoria, non da A</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
-<p><em>Anticipare brevemente il prossimo argomento e perché segue logicamente.</em></p>
+<p>Abbiamo completato i comandi fondamentali del 6510. Prossimi moduli: operazioni aritmetiche avanzate, I/O, periferiche, grafica.</p>
 <hr />
 <h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
-<p><em>Dettagli opzionali per chi vuole approfondire il comportamento hardware.</em></p>
+<p><strong>Uso di CMP per loop:</strong></p>
+<pre class="highlight"><code class="language-asm">LDX #$00
+loop:
+  ; codice
+  INX
+  CPX #$10       ; confronta X con 16
+  BNE loop       ; ripeti se X ≠ 16</code></pre>
+<p><strong>Uso di BIT per testare flag hardware:</strong></p>
+<pre class="highlight"><code class="language-asm">BIT $D019      ; testa il registro VIC-II IRQ
+BMI interrupt_occurred</code></pre>
 <hr />
 <h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
 <ul>
 <li>[ ] l'esempio compila con <code>64tass</code></li>
-<li>[ ] l'esempio è coerente con la lezione</li>
-<li>[ ] ogni istruzione nuova è spiegata prima dell'uso</li>
-<li>[ ] indice, glossario e changelog sono aggiornati</li>
-<li>[ ] il contenuto è semplice e progressivo</li>
+<li>[ ] CMP confronta correttamente e setta i flag</li>
+<li>[ ] BIT testa i bit e setta N/V</li>
+<li>[ ] il contenuto è progressivo rispetto alle lezioni precedenti</li>
 </ul>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../" class="btn btn-neutral float-left" title="Modulo 7 - Indice"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../021-incremento-decremento-memoria/" class="btn btn-neutral float-right" title="Lezione 021 - Incremento e decremento in memoria">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -310,6 +536,10 @@
         </span>
     
     
+      <span><a href="../../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../021-incremento-decremento-memoria/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
