@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-07-08 — Riduzione warning MkDocs: nav moduli 9-14 + esclusione template
+
+### Aggiornamenti
+- Aggiunti in `mkdocs.yml` gli indici dei moduli 9-14 alla sezione di navigazione.
+- Configurata esclusione dei file template lezione dalla build con:
+  - `modules/modulo-*/lessons/lesson-template.md`
+
+### Obiettivo
+- Ridurre i warning "not included in the nav" durante build/deploy incrementali del corso.
+
+---
+
 ## 2026-07-08 — Modulo 8 completato: lezioni 037-040 + pubblicazione
 
 ### Nuove lezioni

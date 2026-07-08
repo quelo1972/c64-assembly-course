@@ -63,6 +63,20 @@ nav:
       - Lezione 038 — Screen RAM e Color RAM: modules/modulo-8/lessons/038-screen-ram-color-ram.md
       - "Lezione 039 — KERNAL: chiamate ROM per I/O": modules/modulo-8/lessons/039-kernal-chiamate-rom-io.md
       - "Lezione 040 — Mini-progetto: joystick e schermo": modules/modulo-8/lessons/040-mini-progetto-joystick-schermo.md
+    - Modulo 9 - Grafica con VIC-II:
+      - "Modulo 9 - Indice": modules/modulo-9.md
+    - Modulo 10 - Suono con SID:
+      - "Modulo 10 - Indice": modules/modulo-10.md
+    - Modulo 11 - Interrupt, CIA e gestione tempo:
+      - "Modulo 11 - Indice": modules/modulo-11.md
+    - Modulo 12 - File system, cassette e disk I/O:
+      - "Modulo 12 - Indice": modules/modulo-12.md
+    - Modulo 13 - Ottimizzazione e tecniche avanzate:
+      - "Modulo 13 - Indice": modules/modulo-13.md
+    - Modulo 14 - Progetto finale:
+      - "Modulo 14 - Indice": modules/modulo-14.md
+exclude_docs: |
+  modules/modulo-*/lessons/lesson-template.md
 theme:
   name: readthedocs
 markdown_extensions:
