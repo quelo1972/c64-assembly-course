@@ -8,10 +8,10 @@
 
 ## 🎯 Obiettivi
 
-- usare `SETNAM`, `SETLFS`, `LOAD`, `SAVE`;
+- usare `SETNAM`, `SETLFS`, `LOAD`;
 - distinguere indirizzo di load automatico e indirizzo esplicito;
 - capire il ruolo del carry flag nelle routine KERNAL;
-- costruire una sequenza base di load/save.
+- costruire una sequenza base di load con gestione esito.
 
 ---
 

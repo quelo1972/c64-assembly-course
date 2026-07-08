@@ -217,7 +217,7 @@ BMI interrupt_occurred
 
 ## 🔎 Approfondimento - Dentro il 6510
 
-La stabilita del software su C64 dipende da una disciplina costante: passi piccoli, stato esplicito e ordine prevedibile nelle scritture su memoria e I/O. Questo approccio riduce errori difficili da tracciare nelle fasi successive del corso.
+Nelle routine aritmetiche e bitwise, la stabilita nasce dalla gestione rigorosa di carry, overflow e bit di stato. Piccole verifiche intermedie mantengono correttezza e facilitano il debug delle operazioni composte.
 
 ## ✅ Checklist finale
 

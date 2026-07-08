@@ -180,7 +180,7 @@ Questo è dovuto all'architettura del 6510: X è l'index per addressing esterno,
 
 ## 🔎 Approfondimento - Dentro il 6510
 
-La stabilita del software su C64 dipende da una disciplina costante: passi piccoli, stato esplicito e ordine prevedibile nelle scritture su memoria e I/O. Questo approccio riduce errori difficili da tracciare nelle fasi successive del corso.
+Nelle store operation, la stabilita deriva dal controllo del punto di scrittura: indirizzo giusto, timing corretto e verifica dell effetto in memoria. Scrivere con intenzione previene bug silenziosi difficili da isolare.
 
 ## ✅ Checklist finale
 

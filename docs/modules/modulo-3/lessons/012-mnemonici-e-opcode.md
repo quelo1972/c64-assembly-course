@@ -207,7 +207,7 @@ Anche in questa lezione il 6510 segue un flusso semplice: esegue istruzioni in s
 
 ## 🔎 Approfondimento - Dentro il 6510
 
-La stabilita del software su C64 dipende da una disciplina costante: passi piccoli, stato esplicito e ordine prevedibile nelle scritture su memoria e I/O. Questo approccio riduce errori difficili da tracciare nelle fasi successive del corso.
+Quando studi mnemonici, opcode e macro, la stabilita dipende dalla precisione del linguaggio: nomi chiari, direttive esplicite e struttura leggibile. Questa disciplina rende il codice assemblato piu comprensibile e verificabile.
 
 ## ✅ Checklist finale
 

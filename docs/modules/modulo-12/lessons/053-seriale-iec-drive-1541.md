@@ -10,7 +10,7 @@
 
 - capire il ruolo del bus IEC nel trasferimento dati;
 - distinguere device number, command channel e data channel;
-- riconoscere il flusso OPEN -> TALK/LISTEN -> CLOSE;
+- riconoscere il flusso base OPEN -> scambio dati/comandi -> CLOSE;
 - introdurre i limiti prestazionali del protocollo seriale standard.
 
 ---

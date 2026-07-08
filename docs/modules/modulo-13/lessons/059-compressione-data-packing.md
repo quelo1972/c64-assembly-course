@@ -65,14 +65,12 @@ decode_next:
     STA value
     INY
 
-    LDY count
 write_loop:
     LDA value
     STA DST,X
     INX
-    DEY
+    DEC count
     BNE write_loop
-
     JMP decode_next
 
 done:
@@ -87,7 +85,7 @@ value:
     .byte 10,$41, 5,$20, 10,$42, 0
 ```
 
-`DEY` decrementa Y e aggiorna i flag; con `BNE` ottieni un loop controllato da contatore.
+`DEC count` decrementa il contatore del run e aggiorna i flag; con `BNE` ottieni un loop controllato da conteggio esplicito.
 
 ---
 

@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-08 — Review editoriale trasversale finale (moduli 0-14)
+
+### Correzioni didattiche
+- Allineati obiettivi e contenuto pratico in `docs/modules/modulo-12/lessons/053-seriale-iec-drive-1541.md` (flusso base OPEN -> scambio -> CLOSE).
+- Allineati obiettivi e contenuto pratico in `docs/modules/modulo-12/lessons/054-kernal-io-disco-nastro.md` (focus su `LOAD` con gestione esito).
+- Corretto esempio RLE in `docs/modules/modulo-13/lessons/059-compressione-data-packing.md` separando indice sorgente e contatore run.
+
+### Uniformita stilistica
+- Rimossi paragrafi di approfondimento duplicati in serie storiche (moduli 0, 3, 4, 5, 6, 7).
+- Introdotti testi di approfondimento contestuali per area tematica, mantenendo tono didattico coerente.
+
+### Esito
+- Quality check globale completato con esito OK.
+
+## 2026-07-08 — Appendice 002 aggiornata con costrutti 64tass usati nel corso
+
+### Aggiornamento contenuti
+- Aggiunta sezione pratica in `docs/appendici/002-direttive-e-comandi-64tass.md` con l'elenco dei costrutti 64tass realmente usati nei moduli 0-14.
+- Inclusi: direttive ricorrenti, sintassi assembler frequente (`*=`, costanti simboliche, `<`/`>`), comando CLI standard con `--cbm-prg`.
+
+### Obiettivo
+- Migliorare la corrispondenza tra reference appendici e codice effettivo del corso.
+
 ## 2026-07-08 — Completamento corso: moduli 12-13-14 (lezioni 053-064)
 
 ### Nuove lezioni

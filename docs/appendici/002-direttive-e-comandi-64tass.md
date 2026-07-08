@@ -135,3 +135,34 @@ In questo listato:
 
 - `.text`, `.macro`, `*=`, costante `BORDER` sono 64tass;
 - `LDA`, `STA`, `RTS` sono istruzioni CPU.
+
+---
+
+## 8. Costrutti 64tass effettivamente usati nel corso (moduli 0-14)
+
+Per mantenere allineamento pratico tra teoria e lezioni, ecco il set di costrutti 64tass realmente usati nei listati del corso.
+
+### Direttive ricorrenti
+
+- `.byte`
+- `.word`
+- `.text`
+- `.fill`
+- `.include`
+- `.macro` / `.endm`
+- `.align`
+- `.struct` / `.endstruct` (casi avanzati)
+
+### Sintassi assembler usata frequentemente
+
+- `*= $0801` (location counter / indirizzo di assemblaggio)
+- `NAME = $D020` (costanti simboliche)
+- `#<label` e `#>label` (byte basso/alto di un indirizzo)
+
+### Comando CLI 64tass usato nel workflow corso
+
+```bash
+64tass --cbm-prg -o bin/output.prg src/percorso/main.asm
+```
+
+Per la reference completa di opzioni CLI (warning policy, listing, target multipli), vedi Appendice 006.

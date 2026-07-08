@@ -179,7 +179,7 @@ ADC e SBC setta C, Z, N, V in base al risultato.
 
 ## 🔎 Approfondimento - Dentro il 6510
 
-La stabilita del software su C64 dipende da una disciplina costante: passi piccoli, stato esplicito e ordine prevedibile nelle scritture su memoria e I/O. Questo approccio riduce errori difficili da tracciare nelle fasi successive del corso.
+Nei salti e nelle subroutine, la stabilita dipende dalla chiarezza del flusso di controllo: condizioni esplicite, ritorni coerenti e uso disciplinato dello stack. Questo rende il comportamento del programma prevedibile anche nei casi limite.
 
 ## ✅ Checklist finale
 

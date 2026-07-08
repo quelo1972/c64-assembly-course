@@ -168,7 +168,7 @@ Nota: JMP ha un bug storico nel 6502/6510 con page boundary crossing, ma è stat
 
 ## 🔎 Approfondimento - Dentro il 6510
 
-La stabilita del software su C64 dipende da una disciplina costante: passi piccoli, stato esplicito e ordine prevedibile nelle scritture su memoria e I/O. Questo approccio riduce errori difficili da tracciare nelle fasi successive del corso.
+Con le modalita di indirizzamento, la stabilita si ottiene scegliendo sempre il modo piu adatto al dato e al costo in cicli. Distinguere con precisione immediate, zero page e assoluto riduce errori logici e regressioni.
 
 ## ✅ Checklist finale
 

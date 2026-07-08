@@ -276,7 +276,7 @@ Nella prossima lezione useremo questi concetti come base e aggiungeremo un livel
 
 ## 🔎 Approfondimento - Dentro il 6510
 
-La stabilita del software su C64 dipende da una disciplina costante: passi piccoli, stato esplicito e ordine prevedibile nelle scritture su memoria e I/O. Questo approccio riduce errori difficili da tracciare nelle fasi successive del corso.
+In questa fase iniziale, la stabilita nasce da un ambiente ripetibile: toolchain coerente, emulatori configurati e workflow ordinato. Costruire fondamenta solide qui evita attrito tecnico nei moduli successivi.
 
 ## ✅ Checklist finale
 
