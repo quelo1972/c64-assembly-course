@@ -21,6 +21,7 @@ nav:
       - Lezione 006 - Dal sorgente all'esecuzione: modules/modulo-3/lessons/006-from-source-to-execution.md
     - Modulo 4 - Prime istruzioni:
       - Modulo 4 - Indice: modules/modulo-4.md
+      - "Lezione 023 - Store operations: STA, STX, STY": modules/modulo-4/lessons/023-store-operations.md
       - Lezione 007 - LDA e indirizzamento immediato: modules/modulo-4/lessons/007-lda.md
       - Lezione 008 - STA e scrittura in memoria: modules/modulo-4/lessons/008-sta.md
       - Lezione 009 - Trasferimento tra registri: modules/modulo-4/lessons/009-trasferimento-tra-registri.md
@@ -41,6 +42,9 @@ nav:
       - Lezione 015 - Salti condizionati: modules/modulo-6/lessons/015-salti-condizionati.md
     - Modulo 7 - Operazioni aritmetiche e logiche:
       - Modulo 7 - Indice: modules/modulo-7.md
+      - "Lezione 026 - Shift operations: ASL, LSR, ROL, ROR": modules/modulo-7/lessons/026-shift-operations.md
+      - "Lezione 025 - Operazioni logiche: AND, ORA, EOR": modules/modulo-7/lessons/025-operazioni-logiche.md
+      - "Lezione 024 - Addizione e sottrazione: ADC e SBC": modules/modulo-7/lessons/024-addizione-sottrazione.md
       - "Lezione 022 - Compare e BIT test operations": modules/modulo-7/lessons/022-compare-bit-operations.md
       - Lezione 021 - Incremento e decremento in memoria: modules/modulo-7/lessons/021-incremento-decremento-memoria.md
     - Modulo 8 - I/O e periferiche:

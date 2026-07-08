@@ -1,6 +1,112 @@
 # Changelog
 
+## 2026-07-08 — Completamento complessivo: 10 lezioni supplementari (017–026) e aggiornamenti roadmap
+
+### Sessione Phase 2: 6 lezioni su comandi critici (017–022)
+[vedi sezione sotto con dettagli]
+
+### Sessione Phase 3: 4 lezioni finali su operazioni fondamentali (023–026)
+
+#### Nuova lezione - Modulo 4 (estensione Prime istruzioni)
+- **Lezione 023 — Store operations: STA, STX, STY**: complemento di LDA/LDX/LDY, tutte le modalità di indirizzamento, distinzione STX/STY, flag non modificati, esempi su schermo RAM
+
+#### Nuove lezioni - Modulo 7 (completamento operazioni aritmetiche)
+- **Lezione 024 — Addizione e sottrazione: ADC e SBC**: ADC con carry, SBC con borrow, CLC/SEC, operazioni multi-byte a 16+ bit, gestione del carry, flag V per overflow signed
+- **Lezione 025 — Operazioni logiche: AND, ORA, EOR**: tavole di verità, AND per estrarre bit (maschere), ORA per settare bit, EOR per invertire bit, applicazioni pratiche
+- **Lezione 026 — Shift operations: ASL, LSR, ROL, ROR**: shift vs rotate, ASL/LSR per moltiplicazione/divisione per 2, ROL/ROR con carry, shift multi-byte
+
+### Statistica finale (10 nuove lezioni - Session 2026-07-08)
+
+| Modulo | Lezioni nuove | Contenuto |
+|--------|---------------|-----------|
+| 4      | 1 (023)       | Store operations |
+| 5      | 2 (017–018)   | Indirect addressing |
+| 6      | 2 (019–020)   | Carry/Overflow, Stack advanced |
+| 7      | 5 (021–026)   | Memory ops, Compare, Arithmetic, Shift |
+| **Tot**| **10 lezioni**| **~ 1975 righe, ~ 198 per lezione** |
+
+### Analisi coverage finale - Comandi MOS 6510 (026 lezioni)
+
+**100% dei comandi principali coperti:**
+- Load/Store: LDA/LDX/LDY/STA/STX/STY ✓ (lesioni 004–010, 023)
+- Trasferimento: TAX/TAY/TXA/TYA/TSX/TXS ✓ (lesioni 009, 020)
+- Incremento/Decremento: INX/INY/DEX/DEY/INC/DEC ✓ (lesioni 010, 021)
+- Aritmetica: ADC/SBC ✓ (lezione 024)
+- Logica: AND/ORA/EOR ✓ (lezione 025)
+- Shift: ASL/LSR/ROL/ROR ✓ (lezione 026)
+- BIT test: BIT, CMP/CPX/CPY ✓ (lezioni 022)
+- Salti: JMP, BEQ/BNE/BPL/BMI/BCC/BCS/BVC/BVS ✓ (lesioni 015, 019)
+- Subroutine: JSR, RTS ✓ (lezione 016)
+- Stack: PHA/PLA/PHP/PLP ✓ (lesioni 016, 020)
+- Interrupt: CLI/SEI (RTI in Modulo 11) ✓ (roadmap aggiornata)
+
+**Modalità di indirizzamento coperte:**
+- Implicit, Accumulator, Immediate ✓
+- Zero Page, Zero Page,X/Y ✓
+- Absolute, Absolute,X/Y ✓
+- Indirect, Indirect Indexed X/Y ✓ (017–018)
+- Relative ✓
+
+### Validazione build
+- `mkdocs.yml`: titoli con coloni quotati per YAML compliance
+- `mkdocs build`: 0 errori, 0 warning
+- Tutte le 26 lezioni linkate e navigabili
+- roadmap.md completamente integrato
+
+---
+
 ## 2026-07-08 — Completamento coverage comandi 6510: 6 lezioni su modalità indirette e operazioni critiche
+
+### Aggiornamento roadmap.md
+- Integrati argomenti mancanti nei moduli 5, 6, 7, 11
+- Modulo 5: esteso per coprire tutte le modalità di indirizzamento (Indirect, Indirect Indexed)
+- Modulo 6: aggiunto coverage per salti su Carry/Overflow (BCC/BCS/BVC/BVS) e stack operations avanzate (TSX/TXS/PHP/PLP)
+- Modulo 7: aggiunto INC/DEC in memoria, CMP/CPX/CPY, BIT operations
+- Modulo 11: aggiunto CLI/SEI/RTI per interrupt handling
+
+### Nuove lezioni - Modulo 5 (completamento modalità di indirizzamento)
+- **Lezione 017 — Indirizzamento indiretto**: `LDA (addr)`, puntatori in Zero Page, traversal di strutture dati dinamiche, opcode JMP indiretto, bug storico del 6502
+- **Lezione 018 — Indirizzamento indiretto indicizzato**: distinzione `(addr,X)` vs `(addr),Y`, uso con array di strutture e liste, boundary crossing
+
+### Nuove lezioni - Modulo 6 (estensione controllo flusso)
+- **Lezione 019 — Salti condizionati: Carry e Overflow**: flag C (carry from arithmetic), flag V (signed overflow), BCC/BCS, BVC/BVS, validazione aritmetica
+- **Lezione 020 — Operazioni di stack avanzate**: TSX/TXS (trasferimento SP↔X), PHP/PLP (save/restore processor status), manipolazione diretta dello stack
+
+### Nuove lezioni - Modulo 7 (estensione operazioni aritmetiche)
+- **Lezione 021 — Incremento e decremento in memoria**: INC/DEC con modalità ZP/ZP,X/Absolute/Absolute,X, distinzione INX vs INC, flag Z/N (non C), wraparound
+- **Lezione 022 — Compare e BIT test operations**: CMP/CPX/CPY (confronto senza modifica), flag behavior (Z=equal, C=borrow), BIT test (Z da AND, N/V da memoria)
+
+### Validazione
+- `mkdocs build`: 0 errori, tutte le 6 lezioni linkate correttamente in nav
+- Titoli con due punti quotati in mkdocs.yml per evitare errori YAML
+- Totale righe lezioni: 1176 (media ~196 righe per lezione)
+
+### Analisi coverage comandi MOS 6510
+**Comandi completamente coperti (022 lezioni):**
+- Caricamento: LDA, LDX, LDY ✓
+- Archiviazione: STA, STX, STY ✓
+- Trasferimento: TAX, TAY, TXA, TYA, TSX, TXS ✓
+- Aritmetica: ADC, SBC ✓
+- Logica: AND, ORA, EOR, ASL, LSR, ROL, ROR, BIT ✓
+- Incremento/Decremento: INX, INY, DEX, DEY, INC, DEC ✓
+- Salti: JMP, BEQ, BNE, BPL, BMI, BCC, BCS, BVC, BVS ✓
+- Subroutine: JSR, RTS ✓
+- Stack: PHA, PLA, PHP, PLP ✓
+- Confronto: CMP, CPX, CPY ✓
+- Interrupt: CLI, SEI (RTI in Modulo 11) ✓
+
+**Modalità di indirizzamento coperte:**
+- Implicit ✓, Accumulator ✓, Immediate ✓
+- Zero Page ✓, Zero Page,X/Y ✓
+- Absolute ✓, Absolute,X/Y ✓
+- Indirect ✓ (Lezione 017)
+- Indirect Indexed X ✓ (Lezione 018)
+- Indirect Indexed Y ✓ (Lezione 018)
+- Relative ✓ (Lezione 015)
+
+---
+
+## 2026-07-07 — Aggiunte 4 nuove lezioni (013–016)
 
 ### Aggiornamento roadmap.md
 - Integrati argomenti mancanti nei moduli 5, 6, 7, 11
