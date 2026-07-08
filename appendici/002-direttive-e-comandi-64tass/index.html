@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Appendice 002 - Direttive e comandi specifici 64tass - C64 Assembly Course</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Appendice 002 - Direttive e comandi specifici 64tass";
+        var mkdocs_page_input_path = "appendici/002-direttive-e-comandi-64tass.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> C64 Assembly Course
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Moduli</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 0 - Ambiente di sviluppo</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-0/">Modulo 0 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-0/lessons/001-toolchain-setup/">Lezione 001 — Toolchain e setup del progetto</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-0/lessons/002-git-github/">Lezione 002 — Git e GitHub: versionamento e collaborazione</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-0/lessons/003-vs-code-setup/">Lezione 003 — VS Code: setup e debugging Assembly</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-0/lessons/004-vice-immagini-disco/">Lezione 004 — VICE: configurazione e immagini disco</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-0/lessons/005-automazione-makefile/">Lezione 005 — Automazione: Makefile e task build</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 1 - Fondamenti</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-1/">Modulo 1 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-1/lessons/006-memory/">Lezione 006 — La memoria del Commodore 64</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-1/lessons/007-binary-hex/">Lezione 007 — Sistema binario ed esadecimale</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-1/lessons/008-byte-word/">Lezione 008 — Byte, Word e limiti della memoria</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 2 - CPU MOS 6510</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-2/">Modulo 2 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-2/lessons/009-cpu-6510/">Lezione 009 — La CPU MOS 6510</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-2/lessons/010-registers-axy/">Lezione 010 — Registri A, X e Y</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 3 - Linguaggio e tooling</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-3/">Modulo 3 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-3/lessons/011-from-source-to-execution/">Lezione 011 — Dal sorgente all'esecuzione</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-3/lessons/012-mnemonici-e-opcode/">Lezione 012 — Mnemonici e opcode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-3/lessons/013-direttive-assembler/">Lezione 013 — Direttive assembler, etichette e costanti</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-3/lessons/014-macro-e-organizzazione/">Lezione 014 — Macro e organizzazione del codice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 4 - Prime istruzioni</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-4/">Modulo 4 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-4/lessons/015-lda/">Lezione 015 — LDA e indirizzamento immediato</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-4/lessons/016-sta/">Lezione 016 — STA e scrittura in memoria</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-4/lessons/017-trasferimento-tra-registri/">Lezione 017 — Trasferimento tra registri</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-4/lessons/018-increment-decrement/">Lezione 018 — Incremento e decremento</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-4/lessons/019-store-operations/">Lezione 019 — Store operations: STA, STX, STY</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 5 - Modalità di indirizzamento</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-5/">Modulo 5 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-5/lessons/020-modalita-immediata/">Lezione 020 — Indirizzamento immediato, revisited</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-5/lessons/021-zero-page/">Lezione 021 — Indirizzamento Zero Page</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-5/lessons/022-indirizzamento-assoluto/">Lezione 022 — Indirizzamento assoluto</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-5/lessons/023-indirizzamento-indicizzato/">Lezione 023 — Indirizzamento indicizzato</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-5/lessons/024-indirizzamento-indiretto/">Lezione 024 — Indirizzamento indiretto</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-5/lessons/025-indirizzamento-indiretto-indicizzato/">Lezione 025 — Indirizzamento indiretto indicizzato</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 6 - Controllo del flusso e subroutine</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-6/">Modulo 6 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-6/lessons/026-salti-condizionati/">Lezione 026 — Salti condizionati</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-6/lessons/027-subroutine-jsr-rts/">Lezione 027 — Subroutine: JSR e RTS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-6/lessons/028-salti-su-carry-overflow/">Lezione 028 — Salti condizionati: Carry e Overflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-6/lessons/029-stack-avanzato/">Lezione 029 — Operazioni di stack avanzate</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 7 - Operazioni aritmetiche e logiche</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-7/">Modulo 7 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-7/lessons/030-incremento-decremento-memoria/">Lezione 030 — Incremento e decremento in memoria</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-7/lessons/031-compare-bit-operations/">Lezione 031 — Compare e BIT test operations</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-7/lessons/032-addizione-sottrazione/">Lezione 032 — Addizione e sottrazione: ADC e SBC</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-7/lessons/033-operazioni-logiche/">Lezione 033 — Operazioni logiche: AND, ORA, EOR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-7/lessons/034-shift-operations/">Lezione 034 — Shift operations: ASL, LSR, ROL, ROR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-7/lessons/035-moltiplicazione/">Lezione 035 — Moltiplicazione: algoritmi software</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-7/lessons/036-divisione/">Lezione 036 — Divisione: algoritmi software</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 8 - I/O e periferiche</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-8/">Modulo 8 - Indice</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-8/lessons/037-mappa-io-c64-vic-sid-cia/">Lezione 037 — Mappa I/O del C64: VIC-II, SID, CIA</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-8/lessons/038-screen-ram-color-ram/">Lezione 038 — Screen RAM e Color RAM</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-8/lessons/039-kernal-chiamate-rom-io/">Lezione 039 — KERNAL: chiamate ROM per I/O</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-8/lessons/040-mini-progetto-joystick-schermo/">Lezione 040 — Mini-progetto: joystick e schermo</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 9 - Grafica con VIC-II</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-9/">Modulo 9 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 10 - Suono con SID</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-10/">Modulo 10 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 11 - Interrupt, CIA e gestione tempo</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-11/">Modulo 11 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 12 - File system, cassette e disk I/O</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-12/">Modulo 12 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 13 - Ottimizzazione e tecniche avanzate</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-13/">Modulo 13 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 14 - Progetto finale</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../modules/modulo-14/">Modulo 14 - Indice</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Appendici</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Appendici - Indice</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../001-regole-sintattiche-64tass/">Appendice 001 - Regole sintattiche del 64tass</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Appendice 002 - Direttive e comandi specifici 64tass</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-direttive-dati">1. Direttive dati</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#byte">.byte</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#word">.word</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#text">.text</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-direttive-codice-e-organizzazione">2. Direttive codice e organizzazione</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#include">.include</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#align">.align</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-macro-direttive-non-opcode">3. Macro (direttive, non opcode)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#macro-endm">.macro / .endm</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-direttive-strutturali-avanzate">4. Direttive strutturali avanzate</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-tabella-cpu-vs-64tass">5. Tabella: CPU vs 64tass</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-errori-frequenti">6. Errori frequenti</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-esempio-didattico-completo">7. Esempio didattico completo</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../003-macro-scope-organizzazione/">Appendice 003 - Macro, scope e organizzazione del codice</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../004-confine-mos6510-vs-64tass/">Appendice 004 - Mappa di confine: MOS 6510 vs 64tass</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">C64 Assembly Course</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Appendici &raquo;</li>
+      <li class="breadcrumb-item active">Appendice 002 - Direttive e comandi specifici 64tass</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/appendici/002-direttive-e-comandi-64tass.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><a href="../../">🏠 Home</a></p>
+<h1 id="appendice-002-direttive-e-comandi-specifici-64tass">Appendice 002 - Direttive e comandi specifici 64tass<a class="headerlink" href="#appendice-002-direttive-e-comandi-specifici-64tass" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Obiettivo: catalogare le direttive 64tass piu importanti distinguendole dalle istruzioni del MOS 6510.</p>
+</blockquote>
+<hr />
+<h2 id="1-direttive-dati">1. Direttive dati<a class="headerlink" href="#1-direttive-dati" title="Permanent link">&para;</a></h2>
+<h3 id="byte"><code>.byte</code><a class="headerlink" href="#byte" title="Permanent link">&para;</a></h3>
+<p>Inserisce uno o piu byte nel codice oggetto.</p>
+<pre class="highlight"><code class="language-asm">TABLE:
+    .byte $01, $02, $FF</code></pre>
+<h3 id="word"><code>.word</code><a class="headerlink" href="#word" title="Permanent link">&para;</a></h3>
+<p>Inserisce word a 16 bit in little-endian.</p>
+<pre class="highlight"><code class="language-asm">VECTORS:
+    .word $0801, $C000</code></pre>
+<h3 id="text"><code>.text</code><a class="headerlink" href="#text" title="Permanent link">&para;</a></h3>
+<p>Inserisce byte da stringa.</p>
+<pre class="highlight"><code class="language-asm">MSG:
+    .text "HELLO"</code></pre>
+<p>Nota: la codifica visuale dipende dal contesto C64 (PETSCII/screen code), ma <code>.text</code> resta una direttiva assembler.</p>
+<hr />
+<h2 id="2-direttive-codice-e-organizzazione">2. Direttive codice e organizzazione<a class="headerlink" href="#2-direttive-codice-e-organizzazione" title="Permanent link">&para;</a></h2>
+<h3 id="include"><code>.include</code><a class="headerlink" href="#include" title="Permanent link">&para;</a></h3>
+<p>Include un altro file sorgente.</p>
+<pre class="highlight"><code class="language-asm">.include "constants.asm"
+.include "utils.asm"</code></pre>
+<p>Uso consigliato:</p>
+<ul>
+<li>costanti hardware in file dedicato;</li>
+<li>routine comuni in file separati;</li>
+<li>file principale pulito e leggibile.</li>
+</ul>
+<h3 id="align"><code>.align</code><a class="headerlink" href="#align" title="Permanent link">&para;</a></h3>
+<p>Allinea il punto di assemblaggio a un multiplo.</p>
+<pre class="highlight"><code class="language-asm">.align 256</code></pre>
+<hr />
+<h2 id="3-macro-direttive-non-opcode">3. Macro (direttive, non opcode)<a class="headerlink" href="#3-macro-direttive-non-opcode" title="Permanent link">&para;</a></h2>
+<h3 id="macro-endm"><code>.macro</code> / <code>.endm</code><a class="headerlink" href="#macro-endm" title="Permanent link">&para;</a></h3>
+<p>Definisce riuso di blocchi parametrici.</p>
+<pre class="highlight"><code class="language-asm">.macro set_border color
+    LDA #color
+    STA $D020
+.endm
+
+set_border $06</code></pre>
+<p>Espansione: l'assembler sostituisce il testo macro in fase di assemblaggio.</p>
+<hr />
+<h2 id="4-direttive-strutturali-avanzate">4. Direttive strutturali avanzate<a class="headerlink" href="#4-direttive-strutturali-avanzate" title="Permanent link">&para;</a></h2>
+<p>Nel materiale del corso compaiono anche forme avanzate, ad esempio:</p>
+<ul>
+<li><code>.struct</code> / <code>.endstruct</code></li>
+<li>costrutti condizionali o iterativi assembler (<code>.if</code>, <code>.for</code>) in contesti avanzati.</li>
+</ul>
+<p>Questi costrutti sono utili, ma didatticamente vanno introdotti solo quando la base CPU e solida.</p>
+<hr />
+<h2 id="5-tabella-cpu-vs-64tass">5. Tabella: CPU vs 64tass<a class="headerlink" href="#5-tabella-cpu-vs-64tass" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Esempio</th>
+<th>Tipo</th>
+<th>Eseguito dalla CPU?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LDA #$01</code></td>
+<td>Istruzione MOS 6510</td>
+<td>Si</td>
+</tr>
+<tr>
+<td><code>STA $D020</code></td>
+<td>Istruzione MOS 6510</td>
+<td>Si</td>
+</tr>
+<tr>
+<td><code>.byte $01</code></td>
+<td>Direttiva 64tass</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>.include "x.asm"</code></td>
+<td>Direttiva 64tass</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>.macro ... .endm</code></td>
+<td>Direttiva 64tass</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>*= $0801</code></td>
+<td>Assegnazione location counter</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-errori-frequenti">6. Errori frequenti<a class="headerlink" href="#6-errori-frequenti" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Usare direttive senza spiegare che sono preprocessing assembler.</li>
+<li>Aspettarsi che una macro abbia costo runtime "magico": il costo dipende dal codice espanso.</li>
+<li>Confondere <code>.word</code> con ordine big-endian (sul 6510 e little-endian).</li>
+</ul>
+<hr />
+<h2 id="7-esempio-didattico-completo">7. Esempio didattico completo<a class="headerlink" href="#7-esempio-didattico-completo" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-asm">*= $0801
+
+BORDER = $D020
+
+MSG:
+    .text "HI"
+
+.macro set_border color
+    LDA #color
+    STA BORDER
+.endm
+
+START:
+    set_border $02
+    RTS</code></pre>
+<p>In questo listato:</p>
+<ul>
+<li><code>.text</code>, <code>.macro</code>, <code>*=</code>, costante <code>BORDER</code> sono 64tass;</li>
+<li><code>LDA</code>, <code>STA</code>, <code>RTS</code> sono istruzioni CPU.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../001-regole-sintattiche-64tass/" class="btn btn-neutral float-left" title="Appendice 001 - Regole sintattiche del 64tass"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../003-macro-scope-organizzazione/" class="btn btn-neutral float-right" title="Appendice 003 - Macro, scope e organizzazione del codice">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/quelo1972/c64-assembly-course" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../001-regole-sintattiche-64tass/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../003-macro-scope-organizzazione/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
