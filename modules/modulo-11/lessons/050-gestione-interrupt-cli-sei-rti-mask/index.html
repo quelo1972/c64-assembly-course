@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Lezione 022 — Indirizzamento assoluto - C64 Assembly Course</title>
+    <title>Lezione 050 - Gestione interrupt: CLI, SEI, RTI e mask - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Lezione 022 \u2014 Indirizzamento assoluto";
-        var mkdocs_page_input_path = "modules/modulo-5/lessons/022-indirizzamento-assoluto.md";
+        var mkdocs_page_name = "Lezione 050 - Gestione interrupt: CLI, SEI, RTI e mask";
+        var mkdocs_page_input_path = "modules/modulo-11/lessons/050-gestione-interrupt-cli-sei-rti-mask.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -113,53 +113,21 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 5 - Modalità di indirizzamento</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 5 - Indice</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 5 - Modalità di indirizzamento</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/">Modulo 5 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../020-modalita-immediata/">Lezione 020 — Indirizzamento immediato, revisited</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/020-modalita-immediata/">Lezione 020 — Indirizzamento immediato, revisited</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../021-zero-page/">Lezione 021 — Indirizzamento Zero Page</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/021-zero-page/">Lezione 021 — Indirizzamento Zero Page</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 022 — Indirizzamento assoluto</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#indirizzi-a-16-bit">Indirizzi a 16 bit</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#sintassi">Sintassi</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#comparazione-modalita">Comparazione modalità</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/022-indirizzamento-assoluto/">Lezione 022 — Indirizzamento assoluto</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../023-indirizzamento-indicizzato/">Lezione 023 — Indirizzamento indicizzato</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/023-indirizzamento-indicizzato/">Lezione 023 — Indirizzamento indicizzato</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../024-indirizzamento-indiretto/">Lezione 024 — Indirizzamento indiretto</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/024-indirizzamento-indiretto/">Lezione 024 — Indirizzamento indiretto</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../025-indirizzamento-indiretto-indicizzato/">Lezione 025 — Indirizzamento indiretto indicizzato</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/025-indirizzamento-indiretto-indicizzato/">Lezione 025 — Indirizzamento indiretto indicizzato</a>
                 </li>
     </ul>
                   </li>
@@ -239,17 +207,47 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 11 - Interrupt, CIA e gestione tempo</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/">Modulo 11 - Indice</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 11 - Interrupt, CIA e gestione tempo</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 11 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/lessons/049-tipi-interrupt-irq-nmi-brk/">Lezione 049 - Tipi di interrupt: IRQ, NMI e BRK</a>
+                <li class="toctree-l2"><a class="reference internal" href="../049-tipi-interrupt-irq-nmi-brk/">Lezione 049 - Tipi di interrupt: IRQ, NMI e BRK</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/lessons/050-gestione-interrupt-cli-sei-rti-mask/">Lezione 050 - Gestione interrupt: CLI, SEI, RTI e mask</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 050 - Gestione interrupt: CLI, SEI, RTI e mask</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#istruzioni-chiave">Istruzioni chiave</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mask-principali-su-c64">Mask principali su C64</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
+    </li>
+    </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/lessons/051-cia-timer-serial-keyboard-matrix/">Lezione 051 - CIA: timer, seriale e keyboard matrix</a>
+                <li class="toctree-l2"><a class="reference internal" href="../051-cia-timer-serial-keyboard-matrix/">Lezione 051 - CIA: timer, seriale e keyboard matrix</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/lessons/052-mini-progetto-timer-cia-eventi-periodici/">Lezione 052 - Mini-progetto: timer CIA per eventi periodici</a>
+                <li class="toctree-l2"><a class="reference internal" href="../052-mini-progetto-timer-cia-eventi-periodici/">Lezione 052 - Mini-progetto: timer CIA per eventi periodici</a>
                 </li>
     </ul>
                   </li>
@@ -308,10 +306,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Moduli &raquo;</li>
-          <li>Modulo 5 - Modalità di indirizzamento &raquo;</li>
-      <li class="breadcrumb-item active">Lezione 022 — Indirizzamento assoluto</li>
+          <li>Modulo 11 - Interrupt, CIA e gestione tempo &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 050 - Gestione interrupt: CLI, SEI, RTI e mask</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-5/lessons/022-indirizzamento-assoluto.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-11/lessons/050-gestione-interrupt-cli-sei-rti-mask.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -320,184 +318,173 @@
             <div class="section" itemprop="articleBody">
               
                 <p><a href="../../../../">🏠 Home</a></p>
-<h1 id="lezione-22-indirizzamento-assoluto">Lezione 22 — Indirizzamento assoluto<a class="headerlink" href="#lezione-22-indirizzamento-assoluto" title="Permanent link">&para;</a></h1>
+<h1 id="lezione-050-gestione-interrupt-cli-sei-rti-e-mask">Lezione 050 - Gestione interrupt: CLI, SEI, RTI e mask<a class="headerlink" href="#lezione-050-gestione-interrupt-cli-sei-rti-e-mask" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Obiettivo:</strong> capire come accedere a qualsiasi indirizzo di memoria (0–65535) con l'indirizzamento assoluto, e quando usarlo per registri hardware come VIC-II e SID.</p>
+<p><strong>Obiettivo:</strong> costruire una routine IRQ robusta gestendo correttamente enable/disable interrupt, acknowledge e ritorno con <code>RTI</code>.</p>
 </blockquote>
 <hr />
 <h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
 <ul>
-<li>comprendere la differenza tra indirizzi a 8 bit (Zero Page) e 16 bit (assoluto);</li>
-<li>usare l'indirizzamento assoluto per accedere a registri hardware;</li>
-<li>confrontare size e cicli: Zero Page vs Assoluto;</li>
-<li>scegliere la modalità giusta in base all'indirizzo.</li>
+<li>usare <code>SEI</code> e <code>CLI</code> nel punto giusto;</li>
+<li>capire perche <code>RTI</code> e obbligatorio negli handler custom;</li>
+<li>configurare mask interrupt di VIC-II/CIA;</li>
+<li>applicare save/restore registri in una ISR.</li>
 </ul>
 <hr />
 <h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
-<p>La Zero Page è veloce e compatta, ma raggiunge solo i primi 256 byte di memoria (<code>$0000</code>–<code>$00FF</code>).</p>
-<p>I registri hardware del C64 (VIC-II, SID, CIA) sono però oltre la Zero Page:
-- VIC-II: <code>$D000</code>–<code>$D0FF</code>
-- SID: <code>$D400</code>–<code>$D7FF</code>
-- CIA: <code>$DC00</code>–<code>$DD00</code></p>
-<p>Per accedervi, usiamo l'<strong>indirizzamento assoluto</strong>: un indirizzo a <strong>16 bit</strong> che raggiunge qualsiasi cella.</p>
+<p>Gli interrupt sono potenti ma delicati: basta un acknowledge mancante o un registro non ripristinato per causare glitch o blocchi.</p>
+<p>In questa lezione fissiamo un pattern pratico da riusare.</p>
 <hr />
 <h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
-<h3 id="indirizzi-a-16-bit">Indirizzi a 16 bit<a class="headerlink" href="#indirizzi-a-16-bit" title="Permanent link">&para;</a></h3>
-<p>Nella modalità assoluta, l'indirizzo occupa <strong>2 byte</strong> (16 bit):</p>
-<pre class="highlight"><code class="language-asm">LDA $D020      ; Zero Page (1 byte indirizzo) — NO, $D0 &gt; $FF
-LDA $D020      ; Assoluto (2 byte indirizzo) — indirizzo completo $D020</code></pre>
-<p>Quando <code>64tass</code> vede un indirizzo &gt; <code>$FF</code>, lo assembla automaticamente in modalità assoluta.</p>
-<h3 id="sintassi">Sintassi<a class="headerlink" href="#sintassi" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code class="language-asm">LDA $D020      ; legge il registro colore bordo VIC-II
-STA $D020      ; scrive nel registro colore bordo</code></pre>
-<p>L'indirizzo è a 16 bit little-endian in memoria:</p>
-<pre class="highlight"><code>Indirizzo in memoria   Byte basso   Byte alto
-$0801                  $20          $D0</code></pre>
-<h3 id="comparazione-modalita">Comparazione modalità<a class="headerlink" href="#comparazione-modalita" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Modalità</th>
-<th>Opcode</th>
-<th>Bytes</th>
-<th>Cicli</th>
-<th>Indirizzo max</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Zero Page</td>
-<td><code>$A5</code></td>
-<td>2</td>
-<td>3</td>
-<td><code>$00FF</code></td>
-</tr>
-<tr>
-<td>Assoluto</td>
-<td><code>$AD</code></td>
-<td>3</td>
-<td>4</td>
-<td><code>$FFFF</code></td>
-</tr>
-</tbody>
-</table>
-<p>L'assoluto costa 1 byte in più e 1 ciclo, ma raggiunge ovunque.</p>
+<h3 id="istruzioni-chiave">Istruzioni chiave<a class="headerlink" href="#istruzioni-chiave" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>SEI</code>: imposta il flag I e blocca IRQ mascherabili.</li>
+<li><code>CLI</code>: azzera il flag I e riabilita IRQ mascherabili.</li>
+<li><code>RTI</code>: ritorno da interrupt con ripristino stato completo.</li>
+</ul>
+<h3 id="mask-principali-su-c64">Mask principali su C64<a class="headerlink" href="#mask-principali-su-c64" title="Permanent link">&para;</a></h3>
+<ul>
+<li>VIC-II interrupt enable: <code>$D01A</code></li>
+<li>VIC-II interrupt request/ack: <code>$D019</code></li>
+<li>CIA1 interrupt control: <code>$DC0D</code></li>
+<li>CIA2 interrupt control: <code>$DD0D</code></li>
+</ul>
+<p>Strategia comune:</p>
+<ol>
+<li><code>SEI</code> durante setup;</li>
+<li>disabilita fonti IRQ non usate;</li>
+<li>abilita solo sorgente desiderata;</li>
+<li>installa vettore;</li>
+<li><code>CLI</code>.</li>
+</ol>
 <hr />
 <h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
-<p><code>LDA $D020</code>:</p>
-<ol>
-<li><strong>Fetch opcode</strong>: legge <code>$AD</code> (opcode LDA assoluto)</li>
-<li><strong>Fetch byte basso</strong>: legge <code>$20</code> (parte bassa indirizzo)</li>
-<li><strong>Fetch byte alto</strong>: legge <code>$D0</code> (parte alta indirizzo)</li>
-<li><strong>Read memory</strong>: legge il contenuto di <code>$D020</code></li>
-<li><strong>Execute</strong>: scrive il valore in A</li>
-</ol>
-<p>In totale: <strong>3 byte</strong>, <strong>4 cicli</strong>.</p>
-<p>L'indirizzo viene ricostruito come <code>$D0</code> (alto) + <code>$20</code> (basso) = <code>$D020</code>.</p>
+<p>Il 6510 entra in IRQ in mezzo al flusso normale. Se l'handler altera A/X/Y senza ripristino, il main loop riparte in stato incoerente. Per questo una ISR affidabile salva e ripristina sempre i registri usati.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 013 — Indirizzamento assoluto
-; Controlla registri VIC-II e SID
+<pre class="highlight"><code class="language-asm">; Lezione 050 - Raster IRQ robusto (pattern base)
 *= $0801
 
-; Nota: LDA indirizzo (assoluto) legge il byte da quell'indirizzo a 16 bit.
-; Nota: STA indirizzo (assoluto) scrive A in quell'indirizzo a 16 bit.
+IRQ_VEC_LO = $0314
+IRQ_VEC_HI = $0315
+RASTER     = $D012
+VIC_IRQ_EN = $D01A
+VIC_IRQ_FL = $D019
+CIA1_ICR   = $DC0D
+CIA2_ICR   = $DD0D
+BORDER     = $D020
 
-; Cambia colore bordo (VIC-II $D020)
-LDA #$0B           ; carica il colore marrone
-STA $D020          ; scrivi nel registro colore bordo (assoluto)
+start:
+    SEI
 
-; Leggi il registro SID di controllo (SID $D404)
-LDA $D404          ; leggi il registro SID Control Voice 1
-STA $D020          ; rifletti il valore nel bordo (per debug)
+    ; disabilita e pulisci CIA IRQ
+    LDA #$7F
+    STA CIA1_ICR
+    STA CIA2_ICR
+    LDA CIA1_ICR
+    LDA CIA2_ICR
 
-RTS</code></pre>
-<p>Compila:</p>
-<pre class="highlight"><code class="language-bash">64tass --cbm-prg -o bin/013.prg src/modulo-5/013.asm</code></pre>
+    ; raster line target
+    LDA #$80
+    STA RASTER
+
+    ; abilita solo raster IRQ del VIC-II
+    LDA #%00000001
+    STA VIC_IRQ_EN
+
+    ; installa vettore IRQ custom
+    LDA #&lt;irq_handler
+    STA IRQ_VEC_LO
+    LDA #&gt;irq_handler
+    STA IRQ_VEC_HI
+
+    CLI
+
+main_loop:
+    JMP main_loop
+
+irq_handler:
+    PHA
+    TXA
+    PHA
+    TYA
+    PHA
+
+    ; acknowledge VIC raster IRQ
+    LDA #%00000001
+    STA VIC_IRQ_FL
+
+    INC BORDER
+
+    PLA
+    TAY
+    PLA
+    TAX
+    PLA
+    RTI</code></pre>
+<p><code>PHA</code> salva A sullo stack, <code>PLA</code> lo ripristina. <code>TXA/TYA</code> trasferiscono X/Y in A per poterli salvare con <code>PHA</code>.</p>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Confondere assoluto con Zero Page</strong>: <code>$D020</code> non è ZP (il byte alto <code>$D0</code> &gt; <code>$FF</code>). <code>64tass</code> lo assembla come assoluto automaticamente.</li>
-<li><strong>Dimenticare il byte basso dell'indirizzo</strong>: <code>$D020</code> è indivisibile. Non puoi usare <code>$D0</code> — è un indirizzo incompleto.</li>
-<li><strong>Assumere che assoluto sia lento</strong>: è solo 1 ciclo in più della ZP, spesso è una scelta ragionevole.</li>
+<li>usare <code>RTS</code> al posto di <code>RTI</code> in una ISR;</li>
+<li>dimenticare acknowledge (<code>$D019</code>) e restare in interrupt continuo;</li>
+<li>non salvare registri e corrompere la logica del main loop.</li>
 </ul>
 <hr />
 <h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Leggi il colore bordo (<code>$D020</code>), incrementalo di 1 con <code>INC</code>, e riscrivilo.</li>
-<li>Leggi il colore sfondo (<code>$D021</code>) e scrivilo nel bordo.</li>
-<li>Usa un ciclo per azzerare 10 byte consecutivi a partire da <code>$D020</code>.</li>
+<li>Sostituisci <code>INC BORDER</code> con alternanza tra due colori.</li>
+<li>Sposta la raster line da <code>$80</code> a <code>$30</code> e osserva la differenza.</li>
+<li>Inserisci un contatore IRQ in zero page e stampane il valore a schermo.</li>
 </ol>
 <hr />
 <h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Concetto</th>
-<th>Spiegazione</th>
+<th>Elemento</th>
+<th>Regola pratica</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Indirizzamento assoluto</td>
-<td>Usa indirizzo a 16 bit per raggiungere qualsiasi cella</td>
+<td><code>SEI/CLI</code></td>
+<td>setup atomico, poi enable</td>
 </tr>
 <tr>
-<td>Opcode</td>
-<td><code>$AD</code> per LDA assoluto</td>
+<td>Save/restore A/X/Y</td>
+<td>evita corruzione stato</td>
 </tr>
 <tr>
-<td>Bytes</td>
-<td>3 (opcode + byte basso + byte alto)</td>
+<td>Acknowledge IRQ</td>
+<td>evita loop interrupt infinito</td>
 </tr>
 <tr>
-<td>Cicli</td>
-<td>4 (1 in più della Zero Page)</td>
-</tr>
-<tr>
-<td>Uso tipico</td>
-<td>Registri hardware oltre <code>$00FF</code></td>
-</tr>
-<tr>
-<td>Endianness</td>
-<td>Little-endian (byte basso prima, alto dopo)</td>
+<td><code>RTI</code></td>
+<td>uscita corretta da ISR</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
-<p>Nella lezione 014 vedremo l'<strong>indirizzamento indicizzato</strong>: combina un indirizzo base con un indice nei registri X/Y per accedere a tabelle e array. Utile per cicli su memoria.</p>
+<p>Ora che il pattern ISR e chiaro, passiamo ai CIA: timer, seriale e keyboard matrix.</p>
 <hr />
-<h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
-<p>La mappa memoria del C64 usa indirizzi assoluti:</p>
-<pre class="highlight"><code>$0000–$00FF   Zero Page
-$0100–$01FF   Stack
-$0200–$3FFF   RAM libera (Basic RAM)
-$4000–$7FFF   Cartuccia ROM (normalmente libera)
-$8000–$9FFF   ROM BASIC (banked)
-$A000–$BFFF   Cartuccia ROM
-$C000–$CFFF   ROM KERNAL (banked)
-$D000–$D0FF   VIC-II (chip grafico)
-$D100–$D3FF   SID (chip audio)
-$D400–$D7FF   SID mirror
-$D800–$D8FF   Color RAM
-$DC00–$DDFF   CIA 1 e 2 (I/O, timer)
-$E000–$FFFF   ROM KERNAL</code></pre>
-<p>Ogni indirizzo è a 16 bit.</p>
+<h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
+<p>Il costo cicli di una ISR include ingresso/uscita + salvataggi + lavoro utile. Per timing stabile, mantieni la routine breve e sposta elaborazioni pesanti nel main loop.</p>
 <hr />
 <h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
 <ul>
-<li>[ ] l'esempio compila con <code>64tass</code></li>
-<li>[ ] la differenza tra ZP (<code>$40</code>) e assoluto (<code>$D020</code>) è chiara</li>
-<li>[ ] la struttura little-endian dell'indirizzo è compresa</li>
-<li>[ ] il contenuto è progressivo rispetto alle lezioni 011–012</li>
+<li>[ ] l'esempio compila con 64tass;</li>
+<li>[ ] l'esempio è coerente con la lezione;</li>
+<li>[ ] indice, glossario e changelog sono aggiornati;</li>
+<li>[ ] il contenuto è semplice e progressivo.</li>
 </ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../021-zero-page/" class="btn btn-neutral float-left" title="Lezione 021 — Indirizzamento Zero Page"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../023-indirizzamento-indicizzato/" class="btn btn-neutral float-right" title="Lezione 023 — Indirizzamento indicizzato">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../049-tipi-interrupt-irq-nmi-brk/" class="btn btn-neutral float-left" title="Lezione 049 - Tipi di interrupt: IRQ, NMI e BRK"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../051-cia-timer-serial-keyboard-matrix/" class="btn btn-neutral float-right" title="Lezione 051 - CIA: timer, seriale e keyboard matrix">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -524,10 +511,10 @@ $E000–$FFFF   ROM KERNAL</code></pre>
         </span>
     
     
-      <span><a href="../021-zero-page/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../049-tipi-interrupt-irq-nmi-brk/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../023-indirizzamento-indicizzato/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../051-cia-timer-serial-keyboard-matrix/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

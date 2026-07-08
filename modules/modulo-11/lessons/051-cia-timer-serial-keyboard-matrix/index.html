@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Lezione 022 — Indirizzamento assoluto - C64 Assembly Course</title>
+    <title>Lezione 051 - CIA: timer, seriale e keyboard matrix - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Lezione 022 \u2014 Indirizzamento assoluto";
-        var mkdocs_page_input_path = "modules/modulo-5/lessons/022-indirizzamento-assoluto.md";
+        var mkdocs_page_name = "Lezione 051 - CIA: timer, seriale e keyboard matrix";
+        var mkdocs_page_input_path = "modules/modulo-11/lessons/051-cia-timer-serial-keyboard-matrix.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -113,53 +113,21 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 5 - Modalità di indirizzamento</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 5 - Indice</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 5 - Modalità di indirizzamento</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/">Modulo 5 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../020-modalita-immediata/">Lezione 020 — Indirizzamento immediato, revisited</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/020-modalita-immediata/">Lezione 020 — Indirizzamento immediato, revisited</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../021-zero-page/">Lezione 021 — Indirizzamento Zero Page</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/021-zero-page/">Lezione 021 — Indirizzamento Zero Page</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 022 — Indirizzamento assoluto</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#indirizzi-a-16-bit">Indirizzi a 16 bit</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#sintassi">Sintassi</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#comparazione-modalita">Comparazione modalità</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/022-indirizzamento-assoluto/">Lezione 022 — Indirizzamento assoluto</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../023-indirizzamento-indicizzato/">Lezione 023 — Indirizzamento indicizzato</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/023-indirizzamento-indicizzato/">Lezione 023 — Indirizzamento indicizzato</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../024-indirizzamento-indiretto/">Lezione 024 — Indirizzamento indiretto</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/024-indirizzamento-indiretto/">Lezione 024 — Indirizzamento indiretto</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../025-indirizzamento-indiretto-indicizzato/">Lezione 025 — Indirizzamento indiretto indicizzato</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-5/lessons/025-indirizzamento-indiretto-indicizzato/">Lezione 025 — Indirizzamento indiretto indicizzato</a>
                 </li>
     </ul>
                   </li>
@@ -239,17 +207,49 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 11 - Interrupt, CIA e gestione tempo</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/">Modulo 11 - Indice</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 11 - Interrupt, CIA e gestione tempo</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 11 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/lessons/049-tipi-interrupt-irq-nmi-brk/">Lezione 049 - Tipi di interrupt: IRQ, NMI e BRK</a>
+                <li class="toctree-l2"><a class="reference internal" href="../049-tipi-interrupt-irq-nmi-brk/">Lezione 049 - Tipi di interrupt: IRQ, NMI e BRK</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/lessons/050-gestione-interrupt-cli-sei-rti-mask/">Lezione 050 - Gestione interrupt: CLI, SEI, RTI e mask</a>
+                <li class="toctree-l2"><a class="reference internal" href="../050-gestione-interrupt-cli-sei-rti-mask/">Lezione 050 - Gestione interrupt: CLI, SEI, RTI e mask</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/lessons/051-cia-timer-serial-keyboard-matrix/">Lezione 051 - CIA: timer, seriale e keyboard matrix</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 051 - CIA: timer, seriale e keyboard matrix</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cia1-vs-cia2-visione-rapida">CIA1 vs CIA2 (visione rapida)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#registri-timer-cia1-essenziali">Registri timer CIA1 (essenziali)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#keyboard-matrix-concetto">Keyboard matrix (concetto)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
+    </li>
+    </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-11/lessons/052-mini-progetto-timer-cia-eventi-periodici/">Lezione 052 - Mini-progetto: timer CIA per eventi periodici</a>
+                <li class="toctree-l2"><a class="reference internal" href="../052-mini-progetto-timer-cia-eventi-periodici/">Lezione 052 - Mini-progetto: timer CIA per eventi periodici</a>
                 </li>
     </ul>
                   </li>
@@ -308,10 +308,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Moduli &raquo;</li>
-          <li>Modulo 5 - Modalità di indirizzamento &raquo;</li>
-      <li class="breadcrumb-item active">Lezione 022 — Indirizzamento assoluto</li>
+          <li>Modulo 11 - Interrupt, CIA e gestione tempo &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 051 - CIA: timer, seriale e keyboard matrix</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-5/lessons/022-indirizzamento-assoluto.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-11/lessons/051-cia-timer-serial-keyboard-matrix.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -320,184 +320,142 @@
             <div class="section" itemprop="articleBody">
               
                 <p><a href="../../../../">🏠 Home</a></p>
-<h1 id="lezione-22-indirizzamento-assoluto">Lezione 22 — Indirizzamento assoluto<a class="headerlink" href="#lezione-22-indirizzamento-assoluto" title="Permanent link">&para;</a></h1>
+<h1 id="lezione-051-cia-timer-seriale-e-keyboard-matrix">Lezione 051 - CIA: timer, seriale e keyboard matrix<a class="headerlink" href="#lezione-051-cia-timer-seriale-e-keyboard-matrix" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Obiettivo:</strong> capire come accedere a qualsiasi indirizzo di memoria (0–65535) con l'indirizzamento assoluto, e quando usarlo per registri hardware come VIC-II e SID.</p>
+<p><strong>Obiettivo:</strong> capire il ruolo dei due CIA nel C64 e usare il timer A del CIA1 come base per eventi periodici.</p>
 </blockquote>
 <hr />
 <h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
 <ul>
-<li>comprendere la differenza tra indirizzi a 8 bit (Zero Page) e 16 bit (assoluto);</li>
-<li>usare l'indirizzamento assoluto per accedere a registri hardware;</li>
-<li>confrontare size e cicli: Zero Page vs Assoluto;</li>
-<li>scegliere la modalità giusta in base all'indirizzo.</li>
+<li>distinguere CIA1 e CIA2 nel sistema C64;</li>
+<li>comprendere timer A/B e interrupt control register;</li>
+<li>introdurre la keyboard matrix a livello hardware;</li>
+<li>costruire un esempio con timer CIA in polling.</li>
 </ul>
 <hr />
 <h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
-<p>La Zero Page è veloce e compatta, ma raggiunge solo i primi 256 byte di memoria (<code>$0000</code>–<code>$00FF</code>).</p>
-<p>I registri hardware del C64 (VIC-II, SID, CIA) sono però oltre la Zero Page:
-- VIC-II: <code>$D000</code>–<code>$D0FF</code>
-- SID: <code>$D400</code>–<code>$D7FF</code>
-- CIA: <code>$DC00</code>–<code>$DD00</code></p>
-<p>Per accedervi, usiamo l'<strong>indirizzamento assoluto</strong>: un indirizzo a <strong>16 bit</strong> che raggiunge qualsiasi cella.</p>
+<p>I CIA (Complex Interface Adapter) sono centrali per tempo e I/O. Anche se spesso si parte dal VIC-II per raster timing, i timer CIA sono una base robusta per eventi periodici e gestione input.</p>
 <hr />
 <h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
-<h3 id="indirizzi-a-16-bit">Indirizzi a 16 bit<a class="headerlink" href="#indirizzi-a-16-bit" title="Permanent link">&para;</a></h3>
-<p>Nella modalità assoluta, l'indirizzo occupa <strong>2 byte</strong> (16 bit):</p>
-<pre class="highlight"><code class="language-asm">LDA $D020      ; Zero Page (1 byte indirizzo) — NO, $D0 &gt; $FF
-LDA $D020      ; Assoluto (2 byte indirizzo) — indirizzo completo $D020</code></pre>
-<p>Quando <code>64tass</code> vede un indirizzo &gt; <code>$FF</code>, lo assembla automaticamente in modalità assoluta.</p>
-<h3 id="sintassi">Sintassi<a class="headerlink" href="#sintassi" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code class="language-asm">LDA $D020      ; legge il registro colore bordo VIC-II
-STA $D020      ; scrive nel registro colore bordo</code></pre>
-<p>L'indirizzo è a 16 bit little-endian in memoria:</p>
-<pre class="highlight"><code>Indirizzo in memoria   Byte basso   Byte alto
-$0801                  $20          $D0</code></pre>
-<h3 id="comparazione-modalita">Comparazione modalità<a class="headerlink" href="#comparazione-modalita" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Modalità</th>
-<th>Opcode</th>
-<th>Bytes</th>
-<th>Cicli</th>
-<th>Indirizzo max</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Zero Page</td>
-<td><code>$A5</code></td>
-<td>2</td>
-<td>3</td>
-<td><code>$00FF</code></td>
-</tr>
-<tr>
-<td>Assoluto</td>
-<td><code>$AD</code></td>
-<td>3</td>
-<td>4</td>
-<td><code>$FFFF</code></td>
-</tr>
-</tbody>
-</table>
-<p>L'assoluto costa 1 byte in più e 1 ciclo, ma raggiunge ovunque.</p>
+<h3 id="cia1-vs-cia2-visione-rapida">CIA1 vs CIA2 (visione rapida)<a class="headerlink" href="#cia1-vs-cia2-visione-rapida" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>CIA1</strong> (<code>$DC00-$DC0F</code>): tastiera, joystick port 2, timer utili al sistema.</li>
+<li><strong>CIA2</strong> (<code>$DD00-$DD0F</code>): serial bus, gestione linee complementari e timer.</li>
+</ul>
+<h3 id="registri-timer-cia1-essenziali">Registri timer CIA1 (essenziali)<a class="headerlink" href="#registri-timer-cia1-essenziali" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>$DC04/$DC05</code>: Timer A latch lo/hi</li>
+<li><code>$DC06/$DC07</code>: Timer B latch lo/hi</li>
+<li><code>$DC0D</code>: Interrupt Control Register (ICR)</li>
+<li><code>$DC0E</code>: Control Register Timer A</li>
+</ul>
+<p>Timer A tipico:</p>
+<ol>
+<li>carichi latch lo/hi;</li>
+<li>configuri start/one-shot/free-run;</li>
+<li>controlli flag interrupt in ICR.</li>
+</ol>
+<h3 id="keyboard-matrix-concetto">Keyboard matrix (concetto)<a class="headerlink" href="#keyboard-matrix-concetto" title="Permanent link">&para;</a></h3>
+<p>La tastiera C64 e una matrice righe/colonne: si pilotano linee e si leggono stati via CIA1. Molte routine pratiche usano KERNAL scanner, ma capire la matrice aiuta a debug avanzato.</p>
 <hr />
 <h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
-<p><code>LDA $D020</code>:</p>
-<ol>
-<li><strong>Fetch opcode</strong>: legge <code>$AD</code> (opcode LDA assoluto)</li>
-<li><strong>Fetch byte basso</strong>: legge <code>$20</code> (parte bassa indirizzo)</li>
-<li><strong>Fetch byte alto</strong>: legge <code>$D0</code> (parte alta indirizzo)</li>
-<li><strong>Read memory</strong>: legge il contenuto di <code>$D020</code></li>
-<li><strong>Execute</strong>: scrive il valore in A</li>
-</ol>
-<p>In totale: <strong>3 byte</strong>, <strong>4 cicli</strong>.</p>
-<p>L'indirizzo viene ricostruito come <code>$D0</code> (alto) + <code>$20</code> (basso) = <code>$D020</code>.</p>
+<p>Con polling, il 6510 interroga periodicamente un registro (es. ICR). Con interrupt, lascia che l'evento arrivi da solo. Polling e semplice ma spreca cicli; interrupt e piu efficiente per scheduler stabili.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 013 — Indirizzamento assoluto
-; Controlla registri VIC-II e SID
+<pre class="highlight"><code class="language-asm">; Lezione 051 - CIA1 Timer A in polling
 *= $0801
 
-; Nota: LDA indirizzo (assoluto) legge il byte da quell'indirizzo a 16 bit.
-; Nota: STA indirizzo (assoluto) scrive A in quell'indirizzo a 16 bit.
+CIA1_TA_LO = $DC04
+CIA1_TA_HI = $DC05
+CIA1_ICR   = $DC0D
+CIA1_CRA   = $DC0E
+BORDER     = $D020
 
-; Cambia colore bordo (VIC-II $D020)
-LDA #$0B           ; carica il colore marrone
-STA $D020          ; scrivi nel registro colore bordo (assoluto)
+start:
+    ; stop timer A
+    LDA #$00
+    STA CIA1_CRA
 
-; Leggi il registro SID di controllo (SID $D404)
-LDA $D404          ; leggi il registro SID Control Voice 1
-STA $D020          ; rifletti il valore nel bordo (per debug)
+    ; carica latch timer A
+    LDA #$FF
+    STA CIA1_TA_LO
+    LDA #$20
+    STA CIA1_TA_HI
 
-RTS</code></pre>
-<p>Compila:</p>
-<pre class="highlight"><code class="language-bash">64tass --cbm-prg -o bin/013.prg src/modulo-5/013.asm</code></pre>
+    ; clear pending ICR by read
+    LDA CIA1_ICR
+
+    ; start timer A, continuous mode
+    LDA #%00010001
+    STA CIA1_CRA
+
+main_loop:
+wait_ta:
+    LDA CIA1_ICR
+    AND #%00000001          ; bit0: timer A underflow
+    BEQ wait_ta
+
+    INC BORDER
+    JMP main_loop</code></pre>
+<p><code>AND</code> applica una maschera bit-a-bit. Qui isola il bit 0 dell'ICR per verificare l'evento timer A.</p>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Confondere assoluto con Zero Page</strong>: <code>$D020</code> non è ZP (il byte alto <code>$D0</code> &gt; <code>$FF</code>). <code>64tass</code> lo assembla come assoluto automaticamente.</li>
-<li><strong>Dimenticare il byte basso dell'indirizzo</strong>: <code>$D020</code> è indivisibile. Non puoi usare <code>$D0</code> — è un indirizzo incompleto.</li>
-<li><strong>Assumere che assoluto sia lento</strong>: è solo 1 ciclo in più della ZP, spesso è una scelta ragionevole.</li>
+<li>dimenticare di fermare il timer prima di cambiare latch;</li>
+<li>non leggere ICR e lasciare flag pendenti ambigui;</li>
+<li>confondere polling con IRQ reali e aspettarsi stesso timing.</li>
 </ul>
 <hr />
 <h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Leggi il colore bordo (<code>$D020</code>), incrementalo di 1 con <code>INC</code>, e riscrivilo.</li>
-<li>Leggi il colore sfondo (<code>$D021</code>) e scrivilo nel bordo.</li>
-<li>Usa un ciclo per azzerare 10 byte consecutivi a partire da <code>$D020</code>.</li>
+<li>Prova valori latch diversi e misura la frequenza del cambio bordo.</li>
+<li>Passa da timer A a timer B con registri dedicati.</li>
+<li>Integra un controllo tastiera KERNAL in parallelo al polling timer.</li>
 </ol>
 <hr />
 <h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Concetto</th>
-<th>Spiegazione</th>
+<th>Blocco CIA</th>
+<th>Uso</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Indirizzamento assoluto</td>
-<td>Usa indirizzo a 16 bit per raggiungere qualsiasi cella</td>
+<td>Timer A/B</td>
+<td>eventi temporali periodici</td>
 </tr>
 <tr>
-<td>Opcode</td>
-<td><code>$AD</code> per LDA assoluto</td>
+<td>ICR</td>
+<td>stato e controllo interrupt</td>
 </tr>
 <tr>
-<td>Bytes</td>
-<td>3 (opcode + byte basso + byte alto)</td>
-</tr>
-<tr>
-<td>Cicli</td>
-<td>4 (1 in più della Zero Page)</td>
-</tr>
-<tr>
-<td>Uso tipico</td>
-<td>Registri hardware oltre <code>$00FF</code></td>
-</tr>
-<tr>
-<td>Endianness</td>
-<td>Little-endian (byte basso prima, alto dopo)</td>
+<td>Porte I/O</td>
+<td>tastiera/joystick/seriale</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
-<p>Nella lezione 014 vedremo l'<strong>indirizzamento indicizzato</strong>: combina un indirizzo base con un indice nei registri X/Y per accedere a tabelle e array. Utile per cicli su memoria.</p>
+<p>Nel mini-progetto useremo il timer CIA con IRQ per generare tick periodici affidabili.</p>
 <hr />
-<h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento — Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
-<p>La mappa memoria del C64 usa indirizzi assoluti:</p>
-<pre class="highlight"><code>$0000–$00FF   Zero Page
-$0100–$01FF   Stack
-$0200–$3FFF   RAM libera (Basic RAM)
-$4000–$7FFF   Cartuccia ROM (normalmente libera)
-$8000–$9FFF   ROM BASIC (banked)
-$A000–$BFFF   Cartuccia ROM
-$C000–$CFFF   ROM KERNAL (banked)
-$D000–$D0FF   VIC-II (chip grafico)
-$D100–$D3FF   SID (chip audio)
-$D400–$D7FF   SID mirror
-$D800–$D8FF   Color RAM
-$DC00–$DDFF   CIA 1 e 2 (I/O, timer)
-$E000–$FFFF   ROM KERNAL</code></pre>
-<p>Ogni indirizzo è a 16 bit.</p>
+<h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
+<p>Polling su CIA e didatticamente ottimo: rende visibile la relazione diretta tra register read e evento hardware. In produzione, però, un IRQ periodico riduce jitter e libera CPU.</p>
 <hr />
 <h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
 <ul>
-<li>[ ] l'esempio compila con <code>64tass</code></li>
-<li>[ ] la differenza tra ZP (<code>$40</code>) e assoluto (<code>$D020</code>) è chiara</li>
-<li>[ ] la struttura little-endian dell'indirizzo è compresa</li>
-<li>[ ] il contenuto è progressivo rispetto alle lezioni 011–012</li>
+<li>[ ] l'esempio compila con 64tass;</li>
+<li>[ ] l'esempio è coerente con la lezione;</li>
+<li>[ ] indice, glossario e changelog sono aggiornati;</li>
+<li>[ ] il contenuto è semplice e progressivo.</li>
 </ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../021-zero-page/" class="btn btn-neutral float-left" title="Lezione 021 — Indirizzamento Zero Page"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../023-indirizzamento-indicizzato/" class="btn btn-neutral float-right" title="Lezione 023 — Indirizzamento indicizzato">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../050-gestione-interrupt-cli-sei-rti-mask/" class="btn btn-neutral float-left" title="Lezione 050 - Gestione interrupt: CLI, SEI, RTI e mask"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../052-mini-progetto-timer-cia-eventi-periodici/" class="btn btn-neutral float-right" title="Lezione 052 - Mini-progetto: timer CIA per eventi periodici">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -524,10 +482,10 @@ $E000–$FFFF   ROM KERNAL</code></pre>
         </span>
     
     
-      <span><a href="../021-zero-page/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../050-gestione-interrupt-cli-sei-rti-mask/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../023-indirizzamento-indicizzato/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../052-mini-progetto-timer-cia-eventi-periodici/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
