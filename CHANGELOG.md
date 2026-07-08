@@ -1,5 +1,41 @@
 # Changelog
 
+## 2026-07-08 — Modulo 0 Completamento: 4 lezioni ambiente sviluppo (032-035)
+
+### Modulo 0 ora completo!
+
+Completamento della roadmap per **Modulo 0 — Ambiente di sviluppo**:
+
+#### Nuove lezioni
+- **Lezione 032 — Git e GitHub**: Versioning, branch, commit, PR, collaborazione, merge conflicts
+- **Lezione 033 — VS Code**: Setup, estensioni (6502 Assembly), tasks.json, debugging in VICE, workspace organization
+- **Lezione 034 — VICE**: Configurazione emulatore, immagini D64, monitor debugger, breakpoint, disassembly
+- **Lezione 035 — Makefile**: Automazione build, task, script shell, CI/CD, GitHub Actions, riduzione errori
+
+### Coverage Modulo 0
+
+| Argomento | Lezione | Status |
+|-----------|---------|--------|
+| Toolchain 64tass/VICE | 000 | ✅ |
+| Git e GitHub | 032 | ✅ |
+| VS Code setup | 033 | ✅ |
+| VICE e D64 | 034 | ✅ |
+| Makefile automation | 035 | ✅ |
+
+**Modulo 0 Coverage: 100% ✅**
+
+### Statistiche aggiornate
+
+| Metrica | Valore |
+|---------|--------|
+| Lezioni Modulo 0 | 5 (000, 032-035) |
+| **Totale lezioni** | **36** |
+| Moduli completati | Modulo 0-7 |
+| GitHub Pages | Live |
+| Commit | d5bcb87 |
+
+---
+
 ## 2026-07-08 — Quality Assurance: 6 lezioni di gap-filling (000, 027-029, 030-031)
 
 ### Roadmap Verification & Gap Analysis
