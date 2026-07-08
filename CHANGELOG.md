@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-07-08 — Enforcement automatico workflow (script + pre-push hook)
+
+### Nuovi strumenti
+- `scripts/quality-check.sh`: quality check globale unico (build, template headings, hygiene file temporanei).
+- `scripts/release-docs.sh`: pipeline unica quality check -> commit -> push -> deploy.
+- `.githooks/pre-push`: blocco push automatico se il quality check fallisce.
+- `Makefile`: target `quality-check`, `deploy`, `release-docs`, `hook-install`.
+
+### Obiettivo
+- Ridurre a zero il rischio di saltare passaggi del workflow per dimenticanza.
+
 ## 2026-07-08 — Workflow: aggiunto comando standard quality check globale
 
 ### Aggiornamento `.ai/workflow.md`

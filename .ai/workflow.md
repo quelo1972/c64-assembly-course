@@ -114,6 +114,23 @@ Interpretazione esito:
 - Se il comando termina senza output, quality check globale OK.
 - Se appaiono righe `MISSING: ...`, correggere prima di procedere.
 
+### Standard operativo repository (script + hook)
+
+Per evitare dimenticanze future, usare sempre gli strumenti versionati nel repository:
+
+1. `./scripts/quality-check.sh`
+	- esegue build MkDocs, conformita intestazioni template, controllo file temporanei.
+2. `./scripts/release-docs.sh "messaggio commit"`
+	- esegue quality check, commit (solo staged), push e deploy in sequenza.
+3. Hook pre-push versionato in `.githooks/pre-push`
+	- blocca `git push` se il quality check fallisce.
+
+Installazione hook (una volta per clone):
+
+```bash
+make hook-install
+```
+
 ---
 
 ## Regole per gli esempi
