@@ -57,6 +57,12 @@ nav:
       - "Lezione 034 — Shift operations: ASL, LSR, ROL, ROR": modules/modulo-7/lessons/034-shift-operations.md
       - "Lezione 035 — Moltiplicazione: algoritmi software": modules/modulo-7/lessons/035-moltiplicazione.md
       - "Lezione 036 — Divisione: algoritmi software": modules/modulo-7/lessons/036-divisione.md
+    - Modulo 8 - I/O e periferiche:
+      - "Modulo 8 - Indice": modules/modulo-8.md
+      - "Lezione 037 — Mappa I/O del C64: VIC-II, SID, CIA": modules/modulo-8/lessons/037-mappa-io-c64-vic-sid-cia.md
+      - Lezione 038 — Screen RAM e Color RAM: modules/modulo-8/lessons/038-screen-ram-color-ram.md
+      - "Lezione 039 — KERNAL: chiamate ROM per I/O": modules/modulo-8/lessons/039-kernal-chiamate-rom-io.md
+      - "Lezione 040 — Mini-progetto: joystick e schermo": modules/modulo-8/lessons/040-mini-progetto-joystick-schermo.md
 theme:
   name: readthedocs
 markdown_extensions:
