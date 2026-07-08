@@ -92,6 +92,28 @@ Regola vincolante:
 - **Mai fare commit/push/deploy prima del quality check globale**.
 - Se il quality check fallisce, si corregge prima e si ripete il check fino a esito positivo.
 
+### Comando standard (copia/incolla) per quality check globale
+
+Usare questo comando unico prima di ogni commit/push/deploy su moduli e lezioni:
+
+```bash
+cd /home/andros/Projects/c64-assembly-course && \
+.venv/bin/mkdocs build -q && \
+req=("## 🎯 Obiettivi" "## 🧠 Introduzione" "## 📘 Teoria" "## 🤖 Come ragiona il 6510" "## 💡 Esempio pratico" "## ⚠️ Errori comuni" "## 🧪 Esercizi" "## 📌 Riassunto" "## 🔜 Preparazione alla lezione successiva" "## 🔎 Approfondimento - Dentro il 6510" "## ✅ Checklist finale") && \
+missing=0 && \
+while IFS= read -r f; do
+	for h in "${req[@]}"; do
+		grep -Fq "$h" "$f" || { echo "MISSING: $f :: $h"; missing=1; }
+	done
+done < <(find docs/modules -path '*/lessons/*.md' ! -name 'lesson-template.md' | sort) && \
+[[ $missing -eq 0 ]]
+```
+
+Interpretazione esito:
+
+- Se il comando termina senza output, quality check globale OK.
+- Se appaiono righe `MISSING: ...`, correggere prima di procedere.
+
 ---
 
 ## Regole per gli esempi

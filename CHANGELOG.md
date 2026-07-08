@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-07-08 — Workflow: aggiunto comando standard quality check globale
+
+### Aggiornamento `.ai/workflow.md`
+- Inserito blocco operativo "copia/incolla" per quality check globale pre-rilascio.
+- Il comando include: build MkDocs, verifica intestazioni obbligatorie su tutte le lezioni, esito booleano finale.
+
+### Obiettivo
+- Rendere il modus operandi ripetibile e identico nel tempo anche con agent diversi.
+
 ## 2026-07-08 — Workflow aggiornato: quality check globale obbligatorio prima del rilascio
 
 ### Aggiornamento processo
