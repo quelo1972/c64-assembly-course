@@ -71,6 +71,29 @@ Regole operative:
 
 ---
 
+## Modus operandi obbligatorio (moduli e lezioni)
+
+Per ogni nuovo modulo o batch di lezioni, seguire **sempre** questa sequenza senza eccezioni:
+
+1. **Creazione contenuti**
+	- creare lezioni, indice modulo, nav `mkdocs.yml`, eventuale glossario e `CHANGELOG.md`.
+2. **Quality check globale (prima del commit)**
+	- build completa: `.venv/bin/mkdocs build -q`;
+	- verifica conformita intestazioni template su tutte le lezioni (`docs/modules/**/lessons/*.md`, esclusi i template);
+	- verifica link/nav e assenza file temporanei.
+3. **Solo dopo quality check OK**
+	- eseguire commit su `main`;
+	- eseguire push su `origin/main`.
+4. **Solo dopo push riuscito**
+	- eseguire deploy: `.venv/bin/mkdocs gh-deploy --clean -b gh-pages -r origin`.
+
+Regola vincolante:
+
+- **Mai fare commit/push/deploy prima del quality check globale**.
+- Se il quality check fallisce, si corregge prima e si ripete il check fino a esito positivo.
+
+---
+
 ## Regole per gli esempi
 
 Ogni esempio deve:

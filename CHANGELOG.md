@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-07-08 — Workflow aggiornato: quality check globale obbligatorio prima del rilascio
+
+### Aggiornamento processo
+- Aggiornato `.ai/workflow.md` con sequenza vincolante per tutti i futuri moduli/lezioni:
+  1. creazione contenuti;
+  2. quality check globale (build + conformita template + link/nav + pulizia workspace);
+  3. solo dopo commit/push;
+  4. solo dopo deploy su `gh-pages`.
+
+### Regola esplicita
+- Vietato eseguire commit, push o deploy prima di quality check globale riuscito.
+
 ## 2026-07-08 — Quality fix globale: conformita template lezioni storiche
 
 ### Intervento
