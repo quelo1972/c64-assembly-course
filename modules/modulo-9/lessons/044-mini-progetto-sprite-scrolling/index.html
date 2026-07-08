@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Lezione 008 — Byte, Word e limiti della memoria - C64 Assembly Course</title>
+    <title>Lezione 044 - Mini-progetto: scena con sprite animati e scrolling - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Lezione 008 \u2014 Byte, Word e limiti della memoria";
-        var mkdocs_page_input_path = "modules/modulo-1/lessons/008-byte-word.md";
+        var mkdocs_page_name = "Lezione 044 - Mini-progetto: scena con sprite animati e scrolling";
+        var mkdocs_page_input_path = "modules/modulo-9/lessons/044-mini-progetto-sprite-scrolling.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -61,53 +61,15 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 1 - Fondamenti</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 1 - Indice</a>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 1 - Fondamenti</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-1/">Modulo 1 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../006-memory/">Lezione 006 — La memoria del Commodore 64</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-1/lessons/006-memory/">Lezione 006 — La memoria del Commodore 64</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../007-binary-hex/">Lezione 007 — Sistema binario ed esadecimale</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-1/lessons/007-binary-hex/">Lezione 007 — Sistema binario ed esadecimale</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 008 — Byte, Word e limiti della memoria</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#il-limite-del-byte">⚠️ Il limite del byte</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#perche-succede">🔁 Perché succede?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico-mentale">🧠 Esempio pratico mentale</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#cose-una-word">📏 Cos’è una word?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#perche-16-bit-sono-importanti">🧭 Perché 16 bit sono importanti?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#overflow-nella-pratica-del-c64">💥 Overflow nella pratica del C64</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#concetto-chiave">🧠 Concetto chiave</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-1/lessons/008-byte-word/">Lezione 008 — Byte, Word e limiti della memoria</a>
                 </li>
     </ul>
                   </li>
@@ -217,17 +179,41 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 9 - Grafica con VIC-II</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/">Modulo 9 - Indice</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 9 - Grafica con VIC-II</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 9 - Indice</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/lessons/041-testo-vs-bitmap/">Lezione 041 - Modalita testo vs bitmap</a>
+                <li class="toctree-l2"><a class="reference internal" href="../041-testo-vs-bitmap/">Lezione 041 - Modalita testo vs bitmap</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/lessons/042-sprite-definizione-posizionamento-collisioni/">Lezione 042 - Sprite: definizione, posizionamento e collisioni</a>
+                <li class="toctree-l2"><a class="reference internal" href="../042-sprite-definizione-posizionamento-collisioni/">Lezione 042 - Sprite: definizione, posizionamento e collisioni</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/lessons/043-raster-interrupts-sincronizzazione/">Lezione 043 - Raster interrupts e sincronizzazione video</a>
+                <li class="toctree-l2"><a class="reference internal" href="../043-raster-interrupts-sincronizzazione/">Lezione 043 - Raster interrupts e sincronizzazione video</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../modulo-9/lessons/044-mini-progetto-sprite-scrolling/">Lezione 044 - Mini-progetto: scena con sprite animati e scrolling</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 044 - Mini-progetto: scena con sprite animati e scrolling</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
+    </li>
+    </ul>
                 </li>
     </ul>
                   </li>
@@ -290,10 +276,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Moduli &raquo;</li>
-          <li>Modulo 1 - Fondamenti &raquo;</li>
-      <li class="breadcrumb-item active">Lezione 008 — Byte, Word e limiti della memoria</li>
+          <li>Modulo 9 - Grafica con VIC-II &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 044 - Mini-progetto: scena con sprite animati e scrolling</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-1/lessons/008-byte-word.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-9/lessons/044-mini-progetto-sprite-scrolling.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -302,118 +288,156 @@
             <div class="section" itemprop="articleBody">
               
                 <p><a href="../../../../">🏠 Home</a></p>
-<h1 id="lezione-8-byte-word-e-limiti-della-memoria">Lezione 8 — - Byte, Word e limiti della memoria<a class="headerlink" href="#lezione-8-byte-word-e-limiti-della-memoria" title="Permanent link">&para;</a></h1>
+<h1 id="lezione-044-mini-progetto-scena-con-sprite-animati-e-scrolling">Lezione 044 - Mini-progetto: scena con sprite animati e scrolling<a class="headerlink" href="#lezione-044-mini-progetto-scena-con-sprite-animati-e-scrolling" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Obiettivo:</strong> capire cosa può contenere un byte, cosa succede quando si superano i limiti e perché l’overflow è fondamentale nel C64.</p>
+<p><strong>Obiettivo:</strong> integrare sprite, charset/tile map e scorrimento orizzontale semplice in una scena coerente.</p>
 </blockquote>
 <hr />
 <h2 id="obiettivi">🎯 Obiettivi<a class="headerlink" href="#obiettivi" title="Permanent link">&para;</a></h2>
 <ul>
-<li>capire il limite di un byte;</li>
-<li>distinguere byte e word;</li>
-<li>riconoscere il significato dell'overflow.</li>
+<li>costruire un loop grafico base per scena dinamica;</li>
+<li>animare uno sprite tramite frame pointer;</li>
+<li>applicare uno scrolling orizzontale semplice;</li>
+<li>usare tile/charset per sfondo leggero.</li>
 </ul>
+<hr />
 <h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
-<p>Un <strong>byte</strong> è un’unità di memoria composta da:</p>
-<pre class="highlight"><code>8 bit</code></pre>
-<p>Un bit può essere:</p>
-<pre class="highlight"><code>0 oppure 1</code></pre>
-<p>Quindi un byte può rappresentare:</p>
-<pre class="highlight"><code>00000000 → 0
-11111111 → 255</code></pre>
-<p>👉 In totale: <strong>256 valori possibili</strong></p>
+<p>Questa lezione completa il modulo 9: mettiamo insieme i concetti del VIC-II in una pipeline minima da "gioco": sfondo a tile (charset), sprite animato e scorrimento hardware base.</p>
 <hr />
 <h2 id="teoria">📘 Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h2>
-<p>Nel 6510 i dati hanno dimensioni fisse. Un byte può contenere solo 8 bit, quindi ha un limite preciso. Quando si supera quel limite, la CPU riparte dall'inizio del range.</p>
-<h2 id="il-limite-del-byte">⚠️ Il limite del byte<a class="headerlink" href="#il-limite-del-byte" title="Permanent link">&para;</a></h2>
-<p>Un byte NON può contenere valori superiori a 255.</p>
-<p>Esempio:</p>
-<pre class="highlight"><code>255 + 1 = ?</code></pre>
-<p>In un sistema a 8 bit:</p>
-<pre class="highlight"><code>11111111 + 1 = 00000000</code></pre>
-<p>👉 Il risultato “riparte da zero”</p>
-<p>Questo fenomeno si chiama:</p>
-<blockquote>
-<p><strong>overflow</strong></p>
-</blockquote>
-<hr />
-<h2 id="perche-succede">🔁 Perché succede?<a class="headerlink" href="#perche-succede" title="Permanent link">&para;</a></h2>
-<p>Perché la CPU lavora con registri a dimensione fissa.</p>
-<p>Se hai solo 8 bit:</p>
+<p>Componenti del mini-progetto:</p>
 <ul>
-<li>puoi contare solo da 0 a 255</li>
-<li>oltre… torni all’inizio</li>
+<li><strong>Background</strong>: griglia caratteri (tile semplici) in Screen RAM;</li>
+<li><strong>Sprite actor</strong>: sprite 0 con due frame alternati;</li>
+<li><strong>Scrolling</strong>: offset orizzontale aggiornato nel tempo;</li>
+<li><strong>Timing</strong>: update sincronizzato (idealmente con raster IRQ).</li>
 </ul>
-<hr />
-<h2 id="esempio-pratico-mentale">🧠 Esempio pratico mentale<a class="headerlink" href="#esempio-pratico-mentale" title="Permanent link">&para;</a></h2>
-<p>Immagina un contachilometri vecchio:</p>
-<pre class="highlight"><code>99999 → 00000</code></pre>
-<p>La CPU funziona allo stesso modo.</p>
-<hr />
-<h2 id="cose-una-word">📏 Cos’è una word?<a class="headerlink" href="#cose-una-word" title="Permanent link">&para;</a></h2>
-<p>Nel contesto del 6510:</p>
-<ul>
-<li>1 byte = 8 bit</li>
-<li>2 byte = 16 bit</li>
-</ul>
-<p>Una coppia di byte si chiama spesso:</p>
-<blockquote>
-<p><strong>word (16 bit)</strong></p>
-</blockquote>
-<p>Esempio:</p>
-<pre class="highlight"><code>$1234</code></pre>
-<p>è composto da:</p>
-<pre class="highlight"><code>$12  $34</code></pre>
-<hr />
-<h2 id="perche-16-bit-sono-importanti">🧭 Perché 16 bit sono importanti?<a class="headerlink" href="#perche-16-bit-sono-importanti" title="Permanent link">&para;</a></h2>
-<p>Con 16 bit possiamo rappresentare:</p>
-<pre class="highlight"><code>2^16 = 65536 valori</code></pre>
-<p>👉 cioè tutto lo spazio di memoria del C64</p>
-<hr />
-<h2 id="overflow-nella-pratica-del-c64">💥 Overflow nella pratica del C64<a class="headerlink" href="#overflow-nella-pratica-del-c64" title="Permanent link">&para;</a></h2>
-<p>Gli overflow non sono errori nel C64.</p>
-<p>Sono <strong>normali e usati continuamente</strong>.</p>
-<p>Esempio:</p>
-<ul>
-<li>contatori che ripartono da 0</li>
-<li>animazioni</li>
-<li>timer hardware</li>
-<li>gestione sprite</li>
-</ul>
-<hr />
-<h2 id="concetto-chiave">🧠 Concetto chiave<a class="headerlink" href="#concetto-chiave" title="Permanent link">&para;</a></h2>
-<p>La CPU NON “si confonde”.</p>
-<p>Fa solo quello che può fare con i bit disponibili.</p>
+<p>Schema update:</p>
+<ol>
+<li>read input / AI semplice;</li>
+<li>update posizione sprite;</li>
+<li>update frame animazione;</li>
+<li>update scroll registro;</li>
+<li>render minimo.</li>
+</ol>
 <hr />
 <h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
-<p>Il 6510 non “capisce” il concetto di infinito. Sa solo che il registro disponibile ha un numero massimo di valori possibili, quindi l'overflow è un comportamento naturale del hardware.</p>
+<p>Il 6510 aggiorna registri VIC-II e memoria video a piccoli passi. La fluidita deriva da update frequenti e coerenti, non da blocchi monolitici. Le operazioni critiche per il frame timing vanno mantenute brevi.</p>
+<hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<p>Se un contatore raggiunge 255, il passo successivo lo riporta a 0. Questo è esattamente il tipo di comportamento che si vede in molti programmi semplici del C64.</p>
+<pre class="highlight"><code class="language-asm">; Lezione 044 - Mini scena: sprite animato + scrolling semplice
+*= $0801
+
+SPRITE0_X     = $D000
+SPRITE0_Y     = $D001
+SPRITE_EN     = $D015
+SPRITE0_COLOR = $D027
+SPRITE_PTR0   = $07F8
+SCROLL_X      = $D016
+
+FRAME_COUNTER = $02
+SPRITE_POS_X  = $03
+
+SPRITE_FRAME0 = $2000
+SPRITE_FRAME1 = $2040
+
+start:
+    LDA #$01
+    STA SPRITE_EN
+
+    LDA #$50
+    STA SPRITE0_Y
+
+    LDA #$01
+    STA SPRITE0_COLOR
+
+    LDA #$40
+    STA SPRITE_POS_X
+
+main_loop:
+    ; movimento sprite
+    LDA SPRITE_POS_X
+    CLC
+    ADC #$01
+    STA SPRITE_POS_X
+    STA SPRITE0_X
+
+    ; animazione 2 frame
+    LDA FRAME_COUNTER
+    AND #%00001000
+    BEQ frame0
+
+    LDA #(SPRITE_FRAME1 / 64)
+    STA SPRITE_PTR0
+    JMP scroll_step
+
+frame0:
+    LDA #(SPRITE_FRAME0 / 64)
+    STA SPRITE_PTR0
+
+scroll_step:
+    ; scroll orizzontale fine (3 bit bassi)
+    LDA FRAME_COUNTER
+    AND #%00000111
+    ORA #%00001000      ; mantiene settaggio base multicolor/text bit pattern esempio
+    STA SCROLL_X
+
+    INC FRAME_COUNTER
+    JMP main_loop
+
+* = SPRITE_FRAME0
+    .byte $18,$3C,$7E,$FF,$FF,$7E,$3C,$18
+    .fill 55, $00
+
+* = SPRITE_FRAME1
+    .byte $00,$18,$3C,$7E,$7E,$3C,$18,$00
+    .fill 55, $00</code></pre>
+<p><code>ADC</code> somma con carry. <code>INC</code> incrementa un byte in memoria. <code>AND</code> maschera i bit utili per animazione e scroll.</p>
+<hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
-<li>pensare che l'overflow sia un errore di programma;</li>
-<li>dimenticare che un byte va da 0 a 255;</li>
-<li>confondere byte e word.</li>
+<li>non separare update sprite e update scroll;</li>
+<li>usare dati sprite con lunghezza sbagliata;</li>
+<li>aspettarsi scrolling "a tile" completo senza gestione colonna entrante.</li>
 </ul>
+<hr />
 <h2 id="esercizi">🧪 Esercizi<a class="headerlink" href="#esercizi" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Quanto vale:</li>
-<li>11111111 + 1 (in binario)?</li>
-<li>Perché 255 è il massimo di un byte?</li>
-<li>Quanti valori può contenere una word da 16 bit?</li>
-<li>Cosa succede dopo 65535 + 1 in 16 bit?</li>
+<li>Aggiungi wrapping della posizione sprite quando supera 255.</li>
+<li>Inserisci un secondo sprite con velocita diversa.</li>
+<li>Implementa inserimento nuova colonna tile quando il fine scroll torna a 0.</li>
 </ol>
 <hr />
 <h2 id="riassunto">📌 Riassunto<a class="headerlink" href="#riassunto" title="Permanent link">&para;</a></h2>
-<ul>
-<li>un byte contiene 8 bit e va da 0 a 255;</li>
-<li>una word contiene 16 bit;</li>
-<li>l'overflow è il comportamento naturale quando si supera il limite dei bit disponibili.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Concetto</th>
+<th>Spiegazione breve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sprite animation</td>
+<td>Cambio puntatore frame nel tempo</td>
+</tr>
+<tr>
+<td>Fine scrolling</td>
+<td>Offset orizzontale gestito via registro VIC-II</td>
+</tr>
+<tr>
+<td>Tile/charset layer</td>
+<td>Sfondo leggero e veloce da aggiornare</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva<a class="headerlink" href="#preparazione-alla-lezione-successiva" title="Permanent link">&para;</a></h2>
-<p>Nella prossima lezione studieremo la CPU MOS 6510 e capiremo come i registri e le istruzioni lavorano insieme per eseguire un programma.</p>
+<p>Nel modulo 10 passeremo dal video all'audio: registri SID, oscillatori, inviluppi e pattern semplici.</p>
+<hr />
 <h2 id="approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510<a class="headerlink" href="#approfondimento-dentro-il-6510" title="Permanent link">&para;</a></h2>
-<p>Per il 6510 i bit sono la rappresentazione fisica dei dati. Capire l'overflow significa comprendere i limiti di questo livello hardware.</p>
+<p>Una scena stabile usa budget cicli per frame: prima timing critico, poi logica extra. Questo approccio evita regressioni quando aggiungi nuove feature grafiche.</p>
+<hr />
 <h2 id="checklist-finale">✅ Checklist finale<a class="headerlink" href="#checklist-finale" title="Permanent link">&para;</a></h2>
 <ul>
 <li>[ ] l'esempio compila con 64tass;</li>
@@ -425,8 +449,8 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../007-binary-hex/" class="btn btn-neutral float-left" title="Lezione 007 — Sistema binario ed esadecimale"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../../modulo-2/" class="btn btn-neutral float-right" title="Modulo 2 - Indice">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../043-raster-interrupts-sincronizzazione/" class="btn btn-neutral float-left" title="Lezione 043 - Raster interrupts e sincronizzazione video"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../modulo-10/" class="btn btn-neutral float-right" title="Modulo 10 - Indice">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -453,10 +477,10 @@
         </span>
     
     
-      <span><a href="../007-binary-hex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../043-raster-interrupts-sincronizzazione/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../../modulo-2/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../../modulo-10/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
