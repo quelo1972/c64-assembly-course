@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Appendice 007 - Linguaggio avanzato 64tass non usato nel corso - C64 Assembly Course</title>
+    <title>Appendice 008 - SID multipli su U64EII e C64U - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Appendice 007 - Linguaggio avanzato 64tass non usato nel corso";
-        var mkdocs_page_input_path = "appendici/007-linguaggio-avanzato-64tass-non-usato-nel-corso.md";
+        var mkdocs_page_name = "Appendice 008 - SID multipli su U64EII e C64U";
+        var mkdocs_page_input_path = "appendici/008-sid-multipli-u64eii-c64u.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -248,33 +248,43 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../006-reference-cli-e-diagnostica-64tass/">Appendice 006 - Reference CLI e diagnostica 64tass</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Appendice 007 - Linguaggio avanzato 64tass non usato nel corso</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../007-linguaggio-avanzato-64tass-non-usato-nel-corso/">Appendice 007 - Linguaggio avanzato 64tass non usato nel corso</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Appendice 008 - SID multipli su U64EII e C64U</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-espressioni-e-tipi-avanzati">1) Espressioni e tipi avanzati</a>
+    <li class="toctree-l2"><a class="reference internal" href="#1-contesto-storico-da-mono-sid-a-multi-sid">1) Contesto storico: da mono-SID a multi-SID</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-scoping-e-organizzazione-ad-alto-livello">2) Scoping e organizzazione ad alto livello</a>
+    <li class="toctree-l2"><a class="reference internal" href="#2-cosa-cambia-per-il-programmatore-6510">2) Cosa cambia per il programmatore 6510</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-macros-e-funzioni-custom">3) Macros e funzioni custom</a>
+    <li class="toctree-l2"><a class="reference internal" href="#3-address-map-regola-generale-e-indirizzi-comuni">3) Address map: regola generale e indirizzi comuni</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#indirizzi-secondari-comuni-nel-mondo-stereo-sid">Indirizzi secondari comuni nel mondo stereo-SID</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#4-repetitionflow-compile-time-avanzati">4) Repetition/flow compile-time avanzati</a>
+        </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#5-text-encoding-e-escape-system-avanzato">5) Text encoding e escape system avanzato</a>
+    <li class="toctree-l2"><a class="reference internal" href="#4-routing-audio-dual-mono-stereo-mix">4) Routing audio: dual mono, stereo, mix</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#6-directive-families-non-core-c64">6) Directive families non core-C64</a>
+    <li class="toctree-l2"><a class="reference internal" href="#5-6581-vs-8580-in-setup-multi-sid">5) 6581 vs 8580 in setup multi-SID</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#7-pseudo-instructions-e-multi-cpu-extras">7) Pseudo-instructions e multi-CPU extras</a>
+    <li class="toctree-l2"><a class="reference internal" href="#6-strategia-software-consigliata-robusta">6) Strategia software consigliata (robusta)</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#8-diagnostica-professionale-non-beginner">8) Diagnostica professionale (non beginner)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#7-pattern-di-codice-astrazione-base-registri">7) Pattern di codice: astrazione base registri</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#9-compatibilita-e-migrazione-legacy">9) Compatibilita e migrazione legacy</a>
+    <li class="toctree-l2"><a class="reference internal" href="#8-pattern-di-codice-split-musicale-a-6-voci">8) Pattern di codice: split musicale a 6 voci</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#10-regola-didattica-del-corso">10) Regola didattica del corso</a>
+    <li class="toctree-l2"><a class="reference internal" href="#9-rilevazione-multi-sid-cosa-e-realistico">9) Rilevazione multi-SID: cosa e realistico</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#11-link-ufficiali-per-approfondimento-completo">11) Link ufficiali per approfondimento completo</a>
+    <li class="toctree-l2"><a class="reference internal" href="#10-compatibilita-con-player-legacy-sid">10) Compatibilita con player legacy SID</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#11-pitfall-comuni">11) Pitfall comuni</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#12-checklist-di-progetto-multi-sid">12) Checklist di progetto multi-SID</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#13-mini-roadmap-pratica-per-estendere-un-player-del-corso">13) Mini roadmap pratica per estendere un player del corso</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#14-riferimenti-utili">14) Riferimenti utili</a>
     </li>
     </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../008-sid-multipli-u64eii-c64u/">Appendice 008 - SID multipli su U64EII e C64U</a>
                   </li>
               </ul>
       </div>
@@ -292,9 +302,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Appendici &raquo;</li>
-      <li class="breadcrumb-item active">Appendice 007 - Linguaggio avanzato 64tass non usato nel corso</li>
+      <li class="breadcrumb-item active">Appendice 008 - SID multipli su U64EII e C64U</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/appendici/007-linguaggio-avanzato-64tass-non-usato-nel-corso.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/appendici/008-sid-multipli-u64eii-c64u.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -303,137 +313,221 @@
             <div class="section" itemprop="articleBody">
               
                 <p><a href="../../">🏠 Home</a></p>
-<h1 id="appendice-007-linguaggio-avanzato-64tass-non-usato-nel-corso">Appendice 007 - Linguaggio avanzato 64tass non usato nel corso<a class="headerlink" href="#appendice-007-linguaggio-avanzato-64tass-non-usato-nel-corso" title="Permanent link">&para;</a></h1>
+<h1 id="appendice-008-sid-multipli-su-u64eii-e-c64u">Appendice 008 - SID multipli su U64EII e C64U<a class="headerlink" href="#appendice-008-sid-multipli-su-u64eii-e-c64u" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>Obiettivo: documentare feature 64tass avanzate non centrali nel percorso beginner del corso, ma utili in progetti reali.</p>
+<p>Obiettivo: spiegare in modo operativo e completo come funziona il paradigma multi-SID sulle board moderne (Ultimate 64 Elite II / C64U family), con strategie di coding compatibili e fallback robusti.</p>
 </blockquote>
 <hr />
-<h2 id="1-espressioni-e-tipi-avanzati">1) Espressioni e tipi avanzati<a class="headerlink" href="#1-espressioni-e-tipi-avanzati" title="Permanent link">&para;</a></h2>
-<p>Feature rilevanti oltre il percorso base:</p>
+<h2 id="1-contesto-storico-da-mono-sid-a-multi-sid">1) Contesto storico: da mono-SID a multi-SID<a class="headerlink" href="#1-contesto-storico-da-mono-sid-a-multi-sid" title="Permanent link">&para;</a></h2>
+<p>Sul C64 classico, il software scrive quasi sempre su un solo SID all'indirizzo base <code>$D400</code>.</p>
+<p>Con board moderne FPGA (come U64EII/C64U), il concetto si estende:</p>
 <ul>
-<li>integer arbitrary precision;</li>
-<li>bit string e byte string con slicing/indexing;</li>
-<li>float compile-time;</li>
-<li>tuple/list/dict con operazioni vettoriali e broadcasting;</li>
-<li>tipi espliciti (<code>int</code>, <code>bits</code>, <code>bytes</code>, <code>dict</code>, <code>code</code>, ecc.);</li>
-<li>operatori avanzati (<code>&lt;=&gt;</code>, <code>??</code>, <code>&lt;?</code>, <code>&gt;?</code>, fold con <code>...</code>).</li>
+<li>un SID principale resta mappato a <code>$D400</code>;</li>
+<li>uno o piu SID aggiuntivi possono essere abilitati in parallelo;</li>
+<li>l'uscita audio puo essere mixata o separata su canali L/R.</li>
 </ul>
-<p>Quando usarle:</p>
+<p>Risultato pratico: da 3 voci hardware si puo passare a 6 (dual SID) o oltre in alcune configurazioni.</p>
+<hr />
+<h2 id="2-cosa-cambia-per-il-programmatore-6510">2) Cosa cambia per il programmatore 6510<a class="headerlink" href="#2-cosa-cambia-per-il-programmatore-6510" title="Permanent link">&para;</a></h2>
+<p>La CPU non usa nuove istruzioni: continuano a valere <code>LDA/STA/JSR/...</code>.</p>
+<p>Cambia il modello di indirizzamento I/O audio:</p>
 <ul>
-<li>generazione di tabelle;</li>
-<li>metaprogrammazione compile-time;</li>
-<li>packing/trasformazioni dati senza tool esterni.</li>
+<li>SID 1: base classica <code>$D400</code>;</li>
+<li>SID 2/3/4: basi alternative configurabili dalla board/firmware.</li>
+</ul>
+<p>Quindi il player deve sapere "dove" scrivere i registri del secondo (o terzo) SID.</p>
+<hr />
+<h2 id="3-address-map-regola-generale-e-indirizzi-comuni">3) Address map: regola generale e indirizzi comuni<a class="headerlink" href="#3-address-map-regola-generale-e-indirizzi-comuni" title="Permanent link">&para;</a></h2>
+<p>Ogni SID occupa 32 registri (offset <code>0..31</code>).</p>
+<p>Formula generale:</p>
+<ul>
+<li><code>SIDn_REG = SIDn_BASE + offset</code></li>
+</ul>
+<p>Esempio:</p>
+<ul>
+<li><code>FREQ LO voice1</code> e <code>BASE + 0</code></li>
+<li><code>CONTROL voice1</code> e <code>BASE + 4</code></li>
+<li><code>MODE/VOLUME</code> e <code>BASE + 24</code></li>
+</ul>
+<h3 id="indirizzi-secondari-comuni-nel-mondo-stereo-sid">Indirizzi secondari comuni nel mondo stereo-SID<a class="headerlink" href="#indirizzi-secondari-comuni-nel-mondo-stereo-sid" title="Permanent link">&para;</a></h3>
+<p>Nel panorama software/hardware C64 sono comuni (a seconda di board e firmware) basi come:</p>
+<ul>
+<li><code>$D420</code></li>
+<li><code>$D500</code></li>
+<li><code>$DE00</code></li>
+<li><code>$DF00</code></li>
+</ul>
+<p>Nota importante:</p>
+<ul>
+<li>su U64EII/C64U la lista esatta dipende da firmware e configurazione menu;</li>
+<li>va sempre verificata nella configurazione macchina prima di fissarla nel codice.</li>
 </ul>
 <hr />
-<h2 id="2-scoping-e-organizzazione-ad-alto-livello">2) Scoping e organizzazione ad alto livello<a class="headerlink" href="#2-scoping-e-organizzazione-ad-alto-livello" title="Permanent link">&para;</a></h2>
-<p>Costrutti oltre il minimo didattico:</p>
+<h2 id="4-routing-audio-dual-mono-stereo-mix">4) Routing audio: dual mono, stereo, mix<a class="headerlink" href="#4-routing-audio-dual-mono-stereo-mix" title="Permanent link">&para;</a></h2>
+<p>Le board moderne permettono normalmente di:</p>
 <ul>
-<li><code>.namespace</code> / <code>.endnamespace</code></li>
-<li><code>.with</code> / <code>.endwith</code></li>
-<li><code>.weak</code> / <code>.endweak</code></li>
-<li><code>.proc</code> (compila solo se referenziata)</li>
-<li><code>.section</code> / <code>.dsection</code> per layout multi-area</li>
+<li>assegnare SID1/SID2 a L/R;</li>
+<li>fare mix centrato;</li>
+<li>scegliere modelli SID differenti per i vari slot (6581/8580 emulati).</li>
 </ul>
-<p>Use case tipici:</p>
+<p>Pattern tipici:</p>
+<ol>
+<li>Mono compatibile: solo SID1 (legacy-safe).</li>
+<li>Dual SID mirror: stessa patch su SID1+SID2 per suono piu pieno.</li>
+<li>Dual SID split: voci lead su SID1, bass/pad su SID2 (stereo musicale).</li>
+</ol>
+<hr />
+<h2 id="5-6581-vs-8580-in-setup-multi-sid">5) 6581 vs 8580 in setup multi-SID<a class="headerlink" href="#5-6581-vs-8580-in-setup-multi-sid" title="Permanent link">&para;</a></h2>
+<p>Con piu SID puoi combinare modelli diversi. Questo aumenta le possibilita timbriche ma introduce variabili:</p>
 <ul>
-<li>librerie modulari con simboli pubblici/privati;</li>
-<li>dead code reduction automatica;</li>
-<li>mapping complesso memoria/banche.</li>
+<li>risposta filtri diversa;</li>
+<li>differenze nel comportamento digisample (<code>$D418</code> tricks);</li>
+<li>bilanciamento volume non identico tra modelli.</li>
+</ul>
+<p>Consiglio pratico:</p>
+<ul>
+<li>definire preset separati "6581-like" e "8580-like";</li>
+<li>evitare hardcode unico di cutoff/resonance senza test A/B.</li>
 </ul>
 <hr />
-<h2 id="3-macros-e-funzioni-custom">3) Macros e funzioni custom<a class="headerlink" href="#3-macros-e-funzioni-custom" title="Permanent link">&para;</a></h2>
-<p>Oltre <code>.macro</code> classica:</p>
+<h2 id="6-strategia-software-consigliata-robusta">6) Strategia software consigliata (robusta)<a class="headerlink" href="#6-strategia-software-consigliata-robusta" title="Permanent link">&para;</a></h2>
+<p>Per progetti didattici/produttivi:</p>
+<ol>
+<li>Definisci basi SID come costanti configurabili.</li>
+<li>Mantieni sempre percorso fallback mono-SID.</li>
+<li>Se multi-SID non e certo, usa profilo runtime selezionabile (launcher/menu).</li>
+<li>Seleziona una mappa indirizzi documentata nel readme del progetto.</li>
+</ol>
+<hr />
+<h2 id="7-pattern-di-codice-astrazione-base-registri">7) Pattern di codice: astrazione base registri<a class="headerlink" href="#7-pattern-di-codice-astrazione-base-registri" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-asm">; Configurazione base (esempio)
+SID1_BASE = $D400
+SID2_BASE = $D420    ; esempio comune, da confermare sulla board
+
+; Offset registri utili
+SID_FREQ_LO = 0
+SID_FREQ_HI = 1
+SID_CTRL    = 4
+SID_AD      = 5
+SID_SR      = 6
+SID_VOL     = 24</code></pre>
+<p>Scrittura su SID1 e SID2 (mirror patch):</p>
+<pre class="highlight"><code class="language-asm">; Inizializza volume su entrambi i SID
+LDA #$0F
+STA SID1_BASE + SID_VOL
+STA SID2_BASE + SID_VOL
+
+; Stessa frequenza su voice1
+LDA #$00
+STA SID1_BASE + SID_FREQ_LO
+STA SID2_BASE + SID_FREQ_LO
+
+LDA #$20
+STA SID1_BASE + SID_FREQ_HI
+STA SID2_BASE + SID_FREQ_HI
+
+; ADSR
+LDA #$11
+STA SID1_BASE + SID_AD
+STA SID2_BASE + SID_AD
+LDA #$F2
+STA SID1_BASE + SID_SR
+STA SID2_BASE + SID_SR
+
+; Gate on + triangle
+LDA #%00010001
+STA SID1_BASE + SID_CTRL
+STA SID2_BASE + SID_CTRL</code></pre>
+<hr />
+<h2 id="8-pattern-di-codice-split-musicale-a-6-voci">8) Pattern di codice: split musicale a 6 voci<a class="headerlink" href="#8-pattern-di-codice-split-musicale-a-6-voci" title="Permanent link">&para;</a></h2>
+<p>Schema logico comune:</p>
 <ul>
-<li>macro con parameter references (<code>\1..\9</code>, <code>\name</code>, <code>\@</code>);</li>
-<li>text references (<code>@1..@9</code>);</li>
-<li><code>.segment</code> come macro "testuale";</li>
-<li><code>.sfunction</code> (single-expression);</li>
-<li><code>.function</code> multi-line con ritorno valori.</li>
+<li>SID1 voice1/2: lead + arp</li>
+<li>SID1 voice3: fx/noise</li>
+<li>SID2 voice1/2: bass + chord</li>
+<li>SID2 voice3: support/pad</li>
 </ul>
-<p>Rischi didattici:</p>
+<p>Vantaggio:</p>
 <ul>
-<li>aumentano potenza e complessita;</li>
-<li>possono nascondere il flusso CPU a chi inizia.</li>
+<li>piu headroom compositiva rispetto al vincolo 3 voci classico.</li>
+</ul>
+<p>Costo:</p>
+<ul>
+<li>scheduler note piu complesso;</li>
+<li>maggiore traffico su registri I/O per frame/tick.</li>
 </ul>
 <hr />
-<h2 id="4-repetitionflow-compile-time-avanzati">4) Repetition/flow compile-time avanzati<a class="headerlink" href="#4-repetitionflow-compile-time-avanzati" title="Permanent link">&para;</a></h2>
-<p>Costrutti non beginner ma molto potenti:</p>
+<h2 id="9-rilevazione-multi-sid-cosa-e-realistico">9) Rilevazione multi-SID: cosa e realistico<a class="headerlink" href="#9-rilevazione-multi-sid-cosa-e-realistico" title="Permanent link">&para;</a></h2>
+<p>Rilevare automaticamente SID aggiuntivi dal solo codice C64 non e sempre affidabile:</p>
 <ul>
-<li><code>.for</code>, <code>.bfor</code>, <code>.rept</code>, <code>.brept</code>, <code>.while</code>, <code>.bwhile</code>;</li>
-<li><code>.break</code>, <code>.continue</code>, versioni condizionali;</li>
-<li>forme iterative con <code>in range(...)</code>;</li>
-<li>packing tuple/list in loop multi-variabile.</li>
+<li>molti registri SID sono write-only;</li>
+<li>alcune letture non permettono discriminazione forte;</li>
+<li>comportamenti possono dipendere dalla board/fpga core.</li>
 </ul>
-<p>Use case:</p>
+<p>Approccio consigliato:</p>
 <ul>
-<li>LUT sin/cos, mappe, tabelle sprite, generatori pattern.</li>
-</ul>
-<hr />
-<h2 id="5-text-encoding-e-escape-system-avanzato">5) Text encoding e escape system avanzato<a class="headerlink" href="#5-text-encoding-e-escape-system-avanzato" title="Permanent link">&para;</a></h2>
-<p>Sistema encoding completo:</p>
-<ul>
-<li><code>.enc</code>, <code>.encode</code>;</li>
-<li>definizione mapping (<code>.cdef</code>, <code>.tdef</code>, <code>.edef</code>);</li>
-<li>conversioni tra none/screen/custom;</li>
-<li>supporto Unicode source con <code>-a</code>.</li>
-</ul>
-<p>Questo e molto oltre il "solo PETSCII" e utile in toolchain internazionali.</p>
-<hr />
-<h2 id="6-directive-families-non-core-c64">6) Directive families non core-C64<a class="headerlink" href="#6-directive-families-non-core-c64" title="Permanent link">&para;</a></h2>
-<p>Famiglie avanzate spesso fuori corso base:</p>
-<ul>
-<li>sectioning esteso (<code>.section</code>, <code>.dsection</code>);</li>
-<li>relocation/virtualizzazione (<code>.logical</code>, <code>.virtual</code>, <code>.offs</code>);</li>
-<li>alignment indiretto (<code>.alignind</code>, <code>.alignpageind</code>);</li>
-<li>65816-size state (<code>.as/.al</code>, <code>.xs/.xl</code>, <code>.autsiz/.mansiz</code>);</li>
-<li>target switching (<code>.cpu</code>) multi-architettura.</li>
+<li>configurazione esplicita utente (mono/dual);</li>
+<li>profili build o flag runtime;</li>
+<li>fallback automatico a mono quando il profilo non e noto.</li>
 </ul>
 <hr />
-<h2 id="7-pseudo-instructions-e-multi-cpu-extras">7) Pseudo-instructions e multi-CPU extras<a class="headerlink" href="#7-pseudo-instructions-e-multi-cpu-extras" title="Permanent link">&para;</a></h2>
-<p>Aree avanzate:</p>
+<h2 id="10-compatibilita-con-player-legacy-sid">10) Compatibilita con player legacy SID<a class="headerlink" href="#10-compatibilita-con-player-legacy-sid" title="Permanent link">&para;</a></h2>
+<p>Molto software storico e mono-SID. Su board moderne:</p>
 <ul>
-<li>generic instruction family (<code>LDR</code>, <code>STR</code>, <code>PSH</code>, <code>PUL</code>, ...);</li>
-<li>always-taken branch pseudo;</li>
-<li>automatic long-branch pipeline;</li>
-<li>alias opcodes e naming compatibility set.</li>
+<li>puoi lasciare SID2 inattivo per compatibilita pura;</li>
+<li>puoi anche route/mix automatico lato board senza toccare il codice storico.</li>
+</ul>
+<p>Per codice nuovo:</p>
+<ul>
+<li>non rompere il path mono;</li>
+<li>rendi opzionale l'estensione multi-SID.</li>
 </ul>
 <hr />
-<h2 id="8-diagnostica-professionale-non-beginner">8) Diagnostica professionale (non beginner)<a class="headerlink" href="#8-diagnostica-professionale-non-beginner" title="Permanent link">&para;</a></h2>
-<p>Per progetti grandi e manutenzione:</p>
+<h2 id="11-pitfall-comuni">11) Pitfall comuni<a class="headerlink" href="#11-pitfall-comuni" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Hardcode di <code>SID2_BASE</code> senza documentare prerequisiti firmware.</li>
+<li>Uso di filtri identici su modelli 6581/8580 diversi.</li>
+<li>Assenza fallback mono e crash sonoro su hardware non configurato.</li>
+<li>Clipping dovuto a mix volume troppo aggressivo su piu SID.</li>
+<li>Timing jitter quando il player aggiorna troppi registri fuori IRQ stabile.</li>
+</ol>
+<hr />
+<h2 id="12-checklist-di-progetto-multi-sid">12) Checklist di progetto multi-SID<a class="headerlink" href="#12-checklist-di-progetto-multi-sid" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>-Wshadow</code>, <code>-Wunused*</code>, <code>-Wstrict-bool</code>;</li>
-<li><code>-Woptimize</code> per hint micro-ottimizzazione;</li>
-<li><code>--dependencies</code> + <code>--make-phony</code> per integrazione build system;</li>
-<li>symbol export multiplo (<code>--labels-root</code>, <code>--labels-section</code>, format VICE/altro).</li>
+<li>[ ] esiste una costante configurabile per ogni base SID;</li>
+<li>[ ] esiste modalita mono compatibile;</li>
+<li>[ ] il readme indica chiaramente mappa indirizzi richiesta;</li>
+<li>[ ] volume/mix testati su cuffie e uscita line;</li>
+<li>[ ] comportamento verificato su almeno due preset (es. 6581-like, 8580-like).</li>
 </ul>
 <hr />
-<h2 id="9-compatibilita-e-migrazione-legacy">9) Compatibilita e migrazione legacy<a class="headerlink" href="#9-compatibilita-e-migrazione-legacy" title="Permanent link">&para;</a></h2>
-<p>64tass fornisce anche percorso compatibilita Turbo Assembler (<code>-T</code>), ma:</p>
+<h2 id="13-mini-roadmap-pratica-per-estendere-un-player-del-corso">13) Mini roadmap pratica per estendere un player del corso<a class="headerlink" href="#13-mini-roadmap-pratica-per-estendere-un-player-del-corso" title="Permanent link">&para;</a></h2>
+<p>Partendo dalla lezione 048:</p>
+<ol>
+<li>duplica routine write-note su <code>SID2_BASE</code>;</li>
+<li>inizializza anche <code>SID2_BASE + 24</code> (volume);</li>
+<li>aggiungi flag <code>MULTI_SID_ENABLE</code>;</li>
+<li>se flag=0 scrivi solo su SID1;</li>
+<li>se flag=1 applica mirror o split pattern;</li>
+<li>porta il timing su IRQ per stabilita musicale.</li>
+</ol>
+<hr />
+<h2 id="14-riferimenti-utili">14) Riferimenti utili<a class="headerlink" href="#14-riferimenti-utili" title="Permanent link">&para;</a></h2>
 <ul>
-<li>non tutte le vecchie pratiche sono consigliate oggi;</li>
-<li>conviene migrare gradualmente verso sintassi moderna e warning puliti.</li>
+<li>SID base architecture e registri classici: https://www.c64-wiki.com/wiki/SID</li>
+<li>Datasheet 6581/8580 (per comportamento analogico):</li>
+<li>http://www.6502.org/documents/datasheets/mos/mos_6581_sid.pdf</li>
+<li>http://www.6502.org/documents/datasheets/mos/mos_6582_sid.pdf</li>
 </ul>
-<hr />
-<h2 id="10-regola-didattica-del-corso">10) Regola didattica del corso<a class="headerlink" href="#10-regola-didattica-del-corso" title="Permanent link">&para;</a></h2>
-<p>Queste feature esistono e sono documentate qui per completezza tecnica.</p>
-<p>Nel percorso principale del corso restiamo comunque su progressione controllata: un concetto nuovo significativo per volta, esempi piccoli e verificabili.</p>
-<hr />
-<h2 id="11-link-ufficiali-per-approfondimento-completo">11) Link ufficiali per approfondimento completo<a class="headerlink" href="#11-link-ufficiali-per-approfondimento-completo" title="Permanent link">&para;</a></h2>
+<p>Per U64EII/C64U:</p>
 <ul>
-<li>Table of contents: https://tass64.sourceforge.net/#contents</li>
-<li>Directives: https://tass64.sourceforge.net/#directives</li>
-<li>Functions: https://tass64.sourceforge.net/#functions</li>
-<li>Types: https://tass64.sourceforge.net/#types</li>
-<li>Pseudo instructions: https://tass64.sourceforge.net/#pseudo-instructions</li>
-<li>Messages: https://tass64.sourceforge.net/#messages</li>
-<li>Opcodes: https://tass64.sourceforge.net/#opcodes</li>
+<li>verifica sempre nel menu di configurazione board/firmware le opzioni effettive di SID count, SID model, SID base address e audio routing, perche possono variare con release firmware.</li>
 </ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../006-reference-cli-e-diagnostica-64tass/" class="btn btn-neutral float-left" title="Appendice 006 - Reference CLI e diagnostica 64tass"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../008-sid-multipli-u64eii-c64u/" class="btn btn-neutral float-right" title="Appendice 008 - SID multipli su U64EII e C64U">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../007-linguaggio-avanzato-64tass-non-usato-nel-corso/" class="btn btn-neutral float-left" title="Appendice 007 - Linguaggio avanzato 64tass non usato nel corso"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -460,10 +554,8 @@
         </span>
     
     
-      <span><a href="../006-reference-cli-e-diagnostica-64tass/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../007-linguaggio-avanzato-64tass-non-usato-nel-corso/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../008-sid-multipli-u64eii-c64u/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
