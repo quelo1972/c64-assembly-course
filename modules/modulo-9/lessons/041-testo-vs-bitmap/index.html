@@ -336,15 +336,18 @@
 <p>La CPU non "disegna" pixel da sola: scrive valori nei registri e nelle aree RAM che il VIC-II legge durante il refresh video. Cambiando configurazione, cambia come il VIC-II interpreta la memoria.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 041 - Setup base modalita testo e riempimento prima riga
+<pre class="highlight"><code class="language-asm">; Lezione 041 - Confronto pratico: testo -&gt; bitmap
 *= $0801
 
 SCREEN_RAM = $0400
 COLOR_RAM  = $D800
 BORDER     = $D020
 BG0        = $D021
+VIC_CTRL1  = $D011
+VIC_MPTR   = $D018
 
 start:
+    ; fase 1: modalita testo (riempie la prima riga)
     LDA #$00
     STA BG0          ; sfondo nero
     LDA #$06
@@ -360,8 +363,18 @@ fill_row:
     CPX #$28         ; 40 colonne
     BNE fill_row
 
+    ; fase 2: passaggio minimo a bitmap mode
+    ; ORA imposta bit a 1 mantenendo gli altri invariati
+    LDA VIC_CTRL1
+    ORA #%00100000   ; bit 5 = bitmap mode ON
+    STA VIC_CTRL1
+
+    ; D018: screen RAM = $0400 (high nibble=1), bitmap = $2000 (bit 3 = 1)
+    LDA #$18
+    STA VIC_MPTR
+
     RTS</code></pre>
-<p><code>STA</code> salva un valore in memoria o registro I/O. <code>CPX</code> confronta X con un limite. <code>BNE</code> continua il ciclo finche il confronto non risulta uguale.</p>
+<p><code>STA</code> salva un valore in memoria o registro I/O. <code>CPX</code> confronta X con un limite. <code>BNE</code> continua il ciclo finche il confronto non risulta uguale. <code>ORA</code> imposta bit specifici senza azzerare gli altri bit del registro.</p>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
