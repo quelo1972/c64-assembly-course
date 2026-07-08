@@ -83,10 +83,22 @@ nav:
       - "Lezione 052 - Mini-progetto: timer CIA per eventi periodici": modules/modulo-11/lessons/052-mini-progetto-timer-cia-eventi-periodici.md
     - Modulo 12 - File system, cassette e disk I/O:
       - "Modulo 12 - Indice": modules/modulo-12.md
+      - "Lezione 053 - Comunicazione seriale IEC e drive 1541": modules/modulo-12/lessons/053-seriale-iec-drive-1541.md
+      - "Lezione 054 - Routine KERNAL per I/O su disco e nastro": modules/modulo-12/lessons/054-kernal-io-disco-nastro.md
+      - "Lezione 055 - Formati PRG e D64": modules/modulo-12/lessons/055-formati-prg-d64.md
+      - "Lezione 056 - Mini-progetto: salvataggio e caricamento dati": modules/modulo-12/lessons/056-mini-progetto-save-load-dati.md
     - Modulo 13 - Ottimizzazione e tecniche avanzate:
       - "Modulo 13 - Indice": modules/modulo-13.md
+      - "Lezione 057 - Ottimizzazione per cicli e memoria": modules/modulo-13/lessons/057-ottimizzazione-cicli-memoria.md
+      - "Lezione 058 - Paging e bank switching (memory map avanzata)": modules/modulo-13/lessons/058-paging-bank-switching-avanzato.md
+      - "Lezione 059 - Tecniche di compressione e data packing": modules/modulo-13/lessons/059-compressione-data-packing.md
+      - "Lezione 060 - Mini-progetto: ottimizzazione di una routine": modules/modulo-13/lessons/060-mini-progetto-ottimizzazione-routine.md
     - Modulo 14 - Progetto finale:
       - "Modulo 14 - Indice": modules/modulo-14.md
+      - "Lezione 061 - Definizione e pianificazione del progetto finale": modules/modulo-14/lessons/061-definizione-pianificazione-progetto.md
+      - "Lezione 062 - Modularizzazione, test e packaging": modules/modulo-14/lessons/062-modularizzazione-test-packaging.md
+      - "Lezione 063 - Release e pubblicazione del progetto": modules/modulo-14/lessons/063-release-pubblicazione-progetto.md
+      - "Lezione 064 - Progetto finale completo": modules/modulo-14/lessons/064-progetto-finale-completo.md
   - Appendici:
     - "Appendici - Indice": appendici/index.md
     - "Appendice 001 - Regole sintattiche del 64tass": appendici/001-regole-sintattiche-64tass.md

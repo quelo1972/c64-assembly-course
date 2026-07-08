@@ -26,3 +26,10 @@
 | RTI             | Istruzione di ritorno da interrupt con ripristino stato |
 | CIA             | Complex Interface Adapter: timer e I/O del C64 |
 | ICR             | Interrupt Control Register dei CIA |
+| IEC serial bus  | Bus seriale usato dal C64 per comunicare con periferiche come il 1541 |
+| 1541            | Drive floppy Commodore per C64, con logica e CPU dedicate |
+| PRG             | File programma C64 con load address nei primi 2 byte |
+| D64             | Immagine disco 1541 con directory e file |
+| Bank switching  | Tecnica di cambio mappa memoria tramite registri di controllo |
+| Data packing    | Tecniche per rappresentare dati in forma piu compatta |
+| Release candidate | Build candidata alla pubblicazione finale |

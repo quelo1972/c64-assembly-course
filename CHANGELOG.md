@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-08 — Completamento corso: moduli 12-13-14 (lezioni 053-064)
+
+### Nuove lezioni
+- **Modulo 12 (053-056)**: seriale IEC/1541, routine KERNAL I/O, formati PRG/D64, mini-progetto save/load.
+- **Modulo 13 (057-060)**: ottimizzazione cicli/memoria, bank switching, data packing, mini-progetto ottimizzazione routine.
+- **Modulo 14 (061-064)**: pianificazione progetto finale, modularizzazione/test/packaging, release/pubblicazione, consegna finale.
+
+### Aggiornamenti struttura
+- Aggiornati indici moduli: `docs/modules/modulo-12.md`, `docs/modules/modulo-13.md`, `docs/modules/modulo-14.md`.
+- Aggiornata navigazione MkDocs con lezioni 053-064 in `mkdocs.yml`.
+- Aggiornato glossario con termini modulo 12-14 (IEC, 1541, PRG/D64, bank switching, data packing, release candidate).
+
+### Esito
+- Roadmap didattica completata fino al **Modulo 14**.
+
 ## 2026-07-08 — Enforcement automatico workflow (script + pre-push hook)
 
 ### Nuovi strumenti
