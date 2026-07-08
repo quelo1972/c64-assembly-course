@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-08 — Modulo 9 avviato: lezioni 041-044 (grafica VIC-II)
+
+### Nuove lezioni
+- **Lezione 041 - Modalita testo vs bitmap**
+- **Lezione 042 - Sprite: definizione, posizionamento e collisioni**
+- **Lezione 043 - Raster interrupts e sincronizzazione video**
+- **Lezione 044 - Mini-progetto: scena con sprite animati e scrolling**
+
+### Copertura roadmap modulo 9
+- Modalita testo vs bitmap
+- Sprites: definizione, posizionamento e collisione
+- Raster interrupts e sincronizzazione
+- Tiles/charset e scorrimento hardware nel mini-progetto
+
+---
+
 ## 2026-07-08 — Nuova sezione Appendici: distinzione completa MOS 6510 vs 64tass
 
 ### Nuove pagine
