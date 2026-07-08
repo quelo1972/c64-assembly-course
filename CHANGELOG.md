@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-08 — Modulo 8 completato: lezioni 037-040 + pubblicazione
+
+### Nuove lezioni
+- **Lezione 037 — Mappa I/O del C64: VIC-II, SID, CIA**
+- **Lezione 038 — Screen RAM e Color RAM**
+- **Lezione 039 — KERNAL: chiamate ROM per I/O**
+- **Lezione 040 — Mini-progetto: joystick e schermo**
+
+### Aggiornamenti struttura
+- Aggiornato indice modulo: `docs/modules/modulo-8.md`
+- Aggiornata navigazione: `mkdocs.yml`
+
+### Pubblicazione
+- Commit contenuti modulo 8 su `main`: `1c3dc03`
+- Deploy GitHub Pages su `gh-pages`: `73dd040`
+- URL: https://quelo1972.github.io/c64-assembly-course/
+
+---
+
 ## 2026-07-08 — Modulo 0 Completamento: 4 lezioni ambiente sviluppo (032-035)
 
 ### Modulo 0 ora completo!
