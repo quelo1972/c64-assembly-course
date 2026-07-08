@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 026 — Shift operations: ASL, LSR, ROL, ROR
+# Lezione 034 — Shift operations: ASL, LSR, ROL, ROR
 
 > **Obiettivo:** capire come spostare i bit a sinistra/destra usando ASL (Arithmetic Shift Left), LSR (Logical Shift Right), ROL (Rotate Left), ROR (Rotate Right).
 

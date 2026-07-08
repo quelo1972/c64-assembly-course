@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 019 — Salti condizionati: Carry e Overflow
+# Lezione 028 — Salti condizionati: Carry e Overflow
 
 > **Obiettivo:** capire come usare i flag C (Carry) e V (oVerflow) per condizionare salti, utili in operazioni aritmetiche.
 

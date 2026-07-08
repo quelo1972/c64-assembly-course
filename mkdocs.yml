@@ -7,56 +7,56 @@ nav:
   - Moduli:
     - Modulo 0 - Ambiente di sviluppo:
       - Modulo 0 - Indice: modules/modulo-0.md
-      - "Lezione 035 - Automazione: Makefile e task build": modules/modulo-0/lessons/035-automazione-makefile.md
-      - "Lezione 034 - VICE: configurazione e immagini disco": modules/modulo-0/lessons/034-vice-immagini-disco.md
-      - "Lezione 033 - VS Code: setup e debugging Assembly": modules/modulo-0/lessons/033-vs-code-setup.md
-      - "Lezione 032 - Git e GitHub: versionamento e collaborazione": modules/modulo-0/lessons/032-git-github.md
-      - Lezione 000 - Toolchain e setup del progetto: modules/modulo-0/lessons/000-toolchain-setup.md
+      - "Lezione 033 - Automazione: Makefile e task build": modules/modulo-0/lessons/033-automazione-makefile.md
+      - "Lezione 032 - VICE: configurazione e immagini disco": modules/modulo-0/lessons/032-vice-immagini-disco.md
+      - "Lezione 027 - VS Code: setup e debugging Assembly": modules/modulo-0/lessons/027-vs-code-setup.md
+      - "Lezione 034 - Git e GitHub: versionamento e collaborazione": modules/modulo-0/lessons/034-git-github.md
+      - Lezione 029 - Toolchain e setup del progetto: modules/modulo-0/lessons/029-toolchain-setup.md
     - Modulo 1 - Fondamenti:
       - Modulo 1 - Indice: modules/modulo-1.md
-      - Lezione 001 - La memoria del Commodore 64: modules/modulo-1/lessons/001-memory.md
-      - Lezione 002 - Sistema binario ed esadecimale: modules/modulo-1/lessons/002-binary-hex.md
-      - Lezione 003 - Byte, Word e limiti della memoria: modules/modulo-1/lessons/003-byte-word.md
+      - Lezione 029 - La memoria del Commodore 64: modules/modulo-1/lessons/029-memory.md
+      - Lezione 034 - Sistema binario ed esadecimale: modules/modulo-1/lessons/034-binary-hex.md
+      - Lezione 027 - Byte, Word e limiti della memoria: modules/modulo-1/lessons/027-byte-word.md
     - Modulo 2 - CPU MOS 6510:
       - Modulo 2 - Indice: modules/modulo-2.md
-      - Lezione 004 - La CPU MOS 6510: modules/modulo-2/lessons/004-cpu-6510.md
-      - Lezione 005 - Registri A, X e Y: modules/modulo-2/lessons/005-registers-axy.md
+      - Lezione 032 - La CPU MOS 6510: modules/modulo-2/lessons/032-cpu-6510.md
+      - Lezione 033 - Registri A, X e Y: modules/modulo-2/lessons/033-registers-axy.md
     - Modulo 3 - Linguaggio e tooling:
       - Modulo 3 - Indice: modules/modulo-3.md
-      - Lezione 029 - Macro e organizzazione del codice: modules/modulo-3/lessons/029-macro-e-organizzazione.md
-      - Lezione 028 - Direttive assembler, etichette e costanti: modules/modulo-3/lessons/028-direttive-assembler.md
-      - Lezione 027 - Mnemonici e opcode: modules/modulo-3/lessons/027-mnemonici-e-opcode.md
-      - Lezione 006 - Dal sorgente all'esecuzione: modules/modulo-3/lessons/006-from-source-to-execution.md
+      - Lezione 023 - Macro e organizzazione del codice: modules/modulo-3/lessons/023-macro-e-organizzazione.md
+      - Lezione 036 - Direttive assembler, etichette e costanti: modules/modulo-3/lessons/036-direttive-assembler.md
+      - Lezione 035 - Mnemonici e opcode: modules/modulo-3/lessons/035-mnemonici-e-opcode.md
+      - Lezione 029 - Dal sorgente all'esecuzione: modules/modulo-3/lessons/029-from-source-to-execution.md
     - Modulo 4 - Prime istruzioni:
       - Modulo 4 - Indice: modules/modulo-4.md
-      - "Lezione 023 - Store operations: STA, STX, STY": modules/modulo-4/lessons/023-store-operations.md
-      - Lezione 007 - LDA e indirizzamento immediato: modules/modulo-4/lessons/007-lda.md
-      - Lezione 008 - STA e scrittura in memoria: modules/modulo-4/lessons/008-sta.md
-      - Lezione 009 - Trasferimento tra registri: modules/modulo-4/lessons/009-trasferimento-tra-registri.md
-      - Lezione 010 - Incremento e decremento: modules/modulo-4/lessons/010-increment-decrement.md
+      - "Lezione 028 - Store operations: STA, STX, STY": modules/modulo-4/lessons/028-store-operations.md
+      - Lezione 034 - LDA e indirizzamento immediato: modules/modulo-4/lessons/034-lda.md
+      - Lezione 027 - STA e scrittura in memoria: modules/modulo-4/lessons/027-sta.md
+      - Lezione 032 - Trasferimento tra registri: modules/modulo-4/lessons/032-trasferimento-tra-registri.md
+      - Lezione 033 - Incremento e decremento: modules/modulo-4/lessons/033-increment-decrement.md
     - Modulo 5 - Modalità di indirizzamento:
       - Modulo 5 - Indice: modules/modulo-5.md
-      - "Lezione 018 - Indirizzamento indiretto indicizzato": modules/modulo-5/lessons/018-indirizzamento-indiretto-indicizzato.md
-      - Lezione 017 - Indirizzamento indiretto: modules/modulo-5/lessons/017-indirizzamento-indiretto.md
-      - Lezione 014 - Indirizzamento indicizzato: modules/modulo-5/lessons/014-indirizzamento-indicizzato.md
-      - Lezione 013 - Indirizzamento assoluto: modules/modulo-5/lessons/013-indirizzamento-assoluto.md
-      - Lezione 011 - Indirizzamento immediato, revisited: modules/modulo-5/lessons/011-modalita-immediata.md
-      - Lezione 012 - Indirizzamento Zero Page: modules/modulo-5/lessons/012-zero-page.md
+      - "Lezione 033 - Indirizzamento indiretto indicizzato": modules/modulo-5/lessons/033-indirizzamento-indiretto-indicizzato.md
+      - Lezione 032 - Indirizzamento indiretto: modules/modulo-5/lessons/032-indirizzamento-indiretto.md
+      - Lezione 023 - Indirizzamento indicizzato: modules/modulo-5/lessons/023-indirizzamento-indicizzato.md
+      - Lezione 036 - Indirizzamento assoluto: modules/modulo-5/lessons/036-indirizzamento-assoluto.md
+      - Lezione 029 - Indirizzamento immediato, revisited: modules/modulo-5/lessons/029-modalita-immediata.md
+      - Lezione 035 - Indirizzamento Zero Page: modules/modulo-5/lessons/035-zero-page.md
     - Modulo 6 - Controllo del flusso e subroutine:
       - Modulo 6 - Indice: modules/modulo-6.md
-      - Lezione 020 - Operazioni di stack avanzate: modules/modulo-6/lessons/020-stack-avanzato.md
-      - "Lezione 019 - Salti condizionati: Carry e Overflow": modules/modulo-6/lessons/019-salti-su-carry-overflow.md
-      - "Lezione 016 - Subroutine: JSR e RTS": modules/modulo-6/lessons/016-subroutine-jsr-rts.md
-      - Lezione 015 - Salti condizionati: modules/modulo-6/lessons/015-salti-condizionati.md
+      - Lezione 029 - Operazioni di stack avanzate: modules/modulo-6/lessons/029-stack-avanzato.md
+      - "Lezione 028 - Salti condizionati: Carry e Overflow": modules/modulo-6/lessons/028-salti-su-carry-overflow.md
+      - "Lezione 027 - Subroutine: JSR e RTS": modules/modulo-6/lessons/027-subroutine-jsr-rts.md
+      - Lezione 034 - Salti condizionati: modules/modulo-6/lessons/034-salti-condizionati.md
     - Modulo 7 - Operazioni aritmetiche e logiche:
       - Modulo 7 - Indice: modules/modulo-7.md
-      - "Lezione 031 - Divisione: algoritmi software": modules/modulo-7/lessons/031-divisione.md
-      - "Lezione 030 - Moltiplicazione: algoritmi software": modules/modulo-7/lessons/030-moltiplicazione.md
-      - "Lezione 026 - Shift operations: ASL, LSR, ROL, ROR": modules/modulo-7/lessons/026-shift-operations.md
-      - "Lezione 025 - Operazioni logiche: AND, ORA, EOR": modules/modulo-7/lessons/025-operazioni-logiche.md
-      - "Lezione 024 - Addizione e sottrazione: ADC e SBC": modules/modulo-7/lessons/024-addizione-sottrazione.md
-      - "Lezione 022 - Compare e BIT test operations": modules/modulo-7/lessons/022-compare-bit-operations.md
-      - Lezione 021 - Incremento e decremento in memoria: modules/modulo-7/lessons/021-incremento-decremento-memoria.md
+      - "Lezione 036 - Divisione: algoritmi software": modules/modulo-7/lessons/036-divisione.md
+      - "Lezione 035 - Moltiplicazione: algoritmi software": modules/modulo-7/lessons/035-moltiplicazione.md
+      - "Lezione 034 - Shift operations: ASL, LSR, ROL, ROR": modules/modulo-7/lessons/034-shift-operations.md
+      - "Lezione 033 - Operazioni logiche: AND, ORA, EOR": modules/modulo-7/lessons/033-operazioni-logiche.md
+      - "Lezione 032 - Addizione e sottrazione: ADC e SBC": modules/modulo-7/lessons/032-addizione-sottrazione.md
+      - "Lezione 036 - Compare e BIT test operations": modules/modulo-7/lessons/036-compare-bit-operations.md
+      - Lezione 035 - Incremento e decremento in memoria: modules/modulo-7/lessons/035-incremento-decremento-memoria.md
     - Modulo 8 - I/O e periferiche:
       - Modulo 8 - Indice: modules/modulo-8.md
     - Modulo 9 - Grafica con VIC-II:

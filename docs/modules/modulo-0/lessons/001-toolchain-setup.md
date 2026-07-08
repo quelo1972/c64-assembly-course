@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 000 — Toolchain e setup del progetto
+# Lezione 029 — Toolchain e setup del progetto
 
 > **Obiettivo:** comprendere il toolchain per Assembly del Commodore 64 e configurare l'ambiente di sviluppo.
 

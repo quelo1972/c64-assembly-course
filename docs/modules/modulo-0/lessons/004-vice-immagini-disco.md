@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 034 — VICE: configurazione e immagini disco
+# Lezione 032 — VICE: configurazione e immagini disco
 
 > **Obiettivo:** configurare VICE completamente e lavorare con immagini disco D64 per il C64.
 

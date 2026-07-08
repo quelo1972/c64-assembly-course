@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 024 — Addizione e sottrazione: ADC e SBC
+# Lezione 032 — Addizione e sottrazione: ADC e SBC
 
 > **Obiettivo:** capire come fare operazioni aritmetiche con ADC (Add with Carry) e SBC (Subtract with Carry), gestendo il flag carry per operazioni multi-byte.
 

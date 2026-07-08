@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 020 — Operazioni di stack avanzate
+# Lezione 029 — Operazioni di stack avanzate
 
 > **Obiettivo:** capire come usare TSX/TXS/PHP/PLP per manipolare direttamente lo stack pointer e salvare il processor status.
 

@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 025 — Operazioni logiche: AND, ORA, EOR
+# Lezione 033 — Operazioni logiche: AND, ORA, EOR
 
 > **Obiettivo:** capire come manipolare bit usando operazioni logiche AND (AND), ORA (OR), EOR (XOR) per maschere e combinazioni di bit.
 

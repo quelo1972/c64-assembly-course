@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 032 — Git e GitHub: versionamento e collaborazione
+# Lezione 034 — Git e GitHub: versionamento e collaborazione
 
 > **Obiettivo:** comprendere Git e GitHub per tracciare cambiamenti, collaborare e condividere codice Assembly.
 

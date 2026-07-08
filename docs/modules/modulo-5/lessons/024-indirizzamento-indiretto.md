@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 017 — Indirizzamento indiretto
+# Lezione 032 — Indirizzamento indiretto
 
 > **Obiettivo:** capire come usare l'indirizzamento indiretto per accedere a memoria usando un puntatore memorizzato in Zero Page.
 

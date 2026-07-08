@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 011 — Indirizzamento immediato, revisited
+# Lezione 029 — Indirizzamento immediato, revisited
 
 > **Obiettivo:** capire in modo preciso cosa significa "immediato" come modalità di indirizzamento e perché è la più semplice — e la più limitata.
 

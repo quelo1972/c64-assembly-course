@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 018 — Indirizzamento indiretto indicizzato
+# Lezione 033 — Indirizzamento indiretto indicizzato
 
 > **Obiettivo:** capire come combinare indirizzamento indiretto con indexing per navigare array di strutture e liste.
 
