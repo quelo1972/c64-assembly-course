@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 005 - Registri A, X e Y
+# Lezione 10 — - Registri A, X e Y
 
 > **Obiettivo:** capire i tre registri principali della CPU 6510 e come vengono usati.
 

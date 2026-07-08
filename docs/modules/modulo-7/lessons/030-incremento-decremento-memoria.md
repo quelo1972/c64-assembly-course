@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 035 — Incremento e decremento in memoria
+# Lezione 30 — Incremento e decremento in memoria
 
 > **Obiettivo:** capire come usare INC/DEC per modificare direttamente celle di memoria, oltre ai registri X/Y.
 

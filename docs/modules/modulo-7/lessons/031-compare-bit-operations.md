@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 036 — Compare e BIT test operations
+# Lezione 31 — Compare e BIT test operations
 
 > **Obiettivo:** capire come usare CMP/CPX/CPY per confrontare senza modifica, e BIT per testare bit specifici.
 

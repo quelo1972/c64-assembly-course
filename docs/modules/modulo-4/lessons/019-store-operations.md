@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 028 — Store operations: STA, STX, STY
+# Lezione 19 — Store operations: STA, STX, STY
 
 > **Obiettivo:** capire come scrivere dati dalla CPU alla memoria usando STA, STX, STY e le diverse modalità di indirizzamento.
 

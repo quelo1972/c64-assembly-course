@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 006 - Dal sorgente all'esecuzione
+# Lezione 11 — - Dal sorgente all'esecuzione
 
 > **Obiettivo:** capire cosa succede quando un file Assembly diventa un programma eseguibile sul Commodore 64.
 

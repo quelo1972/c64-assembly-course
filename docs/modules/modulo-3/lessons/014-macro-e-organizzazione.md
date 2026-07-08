@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 023 — Macro e organizzazione del codice
+# Lezione 14 — Macro e organizzazione del codice
 
 > **Obiettivo:** capire come usare macro per riutilizzare codice e organizzare programmi complessi in moduli.
 

@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 036 — Divisione: algoritmi software
+# Lezione 36 — Divisione: algoritmi software
 
 > **Obiettivo:** capire come implementare divisione di interi usando shift e sottrazione.
 

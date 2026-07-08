@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 034 — Salti condizionati
+# Lezione 26 — Salti condizionati
 
 > **Obiettivo:** capire come usare i flag del 6510 e le istruzioni di salto condizionato (BEQ, BNE, BPL, BMI) per controllare il flusso di esecuzione.
 

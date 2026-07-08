@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 003 - Byte, Word e limiti della memoria
+# Lezione 8 — - Byte, Word e limiti della memoria
 
 > **Obiettivo:** capire cosa può contenere un byte, cosa succede quando si superano i limiti e perché l’overflow è fondamentale nel C64.
 

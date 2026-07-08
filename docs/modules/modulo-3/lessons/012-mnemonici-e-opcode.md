@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 035 — Mnemonici e opcode
+# Lezione 12 — Mnemonici e opcode
 
 > **Obiettivo:** capire la relazione tra mnemonici (LDA, STA, etc.) e opcode (hex), e come l'assembler li traduce.
 

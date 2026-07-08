@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 023 — Indirizzamento indicizzato
+# Lezione 23 — Indirizzamento indicizzato
 
 > **Obiettivo:** capire come usare i registri X e Y per indicizzare un indirizzo base e accedere ad array e tabelle in modo elegante e efficiente.
 

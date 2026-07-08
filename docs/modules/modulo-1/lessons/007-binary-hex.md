@@ -1,5 +1,5 @@
 [🏠 Home](../../../index.md)
-# Lezione 002 - Sistema binario ed esadecimale
+# Lezione 7 — - Sistema binario ed esadecimale
 
 > **Obiettivo:** imparare a leggere e ragionare in binario ed esadecimale, come fa il MOS 6510.
 

@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 027 — Subroutine: JSR e RTS
+# Lezione 27 — Subroutine: JSR e RTS
 
 > **Obiettivo:** capire come organizzare il codice in subroutine chiamabili, usare JSR per saltare, RTS per rientrare, e sfruttare lo stack per salvare l'indirizzo di ritorno.
 

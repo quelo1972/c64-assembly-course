@@ -1,5 +1,5 @@
 [🏠 Home](../../../index.md)
-# Lezione 001 - La memoria del Commodore 64
+# Lezione 6 — - La memoria del Commodore 64
 
 > **Obiettivo:** comprendere come il processore MOS 6510 vede la memoria del Commodore 64.
 

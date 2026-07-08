@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 036 — Direttive assembler, etichette e costanti
+# Lezione 13 — Direttive assembler, etichette e costanti
 
 > **Obiettivo:** capire come usare direttive assembler, etichette symboliche e costanti per scrivere codice leggibile e riutilizzabile.
 

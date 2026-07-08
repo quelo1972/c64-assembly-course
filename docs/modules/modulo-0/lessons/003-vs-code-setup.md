@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 027 — VS Code: setup e debugging Assembly
+# Lezione 3 — VS Code: setup e debugging Assembly
 
 > **Obiettivo:** configurare VS Code per scrivere, compilare e debuggare Assembly per il C64.
 

@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 033 — Automazione: Makefile e task build
+# Lezione 5 — Automazione: Makefile e task build
 
 > **Obiettivo:** automatizzare build, testing e deployment con Makefile e script shell.
 

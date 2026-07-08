@@ -1,6 +1,6 @@
 [🏠 Home](../../../index.md)
 
-# Lezione 035 — Moltiplicazione: algoritmi software
+# Lezione 35 — Moltiplicazione: algoritmi software
 
 > **Obiettivo:** capire come implementare moltiplicazione di interi usando solo istruzioni base del 6510.
 
