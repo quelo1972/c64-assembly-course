@@ -21,3 +21,8 @@
 | Gate            | Bit di controllo che avvia o rilascia una nota SID |
 | Cutoff          | Frequenza di taglio del filtro SID |
 | Resonance       | Enfasi attorno alla frequenza di taglio del filtro |
+| IRQ             | Interrupt mascherabile gestito via flag I e vettore IRQ |
+| NMI             | Interrupt non mascherabile (es. RESTORE) |
+| RTI             | Istruzione di ritorno da interrupt con ripristino stato |
+| CIA             | Complex Interface Adapter: timer e I/O del C64 |
+| ICR             | Interrupt Control Register dei CIA |

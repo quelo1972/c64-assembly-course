@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-08 — Modulo 11 avviato: lezioni 049-052 (interrupt, CIA, tempo)
+
+### Nuove lezioni
+- **Lezione 049 - Tipi di interrupt: IRQ, NMI e BRK**
+- **Lezione 050 - Gestione interrupt: CLI, SEI, RTI e mask**
+- **Lezione 051 - CIA: timer, seriale e keyboard matrix**
+- **Lezione 052 - Mini-progetto: timer CIA per eventi periodici**
+
+### Copertura roadmap modulo 11
+- Tipi di interrupt (NMI, IRQ)
+- Gestione interrupt con `CLI/SEI/RTI`
+- CIA chips: timer, seriale, keyboard matrix
+- Uso degli interrupt per timing e input
+
+### Allineamento contenuti
+- Aggiornato glossario con termini: IRQ, NMI, RTI, CIA, ICR.
+
 ## 2026-07-08 — Nuova appendice tecnica: SID multipli su U64EII/C64U
 
 ### Nuova pagina

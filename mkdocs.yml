@@ -77,6 +77,10 @@ nav:
       - "Lezione 048 - Mini-progetto: playback di un pattern musicale SID": modules/modulo-10/lessons/048-mini-progetto-pattern-musicale-sid.md
     - Modulo 11 - Interrupt, CIA e gestione tempo:
       - "Modulo 11 - Indice": modules/modulo-11.md
+      - "Lezione 049 - Tipi di interrupt: IRQ, NMI e BRK": modules/modulo-11/lessons/049-tipi-interrupt-irq-nmi-brk.md
+      - "Lezione 050 - Gestione interrupt: CLI, SEI, RTI e mask": modules/modulo-11/lessons/050-gestione-interrupt-cli-sei-rti-mask.md
+      - "Lezione 051 - CIA: timer, seriale e keyboard matrix": modules/modulo-11/lessons/051-cia-timer-serial-keyboard-matrix.md
+      - "Lezione 052 - Mini-progetto: timer CIA per eventi periodici": modules/modulo-11/lessons/052-mini-progetto-timer-cia-eventi-periodici.md
     - Modulo 12 - File system, cassette e disk I/O:
       - "Modulo 12 - Indice": modules/modulo-12.md
     - Modulo 13 - Ottimizzazione e tecniche avanzate:
