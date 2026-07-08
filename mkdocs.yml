@@ -7,6 +7,7 @@ nav:
   - Moduli:
     - Modulo 0 - Ambiente di sviluppo:
       - Modulo 0 - Indice: modules/modulo-0.md
+      - Lezione 000 - Toolchain e setup del progetto: modules/modulo-0/lessons/000-toolchain-setup.md
     - Modulo 1 - Fondamenti:
       - Modulo 1 - Indice: modules/modulo-1.md
       - Lezione 001 - La memoria del Commodore 64: modules/modulo-1/lessons/001-memory.md
@@ -18,6 +19,9 @@ nav:
       - Lezione 005 - Registri A, X e Y: modules/modulo-2/lessons/005-registers-axy.md
     - Modulo 3 - Linguaggio e tooling:
       - Modulo 3 - Indice: modules/modulo-3.md
+      - Lezione 029 - Macro e organizzazione del codice: modules/modulo-3/lessons/029-macro-e-organizzazione.md
+      - Lezione 028 - Direttive assembler, etichette e costanti: modules/modulo-3/lessons/028-direttive-assembler.md
+      - Lezione 027 - Mnemonici e opcode: modules/modulo-3/lessons/027-mnemonici-e-opcode.md
       - Lezione 006 - Dal sorgente all'esecuzione: modules/modulo-3/lessons/006-from-source-to-execution.md
     - Modulo 4 - Prime istruzioni:
       - Modulo 4 - Indice: modules/modulo-4.md
@@ -42,6 +46,8 @@ nav:
       - Lezione 015 - Salti condizionati: modules/modulo-6/lessons/015-salti-condizionati.md
     - Modulo 7 - Operazioni aritmetiche e logiche:
       - Modulo 7 - Indice: modules/modulo-7.md
+      - "Lezione 031 - Divisione: algoritmi software": modules/modulo-7/lessons/031-divisione.md
+      - "Lezione 030 - Moltiplicazione: algoritmi software": modules/modulo-7/lessons/030-moltiplicazione.md
       - "Lezione 026 - Shift operations: ASL, LSR, ROL, ROR": modules/modulo-7/lessons/026-shift-operations.md
       - "Lezione 025 - Operazioni logiche: AND, ORA, EOR": modules/modulo-7/lessons/025-operazioni-logiche.md
       - "Lezione 024 - Addizione e sottrazione: ADC e SBC": modules/modulo-7/lessons/024-addizione-sottrazione.md

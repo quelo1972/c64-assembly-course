@@ -18,6 +18,8 @@ Implementare routine di moltiplicazione e divisione a 8/16 bit.
 - [Lezione 024 - Addizione e sottrazione: ADC e SBC](modulo-7/lessons/024-addizione-sottrazione.md)
 - [Lezione 025 - Operazioni logiche: AND, ORA, EOR](modulo-7/lessons/025-operazioni-logiche.md)
 - [Lezione 026 - Shift operations: ASL, LSR, ROL, ROR](modulo-7/lessons/026-shift-operations.md)
+- [Lezione 030 - Moltiplicazione: algoritmi software](modulo-7/lessons/030-moltiplicazione.md)
+- [Lezione 031 - Divisione: algoritmi software](modulo-7/lessons/031-divisione.md)
 ## Obiettivo
 
 Padroneggiare le tecniche aritmetiche e logiche per costruire routine numeriche affidabili.
