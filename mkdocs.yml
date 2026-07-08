@@ -7,6 +7,10 @@ nav:
   - Moduli:
     - Modulo 0 - Ambiente di sviluppo:
       - Modulo 0 - Indice: modules/modulo-0.md
+      - "Lezione 035 - Automazione: Makefile e task build": modules/modulo-0/lessons/035-automazione-makefile.md
+      - "Lezione 034 - VICE: configurazione e immagini disco": modules/modulo-0/lessons/034-vice-immagini-disco.md
+      - "Lezione 033 - VS Code: setup e debugging Assembly": modules/modulo-0/lessons/033-vs-code-setup.md
+      - "Lezione 032 - Git e GitHub: versionamento e collaborazione": modules/modulo-0/lessons/032-git-github.md
       - Lezione 000 - Toolchain e setup del progetto: modules/modulo-0/lessons/000-toolchain-setup.md
     - Modulo 1 - Fondamenti:
       - Modulo 1 - Indice: modules/modulo-1.md
