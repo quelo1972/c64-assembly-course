@@ -1,275 +1,132 @@
 # Workflow di sviluppo
 
-Questo documento descrive il processo standard da seguire per ogni modifica al progetto.
+Questo documento definisce le regole operative obbligatorie per creare o modificare moduli e lezioni del corso.
 
-L'obiettivo è mantenere il repository coerente, verificabile e facile da mantenere.
+## Regola non negoziabile: 1 lezione = 1 esempio asm compilabile
 
----
+Ogni lezione deve avere SEMPRE:
 
-## Struttura della documentazione
+1. un blocco codice `asm` nella sezione `## 💡 Esempio pratico`;
+2. un sorgente compilabile corrispondente;
+3. una build verificata con `64tass`.
+
+Nel repository questa regola e gestita automaticamente da `scripts/build-lesson-examples.sh`, che:
+
+1. estrae il blocco `asm` della sezione `## 💡 Esempio pratico` di ogni lezione;
+2. genera/aggiorna il file `src/lessons/<NNN-slug>/main.asm`;
+3. compila ogni sorgente in `bin/lessons/<NNN-slug>.prg`.
+
+Se anche una sola lezione non ha esempio asm valido o non compila, il check fallisce.
+
+## Struttura standard
 
 Le lezioni vivono in:
 
-```
+```text
 docs/modules/modulo-{N}/lessons/{NNN}-{slug}.md
 ```
 
-Ogni modulo ha:
-- `docs/modules/modulo-{N}.md` — pagina indice del modulo
-- `docs/modules/modulo-{N}/lessons/` — cartella lezioni
-- `docs/modules/modulo-{N}/lessons/lesson-template.md` — template da copiare
+Le sorgenti esempi compilati vivono in:
 
----
-
-## Creazione di una nuova lezione (metodo raccomandato)
-
-Usare lo script helper:
-
-```bash
-./scripts/new-lesson.sh <modulo> <numero> <slug> "<Titolo esteso>"
-# Esempio:
-./scripts/new-lesson.sh 5 013 "indirizzamento-assoluto" "Indirizzamento assoluto"
+```text
+src/lessons/{NNN}-{slug}/main.asm
 ```
 
-Lo script:
-1. Copia `lesson-template.md` nella cartella `lessons/` corretta
-2. Aggiorna l'indice del modulo (`docs/modules/modulo-N.md`)
-3. Aggiunge la voce nav in `mkdocs.yml`
+Gli output compilati vivono in:
 
-Dopo l'esecuzione:
-1. Scrivi il contenuto completo nel file creato
-2. Aggiungi l'esempio Assembly in `src/modulo-{N}/`
-3. Verifica che l'esempio compili con `64tass`
-4. Esegui `mkdocs build` e controlla i warning
-5. Aggiorna `CHANGELOG.md`
-6. Esegui commit e push su `main`
-7. Pubblica con `.venv/bin/mkdocs gh-deploy --clean -b gh-pages -r origin`
+```text
+bin/{NNN}-{slug}.prg
+```
 
----
+Artefatti storici (pipeline precedente) vivono in:
 
-## Creazione manuale di una lezione
+```text
+bin/legacy/*.prg
+```
 
-Se preferisci senza lo script:
+## Flusso obbligatorio per nuove lezioni o modifiche
 
-1. Copia `docs/modules/modulo-{N}/lessons/lesson-template.md` → `{NNN}-{slug}.md`
-2. Compila tutte le sezioni del template (vedi `.ai/lesson-template.md`)
-3. Aggiungi la voce in `docs/modules/modulo-{N}.md` sotto `## Lezioni incluse`
-4. Aggiungi la voce nav in `mkdocs.yml` sotto il modulo corretto
-5. Segui i passi 2–7 del metodo raccomandato
+Seguire SEMPRE questa sequenza:
 
----
-
-## Regola posizione Appendici (navigazione web)
-
-Le **Appendici** devono comparire **sempre in fondo** alla navigazione del corso nel sito MkDocs.
-
-Regole operative:
-
-1. In `mkdocs.yml`, la sezione `Appendici` deve essere l'ultima sezione della `nav`.
-2. Nessun nuovo modulo o sezione del corso deve essere aggiunto dopo `Appendici`.
-3. In `docs/index.md`, il blocco "Appendici" deve rimanere dopo l'elenco dei moduli.
-
----
-
-## Modus operandi obbligatorio (moduli e lezioni)
-
-Per ogni nuovo modulo o batch di lezioni, seguire **sempre** questa sequenza senza eccezioni:
-
-1. **Creazione contenuti**
-	- creare lezioni, indice modulo, nav `mkdocs.yml`, eventuale glossario e `CHANGELOG.md`.
-2. **Quality check globale (prima del commit)**
-	- build completa: `.venv/bin/mkdocs build -q`;
-	- verifica conformita intestazioni template su tutte le lezioni (`docs/modules/**/lessons/*.md`, esclusi i template);
-	- verifica link/nav e assenza file temporanei.
-3. **Solo dopo quality check OK**
-	- eseguire commit su `main`;
-	- eseguire push su `origin/main`.
-4. **Solo dopo push riuscito**
-	- eseguire deploy: `.venv/bin/mkdocs gh-deploy --clean -b gh-pages -r origin`.
+1. creare/aggiornare la lezione in `docs/modules/.../lessons/...`;
+2. verificare che `## 💡 Esempio pratico` contenga un blocco `asm` completo e standalone;
+3. eseguire build esempi:
+   - `make build-lessons`
+4. correggere eventuali errori e ripetere finche la build esempi e tutta verde;
+5. eseguire quality check globale:
+   - `make quality-check`
+6. solo dopo quality check OK: commit e push;
+7. solo dopo push riuscito: deploy su `gh-pages`.
 
 Regola vincolante:
 
-- **Mai fare commit/push/deploy prima del quality check globale**.
-- Se il quality check fallisce, si corregge prima e si ripete il check fino a esito positivo.
+- Mai fare commit/push/deploy se `make build-lessons` o `make quality-check` falliscono.
+- Non mescolare nuovi output lezione con artefatti legacy: i file legacy restano in `bin/legacy`.
 
-### Comando standard (copia/incolla) per quality check globale
+## Comandi standard
 
-Usare questo comando unico prima di ogni commit/push/deploy su moduli e lezioni:
+Build di tutti gli esempi lezione:
 
 ```bash
-cd /home/andros/Projects/c64-assembly-course && \
-.venv/bin/mkdocs build -q && \
-req=("## 🎯 Obiettivi" "## 🧠 Introduzione" "## 📘 Teoria" "## 🤖 Come ragiona il 6510" "## 💡 Esempio pratico" "## ⚠️ Errori comuni" "## 🧪 Esercizi" "## 📌 Riassunto" "## 🔜 Preparazione alla lezione successiva" "## 🔎 Approfondimento - Dentro il 6510" "## ✅ Checklist finale") && \
-missing=0 && \
-while IFS= read -r f; do
-	for h in "${req[@]}"; do
-		grep -Fq "$h" "$f" || { echo "MISSING: $f :: $h"; missing=1; }
-	done
-done < <(find docs/modules -path '*/lessons/*.md' ! -name 'lesson-template.md' | sort) && \
-[[ $missing -eq 0 ]]
+make build-lessons
 ```
 
-Interpretazione esito:
+Quality check globale (include build di tutti gli esempi):
 
-- Se il comando termina senza output, quality check globale OK.
-- Se appaiono righe `MISSING: ...`, correggere prima di procedere.
+```bash
+make quality-check
+```
 
-### Standard operativo repository (script + hook)
+Release completa (quality check -> commit -> push -> deploy):
 
-Per evitare dimenticanze future, usare sempre gli strumenti versionati nel repository:
+```bash
+./scripts/release-docs.sh "messaggio commit"
+```
 
-1. `./scripts/quality-check.sh`
-	- esegue build MkDocs, conformita intestazioni template, controllo file temporanei.
-2. `./scripts/release-docs.sh "messaggio commit"`
-	- esegue quality check, commit (solo staged), push e deploy in sequenza.
-3. Hook pre-push versionato in `.githooks/pre-push`
-	- blocca `git push` se il quality check fallisce.
+Deploy manuale (solo dopo quality check e push):
+
+```bash
+.venv/bin/mkdocs gh-deploy --clean -b gh-pages -r origin
+```
+
+## Requisiti editoriali lezioni
+
+Ogni lezione deve contenere le intestazioni richieste dal template e mantenere coerenza didattica.
+
+Intestazioni obbligatorie:
+
+- `## 🎯 Obiettivi`
+- `## 🧠 Introduzione`
+- `## 📘 Teoria`
+- `## 🤖 Come ragiona il 6510`
+- `## 💡 Esempio pratico`
+- `## ⚠️ Errori comuni`
+- `## 🧪 Esercizi`
+- `## 📌 Riassunto`
+- `## 🔜 Preparazione alla lezione successiva`
+- `## 🔎 Approfondimento - Dentro il 6510`
+- `## ✅ Checklist finale`
+
+## Requisiti dell esempio asm
+
+Ogni esempio asm deve essere:
+
+1. coerente con il tema della lezione;
+2. minimo ma completo;
+3. compilabile con `64tass --cbm-prg` senza errori;
+4. privo di placeholder non assemblabili;
+5. autosufficiente (niente include mancanti, simboli non definiti, pseudo-codice dentro il blocco).
+
+## Appendici e navigazione
+
+La sezione Appendici deve restare in fondo alla nav (`mkdocs.yml`) e in fondo al blocco moduli su `docs/index.md`.
+
+## Hook e automazione
+
+Il repository usa hook pre-push in `.githooks/pre-push` che esegue il quality check.
 
 Installazione hook (una volta per clone):
 
 ```bash
 make hook-install
 ```
-
----
-
-## Regole per gli esempi
-
-Ogni esempio deve:
-
-* compilare senza warning o errori con `64tass --cbm-prg`;
-* essere il più piccolo possibile;
-* introdurre un solo concetto nuovo;
-* essere coerente con quanto spiegato nella lezione.
-
----
-
-## Regole per le lezioni
-
-Ogni lezione deve contenere esattamente queste intestazioni, con questo wording e le icone corrispondenti:
-
-* 🎯 Obiettivi
-* 🧠 Introduzione
-* 📘 Teoria
-* 🤖 Come ragiona il 6510
-* 💡 Esempio pratico
-* ⚠️ Errori comuni
-* 🧪 Esercizi
-* 📌 Riassunto
-* 🔜 Preparazione alla lezione successiva
-* 🔎 Approfondimento - Dentro il 6510
-* ✅ Checklist finale
-
-Ogni nuova lezione deve essere confrontata con `.ai/lesson-template.md` prima del merge.
-
-Regola istruzioni: non citare o usare istruzioni Assembly senza fornire una breve spiegazione contestuale nella stessa lezione, a meno che l'istruzione sia già stata trattata in una lezione precedente.
-
----
-
-## Deploy su GitHub Pages
-
-**Non modificare mai il branch `gh-pages` manualmente.**
-
-Per pubblicare:
-
-```bash
-.venv/bin/mkdocs gh-deploy --clean -b gh-pages -r origin
-```
-
-Per dettagli vedere `.ai/deployment.md`.
-
----
-
-## Commit
-
-Messaggi di commit nel formato:
-
-```
-tipo(scope): descrizione breve
-
-# Esempi:
-docs(mod5): add lesson 013 - Indirizzamento assoluto
-feat(scripts): add new-lesson.sh helper
-fix(nav): correct mkdocs.yml indentation
-chore(docs): add lesson-template.md to modules 5-14
-```
-
----
-
-# Regole per gli esempi
-
-Ogni esempio deve:
-
-* compilare senza warning o errori;
-* essere il più piccolo possibile;
-* introdurre un solo concetto nuovo;
-* essere coerente con quanto spiegato nella lezione.
-
----
-
-# Regole per le lezioni
-
-Ogni lezione deve contenere esattamente queste intestazioni, con questo wording e le icone corrispondenti:
-
-* 🎯 Obiettivi
-* 🧠 Introduzione
-* 📘 Teoria
-* 🤖 Come ragiona il 6510
-* 💡 Esempio pratico
-* ⚠️ Errori comuni
-* 🧪 Esercizi
-* 📌 Riassunto
-* 🔜 Preparazione alla lezione successiva
-* 🔎 Approfondimento - Dentro il 6510
-* ✅ Checklist finale
-
-Ogni nuova lezione deve essere confrontata con `.ai/lesson-template.md` prima del merge. Le intestazioni devono corrispondere esattamente al template, compresi emoji e wording.
-
----
-
-# Commit
-
-Preferire messaggi di commit chiari e descrittivi.
-
-Esempi:
-
-* `Add lesson 007 - Program Counter`
-* `Improve lesson 003 exercises`
-* `Fix example for LDA immediate addressing`
-
----
-
-# Controlli prima del push
-
-Prima di eseguire il push verificare:
-
-* il sito GitHub Pages continua a funzionare;
-* gli esempi compilano;
-* i link tra le lezioni sono corretti;
-* non sono stati introdotti file temporanei nel repository;
-* tutte le lezioni `docs/lessons/*.md` contengono le intestazioni del template esattamente come in `.ai/lesson-template.md`;
-* tutte le lezioni hanno `## Approfondimento - Dentro il 6510` e `## Checklist finale` quando previsto dal template.
-* la pubblicazione MkDocs usa il branch `gh-pages` e non il percorso `main/docs`.
-* la sezione `Appendici` e in fondo alla navigazione (`mkdocs.yml`) e in fondo al blocco moduli in `docs/index.md`.
-
----
-
-# Pubblicazione MkDocs
-
-Per una pubblicazione coerente e ripetibile del sito MkDocs, seguire sempre questa procedura:
-
-1. Generare il sito localmente con `.venv/bin/mkdocs build`.
-2. Verificare che il sito locale sia corretto.
-3. Eseguire il deploy su GitHub Pages usando il branch `gh-pages`.
-4. Verificare che la configurazione GitHub Pages punti a `gh-pages` con `path: /`.
-5. Non usare `main/docs` come sorgente di Pages per questo progetto; `docs/` contiene le sorgenti markdown, non il sito generato.
-
-Questa procedura evita che la versione remota mostri un sito diverso da quella generata da MkDocs.
-
----
-
-# Principio fondamentale
-
-Mai sacrificare la comprensione per la velocità.
-
-Ogni esempio e ogni spiegazione devono essere verificati e mantenuti il più semplici possibile.

@@ -94,21 +94,18 @@ In totale: **2–3 byte**, **5+ cicli**.
 ; Usa puntatori in Zero Page per accedere a dati
 *= $0801
 
-; Nota: LDA (indirizzo_puntatore) legge da un indirizzo memorizzato in ZP
+; Sul 6510 l'indiretto puro e supportato da JMP ($addr)
 
-; Inizializza il puntatore in $40/$41
-; Vogliamo puntare a $D020 (VIC-II)
-LDA #$20       ; byte basso di $D020
-STA $40
-LDA #$D0       ; byte alto di $D020
-STA $41
+start:
+	LDA #<target
+	STA $40
+	LDA #>target
+	STA $41
+	JMP ($0040)
 
-; Ora usa il puntatore
-LDA ($40)      ; legge il valore attuale di $D020
-INC            ; incrementa
-STA ($40)      ; scrive il nuovo valore in $D020
-
-RTS
+target:
+	INC $D020
+	JMP target
 ```
 
 Compila:

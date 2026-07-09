@@ -1,0 +1,28 @@
+; Lezione 061 - Skeleton progetto finale
+*= $0801
+
+BORDER = $D020
+
+start:
+    JSR init
+
+main_loop:
+    JSR input_step
+    JSR update_step
+    JSR render_step
+    JMP main_loop
+
+init:
+    LDA #$00
+    STA BORDER
+    RTS
+
+input_step:
+    RTS
+
+update_step:
+    RTS
+
+render_step:
+    INC BORDER
+    RTS

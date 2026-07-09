@@ -180,6 +180,20 @@ La CPU non "vede" schermo, tastiera o colori. Per lei esistono soltanto indirizz
 
 Immaginiamo di voler cambiare il bordo. Il programma non parla di “blu”: scrive un byte nell'indirizzo corretto e lascia che l'hardware interpreti quel valore.
 
+```asm
+; Lezione 006 - Memoria mappata I/O: scrittura su $D020
+*= $0801
+
+BORDER = $D020
+
+start:
+	LDA #$06
+	STA BORDER
+
+loop:
+	JMP loop
+```
+
 ## ⚠️ Errori comuni
 
 - confondere un indirizzo con il contenuto della cella;

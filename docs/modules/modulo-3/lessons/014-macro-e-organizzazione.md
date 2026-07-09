@@ -121,23 +121,22 @@ Risultato: come se avessi scritto le 3 istruzioni direttamente.
 ## 💡 Esempio pratico
 
 ```asm
-; Lezione 029 — Macro e organizzazione
-; main.asm
-.include "constants.asm"
-.include "utils.asm"
+; Lezione 014 — Macro e organizzazione (standalone)
+*= $0801
 
-* = program_start
+BORDER = $D020
 
-init:
-  set_border_color color_red
-  clear_screen
-  
+set_border .macro color
+  LDA #\color
+  STA BORDER
+.endm
+
+start:
+  set_border $02
+
 loop:
-  inc_border
-  delay_ms 10
+  INC BORDER
   JMP loop
-
-program_start = $0801
 ```
 
 File `constants.asm`:

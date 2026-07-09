@@ -99,23 +99,26 @@ Uso: **array in memoria**, dove il puntatore punta all'inizio, Y è l'offset.
 ; Leggi da un array usando puntatore + offset
 *= $0801
 
-; Nota: LDA (addr,X) usa X per selezionare il puntatore
-; Nota: LDA (addr),Y usa Y per l'offset dentro la struttura
+; Setup puntatore base in Zero Page
+	LDA #<data
+	STA $40
+	LDA #>data
+	STA $41
 
-; Setup: array di puntatori in $40, $42, $44 (per X=0,1,2)
-; Puntatore 0: $40/$41 = $0400
-; Puntatore 1: $42/$43 = $0500
-; Puntatore 2: $44/$45 = $0600
+start:
+	LDX #$00
+	LDA ($40,X)    ; indexed indirect: legge da indirizzo puntato da $40/$41
+	STA $D020
 
-; Leggi byte 5 del primo array (X=0, Y=5)
-LDX #$00       ; seleziona puntatore 0
-LDY #$05       ; offset 5
-LDA ($40,X),Y  ; legge da ($40 + X) + Y = $0400 + $05 = $0405
+	LDY #$01
+	LDA ($40),Y    ; indirect indexed: legge da (puntatore + Y)
+	STA $D021
 
-; Scrivilo in A (sarà disponibile per operazioni successive)
-STA $D020      ; scrivi nel bordo per visualizzare
+loop:
+	JMP loop
 
-RTS
+data:
+	.byte $06,$0B
 ```
 
 Compila:

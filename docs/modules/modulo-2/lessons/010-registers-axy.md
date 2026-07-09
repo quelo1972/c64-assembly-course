@@ -160,6 +160,26 @@ Il 6510 usa A come registro principale per i dati, mentre X e Y servono come sup
 
 Se il programma deve lavorare su una tabella, X o Y possono indicare la posizione corrente, mentre A contiene il dato attuale da elaborare.
 
+```asm
+; Lezione 010 - Registri A, X, Y in azione
+*= $0801
+
+BORDER = $D020
+
+start:
+	LDA #$01
+	LDX #$02
+	LDY #$03
+
+	TXA
+	ADC #$00
+	TYA
+	STA BORDER
+
+loop:
+	JMP loop
+```
+
 ## ⚠️ Errori comuni
 
 - confondere registri con celle di memoria;

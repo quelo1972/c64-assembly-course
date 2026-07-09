@@ -91,17 +91,16 @@ Durante la compilazione:
 
 ```asm
 ; hello.asm
-* = $0801        ; indirizzo BASIC di caricamento
+* = $0801        ; indirizzo di caricamento
 
-    .text
-    "10 PRINT"HELLO C64""
-    "
-"
-    "20 END"
-    "
-"
-    
-    RTS
+BORDER = $D020
+
+start:
+    LDA #$06
+    STA BORDER
+
+loop:
+    JMP loop
 ```
 
 ### Build
@@ -111,7 +110,7 @@ Durante la compilazione:
 x64 hello.prg
 ```
 
-Risultato: il programma carica e stampa "HELLO C64".
+Risultato: il programma carica e imposta il bordo a blu.
 
 ---
 

@@ -209,6 +209,20 @@ Il 6510 non legge “dieci” o “quindici”: legge 0 e 1. L'esadecimale è so
 
 Il valore $D020 può essere scritto come una sequenza di bit, ma per noi è molto più semplice leggerlo come un numero esadecimale.
 
+```asm
+; Lezione 007 - Uso di costanti esadecimali
+*= $0801
+
+BORDER = $D020
+
+start:
+   LDA #$0A
+   STA BORDER
+
+loop:
+   JMP loop
+```
+
 ## ⚠️ Errori comuni
 
 - confondere binario e decimale;

@@ -156,6 +156,22 @@ Il 6510 non “capisce” il concetto di infinito. Sa solo che il registro dispo
 
 Se un contatore raggiunge 255, il passo successivo lo riporta a 0. Questo è esattamente il tipo di comportamento che si vede in molti programmi semplici del C64.
 
+```asm
+; Lezione 008 - Overflow di un contatore a 8 bit
+*= $0801
+
+COUNTER = $C000
+
+start:
+   LDA #$FF
+   STA COUNTER
+
+   INC COUNTER     ; $FF -> $00 (wrap a 8 bit)
+
+loop:
+   JMP loop
+```
+
 ## ⚠️ Errori comuni
 
 - pensare che l'overflow sia un errore di programma;

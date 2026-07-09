@@ -172,6 +172,14 @@ La CPU non vede file, cartelle o nomi. Quando il programma viene caricato, vede 
 
 Se il sorgente contiene `* = $1000`, l'assembler produce un PRG che viene caricato a partire da quell'indirizzo.
 
+```asm
+; Lezione 011 - Dal sorgente al PRG
+*= $1000
+
+start:
+      RTS
+```
+
 ## ⚠️ Errori comuni
 
 - confondere il file sorgente con il file eseguibile;

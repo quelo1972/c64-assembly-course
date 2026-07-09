@@ -44,4 +44,7 @@ if find . -maxdepth 1 -type f \( -name '.tmp-*' -o -name '*.tmp' \) | grep -q .;
   exit 1
 fi
 
+echo "[quality-check] Build all lesson asm examples"
+./scripts/build-lesson-examples.sh
+
 echo "[quality-check] OK"

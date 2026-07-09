@@ -1,7 +1,10 @@
-.PHONY: quality-check deploy release-docs hook-install
+.PHONY: quality-check build-lessons deploy release-docs hook-install
 
 quality-check:
 	./scripts/quality-check.sh
+
+build-lessons:
+	./scripts/build-lesson-examples.sh
 
 deploy:
 	./.venv/bin/mkdocs gh-deploy --clean -b gh-pages -r origin

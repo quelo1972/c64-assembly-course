@@ -1,0 +1,24 @@
+; Lezione 058 - Save/switch/restore del registro $01
+*= $0801
+
+PORT01 = $0001
+BORDER = $D020
+
+start:
+    LDA PORT01
+    PHA                 ; salva mappa attuale
+
+    ; esempio: cambia temporaneamente bit mappa (dimostrativo)
+    LDA PORT01
+    AND #%11111000
+    ORA #%00000101
+    STA PORT01
+
+    ; operazione protetta (placeholder)
+    INC BORDER
+
+    PLA
+    STA PORT01          ; ripristina mappa originaria
+
+loop:
+    JMP loop

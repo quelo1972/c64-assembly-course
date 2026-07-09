@@ -49,7 +49,7 @@ for i = 0 to 15:
 div (A:X ÷ Y → A=quoziente, X=resto)
 {
   quoziente = 0
-  
+
   for i = 0 to 7:
     quoziente <<= 1
     if divisor_hi bit:
@@ -87,45 +87,40 @@ div (A:X ÷ Y → A=quoziente, X=resto)
 ; Divisione 16 ÷ 8 → quoziente + resto
 *= $0801
 
-; Chiamata: LDA div_hi, LDX div_lo, LDY divisore, JSR div
-; Risultato: A = quoziente, X = resto
+dividend = $C010
+divisor = $C011
+quotient = $C012
+remainder = $C013
 
-div:
-  ; A = dividendo byte alto
-  ; X = dividendo byte basso
-  ; Y = divisore
-  ; Risultato: A = quoziente, X = resto
-  
-  CMP #$00       ; se divisore = 0, errore
-  BEQ err_div0
-  
-  ; Setup
-  LDA #$00       ; A = quoziente
-  STX remainder  ; remainder = dividendo basso
-  
-  LDX #$08       ; 8 iterazioni per 8 bit
-  
-loop:
-  ASL remainder  ; shift remainder (dividendo)
-  ROL            ; rotate quoziente (accumula risultato)
-  
+start:
+  LDA #$0F
+  STA dividend
+  LDA #$03
+  STA divisor
+  LDA #$00
+  STA quotient
+
+div_loop:
+  LDA dividend
+  CMP divisor
+  BCC done
   SEC
-  SBC Y          ; sottrai divisore
-  BCC skip       ; se < 0 (borrow), skip
-  
-  ; quoziente risultato |= 1 (carry)
-  ORA #$01
-  
-skip:
-  DEX
-  BNE loop
-  
-  STX remainder  ; remainder = il valore di X (che è rimasto)
-  
-err_div0:
-  RTS
+  SBC divisor
+  STA dividend
+  INC quotient
+  JMP div_loop
 
-remainder = $02
+done:
+  LDA dividend
+  STA remainder
+
+  LDA quotient
+  STA $D020
+  LDA remainder
+  STA $D021
+
+loop:
+  JMP loop
 ```
 
 ---

@@ -57,7 +57,7 @@ mult (A × X → Y:A)
 {
   Y = 0              ; byte alto risultato
   result_lo = A      ; inizializza risultato basso (A era il moltiplicando)
-  
+
   for i = 0 to 7:
     if (X & 1) = 1:
       result_lo += result_lo
@@ -96,45 +96,38 @@ mult (A × X → Y:A)
 ; Moltiplicazione 8x8 → 16 bit
 *= $0801
 
-; Chiamata: LDA moltiplicando, LDX moltiplicatore, JSR mult
-; Risultato: Y:A (Y=byte alto, A=byte basso)
+factor_a = $C000
+factor_b = $C001
+result_lo = $C002
+result_hi = $C003
 
-mult:
-  ; A = moltiplicando
-  ; X = moltiplicatore
-  ; Risultato: Y:A
-  
-  LDY #$00        ; Y = 0 (accumulo byte alto)
-  LSR             ; shift A a destra per preparare
-  BEQ done        ; se A = 0, risultato = 0
-  
-  ASL             ; shift A a sinistra (restore)
-  STA temp        ; temp = moltiplicando
-  
-  LDA #$00        ; A = 0 (accumulo byte basso)
-  LDY #$00        ; Y = 0 (accumulo byte alto)
-  
-loop:
-  LSR temp        ; shift moltiplicando
-  BCC skip_add    ; se bit = 0, skip add
-  
+start:
+  LDA #$05
+  STA factor_a
+  LDA #$03
+  STA factor_b
+
+  LDA #$00
+  STA result_lo
+  STA result_hi
+
+  LDX factor_b
+mul_loop:
   CLC
-  ADC X           ; somma moltiplicatore
-  BCC skip_carry
-  INY             ; incrementa Y se carry
-  
-skip_carry:
-  ASL X           ; shift moltiplicatore a sinistra
-  DEC temp        ; decrementa contatore
-  BNE loop
-  
-skip_add:
-  LDY #$00        ; TODO: fix accumulo Y
-  
-done:
-  RTS
+  LDA result_lo
+  ADC factor_a
+  STA result_lo
+  LDA result_hi
+  ADC #$00
+  STA result_hi
+  DEX
+  BNE mul_loop
 
-temp = $02        ; temporaneo Zero Page
+  LDA result_lo
+  STA $D020
+
+loop:
+  JMP loop
 ```
 
 ---
