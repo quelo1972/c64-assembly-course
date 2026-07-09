@@ -380,10 +380,10 @@
 <li>controlli flag interrupt in ICR.</li>
 </ol>
 <h3 id="keyboard-matrix-concetto">Keyboard matrix (concetto)<a class="headerlink" href="#keyboard-matrix-concetto" title="Permanent link">&para;</a></h3>
-<p>La tastiera C64 e una matrice righe/colonne: si pilotano linee e si leggono stati via CIA1. Molte routine pratiche usano KERNAL scanner, ma capire la matrice aiuta a debug avanzato.</p>
+<p>La tastiera C64 è una matrice righe/colonne: si pilotano linee e si leggono stati via CIA1. Molte routine pratiche usano KERNAL scanner, ma capire la matrice aiuta a debug avanzato.</p>
 <hr />
 <h2 id="come-ragiona-il-6510">🤖 Come ragiona il 6510<a class="headerlink" href="#come-ragiona-il-6510" title="Permanent link">&para;</a></h2>
-<p>Con polling, il 6510 interroga periodicamente un registro (es. ICR). Con interrupt, lascia che l'evento arrivi da solo. Polling e semplice ma spreca cicli; interrupt e piu efficiente per scheduler stabili.</p>
+<p>Con polling, il 6510 interroga periodicamente un registro (es. ICR). Con interrupt, lascia che l'evento arrivi da solo. Polling è semplice ma spreca cicli; interrupt è piu efficiente per scheduler stabili.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
 <pre class="highlight"><code class="language-asm">; Lezione 051 - CIA1 Timer A in polling
