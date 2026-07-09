@@ -17,7 +17,7 @@
 
 ## 🧠 Introduzione
 
-Il modulo finale non e solo codice: e gestione del progetto. Una pianificazione chiara riduce blocchi e aumenta probabilita di arrivare a una release completa.
+Il modulo finale non è solo codice: e gestione del progetto. Una pianificazione chiara riduce blocchi e aumenta probabilita di arrivare a una release completa.
 
 ---
 
@@ -78,7 +78,7 @@ render_step:
     RTS
 ```
 
-`RTS` termina una subroutine e torna al chiamante: e la base della modularizzazione del progetto.
+`RTS` termina una subroutine e torna al chiamante: è la base della modularizzazione del progetto.
 
 ---
 

@@ -2,13 +2,13 @@
 
 # Lezione 19 — Store operations: STA, STX, STY
 
-> **Obiettivo:** capire come scrivere dati dalla CPU alla memoria usando STA, STX, STY e le diverse modalità di indirizzamento.
+> **Obiettivo:** capire come scrivere dati dalla CPU alla memoria usando STA, STX, STY è le diverse modalità di indirizzamento.
 
 ---
 
 ## 🎯 Obiettivi
 
-- comprendere STA, STX, STY e quando usarli;
+- comprendere STA, STX, STY è quando usarli;
 - usare tutte le modalità di indirizzamento con store;
 - confrontare con load operations;
 - implementare logica di scrittura in memoria.

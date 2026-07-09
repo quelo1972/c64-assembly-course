@@ -2,7 +2,7 @@
 
 # Lezione 21 — Indirizzamento Zero Page
 
-> **Obiettivo:** capire cos'è la Zero Page, perché è speciale sul 6510 e come usare le istruzioni in modalità Zero Page per accedere a variabili in modo efficiente.
+> **Obiettivo:** capire cos'è la Zero Page, perché è speciale sul 6510 è come usare le istruzioni in modalità Zero Page per accedere a variabili in modo efficiente.
 
 ---
 

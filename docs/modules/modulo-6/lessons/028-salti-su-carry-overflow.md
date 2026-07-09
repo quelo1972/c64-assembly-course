@@ -8,7 +8,7 @@
 
 ## 🎯 Obiettivi
 
-- comprendere il flag C (Carry) e quando viene settato;
+- comprendere il flag C (Carry) è quando viene settato;
 - comprendere il flag V (oVerflow) per aritmetica signed;
 - usare BCC/BCS per salti su carry;
 - usare BVC/BVS per salti su overflow;

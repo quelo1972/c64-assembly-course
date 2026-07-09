@@ -17,7 +17,7 @@
 
 ## 🧠 Introduzione
 
-Le routine KERNAL astraggono disco e nastro dietro una API stabile. Per il corso e il modo migliore per acquisire praticita prima di affrontare livelli piu bassi.
+Le routine KERNAL astraggono disco e nastro dietro una API stabile. Per il corso è il modo migliore per acquisire praticita prima di affrontare livelli piu bassi.
 
 ---
 
@@ -134,7 +134,7 @@ Nella prossima lezione analizzeremo i formati PRG e D64 per capire cosa stiamo r
 
 ## 🔎 Approfondimento - Dentro il 6510
 
-L uso dei flag dopo una routine ROM e una tecnica fondamentale: riduce branching superfluo e rende esplicita la gestione degli errori.
+L uso dei flag dopo una routine ROM è una tecnica fondamentale: riduce branching superfluo e rende esplicita la gestione degli errori.
 
 ---
 

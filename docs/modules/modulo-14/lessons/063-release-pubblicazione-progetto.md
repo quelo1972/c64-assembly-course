@@ -17,7 +17,7 @@
 
 ## 🧠 Introduzione
 
-Una release e un prodotto, non solo un commit. Deve essere ripetibile, documentata e verificabile da terzi.
+Una release è un prodotto, non solo un commit. Deve essere ripetibile, documentata e verificabile da terzi.
 
 ---
 
@@ -97,7 +97,7 @@ Usare un build marker aiuta a distinguere rapidamente versioni diverse in test m
 
 ## 🔜 Preparazione alla lezione successiva
 
-Nell ultima lezione chiuderemo il corso con il progetto finale completo e una retrospettiva tecnica.
+Nell ultima lezione chiuderemo il corso con il progetto finale completo è una retrospettiva tecnica.
 
 ---
 

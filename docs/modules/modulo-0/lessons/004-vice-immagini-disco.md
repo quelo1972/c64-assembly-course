@@ -8,7 +8,7 @@
 
 ## 🎯 Obiettivi
 
-- comprendere la struttura di VICE e i suoi strumenti;
+- comprendere la struttura di VICE è i suoi strumenti;
 - configurare VICE per Assembly development;
 - creare e gestire immagini disco D64;
 - salvare/caricare programmi da disco;

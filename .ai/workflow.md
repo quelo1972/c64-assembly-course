@@ -14,7 +14,7 @@ Nel repository questa regola e gestita automaticamente da `scripts/build-lesson-
 
 1. estrae il blocco `asm` della sezione `## 💡 Esempio pratico` di ogni lezione;
 2. genera/aggiorna il file `src/lessons/<NNN-slug>/main.asm`;
-3. compila ogni sorgente in `bin/lessons/<NNN-slug>.prg`.
+3. compila ogni sorgente in `bin/<NNN-slug>.prg`.
 
 Se anche una sola lezione non ha esempio asm valido o non compila, il check fallisce.
 
@@ -69,12 +69,42 @@ Regola vincolante:
 - Mai fare commit/push/deploy se `make build-lessons` o `make quality-check` falliscono.
 - Non mescolare nuovi output lezione con artefatti legacy: i file legacy restano in `bin/legacy`.
 
+## Modus operandi default per testi lezioni
+
+Per ogni creazione/modifica testo lezione, applicare SEMPRE questo flusso linguistico:
+
+1. scrivere/modificare il contenuto in markdown;
+2. eseguire normalizzazione automatica minima:
+   - `make text-normalize`
+3. eseguire lint linguistico su forme sospette del verbo essere:
+   - `make text-lint`
+4. rivedere manualmente i casi segnalati dal lint (se presenti);
+5. eseguire quality gate completo:
+   - `make quality-check`
+
+Regola editoriale vincolante:
+
+- usare `è` quando il termine e terza persona singolare del verbo essere;
+- mantenere `e` non accentata quando è congiunzione.
+
 ## Comandi standard
 
 Build di tutti gli esempi lezione:
 
 ```bash
 make build-lessons
+```
+
+Normalizzazione linguistica (testi lezioni):
+
+```bash
+make text-normalize
+```
+
+Lint linguistico (testi lezioni):
+
+```bash
+make text-lint
 ```
 
 Quality check globale (include build di tutti gli esempi):

@@ -44,7 +44,7 @@ Esempi rapidi:
 - sawtooth + gate: `%00100001`
 - pulse + gate: `%01000001`
 
-Nota: il SID permette combinazioni di waveform, ma per iniziare e meglio usare una forma alla volta.
+Nota: il SID permette combinazioni di waveform, ma per iniziare è meglio usare una forma alla volta.
 
 ---
 
@@ -167,7 +167,7 @@ La prossima lezione introduce inviluppi ADSR e filtri SID per modellare dinamica
 
 ## 🔎 Approfondimento - Dentro il 6510
 
-L'ordine delle scritture su registri audio e una forma di "protocollo software": prima setup stabile, poi trigger (gate). Questo riduce artefatti.
+L'ordine delle scritture su registri audio è una forma di "protocollo software": prima setup stabile, poi trigger (gate). Questo riduce artefatti.
 
 ---
 

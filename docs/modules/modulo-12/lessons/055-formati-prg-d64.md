@@ -10,7 +10,7 @@
 
 - distinguere PRG da immagine disco D64;
 - interpretare i primi byte di un file PRG;
-- capire quando usare solo PRG e quando usare D64;
+- capire quando usare solo PRG è quando usare D64;
 - preparare un flusso di test robusto in emulatore.
 
 ---

@@ -17,7 +17,7 @@
 
 ## 🧠 Introduzione
 
-Questa lezione e il traguardo: un progetto funzionante che dimostra competenze su CPU 6510, memoria, I/O, grafica, audio e processo di rilascio.
+Questa lezione è il traguardo: un progetto funzionante che dimostra competenze su CPU 6510, memoria, I/O, grafica, audio e processo di rilascio.
 
 ---
 
@@ -122,7 +122,7 @@ Il corso e completato. Da qui puoi iterare sul progetto con cicli brevi: feature
 
 ## 🔎 Approfondimento - Dentro il 6510
 
-Chiudere un progetto e una competenza tecnica: decidere cosa non aggiungere e importante quanto decidere cosa implementare.
+Chiudere un progetto è una competenza tecnica: decidere cosa non aggiungere è importante quanto decidere cosa implementare.
 
 ---
 

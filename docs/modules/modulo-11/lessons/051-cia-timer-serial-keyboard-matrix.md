@@ -43,13 +43,13 @@ Timer A tipico:
 
 ### Keyboard matrix (concetto)
 
-La tastiera C64 e una matrice righe/colonne: si pilotano linee e si leggono stati via CIA1. Molte routine pratiche usano KERNAL scanner, ma capire la matrice aiuta a debug avanzato.
+La tastiera C64 è una matrice righe/colonne: si pilotano linee e si leggono stati via CIA1. Molte routine pratiche usano KERNAL scanner, ma capire la matrice aiuta a debug avanzato.
 
 ---
 
 ## 🤖 Come ragiona il 6510
 
-Con polling, il 6510 interroga periodicamente un registro (es. ICR). Con interrupt, lascia che l'evento arrivi da solo. Polling e semplice ma spreca cicli; interrupt e piu efficiente per scheduler stabili.
+Con polling, il 6510 interroga periodicamente un registro (es. ICR). Con interrupt, lascia che l'evento arrivi da solo. Polling è semplice ma spreca cicli; interrupt è piu efficiente per scheduler stabili.
 
 ---
 

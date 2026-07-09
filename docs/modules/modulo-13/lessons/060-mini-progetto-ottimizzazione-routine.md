@@ -25,7 +25,7 @@ Un ottimo esercizio finale per il modulo 13 e prendere una routine semplice e mi
 
 Metodo in 4 passi:
 
-1. baseline: codice funzionante e chiaro;
+1. baseline: codice funzionante è chiaro;
 2. hotspot: identifica sezione critica (loop copy/update);
 3. ottimizzazione mirata (zero page, meno accessi, meno branch);
 4. regressione: verifica output invariato.
@@ -104,7 +104,7 @@ Nel modulo 14 useremo queste pratiche in un progetto completo: pianificazione, b
 
 ## 🔎 Approfondimento - Dentro il 6510
 
-L ottimizzazione sostenibile e una disciplina di progetto: risultati misurabili, rollback semplice e motivazioni chiare per ogni modifica.
+L ottimizzazione sostenibile è una disciplina di progetto: risultati misurabili, rollback semplice e motivazioni chiare per ogni modifica.
 
 ---
 

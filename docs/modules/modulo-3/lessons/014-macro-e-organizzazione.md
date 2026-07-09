@@ -8,7 +8,7 @@
 
 ## 🎯 Obiettivi
 
-- comprendere le macro e come definirle;
+- comprendere le macro è come definirle;
 - riutilizzare blocchi di codice con macro;
 - organizzare programmi in file separati;
 - usare include per modularizzazione.

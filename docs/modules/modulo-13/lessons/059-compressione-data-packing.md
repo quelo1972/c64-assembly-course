@@ -17,7 +17,7 @@
 
 ## 🧠 Introduzione
 
-Su C64, memoria e storage sono limitati. Ridurre dati e una leva cruciale, ma decomprimere costa cicli CPU. L equilibrio dipende dal contesto.
+Su C64, memoria e storage sono limitati. Ridurre dati è una leva cruciale, ma decomprimere costa cicli CPU. L equilibrio dipende dal contesto.
 
 ---
 
@@ -122,7 +122,7 @@ Nel mini-progetto applicheremo ottimizzazione completa su una routine reale misu
 
 ## 🔎 Approfondimento - Dentro il 6510
 
-L ottimizzazione dati e un contratto tra memoria e CPU: ogni scelta di formato deve essere valutata insieme al costo di accesso e trasformazione.
+L ottimizzazione dati è un contratto tra memoria e CPU: ogni scelta di formato deve essere valutata insieme al costo di accesso e trasformazione.
 
 ---
 

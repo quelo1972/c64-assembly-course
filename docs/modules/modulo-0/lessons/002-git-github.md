@@ -20,7 +20,7 @@
 
 Quando scrivi codice Assembly, hai bisogno di:
 
-1. **Tracciare cambiamenti**: chi ha modificato cosa e quando
+1. **Tracciare cambiamenti**: chi ha modificato cosa è quando
 2. **Tornare indietro**: se sbagli, ripristini versioni precedenti
 3. **Collaborare**: più persone lavorano sullo stesso codice
 4. **Condividere**: pubblica il lavoro online

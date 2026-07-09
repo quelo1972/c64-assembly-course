@@ -9,7 +9,7 @@
 ## 🎯 Obiettivi
 
 - usare `SEI` e `CLI` nel punto giusto;
-- capire perche `RTI` e obbligatorio negli handler custom;
+- capire perche `RTI` è obbligatorio negli handler custom;
 - configurare mask interrupt di VIC-II/CIA;
 - applicare save/restore registri in una ISR.
 
@@ -152,7 +152,7 @@ irq_handler:
 
 ## 🔜 Preparazione alla lezione successiva
 
-Ora che il pattern ISR e chiaro, passiamo ai CIA: timer, seriale e keyboard matrix.
+Ora che il pattern ISR è chiaro, passiamo ai CIA: timer, seriale e keyboard matrix.
 
 ---
 

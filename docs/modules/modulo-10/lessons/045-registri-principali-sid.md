@@ -2,7 +2,7 @@
 
 # Lezione 045 - Registri principali del SID
 
-> **Obiettivo:** capire la mappa registri del SID e come inizializzare una voce audio in modo controllato.
+> **Obiettivo:** capire la mappa registri del SID è come inizializzare una voce audio in modo controllato.
 
 ---
 
@@ -17,9 +17,9 @@
 
 ## 🧠 Introduzione
 
-Il SID (MOS 6581/8580) e il chip audio del C64. Per produrre suono, il 6510 scrive nei registri SID in area I/O, come abbiamo gia fatto con VIC-II nel modulo grafico.
+Il SID (MOS 6581/8580) è il chip audio del C64. Per produrre suono, il 6510 scrive nei registri SID in area I/O, come abbiamo gia fatto con VIC-II nel modulo grafico.
 
-L'idea e semplice: scegli una voce, imposti frequenza e forma d'onda, abiliti il gate, e il SID inizia a suonare.
+L'idea è semplice: scegli una voce, imposti frequenza e forma d'onda, abiliti il gate, è il SID inizia a suonare.
 
 ---
 
@@ -46,7 +46,7 @@ Registri globali utili:
 - `$D415-$D417`: cutoff/resonance/filter routing
 - `$D418`: volume master + bit mode speciali
 
-Nota pratica: la frequenza SID non e in Hz diretti. Usi valori a 16 bit; la conversione precisa dipende dal clock PAL/NTSC.
+Nota pratica: la frequenza SID non è in Hz diretti. Usi valori a 16 bit; la conversione precisa dipende dal clock PAL/NTSC.
 
 ---
 

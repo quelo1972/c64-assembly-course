@@ -2,13 +2,13 @@
 
 # Lezione 26 — Salti condizionati
 
-> **Obiettivo:** capire come usare i flag del 6510 e le istruzioni di salto condizionato (BEQ, BNE, BPL, BMI) per controllare il flusso di esecuzione.
+> **Obiettivo:** capire come usare i flag del 6510 è le istruzioni di salto condizionato (BEQ, BNE, BPL, BMI) per controllare il flusso di esecuzione.
 
 ---
 
 ## 🎯 Obiettivi
 
-- comprendere i flag Z, C, N, V e come vengono settati;
+- comprendere i flag Z, C, N, V è come vengono settati;
 - usare BEQ/BNE per saltare in base al flag Z;
 - usare BPL/BMI per saltare in base al flag N;
 - implementare loop condizionali semplici.

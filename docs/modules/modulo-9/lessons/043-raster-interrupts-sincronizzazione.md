@@ -8,7 +8,7 @@
 
 ## 🎯 Obiettivi
 
-- capire cos'e una raster line;
+- capire cos'è una raster line;
 - configurare un IRQ raster minimo;
 - distinguere aggiornamenti in main loop vs IRQ;
 - riconoscere i rischi di sincronizzazione non controllata.
@@ -142,7 +142,7 @@ irq_handler:
 
 ## 🔜 Preparazione alla lezione successiva
 
-Ora uniamo i pezzi: sprite, sincronizzazione raster, charset/tiles e semplice scrolling hardware in un mini-progetto completo.
+Ora uniamo i pezzi: sprite, sincronizzazione raster, charset/tiles è semplice scrolling hardware in un mini-progetto completo.
 
 ---
 

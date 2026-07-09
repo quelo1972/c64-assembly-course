@@ -8,7 +8,7 @@
 
 ## 🎯 Obiettivi
 
-- comprendere CMP, CPX, CPY e come settano i flag;
+- comprendere CMP, CPX, CPY è come settano i flag;
 - usare BIT per testare bit specifici di una cella;
 - implementare logica di confronto complessa;
 - scegliere tra CMP e BIT a seconda del caso d'uso.

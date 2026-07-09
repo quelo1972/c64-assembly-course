@@ -2,7 +2,7 @@
 
 # Lezione 22 — Indirizzamento assoluto
 
-> **Obiettivo:** capire come accedere a qualsiasi indirizzo di memoria (0–65535) con l'indirizzamento assoluto, e quando usarlo per registri hardware come VIC-II e SID.
+> **Obiettivo:** capire come accedere a qualsiasi indirizzo di memoria (0–65535) con l'indirizzamento assoluto, è quando usarlo per registri hardware come VIC-II e SID.
 
 ---
 

@@ -155,7 +155,7 @@ loop:
 
 ## 🔜 Preparazione alla lezione successiva
 
-Con la lezione 031, abbiamo completato la copertuta dei comandi base e le operazioni fondamentali. Prossimi moduli: I/O, periferiche, grafica.
+Con la lezione 031, abbiamo completato la copertuta dei comandi base è le operazioni fondamentali. Prossimi moduli: I/O, periferiche, grafica.
 
 ---
 

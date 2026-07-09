@@ -30,7 +30,7 @@ Pipeline minima:
 3. salva range memoria;
 4. ricarica e verifica marker.
 
-Per mantenere il focus didattico, usiamo un buffer piccolo e una validazione visiva tramite colore bordo.
+Per mantenere il focus didattico, usiamo un buffer piccolo è una validazione visiva tramite colore bordo.
 
 ---
 
@@ -160,7 +160,7 @@ Nel modulo 13 entreremo in ottimizzazione: cicli, memoria, bank switching e pack
 
 ## 🔎 Approfondimento - Dentro il 6510
 
-I mini-progetti robusti nascono da flussi deterministici e verificabili. Anche quando il supporto e lento, una buona disciplina di I/O evita corruzioni e stati inconsistenti.
+I mini-progetti robusti nascono da flussi deterministici e verificabili. Anche quando il supporto è lento, una buona disciplina di I/O evita corruzioni è stati inconsistenti.
 
 ---
 

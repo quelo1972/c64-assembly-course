@@ -2,7 +2,7 @@
 
 # Lezione 20 — Indirizzamento immediato, revisited
 
-> **Obiettivo:** capire in modo preciso cosa significa "immediato" come modalità di indirizzamento e perché è la più semplice — e la più limitata.
+> **Obiettivo:** capire in modo preciso cosa significa "immediato" come modalità di indirizzamento e perché è la più semplice — è la più limitata.
 
 ---
 
@@ -10,7 +10,7 @@
 
 - definire il concetto di "modalità di indirizzamento";
 - capire perché l'indirizzamento immediato si chiama così;
-- distinguere quando usarlo e quando non basta;
+- distinguere quando usarlo è quando non basta;
 - riconoscere la sintassi `#` in `64tass`.
 
 ---
@@ -48,7 +48,7 @@ In `64tass`, il simbolo `#` prima di un valore indica la modalità immediata.
 LDA #$41   ; carica il valore $41 (65 decimale, 'A' ASCII) nell'accumulatore A
 ```
 
-> Nota: `LDA #valore` è l'istruzione "Load Accumulator" in modalità immediata. Il processore legge il byte che segue l'opcode nel flusso del programma e lo carica nel registro A.
+> Nota: `LDA #valore` è l'istruzione "Load Accumulator" in modalità immediata. Il processore legge il byte che segue l'opcode nel flusso del programma è lo carica nel registro A.
 
 Il valore può essere espresso in vari formati:
 

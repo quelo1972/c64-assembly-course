@@ -8,7 +8,7 @@
 
 ## 🎯 Obiettivi
 
-- comprendere AND, ORA, EOR e la loro tavola di verità;
+- comprendere AND, ORA, EOR è la loro tavola di verità;
 - usare AND per estrarre bit (maschere);
 - usare ORA per settare bit;
 - usare EOR per invertire bit;

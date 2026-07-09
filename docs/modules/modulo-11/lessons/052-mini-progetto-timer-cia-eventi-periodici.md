@@ -17,7 +17,7 @@
 
 ## 🧠 Introduzione
 
-Questo mini-progetto chiude il modulo 11: costruiamo una base timing-driven dove il timer CIA produce tick costanti e la ISR aggiorna lo stato. E il passo naturale verso engine piu complessi.
+Questo mini-progetto chiude il modulo 11: costruiamo una base timing-driven dove il timer CIA produce tick costanti è la ISR aggiorna lo stato. È il passo naturale verso engine piu complessi.
 
 ---
 
@@ -166,7 +166,7 @@ Nel modulo 12 useremo questa disciplina temporale anche per I/O su disco e seria
 
 ## 🔎 Approfondimento - Dentro il 6510
 
-Un sistema a tick permette di passare da codice "lineare" a codice "event-driven". Questo pattern e un mattone chiave per demo, giochi e player musicali stabili su C64.
+Un sistema a tick permette di passare da codice "lineare" a codice "event-driven". Questo pattern è un mattone chiave per demo, giochi e player musicali stabili su C64.
 
 ---
 

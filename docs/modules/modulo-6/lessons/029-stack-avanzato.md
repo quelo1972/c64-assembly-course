@@ -200,7 +200,7 @@ Bit 1: Z (Zero)
 Bit 0: C (Carry)
 ```
 
-PHP aggiunge il bit B e il bit 5 come 1 quando salva.
+PHP aggiunge il bit B è il bit 5 come 1 quando salva.
 
 ---
 

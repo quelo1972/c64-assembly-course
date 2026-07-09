@@ -17,7 +17,7 @@
 
 ## 🧠 Introduzione
 
-Un suono credibile non e solo "nota on/off": serve dinamica. L'ADSR definisce come il volume evolve nel tempo, mentre il filtro modella il contenuto armonico.
+Un suono credibile non è solo "nota on/off": serve dinamica. L'ADSR definisce come il volume evolve nel tempo, mentre il filtro modella il contenuto armonico.
 
 In questa lezione lavoriamo con una singola voce per tenere tutto leggibile.
 

@@ -16,7 +16,7 @@
 
 ## 🧠 Introduzione
 
-Nel C64 non esiste una sola modalita grafica. In questa fase e importante capire la scelta architetturale: modalita testo (piu economica e veloce per UI/tabelle) contro bitmap (piu libera ma costosa in memoria).
+Nel C64 non esiste una sola modalita grafica. In questa fase è importante capire la scelta architetturale: modalita testo (piu economica e veloce per UI/tabelle) contro bitmap (piu libera ma costosa in memoria).
 
 ---
 

@@ -47,4 +47,7 @@ fi
 echo "[quality-check] Build all lesson asm examples"
 ./scripts/build-lesson-examples.sh
 
+echo "[quality-check] Italian lesson text lint"
+./scripts/text-lint-italian.sh
+
 echo "[quality-check] OK"

@@ -2,7 +2,7 @@
 
 # Lezione 048 - Mini-progetto: playback di un pattern musicale SID
 
-> **Obiettivo:** costruire un mini player monofonico che legge un pattern di note e lo riproduce con il SID.
+> **Obiettivo:** costruire un mini player monofonico che legge un pattern di note è lo riproduce con il SID.
 
 ---
 
@@ -17,7 +17,7 @@
 
 ## 🧠 Introduzione
 
-Chiudiamo il modulo 10 con un mini-progetto completo: un pattern player essenziale. Non e un tracker, ma mostra la struttura base usata in molti engine audio: dati + interprete + timing.
+Chiudiamo il modulo 10 con un mini-progetto completo: un pattern player essenziale. Non è un tracker, ma mostra la struttura base usata in molti engine audio: dati + interprete + timing.
 
 ---
 
@@ -40,7 +40,7 @@ Per semplicita usiamo una sola voce (voice 1).
 
 ## 🤖 Come ragiona il 6510
 
-Il 6510 esegue sempre lo stesso ciclo: legge byte dal pattern, li traduce in scritture SID, applica delay, passa alla nota successiva. Questa ripetizione deterministica e la base dei player musicali realtime su macchine 8-bit.
+Il 6510 esegue sempre lo stesso ciclo: legge byte dal pattern, li traduce in scritture SID, applica delay, passa alla nota successiva. Questa ripetizione deterministica è la base dei player musicali realtime su macchine 8-bit.
 
 ---
 

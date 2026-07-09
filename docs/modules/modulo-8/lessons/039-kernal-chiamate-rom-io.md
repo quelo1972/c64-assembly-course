@@ -42,7 +42,7 @@ Con `JSR $FFD2`:
 1. la CPU salva il return address sullo stack;
 2. salta alla routine ROM;
 3. la routine usa A come carattere da stampare;
-4. al termine esegue `RTS` e la CPU riprende dal chiamante.
+4. al termine esegue `RTS` è la CPU riprende dal chiamante.
 
 Lo stesso schema vale per `GETIN`, che restituisce il dato in `A`.
 
@@ -114,4 +114,4 @@ Le chiamate KERNAL semplificano il codice ma aggiungono overhead rispetto all'ac
 - [ ] l'esempio e coerente con la lezione
 - [ ] ogni istruzione nuova e spiegata prima dell'uso
 - [ ] indice, glossario e changelog sono aggiornati
-- [ ] il contenuto e semplice e progressivo
+- [ ] il contenuto è semplice e progressivo

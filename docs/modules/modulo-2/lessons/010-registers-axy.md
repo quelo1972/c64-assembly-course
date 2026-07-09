@@ -2,7 +2,7 @@
 
 # Lezione 10 — - Registri A, X e Y
 
-> **Obiettivo:** capire i tre registri principali della CPU 6510 e come vengono usati.
+> **Obiettivo:** capire i tre registri principali della CPU 6510 è come vengono usati.
 
 ---
 

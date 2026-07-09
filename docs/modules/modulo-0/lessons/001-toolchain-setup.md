@@ -126,7 +126,7 @@ Risultato: il programma carica e imposta il bordo a blu.
 ## 🧪 Esercizi
 
 1. Installa 64tass, VICE, VS Code e verifica le versioni
-2. Scrivi un programma che carica un valore in A e lo scrive in `$D020`
+2. Scrivi un programma che carica un valore in A è lo scrive in `$D020`
 3. Compila e esegui in VICE
 
 ---
@@ -145,7 +145,7 @@ Risultato: il programma carica e imposta il bordo a blu.
 
 ## 🔜 Preparazione alla lezione successiva
 
-Nella lezione 001 vedremo i fondamenti: la memoria del Commodore 64 e come i dati sono organizzati.
+Nella lezione 001 vedremo i fondamenti: la memoria del Commodore 64 è come i dati sono organizzati.
 
 ---
 

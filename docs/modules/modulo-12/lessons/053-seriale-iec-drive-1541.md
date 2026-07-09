@@ -17,7 +17,7 @@
 
 ## 🧠 Introduzione
 
-Il drive 1541 e una periferica intelligente con propria CPU. Il C64 comunica con il drive via bus seriale IEC, non come semplice RAM esterna.
+Il drive 1541 è una periferica intelligente con propria CPU. Il C64 comunica con il drive via bus seriale IEC, non come semplice RAM esterna.
 
 Per questo le operazioni su file sono uno scambio di comandi e dati, non una lettura diretta del disco settore per settore.
 
@@ -40,8 +40,8 @@ Pattern operativo semplificato:
 
 Prestazioni:
 
-- il seriale standard del C64 e relativamente lento;
-- la robustezza del protocollo e prioritaria rispetto alla velocita;
+- il seriale standard del C64 è relativamente lento;
+- la robustezza del protocollo è prioritaria rispetto alla velocita;
 - accelerazioni (fastloader) esistono, ma vanno considerate extra rispetto al percorso base.
 
 ---

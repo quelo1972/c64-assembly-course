@@ -17,7 +17,7 @@
 
 ## 🧠 Introduzione
 
-Finora abbiamo lavorato soprattutto con RAM e operazioni CPU. Nel C64, pero, una parte fondamentale della memoria e mappata su periferiche hardware: quando scrivi in un certo indirizzo, non stai scrivendo in RAM, stai controllando un chip.
+Finora abbiamo lavorato soprattutto con RAM e operazioni CPU. Nel C64, pero, una parte fondamentale della memoria è mappata su periferiche hardware: quando scrivi in un certo indirizzo, non stai scrivendo in RAM, stai controllando un chip.
 
 ---
 
@@ -71,7 +71,7 @@ not_up:
   JMP loop
 ```
 
-`LDA` carica il valore dal registro hardware in A. `AND` maschera i bit non necessari. `BNE` salta quando il risultato non e zero. `STA` scrive nel registro colore.
+`LDA` carica il valore dal registro hardware in A. `AND` maschera i bit non necessari. `BNE` salta quando il risultato non è zero. `STA` scrive nel registro colore.
 
 ---
 
@@ -118,4 +118,4 @@ Le letture/scritture su I/O usano gli stessi opcode delle letture/scritture RAM.
 - [ ] l'esempio e coerente con la lezione
 - [ ] ogni istruzione nuova e spiegata prima dell'uso
 - [ ] indice, glossario e changelog sono aggiornati
-- [ ] il contenuto e semplice e progressivo
+- [ ] il contenuto è semplice e progressivo

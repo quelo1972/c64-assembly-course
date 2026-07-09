@@ -1,7 +1,7 @@
 [🏠 Home](../../../index.md)
 # Lezione 18 — - Incremento e decremento
 
-> **Obiettivo:** imparare le istruzioni `INX`, `INY`, `DEX`, `DEY` e il loro uso pratico.
+> **Obiettivo:** imparare le istruzioni `INX`, `INY`, `DEX`, `DEY` è il loro uso pratico.
 
 ---
 
@@ -39,7 +39,7 @@ Brevi definizioni (per chiarezza):
 - `BPL` (Branch if PLus): salta se il flag Negative non è settato (risultato positivo o zero).
 - `BMI` (Branch if MInus): salta se il flag Negative è settato (risultato negativo).
 
-Queste brevi note spiegano il comportamento dei salti condizionati menzionati nell'esempio; approfondiremo i salti e le subroutine nella lezione dedicata.
+Queste brevi note spiegano il comportamento dei salti condizionati menzionati nell'esempio; approfondiremo i salti è le subroutine nella lezione dedicata.
 
 ---
 
@@ -103,7 +103,7 @@ Spiegazione:
 
 ## 🔜 Preparazione alla lezione successiva
 
-Nella prossima lezione introdurremo i salti condizionati e le subroutine (`JMP`, `JSR`, `RTS`).
+Nella prossima lezione introdurremo i salti condizionati è le subroutine (`JMP`, `JSR`, `RTS`).
 
 Brevi definizioni:
 

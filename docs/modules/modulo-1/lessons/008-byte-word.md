@@ -196,7 +196,7 @@ loop:
 
 ## 🔜 Preparazione alla lezione successiva
 
-Nella prossima lezione studieremo la CPU MOS 6510 e capiremo come i registri e le istruzioni lavorano insieme per eseguire un programma.
+Nella prossima lezione studieremo la CPU MOS 6510 e capiremo come i registri è le istruzioni lavorano insieme per eseguire un programma.
 
 ## 🔎 Approfondimento - Dentro il 6510
 

@@ -8,7 +8,7 @@
 
 ## 🎯 Obiettivi
 
-- comprendere ASL, LSR, ROL, ROR e le loro differenze;
+- comprendere ASL, LSR, ROL, ROR è le loro differenze;
 - usare shift per moltiplicazione/divisione veloci;
 - usare rotate per manipolazione circolare di bit;
 - implementare operazioni di bit shifting multi-byte.

@@ -44,7 +44,7 @@ Usare questi comandi è più veloce che salvare e leggere dalla memoria.
 
 Nel 6510 il registro A è spesso il punto centrale di lavoro.
 
-Quando usi `TAX`, il processore prende il valore già presente in A e lo mette in X, senza andare in memoria.
+Quando usi `TAX`, il processore prende il valore già presente in A è lo mette in X, senza andare in memoria.
 
 Questo è come se avessi un tavolo di lavoro e spostassi un oggetto da una scatola all'altra all'interno della CPU.
 

@@ -17,12 +17,12 @@
 
 ## 🧠 Introduzione
 
-Nel C64, il testo visualizzato e composto da due aree separate:
+Nel C64, il testo visualizzato è composto da due aree separate:
 
 - una memoria che contiene quale carattere mostrare;
 - una memoria che contiene il colore di ogni cella.
 
-Questa separazione e il cuore del rendering in modalita testo.
+Questa separazione è il cuore del rendering in modalita testo.
 
 ---
 
@@ -33,7 +33,7 @@ Riferimenti standard:
 - `Screen RAM`: `$0400-$07E7` (1000 celle, 40x25)
 - `Color RAM`: `$D800-$DBE7` (1000 celle, 4 bit colore utili)
 
-Ogni posizione dello schermo e una coppia:
+Ogni posizione dello schermo è una coppia:
 
 - byte in Screen RAM: codice PETSCII/screen code;
 - byte in Color RAM: colore del carattere.
@@ -125,4 +125,4 @@ L'indirizzamento assoluto indicizzato (`addr,X`) evita di modificare continuamen
 - [ ] l'esempio e coerente con la lezione
 - [ ] ogni istruzione nuova e spiegata prima dell'uso
 - [ ] indice, glossario e changelog sono aggiornati
-- [ ] il contenuto e semplice e progressivo
+- [ ] il contenuto è semplice e progressivo

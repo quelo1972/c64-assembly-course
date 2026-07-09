@@ -41,7 +41,7 @@ Strategia:
 
 ## 🤖 Come ragiona il 6510
 
-Il loop principale e composto da piccole subroutine:
+Il loop principale è composto da piccole subroutine:
 
 - `erase_cursor` e `draw_cursor` lavorano su `$0400,X`;
 - `read_input` legge `$DC00` e decide incremento/decremento;
@@ -158,4 +158,4 @@ Separare il codice in subroutine riduce la complessita cognitiva e facilita il p
 - [ ] l'esempio e coerente con la lezione
 - [ ] ogni istruzione nuova e spiegata prima dell'uso
 - [ ] indice, glossario e changelog sono aggiornati
-- [ ] il contenuto e semplice e progressivo
+- [ ] il contenuto è semplice e progressivo

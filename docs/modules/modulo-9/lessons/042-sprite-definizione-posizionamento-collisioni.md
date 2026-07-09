@@ -113,7 +113,7 @@ no_coll:
     .byte $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 ```
 
-`AND` applica una maschera bit. `BEQ` salta quando il risultato e zero. Questo e il pattern tipico per leggere flag nei registri hardware.
+`AND` applica una maschera bit. `BEQ` salta quando il risultato e zero. Questo è il pattern tipico per leggere flag nei registri hardware.
 
 ---
 

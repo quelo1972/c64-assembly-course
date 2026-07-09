@@ -96,7 +96,7 @@ mod_render:
 
 1. Dividi il tuo codice in almeno 3 moduli reali.
 2. Crea una checklist regressione da eseguire prima di ogni release.
-3. Produci una build PRG e una D64 con stesso contenuto applicativo.
+3. Produci una build PRG è una D64 con stesso contenuto applicativo.
 
 ---
 
