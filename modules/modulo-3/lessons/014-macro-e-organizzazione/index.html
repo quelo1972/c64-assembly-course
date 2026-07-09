@@ -422,23 +422,22 @@ inc_border</code></pre>
 <p>Risultato: come se avessi scritto le 3 istruzioni direttamente.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 029 — Macro e organizzazione
-; main.asm
-.include "constants.asm"
-.include "utils.asm"
+<pre class="highlight"><code class="language-asm">; Lezione 014 — Macro e organizzazione (standalone)
+*= $0801
 
-* = program_start
+BORDER = $D020
 
-init:
-  set_border_color color_red
-  clear_screen
+set_border .macro color
+  LDA #\color
+  STA BORDER
+.endm
+
+start:
+  set_border $02
 
 loop:
-  inc_border
-  delay_ms 10
-  JMP loop
-
-program_start = $0801</code></pre>
+  INC BORDER
+  JMP loop</code></pre>
 <p>File <code>constants.asm</code>:</p>
 <pre class="highlight"><code class="language-asm">color_red = $02
 color_blue = $06

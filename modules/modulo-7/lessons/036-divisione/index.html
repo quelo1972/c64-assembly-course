@@ -410,45 +410,40 @@ for i = 0 to 15:
 ; Divisione 16 ÷ 8 → quoziente + resto
 *= $0801
 
-; Chiamata: LDA div_hi, LDX div_lo, LDY divisore, JSR div
-; Risultato: A = quoziente, X = resto
+dividend = $C010
+divisor = $C011
+quotient = $C012
+remainder = $C013
 
-div:
-  ; A = dividendo byte alto
-  ; X = dividendo byte basso
-  ; Y = divisore
-  ; Risultato: A = quoziente, X = resto
+start:
+  LDA #$0F
+  STA dividend
+  LDA #$03
+  STA divisor
+  LDA #$00
+  STA quotient
 
-  CMP #$00       ; se divisore = 0, errore
-  BEQ err_div0
+div_loop:
+  LDA dividend
+  CMP divisor
+  BCC done
+  SEC
+  SBC divisor
+  STA dividend
+  INC quotient
+  JMP div_loop
 
-  ; Setup
-  LDA #$00       ; A = quoziente
-  STX remainder  ; remainder = dividendo basso
+done:
+  LDA dividend
+  STA remainder
 
-  LDX #$08       ; 8 iterazioni per 8 bit
+  LDA quotient
+  STA $D020
+  LDA remainder
+  STA $D021
 
 loop:
-  ASL remainder  ; shift remainder (dividendo)
-  ROL            ; rotate quoziente (accumula risultato)
-
-  SEC
-  SBC Y          ; sottrai divisore
-  BCC skip       ; se &lt; 0 (borrow), skip
-
-  ; quoziente risultato |= 1 (carry)
-  ORA #$01
-
-skip:
-  DEX
-  BNE loop
-
-  STX remainder  ; remainder = il valore di X (che è rimasto)
-
-err_div0:
-  RTS
-
-remainder = $02</code></pre>
+  JMP loop</code></pre>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>

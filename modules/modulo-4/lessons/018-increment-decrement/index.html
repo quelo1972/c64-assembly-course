@@ -387,9 +387,8 @@ loop:
     cpx #$05   ; confronta X con 5
     bne loop   ; ripeti finché X != 5
 
-Nota: `CPX #value` confronta il registro `X` con un valore immediato e aggiorna i flag (Zero, Negative) come risultato, senza modificare `X`. È spesso usato insieme a `BNE` o `BEQ` per controllare loop.
-
     rts</code></pre>
+<p>Nota: <code>CPX #value</code> confronta il registro <code>X</code> con un valore immediato e aggiorna i flag (Zero, Negative) come risultato, senza modificare <code>X</code>. E spesso usato insieme a <code>BNE</code> o <code>BEQ</code> per controllare loop.</p>
 <p>Spiegazione:</p>
 <ul>
 <li>inizializziamo <code>X</code> a 0;</li>

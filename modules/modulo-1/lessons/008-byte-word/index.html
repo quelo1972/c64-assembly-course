@@ -437,6 +437,19 @@
 <p>Il 6510 non “capisce” il concetto di infinito. Sa solo che il registro disponibile ha un numero massimo di valori possibili, quindi l'overflow è un comportamento naturale del hardware.</p>
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
 <p>Se un contatore raggiunge 255, il passo successivo lo riporta a 0. Questo è esattamente il tipo di comportamento che si vede in molti programmi semplici del C64.</p>
+<pre class="highlight"><code class="language-asm">; Lezione 008 - Overflow di un contatore a 8 bit
+*= $0801
+
+COUNTER = $C000
+
+start:
+   LDA #$FF
+   STA COUNTER
+
+   INC COUNTER     ; $FF -&gt; $00 (wrap a 8 bit)
+
+loop:
+   JMP loop</code></pre>
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
 <li>pensare che l'overflow sia un errore di programma;</li>

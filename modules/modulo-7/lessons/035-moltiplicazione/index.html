@@ -420,45 +420,38 @@ for each bit in multiplier:
 ; Moltiplicazione 8x8 → 16 bit
 *= $0801
 
-; Chiamata: LDA moltiplicando, LDX moltiplicatore, JSR mult
-; Risultato: Y:A (Y=byte alto, A=byte basso)
+factor_a = $C000
+factor_b = $C001
+result_lo = $C002
+result_hi = $C003
 
-mult:
-  ; A = moltiplicando
-  ; X = moltiplicatore
-  ; Risultato: Y:A
+start:
+  LDA #$05
+  STA factor_a
+  LDA #$03
+  STA factor_b
 
-  LDY #$00        ; Y = 0 (accumulo byte alto)
-  LSR             ; shift A a destra per preparare
-  BEQ done        ; se A = 0, risultato = 0
+  LDA #$00
+  STA result_lo
+  STA result_hi
 
-  ASL             ; shift A a sinistra (restore)
-  STA temp        ; temp = moltiplicando
+  LDX factor_b
+mul_loop:
+  CLC
+  LDA result_lo
+  ADC factor_a
+  STA result_lo
+  LDA result_hi
+  ADC #$00
+  STA result_hi
+  DEX
+  BNE mul_loop
 
-  LDA #$00        ; A = 0 (accumulo byte basso)
-  LDY #$00        ; Y = 0 (accumulo byte alto)
+  LDA result_lo
+  STA $D020
 
 loop:
-  LSR temp        ; shift moltiplicando
-  BCC skip_add    ; se bit = 0, skip add
-
-  CLC
-  ADC X           ; somma moltiplicatore
-  BCC skip_carry
-  INY             ; incrementa Y se carry
-
-skip_carry:
-  ASL X           ; shift moltiplicatore a sinistra
-  DEC temp        ; decrementa contatore
-  BNE loop
-
-skip_add:
-  LDY #$00        ; TODO: fix accumulo Y
-
-done:
-  RTS
-
-temp = $02        ; temporaneo Zero Page</code></pre>
+  JMP loop</code></pre>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>

@@ -432,6 +432,15 @@ clean:
 </ol>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-asm">; Lezione 005 - Sorgente minimo per pipeline make build/run
+*= $0801
+
+BORDER = $D020
+
+start:
+    LDA #$05
+    STA BORDER
+    RTS</code></pre>
 <h3 id="makefile-completo">Makefile completo<a class="headerlink" href="#makefile-completo" title="Permanent link">&para;</a></h3>
 <pre class="highlight"><code class="language-makefile">.PHONY: build run clean deploy all
 

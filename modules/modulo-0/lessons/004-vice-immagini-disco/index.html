@@ -429,6 +429,18 @@ Byte 18-21: Creation date
 <p>VICE crea/legge questi settori per salvare file PRG.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-asm">; Lezione 004 - PRG minimo da caricare in VICE
+*= $0801
+
+BORDER = $D020
+
+start:
+  LDA #$02
+  STA BORDER
+
+loop:
+  INC BORDER
+  JMP loop</code></pre>
 <h3 id="configura-vice-per-development">Configura VICE per development<a class="headerlink" href="#configura-vice-per-development" title="Permanent link">&para;</a></h3>
 <pre class="highlight"><code class="language-bash"># Apri VICE e vai a Settings
 x64

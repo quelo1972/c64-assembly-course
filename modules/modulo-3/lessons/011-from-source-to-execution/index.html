@@ -427,6 +427,11 @@ MOS 6510</code></pre>
 <p>La CPU non vede file, cartelle o nomi. Quando il programma viene caricato, vede solo byte in memoria e segue l'indirizzo di partenza del PRG.</p>
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
 <p>Se il sorgente contiene <code>* = $1000</code>, l'assembler produce un PRG che viene caricato a partire da quell'indirizzo.</p>
+<pre class="highlight"><code class="language-asm">; Lezione 011 - Dal sorgente al PRG
+*= $1000
+
+start:
+      RTS</code></pre>
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
 <li>confondere il file sorgente con il file eseguibile;</li>

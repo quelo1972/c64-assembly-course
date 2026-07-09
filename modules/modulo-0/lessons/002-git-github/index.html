@@ -425,6 +425,17 @@ c618e1e docs: add 6 critical lessons</code></pre>
 <p>HEAD punta sempre al commit attuale.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-asm">; Lezione 002 - Programma minimo tracciabile in Git
+*= $0801
+
+BORDER = $D020
+
+start:
+    LDA #$06
+    STA BORDER
+
+loop:
+    JMP loop</code></pre>
 <h3 id="setup-iniziale">Setup iniziale<a class="headerlink" href="#setup-iniziale" title="Permanent link">&para;</a></h3>
 <pre class="highlight"><code class="language-bash"># Clona il repository
 git clone https://github.com/quelo1972/c64-assembly-course.git

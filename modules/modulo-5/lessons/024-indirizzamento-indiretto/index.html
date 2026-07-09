@@ -435,21 +435,18 @@
 ; Usa puntatori in Zero Page per accedere a dati
 *= $0801
 
-; Nota: LDA (indirizzo_puntatore) legge da un indirizzo memorizzato in ZP
+; Sul 6510 l'indiretto puro e supportato da JMP ($addr)
 
-; Inizializza il puntatore in $40/$41
-; Vogliamo puntare a $D020 (VIC-II)
-LDA #$20       ; byte basso di $D020
-STA $40
-LDA #$D0       ; byte alto di $D020
-STA $41
+start:
+    LDA #&lt;target
+    STA $40
+    LDA #&gt;target
+    STA $41
+    JMP ($0040)
 
-; Ora usa il puntatore
-LDA ($40)      ; legge il valore attuale di $D020
-INC            ; incrementa
-STA ($40)      ; scrive il nuovo valore in $D020
-
-RTS</code></pre>
+target:
+    INC $D020
+    JMP target</code></pre>
 <p>Compila:</p>
 <pre class="highlight"><code class="language-bash">64tass --cbm-prg -o bin/017.prg src/modulo-5/017.asm</code></pre>
 <hr />
