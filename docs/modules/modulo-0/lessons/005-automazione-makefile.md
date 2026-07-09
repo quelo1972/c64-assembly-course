@@ -124,8 +124,8 @@ EMULATOR = x64
 PYTHON = .venv/bin/python3
 MKDOCS = .venv/bin/mkdocs
 
-OUTPUT = bin/hello.prg
-SOURCE = src/000-toolchain/hello.asm
+OUTPUT = bin/legacy/hello.prg
+SOURCE = src/legacy/000-toolchain/hello.asm
 
 # Target default
 all: build
@@ -264,7 +264,7 @@ Sei pronto per il Modulo 1: Fondamenti Assembly!
 	$(ASM) --cbm-prg -o $@ $<
 
 # Usa:
-# make src/hello.prg  → compila src/hello.asm → src/hello.prg
+# make src/legacy/000-toolchain/hello.prg  → compila src/legacy/000-toolchain/hello.asm → src/legacy/000-toolchain/hello.prg
 ```
 
 **Funzioni Make:**

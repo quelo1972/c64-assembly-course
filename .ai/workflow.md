@@ -26,6 +26,12 @@ Le lezioni vivono in:
 docs/modules/modulo-{N}/lessons/{NNN}-{slug}.md
 ```
 
+Le sorgenti storiche del materiale iniziale vivono in:
+
+```text
+src/legacy/{000-toolchain,001-memory,...,010-increment-decrement}/
+```
+
 Le sorgenti esempi compilati vivono in:
 
 ```text

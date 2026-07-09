@@ -52,7 +52,7 @@ cd c64-assembly-course
 Compila il primo esempio:
 
 ```bash
-64tass --cbm-prg -o bin/hello.prg src/000-toolchain/hello.asm
+64tass --cbm-prg -o bin/legacy/hello.prg src/legacy/000-toolchain/hello.asm
 ```
 
 Avvia il sito localmente:
@@ -107,11 +107,14 @@ git add . && git commit -m 'docs(modN): add lesson NNN - Titolo'
 
 ```bash
 mkdir -p bin
-for d in src/*; do
+for d in src/lessons/*; do
   if [ -f "$d/main.asm" ]; then
     64tass --cbm-prg -o "bin/$(basename "$d").prg" "$d/main.asm"
   fi
 done
+
+mkdir -p bin/legacy
+64tass --cbm-prg -o bin/legacy/hello.prg src/legacy/000-toolchain/hello.asm
 ```
 
 ---
@@ -156,7 +159,7 @@ Ctrl + Shift + B
 Output generato:
 
 ```
-bin/hello.prg
+bin/legacy/hello.prg
 ```
 
 ---
@@ -181,8 +184,8 @@ Compilazione:
 
 ```bash
 64tass --cbm-prg \
-  -o bin/hello.prg \
-  src/000-toolchain/hello.asm
+  -o bin/legacy/hello.prg \
+  src/legacy/000-toolchain/hello.asm
 ```
 
 ## ⚠️ Binari e come ricostruirli
@@ -193,11 +196,14 @@ Compilazione:
 
 ```bash
 mkdir -p bin
-for d in src/*; do
+for d in src/lessons/*; do
   if [ -f "$d/main.asm" ]; then
     64tass --cbm-prg -o "bin/$(basename "$d").prg" "$d/main.asm"
   fi
 done
+
+mkdir -p bin/legacy
+64tass --cbm-prg -o bin/legacy/hello.prg src/legacy/000-toolchain/hello.asm
 ```
 
 2) Ricostruire il sito MkDocs localmente (usa l'ambiente virtuale):
@@ -228,9 +234,8 @@ c64-assembly-course/
 │       └── 001-memory.md
 │
 ├── src/               # Codice Assembly
-│   ├── 000-toolchain/
-│   ├── 001-memory/
-│   ├── 002-binary/
+│   ├── legacy/        # Sorgenti storici del percorso iniziale
+│   └── lessons/       # Esempi compilabili delle lezioni
 │
 ├── bin/               # Output compilati (.prg)
 │

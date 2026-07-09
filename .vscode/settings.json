@@ -1,6 +1,6 @@
 {
     "files.associations": {
-        "*.asm": "asm"
+        "*.asm": "64tass"
     },
 
     "editor.tabSize": 4,

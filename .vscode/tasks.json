@@ -8,8 +8,8 @@
             "args": [
                 "--cbm-prg",
                 "-o",
-                "${workspaceFolder}/bin/hello.prg",
-                "${workspaceFolder}/src/000-toolchain/hello.asm"
+                "${workspaceFolder}/bin/legacy/hello.prg",
+                "${workspaceFolder}/src/legacy/000-toolchain/hello.asm"
             ],
             "group": {
                 "kind": "build",
