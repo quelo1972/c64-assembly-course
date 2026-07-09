@@ -450,8 +450,8 @@ EMULATOR = x64
 PYTHON = .venv/bin/python3
 MKDOCS = .venv/bin/mkdocs
 
-OUTPUT = bin/hello.prg
-SOURCE = src/000-toolchain/hello.asm
+OUTPUT = bin/legacy/hello.prg
+SOURCE = src/legacy/000-toolchain/hello.asm
 
 # Target default
 all: build
@@ -589,7 +589,7 @@ echo "✅ Build complete!"</code></pre>
     $(ASM) --cbm-prg -o $@ $&lt;
 
 # Usa:
-# make src/hello.prg  → compila src/hello.asm → src/hello.prg</code></pre>
+# make src/legacy/000-toolchain/hello.prg  → compila src/legacy/000-toolchain/hello.asm → src/legacy/000-toolchain/hello.prg</code></pre>
 <p><strong>Funzioni Make:</strong></p>
 <pre class="highlight"><code class="language-makefile">SOURCES = $(wildcard src/*.asm)
 OBJECTS = $(SOURCES:.asm=.prg)
