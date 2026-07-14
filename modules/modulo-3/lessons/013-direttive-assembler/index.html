@@ -391,10 +391,10 @@ border_color_brown = $0B</code></pre>
 <h3 id="direttiva-alias-per">Direttiva <code>=</code> (alias per *)<a class="headerlink" href="#direttiva-alias-per" title="Permanent link">&para;</a></h3>
 <pre class="highlight"><code class="language-asm">* = $0801      ; equivalente a: program = $0801</code></pre>
 <h3 id="etichette-label">Etichette (label)<a class="headerlink" href="#etichette-label" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code class="language-asm">loop:
+<pre class="highlight"><code class="language-asm">target:
   LDA #$50
   STA $D020
-  JMP loop     ; salta a 'loop'</code></pre>
+  JMP target   ; salta all'etichetta target</code></pre>
 <p>64tass traduce <code>loop</code> all'indirizzo effettivo durante assembly.</p>
 <h3 id="costanti">Costanti<a class="headerlink" href="#costanti" title="Permanent link">&para;</a></h3>
 <pre class="highlight"><code class="language-asm">border_register = $D020
@@ -422,7 +422,7 @@ STA border_register</code></pre>
 <li><strong>Memorizzazione</strong>: <code>loop = $0801</code></li>
 <li><strong>Parsing istruzioni</strong>: <code>LDA</code> assembla normalmente</li>
 </ol>
-<p>Quando vedi <code>JMP loop</code>:</p>
+<p>Quando vedi un salto a un'etichetta come <code>JMP target</code>:</p>
 <ol>
 <li><strong>Lookup</strong>: <code>loop</code> → <code>$0801</code></li>
 <li><strong>Assembly</strong>: JMP diventa <code>$4C $01 $08</code></li>
@@ -459,7 +459,7 @@ count_loop:
   CPX #max_count
   BNE count_loop
 
-  JMP loop
+  RTS
 
 program_start = $0801</code></pre>
 <hr />

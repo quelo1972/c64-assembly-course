@@ -409,12 +409,12 @@ loop:
 
   LDA #$05       ; verde
   STA $D020      ; bordo = verde
-  JMP loop
+  RTS
 
 not_up:
   LDA #$02       ; rosso
   STA $D020      ; bordo = rosso
-  JMP loop</code></pre>
+  RTS</code></pre>
 <p><code>LDA</code> carica il valore dal registro hardware in A. <code>AND</code> maschera i bit non necessari. <code>BNE</code> salta quando il risultato non è zero. <code>STA</code> scrive nel registro colore.</p>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>

@@ -419,8 +419,7 @@ start:
     LDA #%00010001
     STA SID_V1_CTRL
 
-loop:
-    JMP loop</code></pre>
+    RTS</code></pre>
 <p><code>STA</code> scrive il contenuto di A in memoria I/O. Qui ogni <code>STA</code> configura un parametro del SID.</p>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
