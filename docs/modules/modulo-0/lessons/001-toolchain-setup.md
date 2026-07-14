@@ -108,8 +108,7 @@ start:
     LDA #$06
     STA BORDER
 
-loop:
-    JMP loop
+    RTS
 ```
 
 ### Build
@@ -119,7 +118,7 @@ loop:
 x64 hello.prg
 ```
 
-Risultato: il programma carica e imposta il bordo a blu.
+Risultato: il programma carica, imposta il bordo a blu e torna al prompt BASIC.
 
 ---
 
