@@ -431,12 +431,11 @@ start:
     LDA #$06
     STA BORDER
 
-loop:
-    JMP loop</code></pre>
+    RTS</code></pre>
 <h3 id="build">Build<a class="headerlink" href="#build" title="Permanent link">&para;</a></h3>
 <pre class="highlight"><code class="language-bash">64tass --cbm-prg -o hello.prg hello.asm
 x64 hello.prg</code></pre>
-<p>Risultato: il programma carica e imposta il bordo a blu.</p>
+<p>Risultato: il programma carica, imposta il bordo a blu e torna al prompt BASIC.</p>
 <hr />
 <h2 id="errori-comuni">⚠️ Errori comuni<a class="headerlink" href="#errori-comuni" title="Permanent link">&para;</a></h2>
 <ul>
