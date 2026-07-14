@@ -1,6 +1,16 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+
 ; Lezione 013 — Indirizzamento assoluto
 ; Controlla registri VIC-II e SID
-*= $0801
 
 ; Nota: LDA indirizzo (assoluto) legge il byte da quell'indirizzo a 16 bit.
 ; Nota: STA indirizzo (assoluto) scrive A in quell'indirizzo a 16 bit.

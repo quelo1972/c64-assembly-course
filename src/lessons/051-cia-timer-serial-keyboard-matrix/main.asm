@@ -1,5 +1,15 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+
 ; Lezione 051 - CIA1 Timer A in polling
-*= $0801
 
 CIA1_TA_LO = $DC04
 CIA1_TA_HI = $DC05

@@ -1,5 +1,15 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+
 ; Lezione 041 - Confronto pratico: testo -> bitmap
-*= $0801
 
 SCREEN_RAM = $0400
 COLOR_RAM  = $D800

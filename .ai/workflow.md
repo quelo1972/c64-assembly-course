@@ -13,8 +13,9 @@ Ogni lezione deve avere SEMPRE:
 Nel repository questa regola e gestita automaticamente da `scripts/build-lesson-examples.sh`, che:
 
 1. estrae il blocco `asm` della sezione `## 💡 Esempio pratico` di ogni lezione;
-2. genera/aggiorna il file `src/lessons/<NNN-slug>/main.asm`;
-3. compila ogni sorgente in `bin/<NNN-slug>.prg`.
+2. aggiunge automaticamente un preambolo BASIC con `SYS 2061` ai sorgenti generati, cosi il PRG puo essere avviato con `RUN` in VICE senza syntax error;
+3. genera/aggiorna il file `src/lessons/<NNN-slug>/main.asm`;
+4. compila ogni sorgente in `bin/<NNN-slug>.prg`.
 
 Se anche una sola lezione non ha esempio asm valido o non compila, il check fallisce.
 

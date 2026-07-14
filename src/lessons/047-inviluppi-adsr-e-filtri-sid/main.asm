@@ -1,5 +1,15 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+
 ; Lezione 047 - ADSR + filtro low-pass base
-*= $0801
 
 SID_V1_FREQ_LO = $D400
 SID_V1_FREQ_HI = $D401

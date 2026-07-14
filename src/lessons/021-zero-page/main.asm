@@ -1,6 +1,16 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+
 ; Lezione 012 — Indirizzamento Zero Page
 ; Usa la Zero Page come area di variabili temporanee
-*= $0801
 
 ; Variabili in Zero Page (indirizzi $02-$FF sono liberi da usare)
 ; $02 = colore bordo da usare

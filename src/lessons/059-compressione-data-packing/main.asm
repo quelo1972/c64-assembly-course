@@ -1,5 +1,15 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+
 ; Lezione 059 - RLE decode minimale: [count][value]
-*= $0801
 
 SRC = $C200
 DST = $0400

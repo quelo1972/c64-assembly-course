@@ -1,6 +1,16 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+
 ; Lezione 011 — Indirizzamento immediato
 ; Cambia il colore del bordo e dello sfondo del C64
-*= $0801
 
 ; Nota: LDA #valore carica il byte nel registro A (accumulatore).
 ; Nota: STA indirizzo scrive il contenuto di A alla locazione di memoria indicata.

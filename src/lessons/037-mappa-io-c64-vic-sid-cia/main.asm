@@ -1,5 +1,15 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+
 ; Lezione 037 - Lettura joystick e scrittura su border color
-*= $0801
 
 loop:
   LDA $DC00      ; legge CIA1 Port A (joystick porta 2)

@@ -1,6 +1,16 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+
 ; Lezione 031 — Divisione
 ; Divisione 16 ÷ 8 → quoziente + resto
-*= $0801
 
 dividend = $C010
 divisor = $C011

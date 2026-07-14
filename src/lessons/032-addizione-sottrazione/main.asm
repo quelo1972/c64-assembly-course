@@ -1,6 +1,16 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+
 ; Lezione 024 — Addizione e sottrazione
 ; Aritmetica con carry
-*= $0801
 
 ; Addizione semplice
 CLC            ; Azzera il carry prima di ADC
