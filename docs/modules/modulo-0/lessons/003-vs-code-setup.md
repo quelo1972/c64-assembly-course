@@ -8,7 +8,7 @@
 
 ## 🎯 Obiettivi
 
-- installare VS Code è le estensioni necessarie;
+- installare VS Code e le estensioni necessarie;
 - configurare syntax highlighting per Assembly;
 - settare task di build per 64tass;
 - usare debugger e breakpoint in VICE;
