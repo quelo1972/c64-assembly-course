@@ -20,5 +20,4 @@ start:
     PLA
     STA PORT01          ; ripristina mappa originaria
 
-loop:
-    JMP loop
+    RTS

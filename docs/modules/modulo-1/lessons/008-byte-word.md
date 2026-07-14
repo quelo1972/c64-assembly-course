@@ -168,8 +168,7 @@ start:
 
    INC COUNTER     ; $FF -> $00 (wrap a 8 bit)
 
-loop:
-   JMP loop
+   RTS
 ```
 
 ## ⚠️ Errori comuni

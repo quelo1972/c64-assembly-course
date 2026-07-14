@@ -7,6 +7,5 @@ start:
   LDA #$02
   STA BORDER
 
-loop:
   INC BORDER
-  JMP loop
+  RTS

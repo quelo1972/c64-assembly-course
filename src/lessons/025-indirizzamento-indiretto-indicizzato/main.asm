@@ -17,8 +17,7 @@ start:
 	LDA ($40),Y    ; indirect indexed: legge da (puntatore + Y)
 	STA $D021
 
-loop:
-	JMP loop
+	RTS
 
 data:
 	.byte $06,$0B

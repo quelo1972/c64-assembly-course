@@ -13,4 +13,4 @@ start:
 
 loop:
   INC BORDER
-  JMP loop
+  RTS

@@ -149,8 +149,7 @@ start:
   LDA #$0B
   STA BACKGROUND
 
-loop:
-  JMP loop
+  RTS
 ```
 
 ### Setup workspace

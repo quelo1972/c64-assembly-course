@@ -7,5 +7,4 @@ start:
    LDA #$0A
    STA BORDER
 
-loop:
-   JMP loop
+   RTS

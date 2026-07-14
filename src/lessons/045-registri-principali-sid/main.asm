@@ -37,5 +37,4 @@ start:
     LDA #%00010001
     STA SID_V1_CTRL
 
-loop:
-    JMP loop
+    RTS

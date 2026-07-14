@@ -61,8 +61,7 @@ start:
     LDA #'0'
     STA SCREEN+2
 
-loop:
-    JMP loop
+    RTS
 ```
 
 Usare un build marker aiuta a distinguere rapidamente versioni diverse in test manuali.

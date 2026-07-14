@@ -190,8 +190,7 @@ start:
 	LDA #$06
 	STA BORDER
 
-loop:
-	JMP loop
+	RTS
 ```
 
 ## ⚠️ Errori comuni

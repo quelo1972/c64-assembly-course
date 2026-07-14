@@ -63,8 +63,7 @@ start:
     LDA #$01
     STA COLOR
 
-loop:
-    JMP loop
+    RTS
 ```
 
 Se compilato in PRG con `--cbm-prg`, i primi 2 byte del file rappresentano l'indirizzo di caricamento.

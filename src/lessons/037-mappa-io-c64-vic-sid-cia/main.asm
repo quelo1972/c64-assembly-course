@@ -8,9 +8,9 @@ loop:
 
   LDA #$05       ; verde
   STA $D020      ; bordo = verde
-  JMP loop
+  RTS
 
 not_up:
   LDA #$02       ; rosso
   STA $D020      ; bordo = rosso
-  JMP loop
+  RTS

@@ -119,8 +119,7 @@ done:
   LDA remainder
   STA $D021
 
-loop:
-  JMP loop
+	RTS
 ```
 
 ---

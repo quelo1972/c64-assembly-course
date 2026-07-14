@@ -28,8 +28,7 @@ start:
     JSR CLOSE
     JSR CLRCHN
 
-loop:
-    JMP loop
+    RTS
 
 filename:
     .text "TEST"

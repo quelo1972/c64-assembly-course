@@ -63,12 +63,12 @@ loop:
 
   LDA #$05       ; verde
   STA $D020      ; bordo = verde
-  JMP loop
+  RTS
 
 not_up:
   LDA #$02       ; rosso
   STA $D020      ; bordo = rosso
-  JMP loop
+  RTS
 ```
 
 `LDA` carica il valore dal registro hardware in A. `AND` maschera i bit non necessari. `BNE` salta quando il risultato non è zero. `STA` scrive nel registro colore.

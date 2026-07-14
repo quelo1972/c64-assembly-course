@@ -62,10 +62,10 @@ Il 6510 carica il programma qui. Se ometti, 64tass assume `$1000`.
 ### Etichette (label)
 
 ```asm
-loop:
+target:
   LDA #$50
   STA $D020
-  JMP loop     ; salta a 'loop'
+  JMP target   ; salta all'etichetta target
 ```
 
 64tass traduce `loop` all'indirizzo effettivo durante assembly.
@@ -120,7 +120,7 @@ loop:
 3. **Memorizzazione**: `loop = $0801`
 4. **Parsing istruzioni**: `LDA` assembla normalmente
 
-Quando vedi `JMP loop`:
+Quando vedi un salto a un'etichetta come `JMP target`:
 
 1. **Lookup**: `loop` → `$0801`
 2. **Assembly**: JMP diventa `$4C $01 $08`
@@ -152,15 +152,15 @@ init:
 loop:
   LDA #color_red
   STA vic2_border
-  
+
   ; conta fino a max_count
   LDX #$00
 count_loop:
   INX
   CPX #max_count
   BNE count_loop
-  
-  JMP loop
+
+  RTS
 
 program_start = $0801
 ```

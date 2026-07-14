@@ -176,8 +176,7 @@ start:
 	TYA
 	STA BORDER
 
-loop:
-	JMP loop
+	RTS
 ```
 
 ## ⚠️ Errori comuni

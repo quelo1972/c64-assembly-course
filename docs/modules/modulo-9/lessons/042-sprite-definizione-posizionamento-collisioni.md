@@ -96,12 +96,12 @@ loop:
 
     LDA #$02
     STA BORDER         ; rosso se collisione
-    JMP loop
+    RTS
 
 no_coll:
     LDA #$06
     STA BORDER         ; blu se nessuna collisione
-    JMP loop
+    RTS
 
 * = SPRITE_DATA
     .byte $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF

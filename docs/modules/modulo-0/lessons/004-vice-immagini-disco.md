@@ -107,9 +107,8 @@ start:
   LDA #$02
   STA BORDER
 
-loop:
   INC BORDER
-  JMP loop
+  RTS
 ```
 
 ### Configura VICE per development

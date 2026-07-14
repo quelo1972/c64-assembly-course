@@ -98,8 +98,7 @@ start:
     LDA #%00010001
     STA SID_V1_CTRL
 
-loop:
-    JMP loop
+    RTS
 ```
 
 `STA` scrive il contenuto di A in memoria I/O. Qui ogni `STA` configura un parametro del SID.

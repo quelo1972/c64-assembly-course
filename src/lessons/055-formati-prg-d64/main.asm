@@ -10,5 +10,4 @@ start:
     LDA #$01
     STA COLOR
 
-loop:
-    JMP loop
+    RTS

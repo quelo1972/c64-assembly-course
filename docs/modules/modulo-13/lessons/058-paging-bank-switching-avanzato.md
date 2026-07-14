@@ -72,8 +72,7 @@ start:
     PLA
     STA PORT01          ; ripristina mappa originaria
 
-loop:
-    JMP loop
+    RTS
 ```
 
 `AND` e `ORA` permettono read-modify-write su bit specifici senza distruggere l intero valore originale.

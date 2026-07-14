@@ -10,5 +10,4 @@ start:
 	LDA #$03
 	STA BORDER
 
-loop:
-	JMP loop
+	RTS

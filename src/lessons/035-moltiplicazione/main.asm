@@ -32,5 +32,4 @@ mul_loop:
   LDA result_lo
   STA $D020
 
-loop:
-  JMP loop
+  RTS

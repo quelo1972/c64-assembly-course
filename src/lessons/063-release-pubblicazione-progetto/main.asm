@@ -11,5 +11,4 @@ start:
     LDA #'0'
     STA SCREEN+2
 
-loop:
-    JMP loop
+    RTS
