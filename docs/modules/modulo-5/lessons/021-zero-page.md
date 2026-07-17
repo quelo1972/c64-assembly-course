@@ -71,9 +71,22 @@ In totale: **2 byte di programma**, **3 cicli macchina**.
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 012 — Indirizzamento Zero Page
 ; Usa la Zero Page come area di variabili temporanee
-*= $0801
+
+
+    .word 0
+
 
 ; Variabili in Zero Page (indirizzi $02-$FF sono liberi da usare)
 ; $02 = colore bordo da usare

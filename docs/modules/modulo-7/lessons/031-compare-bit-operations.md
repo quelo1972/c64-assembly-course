@@ -108,9 +108,22 @@ Dopo: BCS **non salta** (carry = 0), BPL **non salta** (N = 1).
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 022 — Compare e BIT test operations
 ; Confronta valori e testa bit
-*= $0801
+
+
+    .word 0
+
 
 ; Variabile in Zero Page
 value = $02

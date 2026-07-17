@@ -1,6 +1,19 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 019 — Salti su Carry e Overflow
 ; Valida operazioni aritmetiche
-*= $0801
+
+
+    .word 0
+
 
 ; Somma con validazione di carry
 LDA #$FF       ; carica 255

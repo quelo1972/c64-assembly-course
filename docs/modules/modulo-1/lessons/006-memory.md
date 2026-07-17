@@ -181,8 +181,21 @@ La CPU non "vede" schermo, tastiera o colori. Per lei esistono soltanto indirizz
 Immaginiamo di voler cambiare il bordo. Il programma non parla di “blu”: scrive un byte nell'indirizzo corretto e lascia che l'hardware interpreti quel valore.
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 006 - Memoria mappata I/O: scrittura su $D020
-*= $0801
+
+
+    .word 0
+
 
 BORDER = $D020
 

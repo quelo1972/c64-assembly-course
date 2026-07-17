@@ -59,8 +59,21 @@ Il 6510 non genera audio da solo: configura il SID scrivendo byte nei suoi regis
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 045 - Init minima SID voice 1
-*= $0801
+
+
+    .word 0
+
 
 SID_V1_FREQ_LO = $D400
 SID_V1_FREQ_HI = $D401

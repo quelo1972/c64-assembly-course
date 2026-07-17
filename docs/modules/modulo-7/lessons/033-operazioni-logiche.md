@@ -130,9 +130,22 @@ Settano Z e N, non modificano C o V.
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 025 — Operazioni logiche
 ; Manipolazione di bit
-*= $0801
+
+
+    .word 0
+
 
 ; Estrai il nibble basso (4 bit bassi)
 LDA #$A5       ; 1010 0101

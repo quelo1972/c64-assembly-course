@@ -47,8 +47,21 @@ Il 6510 esegue sempre lo stesso ciclo: legge byte dal pattern, li traduce in scr
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 048 - Mini pattern player monofonico
-*= $0801
+
+
+    .word 0
+
 
 SID_V1_FREQ_LO = $D400
 SID_V1_FREQ_HI = $D401

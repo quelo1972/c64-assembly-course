@@ -98,9 +98,22 @@ In totale: **2 byte**, **6 cicli**.
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 021 — Incremento e decremento in memoria
 ; Modifica variabili globali in Zero Page
-*= $0801
+
+
+    .word 0
+
 
 ; Variabili in Zero Page
 counter = $02

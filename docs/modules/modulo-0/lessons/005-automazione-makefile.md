@@ -102,8 +102,21 @@ Quando esegui `make run`:
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 005 - Sorgente minimo per pipeline make build/run
-*= $0801
+
+
+    .word 0
+
 
 BORDER = $D020
 

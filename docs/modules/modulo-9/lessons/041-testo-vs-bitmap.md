@@ -52,8 +52,21 @@ La CPU non "disegna" pixel da sola: scrive valori nei registri e nelle aree RAM 
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 041 - Confronto pratico: testo -> bitmap
-*= $0801
+
+
+    .word 0
+
 
 SCREEN_RAM = $0400
 COLOR_RAM  = $D800

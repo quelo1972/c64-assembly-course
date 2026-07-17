@@ -95,9 +95,22 @@ Uso: **array in memoria**, dove il puntatore punta all'inizio, Y è l'offset.
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 018 — Indirizzamento indiretto indicizzato
 ; Leggi da un array usando puntatore + offset
-*= $0801
+
+
+    .word 0
+
 
 ; Setup puntatore base in Zero Page
 	LDA #<data

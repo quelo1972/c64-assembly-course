@@ -48,8 +48,21 @@ Quando arriva la linea raster impostata, la CPU salva contesto implicito dell'in
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 043 - Raster IRQ minimale
-*= $0801
+
+
+    .word 0
+
 
 IRQ_VECTOR_LO = $0314
 IRQ_VECTOR_HI = $0315

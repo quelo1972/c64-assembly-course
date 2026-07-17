@@ -1,6 +1,19 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 023 — Store operations
 ; Scrivi dati nella memoria
-*= $0801
+
+
+    .word 0
+
 
 ; Scrivi il colore bianco nel bordo
 LDA #$01

@@ -54,8 +54,16 @@ Questo permette cicli stretti e operazioni con basso overhead.
 ## 💡 Esempio pratico
 
 ```asm
-* = $1000
+* = $0801
 
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
     lda #$00   ; A = 0
     tax        ; X = 0
 

@@ -54,8 +54,21 @@ Questo approccio rende il programma piu leggibile e modulare.
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 040 - Mini progetto joystick + schermo
-*= $0801
+
+
+    .word 0
+
 
 cursor_x = $02
 

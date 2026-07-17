@@ -55,8 +55,16 @@ Il valore rimane anche in A, perché si tratta di copia, non di spostamento.
 ## 💡 Esempio pratico
 
 ```asm
-* = $1000
+* = $0801
 
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
     lda #$06   ; A = 6
     tax        ; X = 6
 

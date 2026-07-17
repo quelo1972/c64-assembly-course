@@ -51,8 +51,21 @@ Lo stesso schema vale per `GETIN`, che restituisce il dato in `A`.
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 039 - Uso base di CHROUT e GETIN
-*= $0801
+
+
+    .word 0
+
 
 start:
   LDA #'A'         ; carica il carattere ASCII/PETSCII da stampare

@@ -51,8 +51,21 @@ Per la CPU cambia poco: riceve byte in memoria secondo un indirizzo di load. Il 
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 055 - Stub PRG semplice
-*= $0801
+
+
+    .word 0
+
 
 SCREEN = $0400
 COLOR  = $D800

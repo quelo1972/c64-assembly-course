@@ -57,8 +57,21 @@ Il 6510 cambia i registri "a scatti". Ogni scrittura puo alterare subito il suon
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 046 - Tone test: triangle, saw, pulse
-*= $0801
+
+
+    .word 0
+
 
 SID_V1_FREQ_LO = $D400
 SID_V1_FREQ_HI = $D401

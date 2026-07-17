@@ -121,8 +121,21 @@ Risultato: come se avessi scritto le 3 istruzioni direttamente.
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 014 — Macro e organizzazione (standalone)
-*= $0801
+
+
+    .word 0
+
 
 BORDER = $D020
 

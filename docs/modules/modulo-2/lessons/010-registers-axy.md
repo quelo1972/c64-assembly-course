@@ -161,8 +161,21 @@ Il 6510 usa A come registro principale per i dati, mentre X e Y servono come sup
 Se il programma deve lavorare su una tabella, X o Y possono indicare la posizione corrente, mentre A contiene il dato attuale da elaborare.
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 010 - Registri A, X, Y in azione
-*= $0801
+
+
+    .word 0
+
 
 BORDER = $D020
 

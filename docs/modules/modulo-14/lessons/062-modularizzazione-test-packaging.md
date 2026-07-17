@@ -55,8 +55,21 @@ Subroutine piccole e isolate riducono side effect. Il 6510 non perdona stato imp
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 062 - Main con moduli separati
-*= $0801
+
+
+    .word 0
+
 
 start:
     JSR mod_init

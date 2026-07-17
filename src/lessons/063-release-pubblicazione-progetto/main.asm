@@ -1,5 +1,18 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 063 - Build marker semplice
-*= $0801
+
+
+    .word 0
+
 
 SCREEN = $0400
 

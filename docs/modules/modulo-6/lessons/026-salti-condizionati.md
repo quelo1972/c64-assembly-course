@@ -91,9 +91,22 @@ L'offset è a **1 byte con segno** (-128 a +127).
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 015 — Salti condizionati
 ; Loop che azzera 16 byte
-*= $0801
+
+
+    .word 0
+
 
 ; Nota: BEQ label salta se Z=1 (risultato zero).
 ; Nota: BNE label salta se Z=0 (risultato non-zero).

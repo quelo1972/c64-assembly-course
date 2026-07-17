@@ -51,8 +51,21 @@ Il 6510 prepara parametri nei registri e delega il trasferimento alle routine RO
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 054 - Load KERNAL con check carry
-*= $0801
+
+
+    .word 0
+
 
 SETLFS = $FFBA
 SETNAM = $FFBD

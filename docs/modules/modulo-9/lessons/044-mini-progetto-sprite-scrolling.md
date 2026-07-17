@@ -49,8 +49,21 @@ Il 6510 aggiorna registri VIC-II e memoria video a piccoli passi. La fluidita de
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 044 - Mini scena: sprite animato + scrolling semplice
-*= $0801
+
+
+    .word 0
+
 
 SPRITE0_X     = $D000
 SPRITE0_Y     = $D001

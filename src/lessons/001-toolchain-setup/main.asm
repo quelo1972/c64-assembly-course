@@ -1,7 +1,4 @@
-; hello.asm
-* = $0801        ; indirizzo di caricamento
-
-BORDER = $D020
+* = $0801
 
     .word next_line
     .word 10
@@ -10,6 +7,16 @@ BORDER = $D020
     .byte 0
 
 next_line:
+    .word 0
+; hello.asm
+
+
+    .word 0
+
+
+BORDER = $D020
+
+
     .word 0
 
 start:

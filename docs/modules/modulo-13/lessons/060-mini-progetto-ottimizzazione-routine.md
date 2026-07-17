@@ -47,8 +47,21 @@ Il 6510 non premia l intuizione, premia la sequenza effettiva di istruzioni. Ogn
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 060 - Baseline vs versione compatta (dimostrativa)
-*= $0801
+
+
+    .word 0
+
 
 SRC = $C300
 DST = $0400

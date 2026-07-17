@@ -1,6 +1,19 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 026 — Shift operations
 ; Spostamento e rotazione di bit
-*= $0801
+
+
+    .word 0
+
 
 ; Moltiplicazione per 2 (shift left)
 LDA #$50       ; 0101 0000

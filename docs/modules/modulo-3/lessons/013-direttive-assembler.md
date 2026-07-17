@@ -21,6 +21,16 @@ L'Assembly è difficile da leggere perché usa indirizzi numerici:
 
 ```asm
 * = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+
 LDA #$0B
 STA $D020
 JMP $0801
@@ -130,9 +140,18 @@ Quando vedi un salto a un'etichetta come `JMP target`:
 ## 💡 Esempio pratico
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 028 — Direttive e organizzazione
 ; Usa etichette, costanti e direttive
-* = program_start
 
 ; Costanti hardware
 vic2_border = $D020

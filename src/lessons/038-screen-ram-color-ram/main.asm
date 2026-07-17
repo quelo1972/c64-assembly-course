@@ -1,5 +1,18 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 038 - Scrittura in Screen RAM e Color RAM
-*= $0801
+
+
+    .word 0
+
 
   LDX #$00          ; X = indice posizione
 

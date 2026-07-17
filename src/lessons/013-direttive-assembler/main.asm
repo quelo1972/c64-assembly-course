@@ -1,6 +1,15 @@
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 028 — Direttive e organizzazione
 ; Usa etichette, costanti e direttive
-* = program_start
 
 ; Costanti hardware
 vic2_border = $D020

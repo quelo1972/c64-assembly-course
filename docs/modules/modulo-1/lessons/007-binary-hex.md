@@ -210,8 +210,21 @@ Il 6510 non legge “dieci” o “quindici”: legge 0 e 1. L'esadecimale è so
 Il valore $D020 può essere scritto come una sequenza di bit, ma per noi è molto più semplice leggerlo come un numero esadecimale.
 
 ```asm
+* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
 ; Lezione 007 - Uso di costanti esadecimali
-*= $0801
+
+
+    .word 0
+
 
 BORDER = $D020
 
