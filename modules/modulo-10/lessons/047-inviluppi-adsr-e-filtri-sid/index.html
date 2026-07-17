@@ -376,8 +376,21 @@
 <p>Il 6510 scrive parametri statici (ADSR/filtro), poi usa gate on/off per innescare le fasi temporali interne del SID. Quindi la curva di volume continua anche senza loop CPU dedicati per ogni campione.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 047 - ADSR + filtro low-pass base
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 047 - ADSR + filtro low-pass base
+
+
+    .word 0
+
 
 SID_V1_FREQ_LO = $D400
 SID_V1_FREQ_HI = $D401

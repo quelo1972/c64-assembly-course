@@ -372,8 +372,21 @@
 <p>Il 6510 premia design semplici: loop corto, stato esplicito, responsabilita nette tra moduli. Una buona architettura riduce il costo delle modifiche tardive.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 061 - Skeleton progetto finale
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 061 - Skeleton progetto finale
+
+
+    .word 0
+
 
 BORDER = $D020
 

@@ -429,8 +429,21 @@ Byte 18-21: Creation date
 <p>VICE crea/legge questi settori per salvare file PRG.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 004 - PRG minimo da caricare in VICE
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 004 - PRG minimo da caricare in VICE
+
+
+    .word 0
+
 
 BORDER = $D020
 

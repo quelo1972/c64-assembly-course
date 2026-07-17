@@ -422,8 +422,21 @@ inc_border</code></pre>
 <p>Risultato: come se avessi scritto le 3 istruzioni direttamente.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 014 — Macro e organizzazione (standalone)
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 014 — Macro e organizzazione (standalone)
+
+
+    .word 0
+
 
 BORDER = $D020
 

@@ -379,8 +379,21 @@
 <p>Subroutine piccole e isolate riducono side effect. Il 6510 non perdona stato implicito: ogni modulo deve sapere cosa legge e cosa scrive.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 062 - Main con moduli separati
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 062 - Main con moduli separati
+
+
+    .word 0
+
 
 start:
     JSR mod_init

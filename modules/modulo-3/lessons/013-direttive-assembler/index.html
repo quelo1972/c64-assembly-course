@@ -370,6 +370,16 @@
 <h2 id="introduzione">🧠 Introduzione<a class="headerlink" href="#introduzione" title="Permanent link">&para;</a></h2>
 <p>L'Assembly è difficile da leggere perché usa indirizzi numerici:</p>
 <pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+
 LDA #$0B
 STA $D020
 JMP $0801</code></pre>
@@ -429,9 +439,18 @@ STA border_register</code></pre>
 </ol>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 028 — Direttive e organizzazione
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 028 — Direttive e organizzazione
 ; Usa etichette, costanti e direttive
-* = program_start
 
 ; Costanti hardware
 vic2_border = $D020

@@ -499,9 +499,22 @@
 </ol>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 022 — Compare e BIT test operations
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 022 — Compare e BIT test operations
 ; Confronta valori e testa bit
-*= $0801
+
+
+    .word 0
+
 
 ; Variabile in Zero Page
 value = $02

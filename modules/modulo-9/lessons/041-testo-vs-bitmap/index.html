@@ -384,8 +384,21 @@
 <p>La CPU non "disegna" pixel da sola: scrive valori nei registri e nelle aree RAM che il VIC-II legge durante il refresh video. Cambiando configurazione, cambia come il VIC-II interpreta la memoria.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 041 - Confronto pratico: testo -&gt; bitmap
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 041 - Confronto pratico: testo -&gt; bitmap
+
+
+    .word 0
+
 
 SCREEN_RAM = $0400
 COLOR_RAM  = $D800

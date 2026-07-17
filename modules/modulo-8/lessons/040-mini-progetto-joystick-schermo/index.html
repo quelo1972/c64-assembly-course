@@ -378,8 +378,21 @@
 <p>Questo approccio rende il programma piu leggibile e modulare.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 040 - Mini progetto joystick + schermo
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 040 - Mini progetto joystick + schermo
+
+
+    .word 0
+
 
 cursor_x = $02
 

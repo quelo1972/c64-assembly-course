@@ -445,9 +445,22 @@ BNE -3         ; salta 3 byte indietro</code></pre>
 </ol>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 015 — Salti condizionati
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 015 — Salti condizionati
 ; Loop che azzera 16 byte
-*= $0801
+
+
+    .word 0
+
 
 ; Nota: BEQ label salta se Z=1 (risultato zero).
 ; Nota: BNE label salta se Z=0 (risultato non-zero).

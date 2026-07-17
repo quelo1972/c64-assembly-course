@@ -479,9 +479,22 @@ ADC #$02       ; aggiungi 2
 - BEQ salta (risultato è zero)</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 019 — Salti su Carry e Overflow
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 019 — Salti su Carry e Overflow
 ; Valida operazioni aritmetiche
-*= $0801
+
+
+    .word 0
+
 
 ; Somma con validazione di carry
 LDA #$FF       ; carica 255

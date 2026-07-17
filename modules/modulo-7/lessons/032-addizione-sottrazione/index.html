@@ -460,9 +460,22 @@ SEC            ; Set Carry (C ← 1)</code></pre>
 </ol>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 024 — Addizione e sottrazione
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 024 — Addizione e sottrazione
 ; Aritmetica con carry
-*= $0801
+
+
+    .word 0
+
 
 ; Addizione semplice
 CLC            ; Azzera il carry prima di ADC

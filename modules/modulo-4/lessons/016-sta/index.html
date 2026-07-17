@@ -374,8 +374,16 @@
 <p>Quindi il flusso diventa:</p>
 <pre class="highlight"><code class="language-text">valore -&gt; A -&gt; memoria</code></pre>
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">* = $1000
+<pre class="highlight"><code class="language-asm">* = $0801
 
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
     lda #$06
     sta $d020
     lda #$01

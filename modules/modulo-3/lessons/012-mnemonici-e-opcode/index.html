@@ -474,9 +474,22 @@ $BD = LDA assoluto, X</code></pre>
 .hex 60       ; RTS</code></pre>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 027 — Mnemonici e opcode
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 027 — Mnemonici e opcode
 ; Caricamento e scrittura tramite mnemonici
-*= $0801
+
+
+    .word 0
+
 
 ; Mnemonico: LDA #$0B
 ; Tradotto a: $A9 $0B

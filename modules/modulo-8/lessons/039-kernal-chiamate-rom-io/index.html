@@ -393,8 +393,21 @@
 <p>Lo stesso schema vale per <code>GETIN</code>, che restituisce il dato in <code>A</code>.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 039 - Uso base di CHROUT e GETIN
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 039 - Uso base di CHROUT e GETIN
+
+
+    .word 0
+
 
 start:
   LDA #'A'         ; carica il carattere ASCII/PETSCII da stampare

@@ -372,8 +372,21 @@
 <p>La CPU non sa nulla di versioning, ma il progetto si: garantire coerenza tra codice, documentazione e build evita bug "di processo" che sul C64 diventano costosi da diagnosticare.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 063 - Build marker semplice
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 063 - Build marker semplice
+
+
+    .word 0
+
 
 SCREEN = $0400
 

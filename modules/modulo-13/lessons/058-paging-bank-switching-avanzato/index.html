@@ -374,8 +374,21 @@
 <p>La CPU esegue sempre indirizzi numerici, ma il contenuto dietro quegli indirizzi puo cambiare con la mappa. Quindi stesso <code>LDA $A000</code> puo leggere RAM o ROM a seconda del contesto.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 058 - Save/switch/restore del registro $01
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 058 - Save/switch/restore del registro $01
+
+
+    .word 0
+
 
 PORT01 = $0001
 BORDER = $D020

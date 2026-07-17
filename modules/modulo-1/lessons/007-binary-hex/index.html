@@ -472,8 +472,21 @@ sta $D020</code></pre>
 <p>Il 6510 non legge “dieci” o “quindici”: legge 0 e 1. L'esadecimale è soltanto una forma più compatta per scrivere questi bit.</p>
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
 <p>Il valore $D020 può essere scritto come una sequenza di bit, ma per noi è molto più semplice leggerlo come un numero esadecimale.</p>
-<pre class="highlight"><code class="language-asm">; Lezione 007 - Uso di costanti esadecimali
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 007 - Uso di costanti esadecimali
+
+
+    .word 0
+
 
 BORDER = $D020
 

@@ -375,8 +375,21 @@
 <p>Il 6510 prepara parametri nei registri e delega il trasferimento alle routine ROM. Dopo la <code>JSR</code>, usa i flag di stato per decidere il percorso successivo (successo/errore).</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 054 - Load KERNAL con check carry
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 054 - Load KERNAL con check carry
+
+
+    .word 0
+
 
 SETLFS = $FFBA
 SETNAM = $FFBD

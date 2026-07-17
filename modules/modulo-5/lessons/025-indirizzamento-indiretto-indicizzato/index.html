@@ -439,9 +439,22 @@
 </ol>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 018 — Indirizzamento indiretto indicizzato
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 018 — Indirizzamento indiretto indicizzato
 ; Leggi da un array usando puntatore + offset
-*= $0801
+
+
+    .word 0
+
 
 ; Setup puntatore base in Zero Page
     LDA #&lt;data

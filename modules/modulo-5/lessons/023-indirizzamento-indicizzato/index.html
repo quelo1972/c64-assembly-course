@@ -461,9 +461,22 @@ LDA $FB,X      ; legge da $FB + $05 = $100 (wrap a $00 in ZP)</code></pre>
 <p>In totale: <strong>3 byte</strong>, <strong>4 cicli</strong> (+ 1 se boundary).</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 014 — Indirizzamento indicizzato
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 014 — Indirizzamento indicizzato
 ; Leggi una stringa da screen RAM e copia nella screen RAM sottostante
-*= $0801
+
+
+    .word 0
+
 
 ; Nota: `LDA indirizzo,X` legge da (indirizzo + X).
 ; Nota: `STA indirizzo,X` scrive A in (indirizzo + X).

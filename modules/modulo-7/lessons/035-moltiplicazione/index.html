@@ -416,9 +416,22 @@ for each bit in multiplier:
 </ol>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 030 — Moltiplicazione
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 030 — Moltiplicazione
 ; Moltiplicazione 8x8 → 16 bit
-*= $0801
+
+
+    .word 0
+
 
 factor_a = $C000
 factor_b = $C001

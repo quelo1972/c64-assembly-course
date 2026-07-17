@@ -370,8 +370,21 @@
 <p>Il 6510 esegue sempre lo stesso ciclo: legge byte dal pattern, li traduce in scritture SID, applica delay, passa alla nota successiva. Questa ripetizione deterministica è la base dei player musicali realtime su macchine 8-bit.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 048 - Mini pattern player monofonico
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 048 - Mini pattern player monofonico
+
+
+    .word 0
+
 
 SID_V1_FREQ_LO = $D400
 SID_V1_FREQ_HI = $D401

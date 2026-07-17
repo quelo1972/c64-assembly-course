@@ -481,8 +481,21 @@ LDY #$20</code></pre>
 <p>Il 6510 usa A come registro principale per i dati, mentre X e Y servono come supporto per contatori e indirizzamenti. Questa divisione semplifica molte operazioni comuni.</p>
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
 <p>Se il programma deve lavorare su una tabella, X o Y possono indicare la posizione corrente, mentre A contiene il dato attuale da elaborare.</p>
-<pre class="highlight"><code class="language-asm">; Lezione 010 - Registri A, X, Y in azione
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 010 - Registri A, X, Y in azione
+
+
+    .word 0
+
 
 BORDER = $D020
 

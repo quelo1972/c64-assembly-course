@@ -379,8 +379,21 @@
 <p>Il 6510 cambia i registri "a scatti". Ogni scrittura puo alterare subito il suono. Per questo conviene definire un ordine: prima frequenza e ADSR, poi gate on; per spegnere, gate off.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 046 - Tone test: triangle, saw, pulse
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 046 - Tone test: triangle, saw, pulse
+
+
+    .word 0
+
 
 SID_V1_FREQ_LO = $D400
 SID_V1_FREQ_HI = $D401

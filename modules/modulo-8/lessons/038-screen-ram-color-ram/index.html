@@ -383,8 +383,21 @@
 <p>Incrementando <code>X</code> (<code>INX</code>) e controllando il limite (<code>CPX</code> + <code>BNE</code>), il 6510 riempie una riga o una porzione di schermo in modo molto efficiente.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 038 - Scrittura in Screen RAM e Color RAM
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 038 - Scrittura in Screen RAM e Color RAM
+
+
+    .word 0
+
 
   LDX #$00          ; X = indice posizione
 

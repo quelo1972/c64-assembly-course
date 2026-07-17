@@ -422,9 +422,22 @@ $0801                  $20          $D0</code></pre>
 <p>L'indirizzo viene ricostruito come <code>$D0</code> (alto) + <code>$20</code> (basso) = <code>$D020</code>.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 013 — Indirizzamento assoluto
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 013 — Indirizzamento assoluto
 ; Controlla registri VIC-II e SID
-*= $0801
+
+
+    .word 0
+
 
 ; Nota: LDA indirizzo (assoluto) legge il byte da quell'indirizzo a 16 bit.
 ; Nota: STA indirizzo (assoluto) scrive A in quell'indirizzo a 16 bit.

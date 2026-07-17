@@ -371,8 +371,21 @@
 <p>Ogni istruzione costa cicli. In loop molto eseguiti, anche un risparmio piccolo per iterazione produce differenze percepibili su frame rate o tempo risposta.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 057 - Loop copia RAM minimale
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 057 - Loop copia RAM minimale
+
+
+    .word 0
+
 
 SRC = $C000
 DST = $0400

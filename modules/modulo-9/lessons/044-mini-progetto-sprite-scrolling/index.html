@@ -373,8 +373,21 @@
 <p>Il 6510 aggiorna registri VIC-II e memoria video a piccoli passi. La fluidita deriva da update frequenti e coerenti, non da blocchi monolitici. Le operazioni critiche per il frame timing vanno mantenute brevi.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 044 - Mini scena: sprite animato + scrolling semplice
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 044 - Mini scena: sprite animato + scrolling semplice
+
+
+    .word 0
+
 
 SPRITE0_X     = $D000
 SPRITE0_Y     = $D001

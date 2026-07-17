@@ -453,9 +453,22 @@ Se decrementi <code>$00</code>, ottieni <code>$FF</code> con N = 1.</p>
 <p>In totale: <strong>2 byte</strong>, <strong>6 cicli</strong>.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 021 — Incremento e decremento in memoria
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 021 — Incremento e decremento in memoria
 ; Modifica variabili globali in Zero Page
-*= $0801
+
+
+    .word 0
+
 
 ; Variabili in Zero Page
 counter = $02

@@ -425,8 +425,21 @@ c618e1e docs: add 6 critical lessons</code></pre>
 <p>HEAD punta sempre al commit attuale.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 002 - Programma minimo tracciabile in Git
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 002 - Programma minimo tracciabile in Git
+
+
+    .word 0
+
 
 BORDER = $D020
 

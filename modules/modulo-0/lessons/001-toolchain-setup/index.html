@@ -413,10 +413,7 @@ make deploy         # pubblica su GitHub Pages</code></pre>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
 <h3 id="primo-programma-hello-c64">Primo programma: Hello C64<a class="headerlink" href="#primo-programma-hello-c64" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code class="language-asm">; hello.asm
-* = $0801        ; indirizzo di caricamento
-
-BORDER = $D020
+<pre class="highlight"><code class="language-asm">* = $0801
 
     .word next_line
     .word 10
@@ -425,6 +422,16 @@ BORDER = $D020
     .byte 0
 
 next_line:
+    .word 0
+; hello.asm
+
+
+    .word 0
+
+
+BORDER = $D020
+
+
     .word 0
 
 start:

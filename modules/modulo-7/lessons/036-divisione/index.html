@@ -406,9 +406,22 @@ for i = 0 to 15:
 </ol>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 031 — Divisione
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 031 — Divisione
 ; Divisione 16 ÷ 8 → quoziente + resto
-*= $0801
+
+
+    .word 0
+
 
 dividend = $C010
 divisor = $C011

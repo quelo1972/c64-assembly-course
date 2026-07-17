@@ -386,8 +386,21 @@
 <p>Con polling, il 6510 interroga periodicamente un registro (es. ICR). Con interrupt, lascia che l'evento arrivi da solo. Polling è semplice ma spreca cicli; interrupt è piu efficiente per scheduler stabili.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 051 - CIA1 Timer A in polling
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 051 - CIA1 Timer A in polling
+
+
+    .word 0
+
 
 CIA1_TA_LO = $DC04
 CIA1_TA_HI = $DC05

@@ -431,9 +431,22 @@
 <p>In totale: <strong>2–3 byte</strong>, <strong>5+ cicli</strong>.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 017 — Indirizzamento indiretto
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 017 — Indirizzamento indiretto
 ; Usa puntatori in Zero Page per accedere a dati
-*= $0801
+
+
+    .word 0
+
 
 ; Sul 6510 l'indiretto puro e supportato da JMP ($addr)
 

@@ -373,8 +373,21 @@
 <p>Nel progetto completo il 6510 esegue un ciclo continuo orchestrando moduli specializzati. La chiave e mantenere stato coerente tra frame/tick e separare responsabilita.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 064 - Skeleton finale integrato
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 064 - Skeleton finale integrato
+
+
+    .word 0
+
 
 BORDER = $D020
 

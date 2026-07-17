@@ -371,8 +371,21 @@
 <p>Il 6510 non premia l intuizione, premia la sequenza effettiva di istruzioni. Ogni eliminazione di lavoro ridondante in loop frequenti si traduce in miglioramento reale.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 060 - Baseline vs versione compatta (dimostrativa)
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 060 - Baseline vs versione compatta (dimostrativa)
+
+
+    .word 0
+
 
 SRC = $C300
 DST = $0400

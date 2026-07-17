@@ -460,8 +460,21 @@ $FFFF</code></pre>
 <p>La CPU non "vede" schermo, tastiera o colori. Per lei esistono soltanto indirizzi e valori. Quando un programma scrive un byte in $D020, non è la CPU a interpretarlo come colore: è il chip video VIC-II a farlo.</p>
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
 <p>Immaginiamo di voler cambiare il bordo. Il programma non parla di “blu”: scrive un byte nell'indirizzo corretto e lascia che l'hardware interpreti quel valore.</p>
-<pre class="highlight"><code class="language-asm">; Lezione 006 - Memoria mappata I/O: scrittura su $D020
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 006 - Memoria mappata I/O: scrittura su $D020
+
+
+    .word 0
+
 
 BORDER = $D020
 

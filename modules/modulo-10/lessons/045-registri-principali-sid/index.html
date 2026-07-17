@@ -380,8 +380,21 @@
 <p>Il 6510 non genera audio da solo: configura il SID scrivendo byte nei suoi registri. Una volta attivato il gate, il SID continua a oscillare secondo i parametri correnti, mentre la CPU puo fare altro.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 045 - Init minima SID voice 1
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 045 - Init minima SID voice 1
+
+
+    .word 0
+
 
 SID_V1_FREQ_LO = $D400
 SID_V1_FREQ_HI = $D401

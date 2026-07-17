@@ -372,8 +372,16 @@
 <p>Il valore rimane anche in A, perché si tratta di copia, non di spostamento.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">* = $1000
+<pre class="highlight"><code class="language-asm">* = $0801
 
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
     lda #$06   ; A = 6
     tax        ; X = 6
 

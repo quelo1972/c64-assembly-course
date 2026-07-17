@@ -399,8 +399,21 @@
 <p>Quando la CPU esegue <code>LDA $DC00</code>, il bus indirizzi punta all'area CIA1 e legge lo stato del port A. Con <code>AND</code> puo filtrare un solo bit (es. direzione su). Se poi fa <code>STA $D020</code>, il valore non va in RAM ma nel registro colore bordo del VIC-II.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 037 - Lettura joystick e scrittura su border color
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 037 - Lettura joystick e scrittura su border color
+
+
+    .word 0
+
 
 loop:
   LDA $DC00      ; legge CIA1 Port A (joystick porta 2)

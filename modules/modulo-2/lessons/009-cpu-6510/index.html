@@ -470,8 +470,21 @@ STA $D020</code></pre>
 <p>Il 6510 non esegue “comandi” in senso umano. Esegue istruzioni numeriche prese dalla memoria, una dopo l’altra, usando il Program Counter per sapere dove andare.</p>
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
 <p>Se il Program Counter punta a $1000, la CPU legge l'istruzione presente lì e poi passa automaticamente alla successiva.</p>
-<pre class="highlight"><code class="language-asm">; Lezione 009 - Sequenza fetch/decode/execute minimale
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 009 - Sequenza fetch/decode/execute minimale
+
+
+    .word 0
+
 
 BORDER = $D020
 

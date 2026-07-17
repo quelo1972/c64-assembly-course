@@ -372,8 +372,21 @@
 <p>La CPU prepara dati e registri; il VIC-II renderizza lo sprite ogni frame. La collisione viene aggiornata dal VIC-II nel relativo registro, poi la CPU la legge con <code>LDA</code> e verifica bit con <code>AND</code>.</p>
 <hr />
 <h2 id="esempio-pratico">💡 Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">&para;</a></h2>
-<pre class="highlight"><code class="language-asm">; Lezione 042 - Sprite 0 base + collision flag read
-*= $0801
+<pre class="highlight"><code class="language-asm">* = $0801
+
+    .word next_line
+    .word 10
+    .byte $9e
+    .text "2061"
+    .byte 0
+
+next_line:
+    .word 0
+; Lezione 042 - Sprite 0 base + collision flag read
+
+
+    .word 0
+
 
 SPRITE0_X      = $D000
 SPRITE0_Y      = $D001
