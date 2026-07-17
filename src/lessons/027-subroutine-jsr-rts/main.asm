@@ -1,16 +1,6 @@
-* = $0801
-
-    .word next_line
-    .word 10
-    .byte $9e
-    .text "2061"
-    .byte 0
-
-next_line:
-    .word 0
-
 ; Lezione 016 — Subroutine: JSR e RTS
 ; Chiama una subroutine per stampare caratteri
+*= $0801
 
 ; Nota: JSR indirizzo salta a una subroutine, salva PC sullo stack.
 ; Nota: RTS rientra al chiamante usando lo stack.

@@ -37,9 +37,14 @@ extract_example() {
   ' "$lesson_file" > "$out_file"
 }
 
-wrap_with_basic_stub() {
+prepare_build_source() {
   local input_file="$1"
   local output_file="$2"
+
+  if ! grep -q '^[[:space:]]*\*\s*=\s*\$0801\([[:space:]]*;.*\)\?$' "$input_file"; then
+    cp "$input_file" "$output_file"
+    return
+  fi
 
   if grep -q '^[[:space:]]*\.byte[[:space:]]\+\$9e' "$input_file" && \
      grep -q '^next_line:' "$input_file"; then
@@ -74,26 +79,20 @@ while IFS= read -r lesson; do
   base="$(basename "$lesson" .md)"
   src_dir="$SRC_ROOT/$base"
   src_file="$src_dir/main.asm"
-  extracted_file="$(mktemp)"
 
   mkdir -p "$src_dir"
 
-  if ! extract_example "$lesson" "$extracted_file"; then
+  if ! extract_example "$lesson" "$src_file"; then
     echo "MISSING_ASM_BLOCK: $lesson"
-    rm -f "$extracted_file"
     fail=1
     continue
   fi
 
-  if [[ ! -s "$extracted_file" ]]; then
+  if [[ ! -s "$src_file" ]]; then
     echo "EMPTY_ASM_BLOCK: $lesson"
-    rm -f "$extracted_file"
     fail=1
     continue
   fi
-
-  wrap_with_basic_stub "$extracted_file" "$src_file"
-  rm -f "$extracted_file"
 
   count=$((count + 1))
 done < <(find "$LESSONS_DIR" -type f -path '*/lessons/*.md' ! -name 'lesson-template.md' | sort)
@@ -110,12 +109,17 @@ fail=0
 while IFS= read -r src_file; do
   base="$(basename "$(dirname "$src_file")")"
   out_file="$BIN_ROOT/$base.prg"
+  build_file="$(mktemp)"
 
-  if ! 64tass --cbm-prg -o "$out_file" "$src_file" >/tmp/lesson-build.log 2>&1; then
+  prepare_build_source "$src_file" "$build_file"
+
+  if ! 64tass --cbm-prg -o "$out_file" "$build_file" >/tmp/lesson-build.log 2>&1; then
     echo "BUILD_FAIL: $src_file"
     cat /tmp/lesson-build.log
     fail=1
   fi
+
+  rm -f "$build_file"
 done < <(find "$SRC_ROOT" -type f -name 'main.asm' | sort)
 
 if [[ $fail -ne 0 ]]; then

@@ -1,16 +1,6 @@
-* = $0801
-
-    .word next_line
-    .word 10
-    .byte $9e
-    .text "2061"
-    .byte 0
-
-next_line:
-    .word 0
-
 ; Lezione 020 — Operazioni di stack avanzate
 ; Salva e ripristina lo stato del processore
+*= $0801
 
 ; Salva i flag attuali
 PHP

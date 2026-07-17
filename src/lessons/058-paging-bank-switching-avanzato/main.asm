@@ -1,15 +1,5 @@
-* = $0801
-
-    .word next_line
-    .word 10
-    .byte $9e
-    .text "2061"
-    .byte 0
-
-next_line:
-    .word 0
-
 ; Lezione 058 - Save/switch/restore del registro $01
+*= $0801
 
 PORT01 = $0001
 BORDER = $D020

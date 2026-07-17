@@ -1,16 +1,6 @@
-* = $0801
-
-    .word next_line
-    .word 10
-    .byte $9e
-    .text "2061"
-    .byte 0
-
-next_line:
-    .word 0
-
 ; Lezione 030 — Moltiplicazione
 ; Moltiplicazione 8x8 → 16 bit
+*= $0801
 
 factor_a = $C000
 factor_b = $C001

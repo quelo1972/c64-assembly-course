@@ -1,15 +1,5 @@
-* = $0801
-
-    .word next_line
-    .word 10
-    .byte $9e
-    .text "2061"
-    .byte 0
-
-next_line:
-    .word 0
-
 ; Lezione 062 - Main con moduli separati
+*= $0801
 
 start:
     JSR mod_init

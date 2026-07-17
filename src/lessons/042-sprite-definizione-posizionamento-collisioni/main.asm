@@ -1,15 +1,5 @@
-* = $0801
-
-    .word next_line
-    .word 10
-    .byte $9e
-    .text "2061"
-    .byte 0
-
-next_line:
-    .word 0
-
 ; Lezione 042 - Sprite 0 base + collision flag read
+*= $0801
 
 SPRITE0_X      = $D000
 SPRITE0_Y      = $D001

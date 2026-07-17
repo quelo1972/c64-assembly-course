@@ -1,16 +1,6 @@
-* = $0801
-
-    .word next_line
-    .word 10
-    .byte $9e
-    .text "2061"
-    .byte 0
-
-next_line:
-    .word 0
-
 ; Lezione 014 — Indirizzamento indicizzato
 ; Leggi una stringa da screen RAM e copia nella screen RAM sottostante
+*= $0801
 
 ; Nota: `LDA indirizzo,X` legge da (indirizzo + X).
 ; Nota: `STA indirizzo,X` scrive A in (indirizzo + X).

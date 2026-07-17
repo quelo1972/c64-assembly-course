@@ -10,11 +10,18 @@ Ogni lezione deve avere SEMPRE:
 2. un sorgente compilabile corrispondente;
 3. una build verificata con `64tass`.
 
+Regola di allineamento obbligatoria (bidirezionale):
+
+- il codice nel blocco `asm` della lezione web deve essere identico al file `src/lessons/<NNN-slug>/main.asm`;
+- ogni modifica al blocco `asm` deve riflettersi nel file `.asm` corrispondente;
+- ogni modifica al file `.asm` deve riflettersi nel blocco `asm` della lezione (e viceversa);
+- non sono ammessi fork tra esempio documentato e sorgente reale.
+
 Nel repository questa regola e gestita automaticamente da `scripts/build-lesson-examples.sh`, che:
 
 1. estrae il blocco `asm` della sezione `## 💡 Esempio pratico` di ogni lezione;
-2. aggiunge automaticamente un preambolo BASIC con `SYS 2061` ai sorgenti generati, cosi il PRG puo essere avviato con `RUN` in VICE senza syntax error;
-3. genera/aggiorna il file `src/lessons/<NNN-slug>/main.asm`;
+2. genera/aggiorna il file `src/lessons/<NNN-slug>/main.asm` mantenendolo allineato 1:1 al codice mostrato nella lezione web;
+3. durante la compilazione PRG applica in modo temporaneo un preambolo BASIC con `SYS 2061`, cosi il programma puo partire con `RUN` in VICE senza alterare il sorgente della lezione;
 4. compila ogni sorgente in `bin/<NNN-slug>.prg`.
 
 Se anche una sola lezione non ha esempio asm valido o non compila, il check fallisce.

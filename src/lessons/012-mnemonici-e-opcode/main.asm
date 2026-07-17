@@ -1,16 +1,6 @@
-* = $0801
-
-    .word next_line
-    .word 10
-    .byte $9e
-    .text "2061"
-    .byte 0
-
-next_line:
-    .word 0
-
 ; Lezione 027 — Mnemonici e opcode
 ; Caricamento e scrittura tramite mnemonici
+*= $0801
 
 ; Mnemonico: LDA #$0B
 ; Tradotto a: $A9 $0B

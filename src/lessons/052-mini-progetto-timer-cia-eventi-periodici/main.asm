@@ -1,15 +1,5 @@
-* = $0801
-
-    .word next_line
-    .word 10
-    .byte $9e
-    .text "2061"
-    .byte 0
-
-next_line:
-    .word 0
-
 ; Lezione 052 - CIA Timer A IRQ mini scheduler
+*= $0801
 
 IRQ_VEC_LO = $0314
 IRQ_VEC_HI = $0315
