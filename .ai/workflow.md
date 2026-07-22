@@ -17,6 +17,12 @@ Regola di allineamento obbligatoria (bidirezionale):
 - ogni modifica al file `.asm` deve riflettersi nel blocco `asm` della lezione (e viceversa);
 - non sono ammessi fork tra esempio documentato e sorgente reale.
 
+Fonte di verita operativa (vincolante):
+
+- il blocco `asm` nella lezione markdown e la fonte di verita primaria;
+- `src/lessons/<NNN-slug>/main.asm` e un derivato sincronizzato dal markdown;
+- `make build-lessons` e `make quality-check` possono rigenerare `src/lessons/.../main.asm` dal markdown.
+
 Nel repository questa regola e gestita automaticamente da `scripts/build-lesson-examples.sh`, che:
 
 1. estrae il blocco `asm` della sezione `## 💡 Esempio pratico` di ogni lezione;
@@ -71,6 +77,13 @@ Seguire SEMPRE questa sequenza:
    - `make quality-check`
 6. solo dopo quality check OK: commit e push;
 7. solo dopo push riuscito: deploy su `gh-pages`.
+
+Procedura anti-sovrascrittura (obbligatoria quando tocchi `src/lessons`):
+
+1. se modifichi `src/lessons/<NNN-slug>/main.asm`, copia subito le stesse modifiche nel blocco `asm` della lezione markdown corrispondente;
+2. esegui `make build-lessons` per riallineare e verificare che non ci siano divergenze residue;
+3. esegui `make quality-check` prima di ogni commit/push;
+4. se dopo `make build-lessons` il file in `src/lessons` cambia in modo inatteso, considera il markdown come versione corretta da cui ripartire.
 
 Regola vincolante:
 
