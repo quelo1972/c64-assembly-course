@@ -135,6 +135,7 @@ init:
     LDA #STATE_TITLE
     STA game_state
 
+    JSR clear_screen
     JSR reset_shots
     JSR reset_enemies
     RTS
@@ -1466,6 +1467,28 @@ draw_cell:
     STA ptr_hi
     LDA color_value
     STA (ptr_lo),Y
+    RTS
+
+clear_screen:
+    LDY #$00
+clear_row_loop:
+    LDX #$00
+clear_col_loop:
+    LDA #$20
+    STA char_value
+    LDA #$01
+    STA color_value
+    TYA
+    PHA
+    JSR draw_cell
+    PLA
+    TAY
+    INX
+    CPX #$28
+    BNE clear_col_loop
+    INY
+    CPY #$19
+    BNE clear_row_loop
     RTS
 
 compute_cell_ptr:

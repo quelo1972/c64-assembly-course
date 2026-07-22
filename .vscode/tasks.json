@@ -4,12 +4,10 @@
         {
             "label": "Build C64 Program",
             "type": "shell",
-            "command": "64tass",
+            "command": "${workspaceFolder}/scripts/build-single-prg.sh",
             "args": [
-                "--cbm-prg",
-                "-o",
-                "${workspaceFolder}/bin/output.prg",
-                "${file}"
+                "${file}",
+                "${workspaceFolder}/bin/output.prg"
             ],
             "group": {
                 "kind": "build",
@@ -28,8 +26,42 @@
             "label": "Run in VICE",
             "type": "shell",
             "command": "x64",
-            "args": ["${workspaceFolder}/bin/output.prg"],
-            "dependsOn": "Build C64"
+            "args": [
+                "-autostartprgmode",
+                "1",
+                "-autostart",
+                "${workspaceFolder}/bin/output.prg"
+            ],
+            "dependsOn": "Build C64 Program"
+        },
+        {
+            "label": "Build Final Lesson 073",
+            "type": "shell",
+            "command": "${workspaceFolder}/scripts/build-single-prg.sh",
+            "args": [
+                "${workspaceFolder}/src/lessons/073-nemici-multipli-pattern-avanzati/main.asm",
+                "${workspaceFolder}/bin/output.prg"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Final Lesson 073 in VICE",
+            "type": "shell",
+            "command": "x64",
+            "args": [
+                "-autostartprgmode",
+                "1",
+                "-autostart",
+                "${workspaceFolder}/bin/output.prg"
+            ],
+            "dependsOn": "Build Final Lesson 073"
         }
     ]
 }
