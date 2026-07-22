@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="quelo1972" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>071 audio eventi sid - C64 Assembly Course</title>
+    <title>Lezione 071 - Audio eventi SID - C64 Assembly Course</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "071 audio eventi sid";
+        var mkdocs_page_name = "Lezione 071 - Audio eventi SID";
         var mkdocs_page_input_path = "modules/modulo-14/lessons/071-audio-eventi-sid.md";
         var mkdocs_page_url = null;
       </script>
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Moduli</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="#">Modulo 0 - Ambiente di sviluppo</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../modulo-0/">Modulo 0 - Indice</a>
@@ -249,8 +249,8 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Modulo 14 - Progetto finale</a>
-    <ul>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Modulo 14 - Progetto finale</a>
+    <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../../">Modulo 14 - Indice</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../061-definizione-pianificazione-progetto/">Lezione 061 - Definizione e pianificazione del progetto finale</a>
@@ -260,6 +260,48 @@
                 <li class="toctree-l2"><a class="reference internal" href="../063-release-pubblicazione-progetto/">Lezione 063 - Release e pubblicazione del progetto</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../064-progetto-finale-completo/">Lezione 064 - Progetto finale completo</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../065-game-loop-e-state-machine/">Lezione 065 - Game loop e state machine</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../066-player-input-e-movimento/">Lezione 066 - Player input e movimento</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../067-sparo-e-object-pool/">Lezione 067 - Sparo e object pool</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../068-nemici-e-spawn-controller/">Lezione 068 - Nemici e spawn controller</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../069-collisioni-e-danno/">Lezione 069 - Collisioni e danno</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../070-score-vite-hud/">Lezione 070 - Score, vite e HUD</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lezione 071 - Audio eventi SID</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#obiettivi">🎯 Obiettivi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#introduzione">🧠 Introduzione</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teoria">📘 Teoria</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#come-ragiona-il-6510">🤖 Come ragiona il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esempio-pratico">💡 Esempio pratico</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-comuni">⚠️ Errori comuni</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#esercizi">🧪 Esercizi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#riassunto">📌 Riassunto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preparazione-alla-lezione-successiva">🔜 Preparazione alla lezione successiva</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approfondimento-dentro-il-6510">🔎 Approfondimento - Dentro il 6510</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#checklist-finale">✅ Checklist finale</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../072-polish-e-packaging-finale/">Lezione 072 - Polish e packaging finale</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../073-nemici-multipli-pattern-avanzati/">Lezione 073 - Nemici multipli e pattern avanzati</a>
                 </li>
     </ul>
                   </li>
@@ -299,7 +341,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li class="breadcrumb-item active">071 audio eventi sid</li>
+          <li>Moduli &raquo;</li>
+          <li>Modulo 14 - Progetto finale &raquo;</li>
+      <li class="breadcrumb-item active">Lezione 071 - Audio eventi SID</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/quelo1972/c64-assembly-course/edit/master/docs/modules/modulo-14/lessons/071-audio-eventi-sid.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -1847,6 +1891,10 @@ sfx_gameover_tone:
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../070-score-vite-hud/" class="btn btn-neutral float-left" title="Lezione 070 - Score, vite e HUD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../072-polish-e-packaging-finale/" class="btn btn-neutral float-right" title="Lezione 072 - Polish e packaging finale">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -1872,6 +1920,10 @@ sfx_gameover_tone:
         </span>
     
     
+      <span><a href="../070-score-vite-hud/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../072-polish-e-packaging-finale/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
