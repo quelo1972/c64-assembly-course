@@ -99,6 +99,15 @@ nav:
       - "Lezione 062 - Modularizzazione, test e packaging": modules/modulo-14/lessons/062-modularizzazione-test-packaging.md
       - "Lezione 063 - Release e pubblicazione del progetto": modules/modulo-14/lessons/063-release-pubblicazione-progetto.md
       - "Lezione 064 - Progetto finale completo": modules/modulo-14/lessons/064-progetto-finale-completo.md
+      - "Lezione 065 - Game loop e state machine": modules/modulo-14/lessons/065-game-loop-e-state-machine.md
+      - "Lezione 066 - Player input e movimento": modules/modulo-14/lessons/066-player-input-e-movimento.md
+      - "Lezione 067 - Sparo e object pool": modules/modulo-14/lessons/067-sparo-e-object-pool.md
+      - "Lezione 068 - Nemici e spawn controller": modules/modulo-14/lessons/068-nemici-e-spawn-controller.md
+      - "Lezione 069 - Collisioni e danno": modules/modulo-14/lessons/069-collisioni-e-danno.md
+      - "Lezione 070 - Score, vite e HUD": modules/modulo-14/lessons/070-score-vite-hud.md
+      - "Lezione 071 - Audio eventi SID": modules/modulo-14/lessons/071-audio-eventi-sid.md
+      - "Lezione 072 - Polish e packaging finale": modules/modulo-14/lessons/072-polish-e-packaging-finale.md
+      - "Lezione 073 - Nemici multipli e pattern avanzati": modules/modulo-14/lessons/073-nemici-multipli-pattern-avanzati.md
   - Appendici:
     - "Appendici - Indice": appendici/index.md
     - "Appendice 001 - Regole sintattiche del 64tass": appendici/001-regole-sintattiche-64tass.md
