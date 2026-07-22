@@ -26,6 +26,14 @@ Se preferisci scorrere direttamente le lezioni, eccole raggruppate per moduli:
 - [Modulo 13 - Ottimizzazione e tecniche avanzate](modules/modulo-13.md)
 - [Modulo 14 - Progetto finale](modules/modulo-14.md)
 
+## 🚀 Track consigliata: Shoot 'em up (estensione)
+
+Se vuoi arrivare a un mini gioco completo in modo guidato, segui l'estensione del Modulo 14:
+
+- [Track shoot 'em up 065-073](modules/modulo-14.md#estensione-consigliata-track-shoot-em-up-065-073)
+- [Lezione 065 - Game loop e state machine](modules/modulo-14/lessons/065-game-loop-e-state-machine.md)
+- [Lezione 073 - Nemici multipli e pattern avanzati](modules/modulo-14/lessons/073-nemici-multipli-pattern-avanzati.md)
+
 ## 📚 Appendici
 
 - [Appendici - Indice](appendici/index.md)

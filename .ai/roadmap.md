@@ -221,8 +221,87 @@ Contenuti:
 * Definizione del progetto (gioco o demo)
 * Pianificazione, modularizzazione e test
 * Packaging e release (PRG/D64 e sito)
+* Track consigliata: shoot 'em up rudimentale
 
 Mini-progetto: completare e presentare il progetto finale.
+
+---
+
+# Track integrata – Shoot 'em up rudimentale
+
+Obiettivo:
+
+Realizzare un mini gioco completo a schermo singolo con movimento del player, proiettili, nemici, collisioni, punteggio e game over.
+
+Sistemi da implementare (in ordine):
+
+1. Game loop a tick fisso (IRQ raster o timer CIA)
+2. Input joystick con debounce minimo
+3. Movimento player e limiti schermo
+4. Sistema proiettili (pool fisso in RAM)
+5. Spawn nemici a ondate semplici
+6. Collisioni player/proiettile/nemico
+7. HUD base: score, vite, stato partita
+8. Audio eventi (sparo, hit, esplosione)
+9. Stato partita: title, playing, game over, restart
+10. Ottimizzazione cicli (update solo entita attive)
+
+Milestone suggerite:
+
+* M1: player controllabile + fuoco
+* M2: nemici + collisioni + score
+* M3: audio + game over + bilanciamento base
+* M4: packaging finale PRG/D64 + documentazione tecnica
+
+Mappa dipendenze con i moduli:
+
+* Input e controllo tempo: Moduli 8 e 11
+* Sprite, rendering e collisioni: Modulo 9
+* Suono eventi: Modulo 10
+* Struttura codice e subroutine: Moduli 3, 6 e 7
+* Ottimizzazione finale: Modulo 13
+
+Gap minimi da aggiungere al corso (se volete piu robustezza):
+
+* Lezione breve su architettura game state machine
+* Lezione breve su object pool in Zero Page e RAM
+* Lezione breve su debug delle collisioni (hitbox semplificate)
+
+Scaletta lezioni finali consigliata (065+):
+
+* 065-game-loop-e-state-machine: loop a tick fisso, stati title/playing/game-over
+* 066-player-input-e-movimento: joystick, limiti schermo, velocita e feeling
+* 067-sparo-e-object-pool: pool proiettili, rate of fire, lifecycle attivo/inattivo
+* 068-nemici-e-spawn-controller: pattern base di spawn, movimento verticale/orizzontale
+* 069-collisioni-e-danno: AABB semplificata, hit player e hit nemico, invulnerabilita breve
+* 070-score-vite-hud: punteggio, vite residue, difficolta progressiva minima
+* 071-audio-eventi-sid: sfx per sparo, hit, esplosione e game over
+* 072-polish-e-packaging-finale: bilanciamento, refactoring, build PRG/D64, release note
+* 073-nemici-multipli-pattern-avanzati (opzionale): wave avanzate e comportamento nemici differenziato
+
+Percorsi file consigliati (senza conflitti con lezioni esistenti):
+
+* Sorgenti ASM: src/lessons/065-.../main.asm fino a src/lessons/072-.../main.asm
+* Output compilati: bin/065-....prg fino a bin/072-....prg
+* Documentazione: docs/modules/modulo-14/lessons/065-....md fino a 072-....md
+
+Naming completo suggerito:
+
+* src/lessons/065-game-loop-e-state-machine/main.asm -> bin/065-game-loop-e-state-machine.prg
+* src/lessons/066-player-input-e-movimento/main.asm -> bin/066-player-input-e-movimento.prg
+* src/lessons/067-sparo-e-object-pool/main.asm -> bin/067-sparo-e-object-pool.prg
+* src/lessons/068-nemici-e-spawn-controller/main.asm -> bin/068-nemici-e-spawn-controller.prg
+* src/lessons/069-collisioni-e-danno/main.asm -> bin/069-collisioni-e-danno.prg
+* src/lessons/070-score-vite-hud/main.asm -> bin/070-score-vite-hud.prg
+* src/lessons/071-audio-eventi-sid/main.asm -> bin/071-audio-eventi-sid.prg
+* src/lessons/072-polish-e-packaging-finale/main.asm -> bin/072-polish-e-packaging-finale.prg
+* src/lessons/073-nemici-multipli-pattern-avanzati/main.asm -> bin/073-nemici-multipli-pattern-avanzati.prg
+
+Deliverable per ogni lezione:
+
+* 1 file sorgente principale incrementale
+* 1 versione compilata in bin
+* 1 checklist di test manuali (3-5 casi)
 
 ---
 
